@@ -18,6 +18,7 @@ const entry = {}
 
 fs.readdirSync(SCRIPT_ENTRIES_DIR).forEach(
   file => {
+    /* Exclude hidden file */
     if (!/(^|\/)\.[^/.]/g.test(file)) {
       const name = path.parse(file).name
       entry[name] = [path.join(SCRIPT_ENTRIES_DIR, file)]
@@ -34,6 +35,13 @@ module.exports = env => {
     mode,
     devtool,
     entry,
+    ignoreWarnings: [
+      {
+        // Hide warning from postcss loader
+        module: /node_modules\/postcss-loader\/lib\/index.js/,
+      },
+      (warning) => true,
+    ],
     output: {
       filename: `[name].js?v=${Date.now()}`,
       path: ASSETS_DIR
@@ -66,7 +74,9 @@ module.exports = env => {
     },
     plugins: [
       new VueLoaderPlugin(),
-      new MiniCssExtractPlugin({ filename: '[name].css' }),
+      new MiniCssExtractPlugin({
+        filename: env.production ? '[name].css.liquid' : '[name].[hash].css'
+      }),
       new BundleAnalyzerPlugin({
         analyzerMode: 'static',
         openAnalyzer: false,
@@ -99,15 +109,13 @@ module.exports = env => {
           }).apply(compiler);
         }
       ],
+      runtimeChunk: 'single',
       splitChunks: {
         minSize: 0,
         cacheGroups: {
-          vendors: {
+          commons: {
             chunks: 'all',
-            name (module, chunks, cacheGroupKey) {
-              const allChunksNames = chunks.map((item) => item.name).filter(v => v).join('@')
-              return `${cacheGroupKey}@${allChunksNames}`
-            },
+            name: 'commons',
             test: /\/node_modules\/|lib\//,
             filename: '[name].js',
             priority: 0,

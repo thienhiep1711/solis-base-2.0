@@ -1,3 +1,6 @@
+/*!**********************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js?importLoaders=1!./node_modules/postcss-loader/lib/index.js!./src/styles/main.css ***!
+  \**********************************************************************************************************************************/
 iframe[src*="localhost"]#preview-bar-iframe {
   display: none;
 }
@@ -16844,5 +16847,3 @@ body.showing-overlay .splash, .product-reviews .stamped-container.showing-overla
     margin: 0;
 }
 
-
-/*# sourceMappingURL=collection.css.map*/
