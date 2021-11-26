@@ -106,12 +106,12 @@
                   {{ product.compare_at_price | money }}
                 </del>
                 <span class="product-form__formatted-price" :class="{'product-form__formatted-price--on-sale' : isOnSale }" v-html="formattedPrice">{{- product.price | money -}}</span>
-                <span class="product-form__discount-message" v-html="bundleDiscountMessage" v-if="isBundle"></span>
+                <span class="product-form__discount-message" v-html="bundleDiscountMessage" v-if="isBundle && isOnSale"></span>
               {%- endif -%}
             </div>
           </div>
           {%- if template.suffix != 'gift-card' -%}
-            <div is="afterpay-priceline" id="{{afterpay_id | default: 'pdp-afterpay'}}" v-if="activeVariant" :amount="activeVariant.price"></div>
+            <div is="afterpay-priceline" id="{{afterpay_id | default: 'pdp-afterpay'}}" v-if="activeVariant" :amount="activeVariant.price" :load="true"></div>
           {%- endif -%}
           {%- unless product.has_only_default_variant -%}
             <div class="product-form__variants {% if show_color_swatch %} product-form__variants--swatches{% endif %}">
@@ -325,7 +325,9 @@
             </div>
           </div>
           {%- unless class == 'product-form--sticky' -%}
-          {{product_tags}}
+            <div class="product-form__preorder wysiwyg" v-if="preOrderMessage" v-html="preOrderMessage">
+            </div>
+            {{product_tags}}
           {%- endunless -%}
         </div>
       </form>

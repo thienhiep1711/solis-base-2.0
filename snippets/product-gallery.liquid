@@ -47,7 +47,7 @@
     <transition name="fade">
       <div v-if="!showVideo && !showYoutubeVideo" >
         <div v-if="badge" class="product-gallery__badge" :class="'product-gallery__badge--' + badge">
-          <img :alt="badge" :src="badgeImage(badge)" />
+          <img :alt="badge" :src="badgeImage(badge)" width="120" height="120" />
         </div>
         <img is="zoomable-image-enhanced"  :src="featuredImage" class="product-gallery__img fit-{{ object_fit }}" />{% comment %}lint:ignore{% endcomment %}
       </div>

@@ -85,28 +85,28 @@
         {%- endif -%}
 
         {%- if tagline != blank -%}
-          <div class="hero-small__tagline h5" data-a-stagger>
+          <div class="hero-small__tagline h5">
             {{ tagline }}
           </div>
         {%- endif -%}
 
         {%- if is_dynamic -%}
-          <h1 class="hero-small__title h1" v-html="title" v-cloak data-a-stagger>
+          <h1 class="hero-small__title h1" v-html="title" v-cloak>
             {{- title -}}
           </h1>
         {%- else -%}
-          <h1 class="hero-small__title h1" data-a-stagger>
+          <h1 class="hero-small__title h1">
             {{- title -}}
           </h1>
         {%- endif -%}
         {%- if description and description != blank -%}
-          <div class="hero-small__text" {% if is_dynamic %}v-html="description"{% endif %} data-a-stagger>
+          <div class="hero-small__text" {% if is_dynamic %}v-html="description" v-cloak {% endif %}>
             {{- description -}}
           </div>
         {%- endif -%}
 
         {%- if social_sharing_content != blank -%}
-          <div class="hero-small__social f aic" data-a-stagger>
+          <div class="hero-small__social f aic">
             <p class="hero-small__social-label p2">{{- 'general.social.share' | t -}}</p>
             {{- social_sharing_content -}}
           </div>

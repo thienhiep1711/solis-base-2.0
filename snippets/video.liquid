@@ -15,6 +15,7 @@
   * loop
   * show_play_button
   * enable_audio
+  * object_fit
 {%- endcomment -%}
 
 {%- if is_vue == false -%}
@@ -83,7 +84,7 @@
 {%- endunless -%}
 
 <div
-  class="video {{ class }} {% if is_vue %}video--is-vue{% endif %} {% if autoplay and show_play_button == false %}video--no-play-button{% endif %} {% if enable_audio == false %}video--no-volume-button{% endif %}"
+  class="video {{ class }} {% if is_vue %}video--is-vue{% endif %} {% if autoplay and show_play_button == false %}video--no-play-button{% endif %} {% if enable_audio == false %}video--no-volume-button{% endif %}{% if object_fit %} fit-{{object_fit}}{% endif %}"
   data-offset="{{ offset }}"
   {% if is_vue %}
     is="vue-video"

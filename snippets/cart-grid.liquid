@@ -90,7 +90,7 @@
                         id: 'checkout',
                         name: 'checkout',
                         class: 'btn--primary btn--full-width' -%}
-                      <div is="afterpay-priceline" id="cart-afterpay" :amount="cart.total_price" :is-gift-card="hasGiftCard"></div>
+                      <div is="afterpay-priceline" id="cart-afterpay" :amount="cart.total_price" :is-gift-card="hasGiftCard" :is-mini-cart-open="app.isMiniCartOpen"></div>
                       <p class="p2 pt1 align-c italic cart__footer-bottom-text">
                         {{- 'cart.general.shipping_at_checkout' | t -}}
                       </p>
@@ -107,7 +107,7 @@
                           class: 'btn--primary btn--full-width cart__footer-bottom-submit' -%}
                         <a href="/" class="link underline p2 cart__footer-bottom-link">{{- 'cart.general.keep_shopping' | t -}}</a>
                       </div>
-                      <div is="afterpay-priceline" id="cart-afterpay" :amount="cart.total_price" :is-gift-card="hasGiftCard"></div>
+                      <div is="afterpay-priceline" id="cart-afterpay" :amount="cart.total_price" :is-gift-card="hasGiftCard" :load="true"></div>
                     {%- endif -%}
                   </div>
                 </div>

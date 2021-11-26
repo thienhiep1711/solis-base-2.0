@@ -1,5 +1,4 @@
 {%- assign product = all_products[section.settings.featured_product] -%}
-            {% render 'preorder-now-collection-item', product: product %}
 {%- assign current_variant = product.selected_or_first_available_variant -%}
 
 {%- if product == empty -%}

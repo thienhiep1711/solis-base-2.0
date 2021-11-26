@@ -14,6 +14,8 @@
   })(window,document,'script','dataLayer','GTM-TVQ33M5');</script>
   <!-- End Google Tag Manager -->
 
+  {%- render 'preconnect-required-origins' -%}
+
   {%- render 'favicon' -%}
 
   {%- capture seo_title -%}
@@ -101,6 +103,7 @@
   {% render 'easy-gdpr-settings' %}
   <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/tfEIq1npcPM_ckjrf1MIfg" async></script>
   {% include 'talkable-partial' %}
+  {%- render 'layer0-scripts' -%}
 </head>
 
 <body class="wheelbarrow-v0 no-touch template template-{{ template.name }} template-{{- template | split: '.' | last | handle -}}">
@@ -128,7 +131,6 @@
   {%- endif -%}
 
   {%- render 'icon-paths' -%}
-  {%- render 'loop-returns' -%}
 
   {%- render 'theme-scripts',
     is_dev_mode: settings.is_dev_mode
@@ -147,6 +149,7 @@
     delay: 1000,
     delay_load: true
   -%}
+  {%- render 'delayed-scripts' -%}
 
   {%- if template contains 'product' and settings.klaviyo_bis_enable -%}
     {%- render 'klaviyo-back-in-stock' -%}
@@ -158,6 +161,5 @@
   <script src="https://rebuyengine.com/js/rebuy?shop={{ shop.permanent_domain }}" async></script>
   <div data-rebuy-id="13674"></div>
 
-{% render 'preorder-now' %}
-  </body>
+</body>
 </html>

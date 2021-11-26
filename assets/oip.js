@@ -19,8 +19,8 @@
                 const oip_page = OIP.settings.pages[page];
                 var html = `    <div id="oip_icon_container" style="text-align:center;z-index:50;background-color:`+OIP.settings.theme.bg_color+`;color:`+OIP.settings.theme.text_color+`;`+OIP.settings.theme.css[OIP.settings.theme.icon_container_position]+OIP.settings.theme.css[OIP.settings.theme.icon_container_shape]+`" onclick="OIP.toggleQrCode()">
                                     <div id="oip_qr_icon" style="margin:10% auto;"></div>
-                                </div>                            
-                               <div id="oip_widget_container" style="display:none;width:100%;height:100%;position:fixed;left:0;top:0;overflow:auto;z-index:50;background-color: rgba(0,0,0,0.4);text-align: center;">
+                                </div>
+                                <div id="oip_widget_container" style="display:none;width:100%;height:100%;position:fixed;left:0;top:0;overflow:auto;z-index:50;background-color: rgba(0,0,0,0.4);text-align: center;">
                                 <div id="oip_widget_content" style="margin:10% auto; padding:20px;width:50%; text-align:center;background-color:`+OIP.settings.theme.bg_color+`;color:`+OIP.settings.theme.text_color+`;">
                                     <div id="oip_widget_header" style="width:100%;height:30px;"><span style="float:right;color:`+OIP.settings.theme.text_color+`;cursor:pointer;padding:5px;" onclick="$('#oip_widget_container').hide();OIP.visible=false;">X</span></div>
                                     <div id="oip_qr_container" style="padding:10px;">
@@ -127,7 +127,7 @@
                 return false;
             }
             $.getJSON('/cart.js',function(cart){
-               callback(cart);
+              callback(cart);
             });
         },
         restoreCart: function(){

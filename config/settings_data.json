@@ -1,0 +1,1581 @@
+{
+  "current": {
+    "apple_touch_icon": "shopify:\/\/shop_images\/apple-touch-icon.png",
+    "favicon_png_32": "shopify:\/\/shop_images\/favicon-32x32.png",
+    "favicon_png_16": "shopify:\/\/shop_images\/favicon-16x16.png",
+    "color_windows_tile": "#0b0fd5",
+    "color_android_theme": "#0b0fd5",
+    "icon_cart": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 35 35\">\n  <defs><\/defs>\n  <circle cx=\"17.5\" cy=\"17.5\" r=\"17.5\" fill=\"#FCFCFC\" opacity=\".2\"><\/circle>\n  <path fill=\"#FCFCFC\" d=\"M24 27H11.2c-.1 0-.3 0-.4-.2h-.1v-.1c-.1-.1-.1-.1-.1-.2V13.1c0-.2 0-.3.1-.4l.1-.3h2.8v-1.6c0-2.1 1.7-3.8 3.8-3.8 2.2 0 4 1.7 4 3.8v1.6H24c.1 0 .4 0 .5.3.1.1.1.1.1.2V26.3c0 .1 0 .3-.2.4v.1h-.1c-.1.1-.2.1-.2.1l-.1.1zm-12.3-1.2h11.8v-12h-1.9v1.4c0 .1 0 .4-.3.5-.1.1-.1.1-.2.1h-.2c-.2 0-.4-.1-.6-.3-.1-.1-.1-.1-.1-.2V13.7H15v1.4c0 .1 0 .4-.3.5-.1.1-.2.1-.2.1h-.2c-.2 0-.4 0-.6-.3-.1-.1-.1-.1-.1-.2l-.1-.2v-1.4h-1.9v12.2zm3-13.4h5.2v-1.6c0-1.4-1.2-2.6-2.6-2.6s-2.6 1.2-2.6 2.6v1.6z\"><\/path>\n<\/svg>",
+    "icon_search": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 35 35\">\n  <defs><\/defs>\n  <circle cx=\"17.5\" cy=\"17.5\" r=\"17.5\" fill=\"#2FF9AF\"><\/circle>\n  <path fill=\"#0B0FD5\" d=\"M25.6 23.9L20.7 19c.9-1.1 1.4-2.5 1.4-4 0-3.5-2.9-6.4-6.4-6.4S9.5 11.5 9.5 15s2.9 6.4 6.4 6.4c1.5 0 2.9-.5 4-1.4l4.9 4.9c0 .1.2.1.3.1s.3-.1.5-.2c.3-.2.3-.6 0-.9zM10.8 15c0-2.8 2.3-5.1 5.1-5.1S21 12.2 21 15s-2.3 5.1-5.1 5.1-5.1-2.3-5.1-5.1z\"><\/path>\n<\/svg>",
+    "icon_search_close": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" fill=\"none\" viewbox=\"0 0 35 35\">\n  <defs><\/defs>\n  <circle cx=\"17.5\" cy=\"17.5\" r=\"17.5\" fill=\"#2FF9AF\"><\/circle>\n  <path stroke=\"#0B0FD5\" d=\"M10.354 10.789l14.142 14.142M9.646 24.788l14.143-14.142\"><\/path>\n<\/svg>",
+    "icon_account": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 35 35\">\n  <defs><\/defs>\n  <circle cx=\"17.5\" cy=\"17.5\" r=\"17.5\" fill=\"#FCFCFC\" opacity=\".2\"><\/circle>\n  <path fill=\"#FCFCFC\" d=\"M24.9 26.3c-.3 0-.5-.2-.6-.4-1.2-3.5-4.1-5.8-7.2-5.8-3.1 0-5.9 2.3-7.2 5.8-.1.3-.5.5-.8.4-.3-.1-.5-.5-.4-.8 1.4-4 4.7-6.7 8.4-6.7s7 2.6 8.4 6.7c.1.3-.1.7-.4.8h-.2zM17.1 17.9c-2.6 0-4.7-2.1-4.7-4.7s2.1-4.7 4.7-4.7 4.7 2.1 4.7 4.7-2.1 4.7-4.7 4.7zm0-8c-1.9 0-3.4 1.5-3.4 3.4s1.5 3.4 3.4 3.4 3.4-1.5 3.4-3.4-1.5-3.4-3.4-3.4z\"><\/path>\n<\/svg>",
+    "icon_facebook": "",
+    "icon_instagram": "",
+    "icon_twitter": "",
+    "icon_youtube": "",
+    "icon_review_empty": "icon-review-empty.svg",
+    "icon_review_half": "icon-review-half.svg",
+    "icon_review_full": "icon-review-full.svg",
+    "show_age_gate": false,
+    "age_gate_min_age": 21,
+    "age_gate_image_desktop": "",
+    "age_gate_image_intermediate": "",
+    "age_gate_image_mobile": "",
+    "age_gate_logo": "",
+    "age_gate_title": "Are You of Proper Drinking Age?",
+    "age_gate_description": "When were you born?",
+    "age_gate_enter_text": "Enter Site",
+    "age_gate_error_text": "You must be of legal drinking age to enter.",
+    "show_page_transition": true,
+    "show_button_transition": true,
+    "show_image_zooming": true,
+    "show_element_staggering": true,
+    "exclude_pages": "refer-a-friend|refer-a-friend-1",
+    "checkout_enable_attentive": true,
+    "enable_mini_cart": true,
+    "cart_enable_notes": true,
+    "cart_show_free_shipping_threshold": true,
+    "cart_free_shipping_threshold": "0",
+    "color_headings": "#0b0fd5",
+    "color_text": "#4e4e4a",
+    "color_light_text": "#6a6a6a",
+    "color_background": "#ffffff",
+    "color_secondary_background": "#ffffff",
+    "color_accent": "#f94c43",
+    "color_text_inverted": "#eaeae8",
+    "color_background_inverted": "#0b0fd5",
+    "color_link": "#4e4e4a",
+    "color_link_hover": "#2ff9af",
+    "color_button_background": "#0b0fd5",
+    "color_button_border": "transparent",
+    "color_button_text": "#fcfcfc",
+    "color_button_hover": "#0b0fd5",
+    "color_button_hover_border": "rgba(0,0,0,0)",
+    "color_button_hover_text": "#fcfcfc",
+    "color_button_secondary_background": "transparent",
+    "color_button_secondary_border": "#0b0fd5",
+    "color_button_secondary_text": "#0b0fd5",
+    "color_button_secondary_hover": "rgba(0,0,0,0)",
+    "color_button_secondary_hover_border": "#2ff9af",
+    "color_button_secondary_hover_text": "#0b0fd5",
+    "color_header_background": "#0b0fd5",
+    "color_header_text": "#fcfcfc",
+    "color_header_transparent_text": "#1c1b1b",
+    "color_header_mobile_background": "#0b0fd5",
+    "color_header_mobile_text": "#fcfcfc",
+    "color_footer_background": "#0b0fd5",
+    "color_footer_heading": "#fcfcfc",
+    "color_footer_text": "#fcfcfc",
+    "color_borders": "#eaeae8",
+    "color_dividers": "#eaeae8",
+    "color_errors": "#f94c43",
+    "color_focus": "#2ff9af",
+    "color_promobar_text": "#4e4e4a",
+    "color_promobar_background": "#2ff9af",
+    "color_animation_line": "#2ff9af",
+    "contact_phone": "",
+    "default_image": "",
+    "is_dev_mode": false,
+    "allow_bug_capture": false,
+    "featured_type": "image",
+    "gift_card_image": "",
+    "gift_card_image_intermediate": "",
+    "gift_card_image_mobile": "",
+    "gift_card_video": "",
+    "gift_card_video_s": "",
+    "gift_card_video_l": "",
+    "gift_card_fallback_desktop": "",
+    "gift_card_fallback_intermediate": "",
+    "gift_card_fallback_mobile": "",
+    "gift_card_title": "Here’s Your Gift Card",
+    "gift_card_text": "Use this code at checkout to redeem your gift card",
+    "print_cta_text": "Print",
+    "continue_cta_text": "Start Shopping",
+    "storefront_access_token": "09dca4936ba4b0c71d31ac0a4881d958",
+    "klaviyo_bis_enable": true,
+    "klaviyo_bis_product_page_text": "GET ON THE WAITLIST!",
+    "klaviyo_bis_modal_body_content": "You’ll be the first to know when this product is available again. We won’t share your email ever.",
+    "newsletter_modal_enable": false,
+    "newsletter_modal_delay": 0,
+    "newsletter_modal_subtitle": "",
+    "newsletter_modal_title": "",
+    "newsletter_title": "Newsletter",
+    "newsletter_description": "Subscribe to get notified about any and all brand updates and info.",
+    "klaviyo_id": "XZnZzk",
+    "klaviyo_url": "https:\/\/manage.kmail-lists.com\/ajax\/subscriptions\/subscribe",
+    "newsletter_placeholder": "Email Address",
+    "newsletter_button_text": "Sign Up",
+    "newsletter_success": "Thank you for signing up!",
+    "newsletter_subscribed": "Address is already subscribed!",
+    "newsletter_error": "Whoops, something went wrong. If this issue persists, please <a href=\"\/pages\/contact\">contact us.<\/a>",
+    "password_layout": "full_page",
+    "show_password": true,
+    "password_title": "",
+    "password_content": "",
+    "background_type": "image",
+    "image": "",
+    "image_intermediate": "",
+    "image_mobile": "",
+    "password_video": "",
+    "password_video_s": "",
+    "password_video_l": "",
+    "password_fallback_desktop": "",
+    "password_fallback_intermediate": "",
+    "password_fallback_mobile": "",
+    "product_image_ratio": "natural",
+    "set_discount_message": "- Save {discount_amount} on Set",
+    "enable_quick_add_to_cart": false,
+    "show_type_tab": true,
+    "search_mode": "product,article",
+    "free_shipping_goal": "0",
+    "share_image": "",
+    "social_facebook": "https:\/\/www.facebook.com\/wkndnation",
+    "social_twitter": "https:\/\/twitter.com\/wearewkndnation",
+    "social_pinterest": "",
+    "social_instagram": "https:\/\/www.instagram.com\/wkndnation\/",
+    "social_vimeo": "",
+    "social_tumblr": "",
+    "social_youtube": "",
+    "social_linkedin": "https:\/\/www.linkedin.com\/company\/wkn-nation",
+    "social_snapchat": "",
+    "social_fancy": "",
+    "use_typekit": true,
+    "typekit_id": "xvv3srk",
+    "use_custom_fonts": true,
+    "headings_size": "large",
+    "headings_font": "helvetica_n4",
+    "headings_typekit_font_family": "balboa-plus-fill, sans-serif",
+    "headings_uppercase": true,
+    "body_font": "helvetica_n4",
+    "body_typekit_font_family": "",
+    "body_custom_font_family": "Optima, sans-serif",
+    "body_font_size": 15,
+    "buttons_custom_font_family": "Gotham, sans-serif",
+    "buttons_font_weight": "500",
+    "buttons_font_size": 11,
+    "buttons_uppercase": true,
+    "checkout_header_image": "shopify:\/\/shop_images\/Rectangle_214_45f51f03-7543-49a4-973b-19a199e42eaa.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Group_936_ed84cf5c-cbf0-4e33-a2c5-f0210a2cbb9f.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "Open Sans",
+    "checkout_body_font": "Open Sans",
+    "checkout_accent_color": "#0b0fd5",
+    "checkout_button_color": "#0b0fd5",
+    "checkout_error_color": "#e32c2b",
+    "buttons_headings_font": true,
+    "buttons_heading_font": true,
+    "headings_typekit_font_weight": "normal",
+    "headings_typekit_font_style": "normal",
+    "body_typekit_font_weight": "normal",
+    "body_typekit_font_style": "normal",
+    "sections": {
+      "promo-bar": {
+        "type": "promo-bar",
+        "settings": {
+          "promobar_enabled": true,
+          "promobar_homepage_only": false,
+          "promobar_content": "<p>The Feel Good Black Friday Sale — 25% OFF Site-wide and Free Shipping on ALL Orders<\/p>"
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "use_sticky_header": true,
+          "logo": "shopify:\/\/shop_images\/ezgif.com-gif-maker_2.gif",
+          "logo_max_width": 200,
+          "mobile_logo_max_width": 100,
+          "navigation_menu": "main-menu-1",
+          "navigation_style": "center",
+          "show_icons": true,
+          "content_for_products": "price",
+          "enable_transparent_header": false,
+          "enable_transparent_header_collection": false,
+          "enable_transparent_header_page": false,
+          "show_transparent_header_border": true
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "disable": false,
+          "about_heading": "COMFORT GONE STYLISH",
+          "about_text": "<p>A new vision of dressing for home, work, and social. Not-so-basic basics that feel and look incredible. Life's messy. Stay comfy.<\/p>",
+          "about_show_social_media": true,
+          "show_payment_types": true,
+          "menu_1": "about-menu",
+          "menu_2": "",
+          "email_signup_heading": "Never Miss A Drop",
+          "email_signup_text": "<p>For the latest product launches, styling tips and 10% off your first order. <\/p>",
+          "menu_bottom": "term-conditions-menu",
+          "show_bottom_image": true,
+          "bottom_image_type": "svg",
+          "bottom_image_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" fill=\"none\" viewbox=\"0 0 1114 170\">\n  <path fill=\"#fff\" d=\"M1114 207.761c-.56-5.013-.56-10.583-.56-16.153 0-5.57-.55-10.583-.55-15.596 0-5.57 0-11.697.55-17.267.56-5.57.56-12.811.56-20.052 0-15.039-3.34-26.179-9.47-33.42-6.68-7.241-16.15-10.583-27.85-10.583-7.8 0-14.48 1.67-20.61 5.57-3.34 2.228-7.24 5.013-10.02 8.355l.55-11.14-3.34.557c-2.78.557-5.57.557-8.35.557-5.02.557-10.03.557-15.6 0-2.79 0-5.01-.557-7.8-.557l-3.34-.557.56 3.342c.55 7.798 1.11 15.596 1.67 23.394 0 7.798.55 16.153.55 25.622v8.912c0 8.912 0 17.267-.55 25.622 0 7.798-.56 15.596-1.67 22.837l-.56 3.899 3.9-.557c2.23-.557 3.9-.557 6.68-.557h18.94c2.79 0 5.01 0 6.68.557l3.9.557-.55-3.899c-.56-7.241-1.12-15.039-1.67-22.837 0-7.798-.56-16.71-.56-25.622v-29.521c0-10.583 7.24-18.938 16.15-19.495 4.46 0 8.36 1.671 10.58 5.57 2.79 3.899 3.9 10.583 3.9 19.495 0 14.482 0 35.091-.55 45.117-.56 10.026-1.12 19.495-2.23 26.736l-.56 3.899 3.9-.557c1.67-.557 3.9-.557 6.68-.557h18.94c2.79 0 5.02 0 6.69.557l5.01 1.671v-3.899zM758.076 197.735c-1.114 0-2.228-.557-2.785-1.114-.557-.557-1.114-1.671-1.671-3.342-.557-1.671-.557-4.456-.557-7.798 0-7.241 0-18.381.557-26.736 0-7.798.557-16.71.557-26.179 0-6.684-1.114-12.811-3.342-17.824-2.228-5.013-5.013-9.469-9.469-12.254-3.899-3.342-8.912-5.57-13.925-6.684-5.013-1.671-10.583-2.228-16.71-2.228-7.241 0-15.039 1.67-22.28 3.899-7.241 2.785-14.482 6.684-20.609 11.697l-2.785 2.228 5.013 4.456h5.013l1.114-1.671c.557-1.114 2.785-2.785 4.456-3.342 1.671-1.114 3.899-2.785 6.127-3.342 2.228-1.114 4.456-2.228 7.241-2.785 2.228-.557 4.456-1.114 7.241-1.114 5.57 0 10.026 1.671 13.368 5.013 4.456 4.456 4.456 17.267 4.456 22.28v.557c0 1.671 0 2.785-.557 3.899-.557.557-1.114 1.671-2.228 2.228-1.671 1.114-3.899 2.228-7.241 3.342-3.342 1.114-8.355 2.228-14.482 3.899-5.013 1.114-9.469 2.785-13.925 4.456-3.899 1.671-7.798 3.899-11.14 6.684-3.342 2.785-5.57 6.127-7.241 10.026-1.671 3.899-2.785 8.355-2.785 13.925 0 3.899.557 7.798 2.228 11.14 1.114 3.899 3.342 7.241 6.127 10.026 2.785 3.342 6.684 5.57 11.14 7.241 4.456 1.671 9.469 2.228 15.596 2.228 7.241 0 13.368-1.671 18.381-4.456 3.342-2.228 6.684-5.013 9.469-8.355 1.671 3.342 3.899 6.127 6.684 8.355 3.899 3.342 8.912 4.456 15.039 4.456 3.342 0 7.241-.557 10.026-1.671 3.342-1.114 6.684-2.228 11.14-3.899l1.671-.557v-7.241h-2.785c-2.785 1.114-4.456 1.114-6.127.557zm-40.104-38.99v22.28c0 7.241-.557 10.583-3.342 13.925-2.228 2.785-4.456 3.342-9.469 3.342-2.785 0-5.013-1.114-6.684-3.342-1.671-1.671-2.785-10.026-2.785-16.71 0-7.798 0-13.925 2.228-18.381 1.114-2.228 3.342-3.899 6.127-5.57 2.785-1.671 5.57-2.785 8.912-3.899 1.671-.557 3.342-1.114 4.456-1.671.557 2.785.557 7.798.557 10.026zM807.65 142.035c0-4.456 0-13.368.557-17.824 0-1.671 0-4.456.557-7.241 0-2.785 0-6.127.557-8.912l22.837.557-1.114-3.899c-.557-1.114-.557-1.114 0-3.342l.557-3.342-22.28.557v-7.241c0-3.342 0-7.241.557-10.583 0-3.342.557-6.684.557-10.026 0-3.342.557-5.57.557-8.355v-1.671l-5.013-3.342-1.671.557c-5.013 2.785-10.026 5.013-15.039 7.241l-15.039 6.684-2.228.557v2.228c.557 5.57.557 10.026.557 14.482v9.469l-11.14-.557.557 3.899c.557 1.671.557 1.671 0 3.342l-1.114 3.899h11.14v19.495c0 5.57-.557 11.14-.557 16.71s-.557 11.14-.557 16.71v14.482c0 30.078 16.71 36.205 31.192 36.205 4.456 0 8.912-.557 13.925-1.671 4.456-1.114 8.355-2.228 11.697-3.899l1.671-.557v-11.14l-4.456 2.785-3.342 1.671c-.557 0-2.228.557-5.57.557-2.228 0-3.342-.557-4.456-1.114-1.114-.557-1.671-1.671-2.228-3.342-.557-2.228-1.671-5.57-1.671-10.026-.557-4.456-.557-10.583-.557-18.381v-10.583l.557-15.039zM875.046 183.253c0-7.798-.557-16.153-.557-25.065v-8.912c0-8.912 0-17.267.557-25.065 0-7.798.557-15.596 1.671-23.394l.557-3.899-3.899.557c-3.899.557-9.469 1.114-16.153 1.114-3.342 0-6.127 0-8.912-.557-2.785 0-5.013-.557-7.241-.557l-3.899-.557.557 3.899 1.671 23.394c.557 7.798.557 16.153.557 25.065v8.912c0 8.912 0 17.267-.557 25.065 0 7.798-.557 15.596-1.671 22.837l-.557 3.899 3.899-.557c2.228-.557 3.899-.557 6.684-.557h18.381c2.785 0 5.013 0 6.684.557l3.899.557-.557-3.899c0-7.241-.557-15.039-1.114-22.837zM943.001 94.133c-7.241 0-14.482 1.114-21.166 3.899-6.684 2.785-13.368 6.684-18.381 11.697-5.013 5.013-9.469 11.697-12.811 19.495-3.342 7.798-4.455 16.71-4.455 26.736s1.67 18.938 5.012 26.179c3.342 7.241 7.798 12.811 13.368 17.267 5.57 4.456 11.697 7.798 18.381 9.469 6.684 1.671 13.368 2.785 20.609 2.785 8.355 0 16.153-1.114 22.837-3.899 7.241-2.785 13.368-6.684 18.381-12.254 5.013-5.57 8.912-11.697 11.697-19.495 2.785-7.798 3.897-16.153 3.897-25.065 0-17.267-5.011-31.192-15.037-41.218-10.026-10.583-24.508-15.596-42.332-15.596zm0 109.729c-8.912 0-18.938-5.57-18.938-49.573 0-18.381 1.671-31.749 5.57-40.104 3.342-7.798 7.798-11.697 13.368-11.697 7.241 0 11.14 6.127 13.368 11.14 3.342 7.798 4.456 26.179 4.456 40.661.557 43.446-8.355 49.573-17.824 49.573zM683.997 41.218c2.785-8.912 5.57-16.153 7.798-22.28 2.228-6.127 3.899-11.14 5.013-13.925L698.479 0l-5.57 1.114h-2.785L687.339 0l-.557 2.785c-1.114 3.342-28.407 87.449-44.56 138.136-4.456 13.368-7.798 24.508-10.583 31.749-2.228-8.355-5.57-19.495-7.241-23.951-2.228-6.684-4.456-13.368-6.684-20.609-2.785-7.241-5.013-14.482-7.241-22.28-2.785-7.241-4.456-14.482-6.684-21.166-2.228-6.684-3.899-12.811-5.57-18.381-1.671-5.57-2.785-9.469-3.342-12.811l-.557-2.785-2.785.557c-1.671 0-3.899.557-5.57.557-2.228 0-5.013 0-7.241-.557l-.557 2.785v-2.785l-2.785-.557-.557 2.228c-2.785 8.912-16.71 50.13-30.078 90.234-8.912 26.736-17.267 51.801-21.723 64.612-1.114 3.342-2.228 6.684-3.342 9.469-3.342 8.912-5.57 16.153-7.798 22.28-2.228 6.127-3.899 11.14-5.013 13.925l-1.671 5.013 5.57-1.114h2.785l2.785.557.557-2.785c.557-2.785 17.267-51.244 31.749-94.133a5953.252 5953.252 0 0120.609-60.713c6.127 17.824 13.368 38.433 18.381 52.915 6.127 17.824 11.14 35.648 16.153 54.029l.557 2.785 2.785-.557c1.671-.557 3.342-.557 5.57-.557h5.57c3.899 0 5.013 0 8.355.557h2.785l.557-2.228c2.228-7.798 5.013-16.71 8.355-26.736 3.342-10.026 6.684-20.052 10.026-30.635 3.342-10.026 6.684-20.609 10.026-30.635 1.671-4.456 6.127-18.381 10.583-33.42 6.127-17.824 13.368-39.547 15.039-44.56z\"><\/path>\n  <path fill=\"#2FF3A9\" d=\"M402.154 191.608c0-5.57-.557-10.583-.557-15.596 0-5.57 0-11.697.557-17.267s.557-12.811.557-20.052c0-15.039-3.342-26.179-9.469-33.42-6.684-7.241-15.596-10.583-27.85-10.583-7.798 0-14.482 1.671-20.609 5.57-3.342 2.228-7.241 5.013-10.026 8.355l.557-11.14-3.342.557c-2.785.557-5.57.557-8.355.557-5.013.557-10.026.557-15.596 0-2.785 0-5.013-.557-7.798-.557l-3.342-.557.557 3.342 1.671 23.394c0 7.798.557 16.153.557 25.622v8.912c0 8.912 0 17.267-.557 25.622 0 7.798-.557 15.596-1.671 22.837v1.671l-2.228-2.785c-.557-1.114-2.228-3.342-3.899-6.684-2.228-3.342-4.456-7.798-7.241-12.254-2.785-4.456-5.57-9.469-8.912-15.039-3.342-5.013-6.127-10.026-8.912-14.482-2.785-4.456-5.013-8.355-7.241-11.697-.557-1.114-2.228-3.342-3.342-5.57-1.114-1.671-2.228-3.342-2.785-4.456 2.228-2.228 6.684-6.684 10.583-11.14 11.697-12.254 21.166-21.166 22.28-22.837l5.013-5.57-8.355 1.114h-2.785l-2.228-.557-1.114 1.671c-4.456 6.127-33.977 34.534-43.446 43.446l-3.899 3.899-1.114 1.114v-.557-46.788c0-10.026 0-19.495.557-27.293 0-7.798.557-15.039.557-21.723 0-6.127.557-12.811.557-18.938v-3.342l-3.899.557c-1.671 0-3.342.557-5.57.557-5.57.557-12.254.557-18.381 0-2.785 0-5.013-.557-7.241-.557l-3.342-.557v3.342c.557 12.254 1.114 25.065 1.114 36.762 0 9.469.557 18.938.557 29.521-5.57 16.71-11.14 35.091-16.153 49.016-3.342 9.469-6.127 18.381-7.798 24.508-2.228-8.355-5.57-18.938-7.241-23.394-2.228-6.684-4.456-13.368-6.684-20.609-2.228-7.241-5.013-14.482-7.241-21.723-2.228-7.241-4.456-14.482-6.684-20.609-2.228-6.684-3.899-12.811-5.57-17.824-1.671-5.013-2.785-9.469-3.342-12.811l-.557-2.785-2.785.557c-1.671 0-3.899.557-5.57.557-1.671 0-3.342 0-5.57-.557l-2.228-.557-1.114 2.228c-5.57 14.482-25.622 73.524-36.205 105.83-1.671 4.456-3.342 8.912-3.899 12.254-1.671-6.127-3.899-14.482-5.57-21.166l-2.785-10.026c-2.228-8.912-5.013-18.381-7.241-27.85-2.785-9.469-5.013-19.495-7.798-28.964-2.785-9.469-5.013-19.495-7.241-28.964l-.557-2.228h-2.785c-2.785.557-5.57.557-8.912.557a89.422 89.422 0 01-17.267 0c-2.785 0-5.57 0-8.912-.557H0l1.671 4.456c.557 1.114 1.114 3.899 3.342 11.697 2.228 6.127 4.456 13.925 7.241 22.837 2.785 8.912 5.57 18.938 8.912 30.078 3.342 11.14 6.127 21.723 9.469 32.306 3.342 10.583 6.127 20.609 8.355 30.078 2.785 9.469 4.456 17.267 6.127 23.394l.557 2.785 2.785-.557c1.671 0 3.342-.557 5.013-.557h5.57c3.899 0 5.013 0 8.355.557h2.785l.557-2.228c2.228-7.241 5.013-15.596 8.355-25.065l4.456-10.026c6.684-18.938 19.495-56.257 23.951-69.625 6.127 17.267 12.811 37.319 17.824 51.244 5.57 17.267 11.14 35.091 15.596 52.915l.557 2.785 2.785-.557c1.671 0 3.342-.557 5.013-.557h5.57c3.899 0 5.013 0 8.355.557h2.785l.557-2.228a453.849 453.849 0 018.355-26.179c3.342-9.469 6.127-20.052 9.469-30.078 2.785-8.355 5.57-16.153 8.355-24.508v4.456c0 14.482 0 27.85-.557 40.104-.557 12.254-.557 23.951-1.114 36.205v3.342l3.342-.557c2.785-.557 5.013-.557 7.798-.557h16.153c2.785 0 5.013 0 7.798.557l4.456.557-1.671-4.456c0-.557-.557-1.114-.557-4.456 0-2.785-.557-5.013-.557-7.798v-8.355V165.986v-3.899c1.671 2.228 3.342 4.456 5.013 7.798 2.228 3.342 3.899 7.241 6.684 11.14 2.228 3.899 4.456 8.355 6.684 11.697 2.228 3.899 3.899 7.241 5.57 10.026 2.785 4.456 3.342 5.57 3.899 6.127l1.114 1.114h1.671c2.785-.557 5.57-.557 7.798-.557h17.824c2.785 0 5.57 0 8.912.557l3.899.557H298.552l2.228-.557c2.228-.557 3.899-.557 6.684-.557h18.938c2.785 0 5.013 0 6.684.557l3.899.557-.557-3.899c-.557-7.241-1.114-15.039-1.671-22.837 0-7.798-.557-16.71-.557-25.622v-29.521c0-10.583 7.241-18.938 16.153-19.495 4.456 0 8.355 1.671 10.583 5.57 2.785 3.899 3.899 10.583 3.899 19.495 0 14.482 0 35.091-.557 45.117-.557 10.026-1.114 19.495-2.228 26.736l1.114 5.57 3.899-.557c1.671-.557 3.899-.557 6.684-.557h18.938c2.785 0 5.013 0 6.684.557l3.342.557v-3.342c-.557-6.127-.557-11.14-.557-16.71zM563.126 29.521c-2.228.557-4.456.557-7.241.557-6.127.557-12.811.557-18.381 0-2.785 0-5.013-.557-6.684-.557l-2.785-.557-.557 2.785c-3.899 12.811-7.798 25.065-11.14 36.205-3.342 9.469-8.355 25.622-12.811 38.433-1.671-2.228-3.342-4.456-6.127-6.127-4.456-3.342-10.583-5.013-17.824-5.013-6.127 0-12.811 1.671-19.495 4.456-6.684 2.785-12.811 7.241-18.381 12.254s-11.14 11.14-15.596 17.824c-4.456 6.684-8.355 14.482-11.14 22.837s-4.456 15.596-5.57 22.837c-1.114 7.241-.557 13.925 1.671 19.495 1.671 5.57 5.013 10.583 10.026 13.925 5.013 3.342 11.14 5.013 19.495 5.013 8.912 0 16.71-2.228 23.394-5.57l6.684-5.013s0 .557-.557.557c-.557 1.671-1.114 2.228-1.114 2.228l-5.013 6.127 8.355-1.671c1.671 0 3.342-.557 6.127-.557h17.267c2.785 0 5.013 0 6.684.557l2.785.557.557-2.785c3.342-11.697 7.241-23.951 11.14-36.205 3.899-12.254 8.355-25.622 13.368-40.104l5.013-14.482c5.013-15.039 12.811-35.648 16.71-47.902 4.456-12.254 9.469-24.508 13.925-36.762l1.671-4.456-4.456 1.114zM444.485 194.393c-.557-2.785-.557-6.684 0-11.697.557-4.456 5.013-18.938 7.798-27.293 3.342-9.469 8.355-22.28 11.14-27.293 3.342-5.57 6.127-9.469 8.912-12.811 2.785-3.342 5.57-5.013 7.798-6.127 2.228-1.114 6.127-1.671 8.355-1.671 2.785 0 6.684 1.114 8.355 7.241 1.114 4.456-2.228 20.609-8.355 37.319-6.127 17.267-14.482 35.091-20.052 41.218-5.57 6.127-11.14 9.469-16.153 9.469-1.671 0-3.342-1.114-5.013-2.228-1.671-1.671-2.228-3.342-2.785-6.127z\"><\/path>\n  <path fill=\"#fff\" d=\"M880.046 39.547c.557 1.671.557 3.9.557 5.57 0 13.368-10.583 24.508-23.394 24.508-12.811 0-23.394-11.14-23.394-24.508 0-2.228 0-3.899.557-5.57\"><\/path>\n<\/svg>",
+          "bottom_image": "shopify:\/\/shop_images\/footer.png",
+          "bottom_image_max_width": "1080"
+        }
+      },
+      "hero-small-plp": {
+        "type": "hero-small-plp",
+        "blocks": {
+          "78050407-a098-4a4c-b5a7-edae76fdcae5": {
+            "type": "collection-hero",
+            "settings": {
+              "collection": "all-products",
+              "inverted_mode": true,
+              "enable_overlay": false,
+              "overlay_opacity": 50,
+              "hero_style": "fullwidth-image",
+              "background_color": "rgba(0,0,0,0)",
+              "image_mobile": "shopify:\/\/shop_images\/Capture_One_Catalog0073_V2A.jpg",
+              "image_intermediate": "shopify:\/\/shop_images\/Capture_One_Catalog0073_V2A.jpg",
+              "video": "",
+              "video_s": "",
+              "video_l": "",
+              "content_alignment": "center",
+              "text_alignment": "center"
+            }
+          },
+          "c26a0e54-fe5b-42b0-8644-a68262d8cadf": {
+            "type": "collection-hero",
+            "settings": {
+              "collection": "tops",
+              "inverted_mode": true,
+              "enable_overlay": true,
+              "overlay_opacity": 9,
+              "hero_style": "fullwidth-image",
+              "background_color": "#ffffff",
+              "image_mobile": "shopify:\/\/shop_images\/01-06-2021_wknd_nation_perfecthoodie_surf_home_7439_copy.jpg",
+              "image_intermediate": "shopify:\/\/shop_images\/tops_PLP_V2.jpg",
+              "video": "",
+              "video_s": "",
+              "video_l": "",
+              "content_alignment": "center",
+              "text_alignment": "center"
+            }
+          },
+          "4e88e5f2-c5db-4c15-b3f3-1f7676db838c": {
+            "type": "collection-hero",
+            "settings": {
+              "collection": "sets",
+              "inverted_mode": true,
+              "enable_overlay": false,
+              "overlay_opacity": 50,
+              "hero_style": "fullwidth-image",
+              "background_color": "rgba(0,0,0,0)",
+              "image_mobile": "shopify:\/\/shop_images\/WhatsApp_Image_2021-02-07_at_4.49.06_PM_copy.jpg",
+              "image_intermediate": "shopify:\/\/shop_images\/sets_PLP.jpg",
+              "video": "",
+              "video_s": "",
+              "video_l": "",
+              "content_alignment": "center",
+              "text_alignment": "center"
+            }
+          },
+          "fd5d15bb-07df-464d-8e8a-148bb4ecb558": {
+            "type": "collection-hero",
+            "settings": {
+              "collection": "bottoms",
+              "inverted_mode": true,
+              "enable_overlay": false,
+              "overlay_opacity": 50,
+              "hero_style": "fullwidth-image",
+              "background_color": "rgba(0,0,0,0)",
+              "image_mobile": "shopify:\/\/shop_images\/bottoms_v2.jpg",
+              "image_intermediate": "shopify:\/\/shop_images\/Untitled-1.jpg",
+              "video": "",
+              "video_s": "",
+              "video_l": "",
+              "content_alignment": "center",
+              "text_alignment": "center"
+            }
+          },
+          "32440437-d274-4c5b-96f5-29fd82fceb50": {
+            "type": "collection-hero",
+            "settings": {
+              "collection": "whats-hot",
+              "inverted_mode": true,
+              "enable_overlay": false,
+              "overlay_opacity": 19,
+              "hero_style": "fullwidth-image",
+              "background_color": "rgba(0,0,0,0)",
+              "image_intermediate": "shopify:\/\/shop_images\/Untitled-1_a593e712-efa1-4901-bd91-bd499740fa63.jpg",
+              "image": "shopify:\/\/shop_images\/Untitled-1_a593e712-efa1-4901-bd91-bd499740fa63.jpg",
+              "video": "",
+              "video_s": "",
+              "video_l": "",
+              "content_alignment": "center",
+              "text_alignment": "center"
+            }
+          },
+          "6375e4cc-3b77-4571-b883-532cd5e6d8d5": {
+            "type": "collection-hero",
+            "settings": {
+              "collection": "on-repeat-tee",
+              "inverted_mode": false,
+              "enable_overlay": true,
+              "overlay_opacity": 1,
+              "hero_style": "fullwidth-image",
+              "background_color": "rgba(0,0,0,0)",
+              "image_mobile": "shopify:\/\/shop_images\/DSC_4032_3b75707b-9881-4912-9756-60915ad0a387.jpg",
+              "image": "shopify:\/\/shop_images\/DSC_4032_3b75707b-9881-4912-9756-60915ad0a387.jpg",
+              "video": "",
+              "video_s": "",
+              "video_l": "",
+              "content_alignment": "bottom-left",
+              "text_alignment": "left"
+            }
+          },
+          "b9364757-42dd-4754-9b6e-2bc57dac956f": {
+            "type": "collection-hero",
+            "settings": {
+              "collection": "game-on-jumpsuit",
+              "inverted_mode": true,
+              "enable_overlay": false,
+              "overlay_opacity": 50,
+              "hero_style": "fullwidth-image",
+              "background_color": "rgba(0,0,0,0)",
+              "image_mobile": "shopify:\/\/shop_images\/AU3A6790_aace4ee4-f849-4598-be27-c5006f18b34c.jpg",
+              "image_intermediate": "shopify:\/\/shop_images\/AU3A6790.jpg",
+              "image": "shopify:\/\/shop_images\/AU3A6790.jpg",
+              "video": "",
+              "video_s": "",
+              "video_l": "",
+              "content_alignment": "bottom-left",
+              "text_alignment": "left"
+            }
+          },
+          "543a4add-08df-43b9-bae3-ebdea6c7d735": {
+            "type": "collection-hero",
+            "settings": {
+              "collection": "match-point-skirt",
+              "inverted_mode": true,
+              "enable_overlay": false,
+              "overlay_opacity": 50,
+              "hero_style": "fullwidth-image",
+              "background_color": "rgba(0,0,0,0)",
+              "image_intermediate": "shopify:\/\/shop_images\/Artboard_1_4319f81c-7b7b-4480-aad6-5f193479ecbd.png",
+              "image": "shopify:\/\/shop_images\/Artboard_1_4319f81c-7b7b-4480-aad6-5f193479ecbd.png",
+              "video": "",
+              "video_s": "",
+              "video_l": "",
+              "content_alignment": "bottom-left",
+              "text_alignment": "left"
+            }
+          },
+          "a34c4787-35d5-4dd5-ab8b-d0e4b338fe0e": {
+            "type": "collection-hero",
+            "settings": {
+              "collection": "the-workleisure-collection",
+              "inverted_mode": true,
+              "enable_overlay": false,
+              "overlay_opacity": 50,
+              "hero_style": "fullwidth-image",
+              "background_color": "rgba(0,0,0,0)",
+              "image_mobile": "shopify:\/\/shop_images\/Untitled_design_2.png",
+              "image_intermediate": "shopify:\/\/shop_images\/Untitled_design_1.png",
+              "image": "shopify:\/\/shop_images\/Untitled_design.png",
+              "video": "",
+              "video_s": "",
+              "video_l": "",
+              "content_alignment": "center",
+              "text_alignment": "center"
+            }
+          },
+          "3054caea-9113-45b1-adfb-04f65fb2b8d1": {
+            "type": "collection-hero",
+            "settings": {
+              "collection": "workleisure-drop-2",
+              "inverted_mode": true,
+              "enable_overlay": false,
+              "overlay_opacity": 50,
+              "hero_style": "fullwidth-image",
+              "background_color": "rgba(0,0,0,0)",
+              "image_mobile": "shopify:\/\/shop_images\/Copy_of_Untitled_640_x_500_px.png",
+              "image_intermediate": "shopify:\/\/shop_images\/Untitled_design_1_fd13f17d-3ce1-4a4b-8199-2dce6cc54db6.png",
+              "image": "shopify:\/\/shop_images\/Untitled_design_1_fd13f17d-3ce1-4a4b-8199-2dce6cc54db6.png",
+              "video": "",
+              "video_s": "",
+              "video_l": "",
+              "content_alignment": "center",
+              "text_alignment": "center"
+            }
+          },
+          "ba86299c-44de-4368-a50d-8b533a7e727e": {
+            "type": "collection-hero",
+            "settings": {
+              "collection": "sofia-and-phuongs-picks",
+              "inverted_mode": true,
+              "enable_overlay": false,
+              "overlay_opacity": 50,
+              "hero_style": "fullwidth-image",
+              "background_color": "transparent",
+              "image_mobile": "shopify:\/\/shop_images\/Holiday_Editorial_0113.jpg",
+              "image_intermediate": "shopify:\/\/shop_images\/Holiday_Editorial_0113.jpg",
+              "image": "shopify:\/\/shop_images\/Holiday_Editorial_0113.jpg",
+              "video": "",
+              "video_s": "",
+              "video_l": "",
+              "content_alignment": "center",
+              "text_alignment": "center"
+            }
+          }
+        },
+        "block_order": [
+          "78050407-a098-4a4c-b5a7-edae76fdcae5",
+          "c26a0e54-fe5b-42b0-8644-a68262d8cadf",
+          "4e88e5f2-c5db-4c15-b3f3-1f7676db838c",
+          "fd5d15bb-07df-464d-8e8a-148bb4ecb558",
+          "32440437-d274-4c5b-96f5-29fd82fceb50",
+          "6375e4cc-3b77-4571-b883-532cd5e6d8d5",
+          "b9364757-42dd-4754-9b6e-2bc57dac956f",
+          "543a4add-08df-43b9-bae3-ebdea6c7d735",
+          "a34c4787-35d5-4dd5-ab8b-d0e4b338fe0e",
+          "3054caea-9113-45b1-adfb-04f65fb2b8d1",
+          "ba86299c-44de-4368-a50d-8b533a7e727e"
+        ],
+        "settings": {
+          "enable_section": true,
+          "inverted_mode": true,
+          "enable_overlay": false,
+          "overlay_opacity": 48,
+          "hero_style": "fullwidth-image",
+          "background_color": "#ffffff",
+          "image_mobile": "shopify:\/\/shop_images\/Holiday_Editorial_0113.jpg",
+          "image": "shopify:\/\/shop_images\/Holiday_Editorial_0113.jpg",
+          "video": "",
+          "video_s": "",
+          "video_l": "",
+          "content_alignment": "center",
+          "text_alignment": "center"
+        }
+      },
+      "plp-grid": {
+        "type": "plp-grid",
+        "blocks": {
+          "b462d2e7-adb6-4ead-b56c-15ed0d825096": {
+            "type": "cta",
+            "settings": {
+              "collection": "all-products",
+              "inverted": false,
+              "aspect_ratio": "",
+              "title": "",
+              "button_text": "",
+              "button_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "b462d2e7-adb6-4ead-b56c-15ed0d825096"
+        ],
+        "settings": {
+          "enable_section": true,
+          "enable_filters": true,
+          "grid_view": "large",
+          "cta_enable": true,
+          "cta_inverted": true,
+          "cta_image_s": "shopify:\/\/shop_images\/Wknd_Nation0612_V3_2160x_87901f01-cc5a-4648-ab16-a91f6be871c7.jpg",
+          "cta_image_l": "shopify:\/\/shop_images\/Wknd_Nation0612_V3_2160x_a6a50cf4-2fed-4fca-b72b-21920ad8cff3.jpg",
+          "cta_aspect_ratio": ".8",
+          "cta_title": "DRESS IT UP, DRESS IT DOWN",
+          "cta_button_text": "Lookbook",
+          "cta_button_url": "shopify:\/\/pages\/spring-2021"
+        }
+      },
+      "collection-related-products": {
+        "type": "collection-related-products",
+        "blocks": {
+          "a698ab54-83f1-4171-aca4-12f00cda675f": {
+            "type": "product",
+            "settings": {
+              "product": "homeworksocial-set"
+            }
+          },
+          "5729df42-e9d4-431d-84e3-52733e27202b": {
+            "type": "product",
+            "settings": {
+              "product": "boardroom-joggers"
+            }
+          },
+          "916220e4-f1b5-4904-ad5e-96591ed20d3f": {
+            "type": "product",
+            "settings": {
+              "product": ""
+            }
+          }
+        },
+        "block_order": [
+          "a698ab54-83f1-4171-aca4-12f00cda675f",
+          "5729df42-e9d4-431d-84e3-52733e27202b",
+          "916220e4-f1b5-4904-ad5e-96591ed20d3f"
+        ],
+        "settings": {
+          "enable_related_products": false,
+          "tagline": "",
+          "title": "Recommended Products"
+        }
+      },
+      "product-main": {
+        "type": "product-main",
+        "blocks": {
+          "1600976487215": {
+            "type": "Accordion",
+            "settings": {
+              "title": "Material",
+              "text": "<p>Testing<\/p><p>Global Organic Textile Standard (GOTS) Certified <\/p><p>OEKO-TEX® Certified <\/p>"
+            }
+          },
+          "1600976578925": {
+            "type": "Accordion",
+            "settings": {
+              "title": "Size & Fit",
+              "text": "<p>Fits true to size for a relaxed fit.<\/p><p>Oleysa is 5’9”, has 23” waist and 34” hips. She usually wears a 0 and wears a XS here.<\/p><p><br\/><\/p>"
+            }
+          },
+          "1600976637207": {
+            "type": "Accordion",
+            "settings": {
+              "title": "Shipping & Returns",
+              "text": "<p>Free shipping on orders of $75 or more. For international shipping, please order through <a href=\"https:\/\/secure.hopshopgo.com\/hopshopgo\/start-register.do?l=en&amp;c=\" target=\"_blank\">HopShopGo<\/a> (not affiliated with Wknd Nation).<\/p><p>Standard orders ship the next day if placed before 12pm EST. Overnight express orders ship same day if placed by 2pm EST. <\/p><p>Easy exchanges and free returns!<\/p>"
+            }
+          },
+          "54581e3d-a19f-4ba3-90b3-5d1df6798eea": {
+            "type": "size-guide",
+            "settings": {
+              "product_types": "Tops",
+              "page": "inches"
+            }
+          },
+          "8a52e545-9907-4448-9a12-ccd59354a0a6": {
+            "type": "size-guide",
+            "settings": {
+              "product_types": "Tops",
+              "page": "size-chart-homeworksocial-sweatshirt"
+            }
+          },
+          "396d645c-43cf-4cc5-bc1f-ab4feca078c9": {
+            "type": "size-guide",
+            "settings": {
+              "product_types": "Bottoms",
+              "page": "inches-1"
+            }
+          },
+          "626d354f-557c-4d05-a5f5-5026de53fd55": {
+            "type": "size-guide",
+            "settings": {
+              "product_types": "Bottoms",
+              "page": "centimeters-1"
+            }
+          }
+        },
+        "block_order": [
+          "1600976487215",
+          "1600976578925",
+          "1600976637207",
+          "54581e3d-a19f-4ba3-90b3-5d1df6798eea",
+          "8a52e545-9907-4448-9a12-ccd59354a0a6",
+          "396d645c-43cf-4cc5-bc1f-ab4feca078c9",
+          "626d354f-557c-4d05-a5f5-5026de53fd55"
+        ],
+        "settings": {
+          "enable_section": true,
+          "selector_style": "block",
+          "show_color_swatch": true,
+          "gallery_style": "cover",
+          "enable_on_scroll_nav": true,
+          "bundle_discount_message": "- Save {discount_amount} on Set",
+          "upsell_title": "Complete the Look",
+          "upsell_product": "double-tank",
+          "enable_size_guide": true,
+          "size_guide_title": "Size Chart",
+          "size_guide_button_text": "Size Guide"
+        }
+      },
+      "full-width-pdp-1": {
+        "type": "full-width-pdp-1",
+        "settings": {
+          "enable_section": true,
+          "inverted_mode": false,
+          "enable_overlay": false,
+          "overlay_opacity": 50,
+          "background_type": "image",
+          "video": "",
+          "video_s": "",
+          "video_l": "",
+          "tagline": "",
+          "title": "Bringing that Saturday night energy in everything we do",
+          "text": "Bringing that Saturday night energy in everything we do"
+        }
+      },
+      "text-and-image-pdp-1": {
+        "type": "text-and-image-pdp-1",
+        "settings": {
+          "enable_section": true,
+          "media_type": "image",
+          "tagline": "",
+          "title": "Bringing that Saturday night energy in everything we do",
+          "text": "Bringing that Saturday night energy in everything we do",
+          "cta_text": "Our Story",
+          "cta_url": "shopify:\/\/pages\/about-us",
+          "content_alignment": "left",
+          "text_alignment": "left"
+        }
+      },
+      "full-width-pdp-2": {
+        "type": "full-width-pdp-2",
+        "settings": {
+          "enable_section": false,
+          "inverted_mode": false,
+          "enable_overlay": false,
+          "overlay_opacity": 50,
+          "background_type": "image",
+          "video": "",
+          "video_s": "",
+          "video_l": "",
+          "tagline": "Changing the Game",
+          "title": "Bringing that Saturday night energy in everything we do",
+          "text": ""
+        }
+      },
+      "text-and-image-pdp-2": {
+        "type": "text-and-image-pdp-2",
+        "settings": {
+          "enable_section": false,
+          "media_type": "image",
+          "tagline": "",
+          "title": "",
+          "text": "",
+          "cta_text": "",
+          "content_alignment": "left",
+          "text_alignment": "left"
+        }
+      },
+      "product-reviews": {
+        "type": "product-reviews",
+        "settings": {
+          "enable_section": true,
+          "enable_reviews": true,
+          "title": "Hear From Real Customers"
+        }
+      },
+      "product-related-products": {
+        "type": "product-related-products",
+        "blocks": {
+          "9eb80dc1-4ce3-4e04-99a7-ceff2ee7f00f": {
+            "type": "product",
+            "settings": {
+              "product": "homeworksocial-set"
+            }
+          },
+          "8e7a04ce-5c54-431c-b985-731010d1e4af": {
+            "type": "product",
+            "settings": {
+              "product": "perfect-hoodie-set"
+            }
+          },
+          "d7b7fcc2-8456-4eb3-a9a5-4d77e07c6d8f": {
+            "type": "product",
+            "settings": {
+              "product": "tux-leggings"
+            }
+          },
+          "e31eae62-b5f2-4649-8ea0-b2ab6bc24d85": {
+            "type": "product",
+            "settings": {
+              "product": "perfect-hoodie"
+            }
+          },
+          "5b4e841a-204c-49a8-aa45-500ae5544063": {
+            "type": "product",
+            "settings": {
+              "product": "double-tank"
+            }
+          },
+          "2827fcc6-b3a7-435b-980c-01f2b7066c64": {
+            "type": "product",
+            "settings": {
+              "product": "homeworksocial-sweatshirt"
+            }
+          },
+          "25680319-49c9-44d9-9c3e-9576ecfb3cd6": {
+            "type": "product",
+            "settings": {
+              "product": "perfect-hoodie"
+            }
+          }
+        },
+        "block_order": [
+          "9eb80dc1-4ce3-4e04-99a7-ceff2ee7f00f",
+          "8e7a04ce-5c54-431c-b985-731010d1e4af",
+          "d7b7fcc2-8456-4eb3-a9a5-4d77e07c6d8f",
+          "e31eae62-b5f2-4649-8ea0-b2ab6bc24d85",
+          "5b4e841a-204c-49a8-aa45-500ae5544063",
+          "2827fcc6-b3a7-435b-980c-01f2b7066c64",
+          "25680319-49c9-44d9-9c3e-9576ecfb3cd6"
+        ],
+        "settings": {
+          "enable_related_products": true,
+          "tagline": "",
+          "title": "You May Also Like"
+        }
+      },
+      "hero-small-basic": {
+        "type": "hero-small-basic",
+        "blocks": {
+          "d17619ba-2172-4abd-80d5-267c27597c99": {
+            "type": "page_hero",
+            "settings": {
+              "page": "frequently-asked-questions",
+              "enable_section": true,
+              "inverted_mode": true,
+              "enable_overlay": false,
+              "overlay_opacity": 50,
+              "hero_style": "fullwidth-image",
+              "background_type": "image",
+              "image_mobile": "shopify:\/\/shop_images\/Wknd_Nation0942_V4_1aecf8a5-2106-4381-9754-ea8694f8bf6f.jpg",
+              "image_intermediate": "shopify:\/\/shop_images\/Wknd_Nation0942_V4_1aecf8a5-2106-4381-9754-ea8694f8bf6f.jpg",
+              "image": "shopify:\/\/shop_images\/Wknd_Nation0942_V4_1aecf8a5-2106-4381-9754-ea8694f8bf6f.jpg",
+              "video": "",
+              "video_s": "",
+              "video_l": "",
+              "content_alignment": "bottom-left",
+              "text_alignment": "left",
+              "title": "",
+              "text": ""
+            }
+          },
+          "94cd0165-c931-4fbf-af27-e9864743ed6e": {
+            "type": "page_hero",
+            "settings": {
+              "page": "shipping-and-returns",
+              "enable_section": true,
+              "inverted_mode": true,
+              "enable_overlay": false,
+              "overlay_opacity": 50,
+              "hero_style": "fullwidth-image",
+              "background_type": "image",
+              "image_mobile": "shopify:\/\/shop_images\/Wknd_Nation1266_V2B.jpg",
+              "image_intermediate": "shopify:\/\/shop_images\/Wknd_Nation1266_V2B.jpg",
+              "image": "shopify:\/\/shop_images\/Wknd_Nation1266_V2B.jpg",
+              "video": "",
+              "video_s": "",
+              "video_l": "",
+              "content_alignment": "bottom-left",
+              "text_alignment": "left",
+              "title": "",
+              "text": ""
+            }
+          },
+          "89bd093d-c3a8-4e1c-beb8-bf2687741c80": {
+            "type": "page_hero",
+            "settings": {
+              "page": "ambassador-program",
+              "enable_section": true,
+              "inverted_mode": true,
+              "enable_overlay": true,
+              "overlay_opacity": 28,
+              "hero_style": "fullwidth-image",
+              "background_type": "image",
+              "image_mobile": "shopify:\/\/shop_images\/contactus.jpg",
+              "image_intermediate": "shopify:\/\/shop_images\/contactus.jpg",
+              "image": "shopify:\/\/shop_images\/contactus.jpg",
+              "video": "",
+              "video_s": "",
+              "video_l": "",
+              "content_alignment": "bottom-left",
+              "text_alignment": "left",
+              "title": "",
+              "text": ""
+            }
+          },
+          "4e7f2fb8-27dc-41b5-9d5a-4d2d46750210": {
+            "type": "page_hero",
+            "settings": {
+              "page": "refer-a-friend",
+              "enable_section": true,
+              "inverted_mode": true,
+              "enable_overlay": false,
+              "overlay_opacity": 50,
+              "hero_style": "fullwidth-image",
+              "background_type": "image",
+              "image_mobile": "shopify:\/\/shop_images\/Wknd_Nation1234_ext_V4.jpg",
+              "image_intermediate": "shopify:\/\/shop_images\/Wknd_Nation1234_ext_V4.jpg",
+              "image": "shopify:\/\/shop_images\/Wknd_Nation1234_ext_V4.jpg",
+              "video": "",
+              "video_s": "",
+              "video_l": "",
+              "content_alignment": "bottom-left",
+              "text_alignment": "left",
+              "title": "",
+              "text": ""
+            }
+          }
+        },
+        "block_order": [
+          "d17619ba-2172-4abd-80d5-267c27597c99",
+          "94cd0165-c931-4fbf-af27-e9864743ed6e",
+          "89bd093d-c3a8-4e1c-beb8-bf2687741c80",
+          "4e7f2fb8-27dc-41b5-9d5a-4d2d46750210"
+        ],
+        "settings": {
+          "enable_section": true,
+          "inverted_mode": true,
+          "enable_overlay": false,
+          "overlay_opacity": 50,
+          "hero_style": "fullwidth-image",
+          "background_type": "image",
+          "image_mobile": "shopify:\/\/shop_images\/contactus.jpg",
+          "image_intermediate": "shopify:\/\/shop_images\/contactus.jpg",
+          "image": "shopify:\/\/shop_images\/Wknd_Nation0942_V6.jpg",
+          "video": "",
+          "video_s": "",
+          "video_l": "",
+          "content_alignment": "center",
+          "text_alignment": "center",
+          "title": "",
+          "text": ""
+        }
+      },
+      "blog-hero": {
+        "type": "blog-hero",
+        "settings": {
+          "enable_section": true,
+          "inverted_mode": true,
+          "enable_overlay": false,
+          "overlay_opacity": 50,
+          "background_type": "image",
+          "image_mobile": "shopify:\/\/shop_images\/040A9796_1.png",
+          "image": "shopify:\/\/shop_images\/040A9796_1_1.png",
+          "video": "",
+          "video_s": "",
+          "video_l": "",
+          "ratio": "1.375",
+          "ratio_s": "0.4565",
+          "ratio_l": "0.4565",
+          "max_height": "500",
+          "max_height_s": "500",
+          "max_height_l": "650",
+          "position": "bottom-left",
+          "alignment": "left",
+          "margin_top": "0",
+          "margin_top_s": "0",
+          "margin_top_l": "0",
+          "tagline": "",
+          "title": "The Latest and Greatest in Wknd News",
+          "title_style": "h1",
+          "text": "",
+          "btn_text_1": "",
+          "btn_link_1": "shopify:\/\/blogs\/news\/our-new-jumpsuit-thats-perfect-everyday-2",
+          "btn_style_1": "primary",
+          "btn_text_2": "",
+          "btn_style_2": "secondary"
+        }
+      },
+      "category-navigation": {
+        "type": "category-navigation",
+        "settings": {
+          "enable_section": true,
+          "tagline": "",
+          "title": "",
+          "menu": ""
+        }
+      },
+      "contact-form": {
+        "type": "contact-form",
+        "settings": {
+          "enable_section": true,
+          "sidebar": "<p><strong>Drop us a line<\/strong><\/p><p>hey@wkndnation.com<\/p><p>(917)576-8427<\/p>",
+          "subject_options": ""
+        }
+      },
+      "article-related-products": {
+        "type": "article-related-products",
+        "settings": {
+          "enable_related_products": true,
+          "tagline": "",
+          "title": "Shop the Story"
+        }
+      },
+      "three-up": {
+        "type": "three-up",
+        "blocks": {
+          "1601481992435": {
+            "type": "post",
+            "settings": {
+              "article": "news\/3-ways-to-style-our-romper"
+            }
+          },
+          "1601481997504": {
+            "type": "post",
+            "settings": {
+              "article": "news\/how-to-dress-up-and-dress-down-our-power-suit"
+            }
+          },
+          "1601482001545": {
+            "type": "post",
+            "settings": {
+              "article": "news\/our-top-wknd-activities-for-this-summer"
+            }
+          }
+        },
+        "block_order": [
+          "1601481992435",
+          "1601481997504",
+          "1601482001545"
+        ],
+        "settings": {
+          "enable_section": true,
+          "title": "Read More"
+        }
+      },
+      "1605796714d25c422d": {
+        "type": "home-hero",
+        "settings": {
+          "inverted_mode": true,
+          "enable_overlay": false,
+          "overlay_opacity": 0,
+          "enable_newsletter": false,
+          "klaviyo_id": "",
+          "newsletter_placeholder": "Enter Your Email Address",
+          "newsletter_button_text": "Sign Up",
+          "background_type": "video",
+          "image_mobile": "shopify:\/\/shop_images\/2_3bc56955-f81c-4aaf-b5ed-7f8a30f796ff.png",
+          "image_intermediate": "shopify:\/\/shop_images\/2_3bc56955-f81c-4aaf-b5ed-7f8a30f796ff.png",
+          "image": "shopify:\/\/shop_images\/Untitled_design_3.png",
+          "video": "https:\/\/player.vimeo.com\/external\/649174233.sd.mp4?s=68cdab97d927255ef83a6301c85349592285a589&profile_id=165",
+          "video_s": "https:\/\/player.vimeo.com\/external\/650123985.sd.mp4?s=258f72a529a28532fbcbc44a8da7e5a72377e775&profile_id=165",
+          "video_l": "https:\/\/player.vimeo.com\/external\/649341117.hd.mp4?s=9b8acbd257984053dca899bff533163216239e65&profile_id=174",
+          "ratio": "1.375",
+          "ratio_s": "0.4514",
+          "ratio_l": "0.4514",
+          "max_height": "500",
+          "max_height_s": "500",
+          "max_height_l": "650",
+          "position": "bottom-left",
+          "alignment": "center",
+          "margin_top": "0",
+          "margin_top_s": "0",
+          "margin_top_l": "0",
+          "tagline": "",
+          "title": "",
+          "title_style": "h1",
+          "text": "",
+          "btn_text_1": "Shop 25% Off",
+          "btn_link_1": "shopify:\/\/collections\/all-products",
+          "btn_style_1": "primary",
+          "btn_text_2": "",
+          "btn_link_2": "",
+          "btn_style_2": "secondary"
+        }
+      },
+      "160580076336b526b5": {
+        "type": "product-grid",
+        "blocks": {
+          "e957d9d1-869c-463b-bb15-92f95c8d1b2d": {
+            "type": "product",
+            "settings": {
+              "product": "picture-day-turtleneck",
+              "collection": "",
+              "image": "shopify:\/\/shop_images\/5.png",
+              "image_hover": "shopify:\/\/shop_images\/6.png"
+            }
+          },
+          "ac2a8d52-4fd5-4c07-ab0a-b05fbce3e618": {
+            "type": "product",
+            "settings": {
+              "product": "workleisure-suit",
+              "collection": "",
+              "image": "shopify:\/\/shop_images\/4.png",
+              "image_hover": "shopify:\/\/shop_images\/3_e35ea8d2-f253-4746-a79e-d2bed06d5be6.png"
+            }
+          },
+          "c198d9f8-ea1f-43f5-8465-9a46c69951b3": {
+            "type": "product",
+            "settings": {
+              "product": "casual-monday-shirt",
+              "collection": "",
+              "image": "shopify:\/\/shop_images\/SHOT_001_0299_ff6acba8-a7a3-4af9-99d1-e4f75eb230e0.jpg",
+              "image_hover": "shopify:\/\/shop_images\/SHOT_001_0050_4f5827dc-d716-4434-8af4-b979e608e882.jpg"
+            }
+          },
+          "313b5e35-d055-4902-9d42-518340e0d454": {
+            "type": "product",
+            "settings": {
+              "product": "varsity-top",
+              "collection": "",
+              "image": "shopify:\/\/shop_images\/2_c489d06d-fc81-4a7a-9cdb-d47a13083e9e.png",
+              "image_hover": "shopify:\/\/shop_images\/1_8340f6bc-7bac-4f9d-b340-057eaa26836c.png"
+            }
+          },
+          "a88cf3c5-5127-4a30-ab7e-898e3bc8cf4f": {
+            "type": "product",
+            "settings": {
+              "product": "super-trooper-jacket",
+              "collection": "",
+              "image": "shopify:\/\/shop_images\/5_Military_Jacket_White_0860.jpg",
+              "image_hover": "shopify:\/\/shop_images\/SHOT_011_2619_a3396035-fd72-43d5-bacc-1918a114fca2.jpg"
+            }
+          },
+          "5df7504e-f377-4ed8-918a-0bb99d101dbe": {
+            "type": "product",
+            "settings": {
+              "product": "tracksuit-set",
+              "collection": "",
+              "image": "shopify:\/\/shop_images\/SHOT_005_1383_aad56062-349c-4ba0-84c3-a394d0cdc49c.jpg",
+              "image_hover": "shopify:\/\/shop_images\/SHOT_005_1452_e18a30e6-cfbe-4b65-b6c0-fce5cc8feb7d.jpg"
+            }
+          },
+          "266bff6e-b697-4e2c-8167-cbdef81ccdc1": {
+            "type": "product",
+            "settings": {
+              "product": "power-tee",
+              "collection": "",
+              "image": "shopify:\/\/shop_images\/Wknd_Nation1042_V1.jpg",
+              "image_hover": "shopify:\/\/shop_images\/16_cropped.jpg"
+            }
+          },
+          "41a5ade5-7b59-4daf-8b71-0c1f922a2822": {
+            "type": "product",
+            "settings": {
+              "product": "homeworksocial-sweatshirt",
+              "collection": "",
+              "image": "shopify:\/\/shop_images\/AU3A1183-2.jpg",
+              "image_hover": "shopify:\/\/shop_images\/01-05-2020_wknd_nation_homeworksocialsweatshirt_shadow_5403.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "e957d9d1-869c-463b-bb15-92f95c8d1b2d",
+          "ac2a8d52-4fd5-4c07-ab0a-b05fbce3e618",
+          "c198d9f8-ea1f-43f5-8465-9a46c69951b3",
+          "313b5e35-d055-4902-9d42-518340e0d454",
+          "a88cf3c5-5127-4a30-ab7e-898e3bc8cf4f",
+          "5df7504e-f377-4ed8-918a-0bb99d101dbe",
+          "266bff6e-b697-4e2c-8167-cbdef81ccdc1",
+          "41a5ade5-7b59-4daf-8b71-0c1f922a2822"
+        ],
+        "settings": {
+          "tagline": "",
+          "title": "",
+          "collection": ""
+        }
+      },
+      "16062430039074dda2": {
+        "type": "shop-the-look",
+        "blocks": {
+          "d67a1a41-f916-40df-a715-d18b8bf8ad8e": {
+            "type": "look",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/4_41636240-b061-43f2-a1ab-65d0ed96958c.png",
+              "dot_style": "light",
+              "product_1": "power-tee",
+              "product_1_horizontal_position": 38,
+              "product_1_vertical_position": 61,
+              "product_2": "workleisure-suit",
+              "product_2_horizontal_position": 61,
+              "product_2_vertical_position": 82,
+              "product_3": "",
+              "product_3_horizontal_position": 85,
+              "product_3_vertical_position": 85
+            }
+          },
+          "897ea970-eb32-45fa-8edd-669ba327966a": {
+            "type": "look",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/1_9ca45611-f35c-4043-ac1b-97739ce40a9a.png",
+              "dot_style": "light",
+              "product_1": "tracksuit-jacket-1",
+              "product_1_horizontal_position": 27,
+              "product_1_vertical_position": 34,
+              "product_2": "tracksuit-set",
+              "product_2_horizontal_position": 27,
+              "product_2_vertical_position": 50,
+              "product_3": "varsity-top",
+              "product_3_horizontal_position": 50,
+              "product_3_vertical_position": 44
+            }
+          },
+          "e6a75ac7-cb27-4e51-971c-8461892b60f1": {
+            "type": "look",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/3.png",
+              "dot_style": "light",
+              "product_1": "double-layer-top",
+              "product_1_horizontal_position": 38,
+              "product_1_vertical_position": 31,
+              "product_2": "workleisure-pants",
+              "product_2_horizontal_position": 20,
+              "product_2_vertical_position": 64,
+              "product_3": "tracksuit-pants-1",
+              "product_3_horizontal_position": 85,
+              "product_3_vertical_position": 68
+            }
+          },
+          "adb76f04-a5bd-40c8-8098-97d67556e5a9": {
+            "type": "look",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/2.png",
+              "dot_style": "light",
+              "product_1": "power-tee",
+              "product_1_horizontal_position": 21,
+              "product_1_vertical_position": 51,
+              "product_2": "casual-monday-shirt",
+              "product_2_horizontal_position": 64,
+              "product_2_vertical_position": 69,
+              "product_3": "super-trooper-jacket",
+              "product_3_horizontal_position": 12,
+              "product_3_vertical_position": 87
+            }
+          }
+        },
+        "block_order": [
+          "d67a1a41-f916-40df-a715-d18b8bf8ad8e",
+          "897ea970-eb32-45fa-8edd-669ba327966a",
+          "e6a75ac7-cb27-4e51-971c-8461892b60f1",
+          "adb76f04-a5bd-40c8-8098-97d67556e5a9"
+        ],
+        "settings": {
+          "subtitle": "",
+          "title": "YOU HAVE THE RIGHT TO FEEL ORDINARY AND LOOK EXTRAORDINARY",
+          "title_image": "shopify:\/\/shop_images\/Fluid-Tyography-GIF.gif",
+          "button_text": "Explore Lookbook",
+          "button_link": "shopify:\/\/pages\/fall-2021"
+        }
+      },
+      "1606243020a27e9849": {
+        "type": "home-hero",
+        "settings": {
+          "inverted_mode": false,
+          "enable_overlay": false,
+          "overlay_opacity": 50,
+          "enable_newsletter": false,
+          "klaviyo_id": "",
+          "newsletter_placeholder": "Enter Your Email Address",
+          "newsletter_button_text": "Sign Up",
+          "background_type": "image",
+          "image_mobile": "shopify:\/\/shop_images\/collage02-mobile-320x440.jpg",
+          "image_intermediate": "shopify:\/\/shop_images\/collage02-tablet-1024x500.jpg",
+          "image": "shopify:\/\/shop_images\/collage02-desktop-1440x650.jpg",
+          "video": "",
+          "video_s": "",
+          "video_l": "",
+          "ratio": "1.3744",
+          "ratio_s": "0.5516",
+          "ratio_l": "0.5556",
+          "max_height": "500",
+          "max_height_s": "565",
+          "max_height_l": "800",
+          "position": "center",
+          "alignment": "center",
+          "margin_top": "20",
+          "margin_top_s": "-100",
+          "margin_top_l": "-195",
+          "tagline": "ULTIMATE STYLING TIP",
+          "title": "WEAR IT YOUR WAY OR THE HIGHWAY",
+          "title_style": "h2",
+          "text": "",
+          "btn_text_1": "Our Story",
+          "btn_link_1": "shopify:\/\/pages\/our-story",
+          "btn_style_1": "primary",
+          "btn_text_2": "",
+          "btn_link_2": "",
+          "btn_style_2": "secondary"
+        }
+      },
+      "1606245580f0fa51ab": {
+        "type": "press",
+        "blocks": {
+          "f6f5cd9f-ec62-4226-b69f-f6d97488683a": {
+            "type": "item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/LandingPage_Brag-Logos_White_Refinery29.png",
+              "description": "\"These tees are some of the most flattering and comfortable pieces I own and I'm always feeling confident in them.\"",
+              "url": "https:\/\/www.refinery29.com\/en-us\/cute-cheap-professional-clothes-accessories#slide-6",
+              "open_in_new_window": true
+            }
+          },
+          "d2cbfbaa-7a2d-4ae6-90af-be2f5d014eaf": {
+            "type": "item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/LandingPage_Brag-Logos_White_Nylon.png",
+              "description": "“Like it or not, matching sweatsuits have become a wardrobe must-have.”",
+              "url": "https:\/\/www.nylon.com\/fashion\/how-to-style-nike-dunks-outfits",
+              "open_in_new_window": true
+            }
+          },
+          "ec487399-45e6-4009-a0bf-99c39230e922": {
+            "type": "item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Harpers_Bazaar_logo_logotype_1d57ba17-7a71-41cb-b6aa-933f1c54192b.png",
+              "description": "Sporty tennis meets polo vibes in this track set—plus I'm not ready to be done with cozy sets, thank you very much.",
+              "url": "https:\/\/www.harpersbazaar.com\/fashion\/g35887169\/what-bazaar-editors-are-shopping-this-week-3-19\/",
+              "open_in_new_window": true
+            }
+          },
+          "ac8d7bb4-7c8a-4602-a142-73114e45db0b": {
+            "type": "item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/LandingPage_Brag-Logos_White_WhoWhatWear.png",
+              "description": "“Pajama shorts you can (and should) keep wearing throughout your day.”",
+              "url": "https:\/\/www.whowhatwear.com\/athletic-shorts\/slide30",
+              "open_in_new_window": true
+            }
+          },
+          "7cdf1a00-cf44-4fc1-890a-95ed296fa1d9": {
+            "type": "item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/LandingPage_Brag-Logos_White_Well_Good.png",
+              "description": "“[This T has effortless coolness] We give it extra stars for the fact that it’s ultra comfy and floats next to the body without ever feeling too baggy or too tight.”",
+              "url": "https:\/\/www.google.com\/url?q=https:\/\/www.wellandgood.com\/summer-t-shirts\/&sa=D&source=editors&ust=1631808732677000&usg=AOvVaw1KgnbqY1gQj8Q5gy8p_-MS",
+              "open_in_new_window": true
+            }
+          },
+          "ffdd7f5a-1c9c-4beb-b48b-b30bc12801f6": {
+            "type": "item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/LandingPage_Brag-Logos_White_WWD.png",
+              "description": "“Cozy classics with a twist.”",
+              "url": "https:\/\/wwd.com\/fashion-news\/fashion-features\/new-label-wknd-nation-debuts-cozy-classics-with-a-twist-1234779491\/",
+              "open_in_new_window": false
+            }
+          },
+          "469db9d9-205f-455f-ae5d-18b80f5a19a2": {
+            "type": "item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Shopify_White_BUG_3840x2160_1.png",
+              "description": "Building Wknd Nation: A 3 Part Series of Struggle & Passion",
+              "url": "https:\/\/www.youtube.com\/channel\/UCBxdtEi-enzKqmSWOzGSv7w",
+              "open_in_new_window": true
+            }
+          }
+        },
+        "block_order": [
+          "f6f5cd9f-ec62-4226-b69f-f6d97488683a",
+          "d2cbfbaa-7a2d-4ae6-90af-be2f5d014eaf",
+          "ec487399-45e6-4009-a0bf-99c39230e922",
+          "ac8d7bb4-7c8a-4602-a142-73114e45db0b",
+          "7cdf1a00-cf44-4fc1-890a-95ed296fa1d9",
+          "ffdd7f5a-1c9c-4beb-b48b-b30bc12801f6",
+          "469db9d9-205f-455f-ae5d-18b80f5a19a2"
+        ],
+        "settings": {
+          "subtitle": "In the News...",
+          "title": ""
+        }
+      },
+      "1606246119531e3be1": {
+        "type": "content-grid",
+        "blocks": {
+          "29eaee71-6700-4cb8-b4ae-cb386fd364d8": {
+            "type": "block",
+            "settings": {
+              "tagline": "New",
+              "title": "DON'T MISS OUR LATEST DROP",
+              "cta_text": "GET IT NOW",
+              "cta_url": "shopify:\/\/collections\/the-workleisure-collection",
+              "background_type": "image",
+              "image": "shopify:\/\/shop_images\/SHOT_011_2619_cda64e4b-5870-4b96-9f55-8b85aaff58b4.jpg",
+              "image_intermediate": "shopify:\/\/shop_images\/SHOT_011_2619_cda64e4b-5870-4b96-9f55-8b85aaff58b4.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/SHOT_011_2619_cda64e4b-5870-4b96-9f55-8b85aaff58b4.jpg",
+              "video": ""
+            }
+          },
+          "dd0274c0-0ff1-42f6-a528-6178b963c659": {
+            "type": "block",
+            "settings": {
+              "tagline": "Sets",
+              "title": "HAVE IT ALL. ALL THE TIME.",
+              "cta_text": "Shop Sets",
+              "cta_url": "shopify:\/\/collections\/sets",
+              "background_type": "image",
+              "image": "shopify:\/\/shop_images\/SHOT_015_3543-2.jpg",
+              "image_intermediate": "shopify:\/\/shop_images\/SHOT_015_3543-2.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/SHOT_015_3543-2.jpg",
+              "video": ""
+            }
+          }
+        },
+        "block_order": [
+          "29eaee71-6700-4cb8-b4ae-cb386fd364d8",
+          "dd0274c0-0ff1-42f6-a528-6178b963c659"
+        ],
+        "settings": {
+          "inverted_mode": true,
+          "enable_overlay": false,
+          "overlay_opacity": 50,
+          "title": ""
+        }
+      },
+      "16069416595f639e19": {
+        "type": "instagram-feed",
+        "settings": {
+          "tagline": "",
+          "title": "THIS IS WKND NATION",
+          "title_image": "shopify:\/\/shop_images\/Homepage-Fluid-Tyography-GIF2.gif",
+          "showcase_gallery_id": "19281",
+          "cta_text": "",
+          "cta_url": ""
+        }
+      },
+      "product-features": {
+        "type": "product-features",
+        "settings": {}
+      },
+      "instagram-feed-product": {
+        "type": "instagram-feed-product",
+        "settings": {
+          "tagline": "",
+          "title": "How We Wear Wknd Nation",
+          "title_image": "shopify:\/\/shop_images\/Group_2.png"
+        }
+      },
+      "lookbook-flex": {
+        "type": "lookbook-flex",
+        "settings": {
+          "lookbook_subtitle": "Shop The Look",
+          "lookbook_aspect_ratio": "1.1444"
+        }
+      },
+      "lookbook-product-grid": {
+        "type": "lookbook-product-grid",
+        "settings": {
+          "enable_products": true,
+          "tagline": "",
+          "title": "What's Hot"
+        }
+      },
+      "related-articles": {
+        "type": "related-articles",
+        "blocks": {
+          "67aaa6c6-8c2b-4e07-97a7-34788d3c9404": {
+            "type": "article",
+            "settings": {
+              "article": "news\/how-to-dress-up-or-dress-down-our-power-suit-1"
+            }
+          },
+          "db5b9d49-ed48-4aef-b3e7-7473f7902480": {
+            "type": "article",
+            "settings": {
+              "article": "news\/how-to-style-our-ciggy-tee"
+            }
+          },
+          "2876bd61-d5b4-41ff-9ade-86f69f00a55c": {
+            "type": "article",
+            "settings": {
+              "article": "news\/how-to-dress-up-or-dress-down-our-power-suit"
+            }
+          }
+        },
+        "block_order": [
+          "67aaa6c6-8c2b-4e07-97a7-34788d3c9404",
+          "db5b9d49-ed48-4aef-b3e7-7473f7902480",
+          "2876bd61-d5b4-41ff-9ade-86f69f00a55c"
+        ],
+        "settings": {
+          "enable_section": true,
+          "title": "Related Articles"
+        }
+      },
+      "blog-page-title": {
+        "type": "blog-page-title",
+        "settings": {
+          "enable_section": true,
+          "tagline": "News",
+          "title": "Comfort is Our State of Mind"
+        }
+      },
+      "page-404": {
+        "type": "page-404",
+        "settings": {
+          "icon": "shopify:\/\/shop_images\/Group_c989724e-970b-455b-bcff-11201ccf84f1.png",
+          "title": "we can’t seem to find what your looking for"
+        }
+      },
+      "content-grid-page-404": {
+        "type": "content-grid-page-404",
+        "blocks": {
+          "59920fdf-a512-4600-a8ae-bca2bd88d401": {
+            "type": "block",
+            "settings": {
+              "tagline": "What's Hot",
+              "title": "Do't Miss Out On Our Latest Drop",
+              "cta_text": "Shop What's Hot",
+              "cta_url": "#",
+              "background_type": "image",
+              "image": "shopify:\/\/shop_images\/Screen_Shot_2020-10-22_at_1.50_1.png"
+            }
+          },
+          "7657654e-efdf-4bd8-aefd-17a4a22551df": {
+            "type": "block",
+            "settings": {
+              "tagline": "Sets",
+              "title": "You Can Have It All",
+              "cta_text": "Shop Sets",
+              "cta_url": "#",
+              "background_type": "image",
+              "image": "shopify:\/\/shop_images\/8db1eaec-c122-4503-b15d-ec864894e6ee_1.png"
+            }
+          }
+        },
+        "block_order": [
+          "59920fdf-a512-4600-a8ae-bca2bd88d401",
+          "7657654e-efdf-4bd8-aefd-17a4a22551df"
+        ],
+        "settings": {
+          "inverted_mode": true,
+          "enable_overlay": false,
+          "overlay_opacity": 50,
+          "title": "Start Shopping"
+        }
+      },
+      "search-hero": {
+        "type": "search-hero",
+        "settings": {
+          "inverted_mode": true,
+          "enable_overlay": false,
+          "overlay_opacity": 50,
+          "background_type": "image",
+          "image_mobile": "shopify:\/\/shop_images\/WhatsApp_Image_2021-02-07_at_4.49.06_PM.jpg",
+          "image_intermediate": "shopify:\/\/shop_images\/sets_PLP.jpg",
+          "image": "shopify:\/\/shop_images\/sets_v2.jpg",
+          "video": "",
+          "video_s": "",
+          "video_l": "",
+          "ratio": "0.78125",
+          "ratio_s": "0.3125",
+          "ratio_l": "0.3125",
+          "max_height": "320",
+          "max_height_s": "450",
+          "max_height_l": "450",
+          "position": "center",
+          "alignment": "center",
+          "margin_top": "0",
+          "margin_top_s": "0",
+          "margin_top_l": "0",
+          "tagline": "",
+          "title": "Search Results",
+          "title_style": "h1"
+        }
+      },
+      "search-content-grid": {
+        "type": "search-content-grid",
+        "blocks": {
+          "e76783c5-d723-4f38-88d4-e245b3d0b381": {
+            "type": "block",
+            "settings": {
+              "tagline": "New",
+              "title": "Don't Miss Out On Our Latest Drop",
+              "cta_text": "Get it now",
+              "cta_url": "#",
+              "background_type": "image",
+              "image": "shopify:\/\/shop_images\/DSC_4363.jpg"
+            }
+          },
+          "fe99592c-5125-432b-a834-3b380998a161": {
+            "type": "block",
+            "settings": {
+              "tagline": "Sets",
+              "title": "Have it all. All the time.",
+              "cta_text": "Shop Sets",
+              "cta_url": "#",
+              "background_type": "image",
+              "image": "shopify:\/\/shop_images\/Wknd_Nation1234_V1D.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "e76783c5-d723-4f38-88d4-e245b3d0b381",
+          "fe99592c-5125-432b-a834-3b380998a161"
+        ],
+        "settings": {
+          "inverted_mode": true,
+          "enable_overlay": false,
+          "overlay_opacity": 50,
+          "title": "Start Shopping"
+        }
+      },
+      "page-flex": {
+        "type": "page-flex",
+        "settings": {}
+      },
+      "viral-loops": {
+        "type": "viral-loops",
+        "settings": {
+          "snippet": "<script>!function(){var a=window.VL=window.VL||{};return a.instances=a.instances||{},a.invoked?void(window.console&&console.error&&console.error(\"VL snippet loaded twice.\")):(a.invoked=!0,void(a.load=function(b,c,d){var e={};e.publicToken=b,e.config=c||{};var f=document.createElement(\"script\");f.type=\"text\/javascript\",f.id=\"vrlps-js\",f.defer=!0,f.src=\"https:\/\/app.viral-loops.com\/client\/vl\/vl.min.js\";var g=document.getElementsByTagName(\"script\")[0];return g.parentNode.insertBefore(f,g),f.onload=function(){a.setup(e),a.instances[b]=e},e.identify=e.identify||function(a,b){e.afterLoad={identify:{userData:a,cb:b}}},e.pendingEvents=[],e.track=e.track||function(a,b){e.pendingEvents.push({event:a,cb:b})},e.pendingHooks=[],e.addHook=e.addHook||function(a,b){e.pendingHooks.push({name:a,cb:b})},e.$=e.$||function(a){e.pendingHooks.push({name:\"ready\",cb:a})},e}))}();var campaign=VL.load(\"XhZkHh4l64rKtXd7f6UBiVULpX4\",{autoLoadWidgets:!0});<\/script>",
+          "image_position": "left",
+          "image": "shopify:\/\/shop_images\/Wknd_Nation0942_V6_mobile.jpg",
+          "image_s": "shopify:\/\/shop_images\/Wknd_Nation0942_V4jpegfromjpeg.jpg",
+          "image_l": "shopify:\/\/shop_images\/Wknd_Nation0942_V6.jpg",
+          "image_width": 68,
+          "badge": "shopify:\/\/shop_images\/badge.gif",
+          "form_title": "Wknd Nation is coming",
+          "form_description": "Finally, Wknd groove meets weekday style. A new way to dress for home, work and social. Arriving February 2021.",
+          "form_subtitle": "Earn Free Product",
+          "enable_first_name": false,
+          "enable_last_name": false,
+          "first_name_label": "First Name",
+          "last_name_label": "Last Name",
+          "email_label": "Sign Up And Invite Friends",
+          "button_title": "Sign Up",
+          "sharing_image_width": 50,
+          "sharing_title": "You’re in! Now tell your friends.",
+          "sharing_description": "Refer your friends to Wknd Nation and earn credit for each one who signs up. Spread the word through your social channels or with the link below:",
+          "milestone_title": "INVITE FRIENDS & EARN FREE STUFF",
+          "milestone_description": "",
+          "terms_content": "Certain restrictions apply. Rules subject to change. Valid in the U.S. only. Credits are valid on your first Wknd Nation purchase and will be issued at launch. Private styling session is with Sofia Karvela (co-founder of Wknd Nation) or a representative of her choosing and will be virtual. Wknd Nation for a year means you will receive one piece from each drop through February 28, 2022. Number of pieces not to exceed 10.",
+          "footer_content": "Copyright © Wknd Nation 2021"
+        }
+      },
+      "list-collections": {
+        "type": "list-collections",
+        "settings": {
+          "enable_section": true,
+          "title": "Shop Barrel’s Products",
+          "collection_menu": "",
+          "shop_collection": "Shop Collection",
+          "browse_all_cta_text": "Browse All Products",
+          "browse_all_cta_link": ""
+        }
+      },
+      "gather-refer-a-friend": {
+        "type": "gather-refer-a-friend",
+        "settings": {
+          "tagline": "Refer a Friend",
+          "title": "Give $10 and Get $10",
+          "copy": "<p>Give your friends $10 off their first purchase, and get $10 when they shop! (You’ll get rewarded for every friend!). Enter your info to unlock your referral link.<\/p>\n<br>\n<p>For Frequently Asked Questions on the Refer-a-Friend program, <a href=\"https:\/\/www.wkndnation.com\/pages\/frequently-asked-questions\" target=\"_blank\">visit our FAQ page here.<\/a><\/p>"
+        }
+      },
+      "gather-friend": {
+        "type": "gather-friend",
+        "settings": {
+          "tagline": "Hello Friend",
+          "title": "Your Friend has sent you $10 OFF",
+          "copy": "<p>Your friend has gifted you $10 OFF your first order with WkndNation!<\/p>\n<br>\n<p>Simply add your name and email on the form on the right hand side to receive your gift.<\/p>\n<br>\n<p>Be sure to copy and paste your unique code and add to the checkout. Enjoy!<\/p>"
+        }
+      },
+      "163158689911ba818c": {
+        "type": "intro-text",
+        "settings": {
+          "enable_section": true,
+          "title": "MAKE EVERY ZONE YOUR COMFORT ZONE",
+          "description": "Reimagined and mindfully designed essentials for crazy comfort and cool style."
+        }
+      }
+    },
+    "content_for_index": [
+      "1605796714d25c422d",
+      "163158689911ba818c",
+      "160580076336b526b5",
+      "1606245580f0fa51ab",
+      "16062430039074dda2",
+      "1606243020a27e9849",
+      "1606246119531e3be1",
+      "16069416595f639e19"
+    ]
+  }
+}

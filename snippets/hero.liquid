@@ -35,6 +35,7 @@
   * is_vue
   * enable_audio
   * lazy_load
+  * object_fit
 {%- endcomment -%}
 
 {%- if is_vue == blank -%}
@@ -75,7 +76,8 @@
           fallback_l: fallback_l,
           class: 'hero__video',
           is_vue: is_vue,
-          enable_audio: enable_audio
+          enable_audio: enable_audio,
+          object_fit: object_fit
         -%}
       {%- else -%}
         {%- render 'picture',
@@ -83,14 +85,15 @@
           bind_dynamic_props: false,
           sources: image_sources,
           breakpoints: breakpoints,
-          width: 100,
-          width_s: 50,
-          width_m: 50,
-          width_l: 33,
+          width: 50,
+          width_s: 70,
+          width_m: 100,
+          width_l: 1000,
           alt: title,
           loader: false,
           is_vue: is_vue,
-          lazy_load: lazy_load
+          lazy_load: lazy_load,
+          object_fit: object_fit
         -%}
     {%- endcase -%}
   </div>
@@ -105,7 +108,7 @@
         {%- endif -%}
 
         {%- if title != blank -%}
-          <h1 class="hero__title {{ title_style }}" data-a-stagger>
+          <h1 class="hero__title {{ title_style }}" {% unless title_style == 'h1' %} data-a-stagger {% endunless%}>
             {{- title -}}
           </h1>
         {%- endif -%}
@@ -117,7 +120,7 @@
         {%- endif -%}
 
         {%- if btn_text_1 != blank or btn_text_2 != blank -%}
-          <div class="hero__ctas js-cta" data-a-stagger>
+          <div class="hero__ctas js-cta" {% unless title_style == 'h1' %} data-a-stagger {% endunless%}>
             {%- if btn_text_1 != '' -%}
               {%- capture btn_class_1 -%}
                 hero__btn btn--{{ btn_style_1 }}

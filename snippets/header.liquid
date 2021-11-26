@@ -41,7 +41,7 @@
   <div class="header__container container container--xl">
     <a class="f aic header-logo" href="/" title="{{- shop.name -}}">
       {%- if logo != blank -%}
-        <img class="header-logo__img header-logo__img--main" src="{{- logo | img_url: 'master' -}}" alt="{{- shop.name -}}">
+        <img class="header-logo__img header-logo__img--main" src="{{- logo | img_url: 'master' -}}" width="200" height="47" alt="{{- shop.name -}}">
 
         {%- if transparent_logo != blank -%}
           <img class="header-logo__img header-logo__img--transparent" src="{{- transparent_logo | img_url: 'master' -}}" alt="{{- shop.name -}}">
@@ -76,14 +76,14 @@
                   {% assign is_sub_products = true %}
                   {% for _item in link.links %}
                       {% if _item.type != 'product_link' %}
-                         {% assign is_sub_products = false %}
+                        {% assign is_sub_products = false %}
                       {% endif %}
                   {% endfor %}
               {%- endif -%}
               <li class="header__nav-item{% if item_class != blank %}{{ item_class }}{% endif %}">
                 {%- if link.links != blank -%}
 
-                  <div class="header__nav-link a1 lb2 {% if link.url == '#' %} header__nav-link--no-link{% endif %}"{% if item_aria != blank %}{{ item_aria }}{% endif %}>
+                  <div class="header__nav-link lb2 {% if link.url == '#' %} header__nav-link--no-link{% endif %}"{% if item_aria != blank %}{{ item_aria }}{% endif %}>
                     <a href="{{ link.url }}">{{- title | strip -}}</a>
                     <span aria-hidden="true" class="header__nav-icon icon js-nav-link">
                       {%- render 'icon' with 'icon-arrow-down' -%}
@@ -96,14 +96,14 @@
                       <ul class="header__subnav-list">
                         {%- for childlink in link.links -%}
                           <li class="header__subnav-item js-link">
-                            <a class="header__subnav-link a1 p2" href="{{- childlink.url -}}" title="{{- childlink.title -}}">{{- childlink.title -}}</a>
+                            <a class="header__subnav-link" href="{{- childlink.url -}}" title="{{- childlink.title -}}">{{- childlink.title -}}</a>
                           </li>
                         {%- endfor -%}
                       </ul>
                     {%- endif -%}
                   </div>
                 {%- else -%}
-                  <a class="header__nav-link a1 lb2{% if link.active %} is-active{% endif %}" href="{{- link.url -}}" title="{{- link.title -}}">
+                  <a class="header__nav-link lb2{% if link.active %} is-active{% endif %}" href="{{- link.url -}}" title="{{- link.title -}}">
                     {{- title | strip -}}
                   </a>
                 {%- endif -%}

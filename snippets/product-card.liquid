@@ -92,7 +92,7 @@
 
         {%- if is_vue -%}
           <div v-if="badge" class="product-card__badge" :class="'product-card__badge--' + badge">
-            <img :alt="badge" :src="badgeImage(badge)" />
+            <img :alt="badge" :src="badgeImage(badge)" width="75" height="75" />
           </div>
         {%- else -%}
           {%- assign badge = product.featured_image.alt | split: '::' | last -%}
@@ -117,7 +117,7 @@
           loader: false -%}
 
           {%- if is_vue -%}
-            <template v-if="hoverImageSrc">
+            <template v-if="hoverImageSrc && hovered">
               {%- render 'picture',
                 is_vue: true,
                 class: 'product-card__image product-card__image--hover',
@@ -228,4 +228,4 @@
       {%- endif -%}
     </div>
     {%- if is_vue -%}</div>{%- endif -%}
-{% render 'preorder-now-collection-item', product: product %}</div>
+</div>

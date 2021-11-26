@@ -3,6 +3,7 @@
   * section
   * id
   * class
+  * object_fit
 {%- endcomment -%}
 
 {%- if section != blank -%}
@@ -102,6 +103,7 @@
             max_height: section['max_height'],
             max_height_s: section['max_height_s'],
             max_height_l: section['max_height_l'],
+            object_fit: section['background_style'],
             id: id,
             lazy_load: false
           -%}
@@ -143,6 +145,7 @@
             max_height: section['max_height'],
             max_height_s: section['max_height_s'],
             max_height_l: section['max_height_l'],
+            object_fit: section['background_style'],
             id: id
           -%}
 
@@ -173,6 +176,7 @@
             max_height: section['max_height'],
             max_height_s: section['max_height_s'],
             max_height_l: section['max_height_l'],
+            object_fit: section['background_style'],
             id: id
           -%}
         {%- endcase -%}

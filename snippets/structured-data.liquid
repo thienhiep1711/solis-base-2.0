@@ -57,9 +57,9 @@
       },
       {% if product.metafields.stamped.reviews_count and product.metafields.stamped.reviews_count != "0" %}
       "aggregateRating": {
-       "@type": "AggregateRating",
-       "ratingValue": {{ product.metafields.stamped.reviews_average | round:2 }},
-       "reviewCount": {{product.metafields.stamped.reviews_count}}
+        "@type":"AggregateRating",
+        "ratingValue":{{ product.metafields.stamped.reviews_average | round:2 }},
+        "reviewCount":{{product.metafields.stamped.reviews_count}}
       },
       {% endif %}
       "offers": {

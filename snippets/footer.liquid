@@ -27,7 +27,7 @@
                 {%- if section.show_payment_types -%}
                   <div class="pt1">
                   {%- for type in shop.enabled_payment_types -%}
-                    <img src="{{ type | payment_type_img_url }}" />
+                    <img src="{{ type | payment_type_img_url }}" width="38" height="24" />
                   {%- endfor -%}
                   </div>
                 {%- endif -%}
