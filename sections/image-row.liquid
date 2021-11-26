@@ -1,0 +1,41 @@
+<div class="grid">
+  {%- if section.settings.left_image -%}
+    <div class="column column--9">
+      <img
+        class="w-100"
+        loading="lazy"
+        src="{{ section.settings.left_image | image_url: width: 1440 }}" alt="{{ section.settings.left_image.alt }}"
+      />
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.right_image -%}
+    <div class="column column--9">
+      <img
+        class="w-100"
+        loading="lazy"
+        src="{{ section.settings.right_image | image_url: width: 1440 }}" alt="{{ section.settings.right_image.alt }}"
+      />
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Image Row",
+  "tag": "section",
+  "class": "image-row",
+  "settings": [
+    {
+      "label": "Left Image",
+      "id": "left_image",
+      "type": "image_picker"
+    },
+    {
+      "label": "Right Image",
+      "id": "right_image",
+      "type": "image_picker"
+    }
+  ]
+}
+{% endschema %}

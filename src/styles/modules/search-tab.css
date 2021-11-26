@@ -1,0 +1,33 @@
+.search-tab__list {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  @media (--s) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  @media (--m) {
+    margin-top: 45px;
+    margin-bottom: 45px;
+  }
+
+  @media (--l) {
+    margin-top: 60px;
+    margin-bottom: 55px;
+  }
+}
+
+.search-tab__item {
+  @extend .label;
+
+  margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.search-tab__item--active {
+  border-bottom: 1px solid var(--coral-pink);
+}

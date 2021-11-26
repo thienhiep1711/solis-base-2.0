@@ -1,0 +1,129 @@
+.header-search {
+  position: absolute;
+  right: 0;
+  height: 40px;
+  width: 100%;
+  max-width: 100%;
+  transition:
+    transform 0.2s cubic-bezier(1, 0.5, 0.8, 1),
+    opacity 0.2s cubic-bezier(1, 0.5, 0.8, 1),
+    visibility 0s cubic-bezier(1, 0.5, 0.8, 1) 0.2s;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-50px);
+  margin-top: -1px;
+  background-color: var(--white);
+  border: 1px solid rgba(var(--asphalt), 0.1);
+
+  @media (--s) {
+    max-width: 372px;
+  }
+
+  @media (--header-breakpoint) {
+    height: 60px;
+    max-width: 500px;
+  }
+
+  @media (--l) {
+    max-width: 590px;
+  }
+
+  &--is-active {
+    pointer-events: auto;
+    z-index: 1;
+    opacity: 1;
+    visibility: visible;
+    display: block;
+    transform: translateY(1px);
+    transition:
+      transform 0.2s cubic-bezier(1, 0.5, 0.8, 1),
+      opacity 0.2s cubic-bezier(1, 0.5, 0.8, 1),
+      visibility 0s cubic-bezier(1, 0.5, 0.8, 1) 0s;
+  }
+}
+
+.header-search__inner {
+  height: 100%;
+}
+
+.header-search__submit {
+  color: var(--c-headings);
+  padding: 1em 0.9em 0.9em;
+  width: 45px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 2;
+
+  @media (--header-breakpoint) {
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+  }
+
+  svg {
+    width: 12px;
+    height: 12px;
+
+    @media (--header-breakpoint) {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.header-search__input-wrapper {
+  position: absolute;
+  padding-left: 45px;
+  width: 100%;
+
+  @media (--header-breakpoint) {
+    padding-left: 55px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    top: 8px;
+    bottom: 9px;
+    left: 45px;
+    background-color: var(--c-text);
+
+    @media (--header-breakpoint) {
+      left: 55px;
+      top: 18px;
+      bottom: 19px;
+    }
+  }
+}
+
+.header-search__input {
+  padding: 0.9em 0.65em 0.8em;
+  width: 100%;
+  color: var(--c-text);
+
+  @media (--header-breakpoint) {
+    padding: 1.4em 1em;
+  }
+
+  &::placeholder {
+    color: rgba(var(--asphalt), 0.6);
+  }
+}
+
+.header-search__result {
+  padding: 5px 0;
+}
+
+.header-search__result-title {
+  width: 70%;
+}
+
+.header-search__results-footer {
+  padding-top: 20px;
+  text-align: center;
+  text-decoration: underline;
+}

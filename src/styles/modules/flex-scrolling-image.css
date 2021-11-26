@@ -1,0 +1,55 @@
+@keyframes flex-scrolling-image {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(calc(var(--computed-width) * (-1)), 0, 0);
+  }
+}
+
+.flex-scrolling-image {
+  margin-top: 20px;
+  margin-bottom: 60px;
+  width: 100%;
+  overflow: hidden;
+
+  @media (--s) {
+    margin-bottom: 70px;
+  }
+
+  @media (--m) {
+    margin-bottom: 80px;
+  }
+
+  @media (--l) {
+    margin-top: 30px;
+    margin-bottom: 110px;
+  }
+}
+
+.flex-scrolling-image__background {
+  --computed-speed: var(--animation-speed);
+  --computed-height: var(--height);
+  --computed-width: calc(var(--computed-height) * var(--aspect-ratio));
+
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  width: calc(var(--computed-width) * 3);
+  height: var(--computed-height);
+  animation: flex-scrolling-image calc(var(--computed-speed)) linear infinite;
+
+  /* &:hover {
+    animation-play-state: paused;
+  } */
+
+  @media (--s) {
+    --computed-speed: var(--animation-speed_s);
+    --computed-height: var(--height_s);
+  }
+
+  @media (--m) {
+    --computed-speed: var(--animation-speed_l);
+    --computed-height: var(--height_l);
+  }
+}

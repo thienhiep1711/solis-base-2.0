@@ -1,0 +1,24 @@
+.site-header {
+  position: relative;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+  z-index: 998;
+
+  .header-is-transparent & {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .header-is-sticky & {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .pdp-on-scroll-nav--active & {
+    transform: translateY(-100%);
+  }
+}

@@ -1,0 +1,20 @@
+.article-metadata {
+  border-top: var(--border);
+
+  @media (--m) {
+    border-top: none;
+  }
+}
+
+.article-metadata__inner {
+  padding: 35px 0;
+
+  @media (--m) {
+    border-top: var(--border);
+  }
+
+  @media (--m) {
+    padding-top: 54px;
+    padding-bottom: 100px;
+  }
+}

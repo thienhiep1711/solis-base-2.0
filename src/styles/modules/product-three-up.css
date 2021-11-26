@@ -1,0 +1,15 @@
+.product-three-up {
+  margin-bottom: 50px;
+}
+
+.product-three-up__container {
+  width: 100%;
+
+  @media (--m) {
+    width: calc(100% - 160px);
+  }
+
+  .flickity-slider {
+    padding: 0 40px;
+  }
+}

@@ -1,0 +1,31 @@
+{%- render 'text-image',
+  class: 'text-image--home'
+-%}
+
+{% schema %}
+{
+  "name": "Home - Text and Image",
+  "settings": [
+    {
+      "label": "Heading",
+      "id": "heading",
+      "type": "text"
+    },
+    {
+      "label": "Description",
+      "id": "description",
+      "type": "textarea"
+    },
+    {
+      "label": "Badge",
+      "id": "badge",
+      "type": "image_picker"
+    },
+    {
+      "label": "Image",
+      "id": "image",
+      "type": "image_picker"
+    }
+  ]
+}
+{% endschema %}

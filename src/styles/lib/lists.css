@@ -1,0 +1,38 @@
+%ul,
+.ul,
+%ol,
+.ol {
+  padding-left: 20px;
+
+  li {
+    margin-top: 0;
+    position: relative;
+
+    @media (--xs) {
+      margin-top: 5px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  ul,
+  ol {
+    margin-top: 3px;
+
+    @media (--xs) {
+      margin-top: 5px;
+    }
+  }
+}
+
+%ul,
+.ul {
+  list-style: disc;
+}
+
+%ol,
+.ol {
+  list-style: decimal;
+}

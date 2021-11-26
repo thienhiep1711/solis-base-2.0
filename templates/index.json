@@ -1,0 +1,27 @@
+{
+  "name": "Homepage",
+  "sections": {
+    "hero": {
+      "type": "hero"
+    },
+    "image_row": {
+      "type": "image-row"
+    },
+    "video": {
+      "type": "video"
+    },
+    "home_character_grid": {
+      "type": "home-character-grid"
+    },
+    "home_text_image": {
+      "type": "home-text-image"
+    }
+  },
+  "order": [
+    "hero",
+    "image_row",
+    "video",
+    "home_character_grid",
+    "home_text_image"
+  ]
+}

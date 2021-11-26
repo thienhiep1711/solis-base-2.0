@@ -1,0 +1,128 @@
+.newsletter__form {
+  align-items: stretch;
+  display: flex;
+  width: 100%;
+
+  .password__newsletter &,
+  .footer__newsletter__form &,
+  .newsletter-form--newsletter-modal & {
+    display: block;
+
+    @media (--m) {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+  }
+}
+
+.newsletter__field {
+  flex: 1 1 auto;
+
+  .footer-mega__newsletter__form & {
+    color: var(--grey-light);
+    padding: 0;
+  }
+}
+
+.newsletter__response {
+  font-size: 12px;
+  margin-top: 5px;
+  padding: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.newsletter__btn {
+  .footer__newsletter__form &,
+  .newsletter-form--newsletter-modal & {
+    margin-top: 20px;
+    min-width: 180px;
+
+    @media (--m) {
+      margin-top: -1px;
+      margin-left: 25px;
+      min-width: 120px;
+    }
+  }
+
+  .footer-mega__newsletter__form & {
+    background-color: var(--grey-light);
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: solid 1px var(--c-borders);
+    color: var(--black);
+  }
+}
+
+.newsletter-form--flexible-page {
+  max-width: 450px;
+  margin: 50px auto;
+
+  .newsletter__form {
+    flex-wrap: wrap;
+  }
+
+  .newsletter__field {
+    width: 100%;
+
+    &:first-child {
+      margin-bottom: 35px;
+    }
+
+    @media (--s) {
+      width: 50%;
+      margin-bottom: 0;
+
+      &.newsletter__field--name {
+        padding-right: 10px;
+      }
+
+      &.newsletter__field--email {
+        padding-left: 10px;
+      }
+    }
+
+    .text-input__el {
+      @extend .input-text;
+
+      border: 0;
+      border-bottom: 1px solid var(--snow);
+      padding: 0;
+      background-color: transparent;
+    }
+  }
+
+  .newsletter__btn {
+    flex: 1 1 auto;
+    max-width: 180px;
+    margin: 50px auto 0;
+
+    @media (--m) {
+      max-width: 200px;
+    }
+
+    .button__el {
+      color: var(--c-btn-background);
+      background-color: var(--c-btn-text);
+    }
+  }
+
+  .newsletter__response {
+    display: block;
+    color: var(--white);
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    left: 0;
+  }
+
+  @media (--xs-max) {
+    max-width: 186px;
+
+    .text-input__el {
+      font-size: var(--buttons-font-size);
+      text-align: center;
+    }
+  }
+}

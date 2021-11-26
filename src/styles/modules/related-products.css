@@ -1,0 +1,94 @@
+.related-products {
+  .container {
+    margin-right: 0;
+    min-width: 100%;
+
+    @media (--s) {
+      margin-right: auto;
+      min-width: unset;
+    }
+  }
+
+  .module-header__title {
+    margin-right: 20px;
+
+    @media (--s) {
+      margin-right: unset;
+    }
+  }
+
+  .flickity-prev-next-button {
+    display: none;
+
+    @media (--s) {
+      display: block;
+    }
+  }
+}
+
+.related-products__inner {
+  padding: 50px 0 40px;
+
+  @media (--s) {
+    padding-bottom: 70px;
+  }
+
+  @media (--m) {
+    padding-top: 80px;
+  }
+
+  @media (--l) {
+    padding-top: 100px;
+    padding-bottom: 90px;
+  }
+
+  .section-instagram-feed + .section-related-product & {
+    padding-top: 0;
+  }
+}
+
+.related-products__item {
+  padding-bottom: 30px;
+}
+
+.related-products__carousel {
+  padding-bottom: 15px;
+  justify-content: center;
+
+  @media (--s) {
+    padding-bottom: 0;
+  }
+
+  .flickity-slide {
+    min-width: 260px;
+    padding-left: 20px;
+    margin-right: 0;
+
+    @media (--s) {
+      min-width: unset;
+      padding-left: 0;
+      margin-right: 15px;
+    }
+
+    @media (--m) {
+      margin-right: 20px;
+      width: calc(100% / 3 - 2 * 20px / 3);
+    }
+
+    @media (--l) {
+      margin-right: 40px;
+      width: calc(100% / 3 - 2 * 40px / 3);
+    }
+
+    &:last-child {
+      padding-right: 20px;
+      padding-left: 0;
+      margin-left: 20px;
+
+      @media (--s) {
+        padding-right: 0;
+        margin-left: 0;
+      }
+    }
+  }
+}

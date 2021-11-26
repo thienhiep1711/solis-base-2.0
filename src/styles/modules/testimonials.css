@@ -1,0 +1,42 @@
+.testimonials {
+  padding: 50px 0;
+}
+
+.testimonials__carousel {
+  display: block;
+  max-width: 828px;
+  margin: 0 auto;
+
+  .flickity-prev-next-button {
+    display: none;
+    width: 45px;
+    height: 45px;
+    border: 1px solid var(--black);
+    border-radius: 50%;
+    background: transparent;
+
+    @media (--m) {
+      display: block;
+    }
+
+    &::before {
+      border-color: var(--black);
+    }
+
+    &.previous {
+      left: calc(-1 * (100vw - 160px - 828px) / 2);
+
+      @media (--xxl) {
+        left: calc(-1 * (var(--xl) - 828px) / 2);
+      }
+    }
+
+    &.next {
+      right: calc(-1 * (100vw - 160px - 828px) / 2);
+
+      @media (--xxl) {
+        right: calc(-1 * (var(--xl) - 828px) / 2);
+      }
+    }
+  }
+}

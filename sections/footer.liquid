@@ -1,0 +1,51 @@
+<nav class="grid gutter">
+  <div class="column column--6">
+    <img
+      class="footer__group-shot"
+      src="{{ 'SeaMonsters-Group_Shot.svg' | asset_url }}"
+      alt="Sea Monsters Group Shot"
+    />
+  </div>
+  <div class="column column--12 grid">
+    <div class="column column--6">
+      {%- render 'footer-column',
+        menu: section.settings.primary_menu
+      -%}
+    </div>
+    <div class="column column--6">
+      {%- render 'footer-column',
+        menu: section.settings.secondary_menu
+      -%}
+    </div>
+    <div class="column column--6">
+      {%- render 'footer-column',
+        menu: section.settings.tertiary_menu
+      -%}
+    </div>
+  </div>
+</nav>
+
+{% schema %}
+{
+  "name": "Footer",
+  "tag": "footer",
+  "class": "footer",
+  "settings": [
+    {
+      "label": "Primary Menu",
+      "id": "primary_menu",
+      "type": "link_list"
+    },
+    {
+      "label": "Secondary Menu",
+      "id": "secondary_menu",
+      "type": "link_list"
+    },
+    {
+      "label": "Tertiary Menu",
+      "id": "tertiary_menu",
+      "type": "link_list"
+    }
+  ]
+}
+{% endschema %}

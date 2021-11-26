@@ -1,0 +1,130 @@
+/**
+ * Custom Showcase style
+ * !important property might be used to overwrite default app styles, please ignore
+ */
+.instagram-feed {
+  .showcase-slider {
+    margin-bottom: 50px;
+
+    @media (--s) {
+      margin-bottom: 0;
+    }
+  }
+
+  .showcase-track {
+    padding: 0 !important;
+
+    @media (--s) {
+      padding: 0 40px !important;
+    }
+
+    @media (--l) {
+      padding: 0 75px !important;
+    }
+  }
+
+  .showcase-grid-item {
+    padding: 0 5px !important;
+    max-width: 50%;
+
+    @media (--s) {
+      max-width: 20%;
+      padding: 0 10px !important;
+    }
+
+    @media (--l) {
+      padding: 0 20px !important;
+    }
+  }
+
+  .showcase-grid-item--video::after {
+    right: 25px !important;
+  }
+
+  .showcase-slider-control {
+    position: absolute;
+    top: auto !important;
+    bottom: -50px !important;
+    width: 30px !important;
+    height: 30px !important;
+    border: 1px solid var(--black);
+    border-radius: 50%;
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    @media (--s) {
+      top: 50% !important;
+      bottom: auto !important;
+      transform: translate3d(0, -50%, 0);
+    }
+
+    @media (--l) {
+      width: 45px !important;
+      height: 45px !important;
+    }
+
+    &::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-left: 1px solid var(--black);
+      border-top: 1px solid var(--black);
+
+      @media (--l) {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+
+  .showcase-slider-control > * {
+    display: none !important;
+  }
+
+  .showcase-slider-control.prev {
+    left: calc(50% - 35px) !important;
+
+    @media (--s) {
+      left: 0 !important;
+    }
+
+    &::after {
+      margin-left: 3px;
+      transform: rotate(-45deg);
+
+      @media (--l) {
+        margin-left: 4px;
+      }
+    }
+  }
+
+  .showcase-slider-control.next {
+    left: calc(50% + 5px) !important;
+
+    @media (--s) {
+      left: auto !important;
+      right: 0 !important;
+    }
+
+    &::after {
+      margin-right: 3px;
+      transform: rotate(135deg);
+
+      @media (--l) {
+        margin-right: 4px;
+      }
+    }
+  }
+
+  .fa-instagram {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .showcase-gallery .showcase-slider .showcase-slider-control.disabled {
+    opacity: 0.5 !important;
+    visibility: visible !important;
+    pointer-events: none;
+  }
+}

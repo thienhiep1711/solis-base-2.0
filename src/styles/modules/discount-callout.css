@@ -1,0 +1,18 @@
+.discount-callout {
+  background-color: rgba(234, 234, 232, 0.3);
+  padding: 20px 45px;
+  margin-top: 20px;
+
+  @media (--s) {
+    padding: 20px;
+  }
+}
+
+.discount-callout--mini-cart {
+  margin-top: 0;
+  margin-right: 30px;
+}
+
+.discount-callout__content {
+  margin-top: 5px;
+}

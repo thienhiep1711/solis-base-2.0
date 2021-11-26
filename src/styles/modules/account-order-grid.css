@@ -1,0 +1,150 @@
+.account-entry-form {
+  max-width: 350px;
+}
+
+.orders__order {
+  padding: 1.2em;
+  border-radius: 4px;
+
+  &:nth-of-type(odd) {
+    background-color: var(--c-secondary-background);
+  }
+}
+
+.account-order-grid {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  @media (--s) {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  @media (--m) {
+    margin-top: 70px;
+    margin-bottom: 70px;
+  }
+
+  @media (--l) {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+}
+
+.account-order-grid__table {
+  margin-top: 0;
+  border-top: 1px solid var(--c-headings);
+
+  @media (--s) {
+    border-top: 0;
+    margin-top: 40px;
+  }
+
+  th {
+    width: 20%;
+
+    &:last-child {
+      width: 5%;
+    }
+  }
+}
+
+.account-order-grid__title {
+  margin-bottom: 18px;
+
+  @media (--m) {
+    margin-bottom: 25px;
+  }
+}
+
+.responsive-table {
+  width: 100%;
+
+  th {
+    @extend .label;
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid var(--c-borders);
+    }
+  }
+
+  a {
+    @extend %link;
+
+    padding-left: 0;
+  }
+
+  @media (--xs-max) {
+    thead {
+      display: none;
+    }
+
+    tr {
+      display: block;
+      padding: 20px 0 5px;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    tr,
+    td {
+      float: left;
+      clear: both;
+      width: 100%;
+    }
+
+    th,
+    td {
+      display: block;
+      text-align: right;
+      padding: 0 0 15px;
+      border: 0;
+      margin: 0;
+    }
+
+    td::before {
+      @extend .label;
+
+      content: attr(data-label);
+      padding-right: 10px;
+      float: left;
+    }
+
+    a {
+      padding-left: 0;
+      margin-left: 15px;
+    }
+  }
+
+  @media (--xs) {
+    thead {
+      tr {
+        border-bottom: 1px solid var(--c-borders);
+      }
+
+      tr:first-child {
+        border-bottom-color: var(--c-headings);
+      }
+    }
+
+    th {
+      padding-bottom: 13px;
+      text-align: left;
+    }
+
+    td {
+      padding: 15px 0;
+      vertical-align: top;
+    }
+  }
+
+  @media (--m) {
+    td {
+      padding: 20px 0;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.shipping-calculator {
+  margin-bottom: 5px;
+}
+
+.shipping-calculator__progress {
+  background-color: var(--newspaper);
+  display: block;
+  height: 10px;
+  position: relative;
+  width: 100%;
+
+  .cart-grid--default & {
+    height: 5px;
+  }
+}
+
+.shipping-calculator__indicator {
+  background-color: var(--coral-pink);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: width var(--speed) var(--ease);
+  width: 0;
+}
+
+.shipping-calculator__message {
+  margin-top: 10px;
+
+  strong {
+    font-weight: 500;
+  }
+}

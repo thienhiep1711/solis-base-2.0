@@ -1,0 +1,7 @@
+.header-mega-nav-item__content {
+  margin-top: 10px;
+
+  @media (--m) {
+    margin-bottom: 50px;
+  }
+}

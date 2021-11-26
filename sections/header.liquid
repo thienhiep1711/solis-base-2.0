@@ -1,0 +1,28 @@
+{%- render 'header-slideout',
+  primary_menu: section.settings.primary_menu,
+  secondary_menu: section.settings.secondary_menu
+-%}
+
+{%- render 'header-bar' -%}
+
+{%- render 'header-cart' -%}
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "header",
+  "class": "header",
+  "settings": [
+    {
+      "label": "Primary Menu",
+      "id": "primary_menu",
+      "type": "link_list"
+    },
+    {
+      "label": "Secondary Menu",
+      "id": "secondary_menu",
+      "type": "link_list"
+    }
+  ]
+}
+{% endschema %}

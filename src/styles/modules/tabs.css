@@ -1,0 +1,37 @@
+.tabs-nav__list {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 20px;
+  list-style: none;
+
+  .modal--content-drawer & {
+    margin: 0 0 20px;
+    padding-left: 0;
+    list-style: none;
+
+    @media (--m) {
+      margin-bottom: 40px;
+    }
+  }
+
+  @media (--m) {
+    margin-bottom: 40px;
+  }
+}
+
+.tabs-nav__list-item {
+  margin: 0 14px;
+
+  .modal--content-drawer & {
+    margin: 0 14px;
+  }
+
+  .label {
+    outline: none;
+    border-bottom: 0;
+  }
+
+  &.is-active .label {
+    border-bottom: 1px solid var(--c-headings);
+  }
+}

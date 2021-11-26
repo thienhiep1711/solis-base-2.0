@@ -1,0 +1,16 @@
+/* change classes to product-carousel */
+
+.product-three-up__container::before {
+  .recently-viewed & {
+    content: '';
+    display: block;
+    border-top: 1px solid var(--c-borders);
+    padding-top: 25px;
+    margin: 0 var(--gutter-xxs);
+
+    @media (--m) {
+      padding-top: 40px;
+      margin: 0;
+    }
+  }
+}

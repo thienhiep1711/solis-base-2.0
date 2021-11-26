@@ -1,0 +1,131 @@
+.flex-text-and-image {
+  .text-and-image__inner {
+    @media (--s-max) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .text-and-image__content {
+    padding-top: 20px;
+  }
+
+  &:first-child {
+    .text-and-image__inner {
+      @media (--s-max) {
+        flex-direction: column-reverse;
+      }
+    }
+
+    .text-and-image__content {
+      @media (--s-max) {
+        padding-top: 0;
+        padding-bottom: 30px;
+      }
+    }
+  }
+
+  .text-and-image__intro {
+    margin-top: 5px;
+  }
+
+  .text-and-image__inner--content-right {
+    .text-and-image__media {
+      @media (--s) {
+        width: 48.62%;
+      }
+    }
+
+    .text-and-image__content {
+      @media (--s) {
+        width: 51.38%;
+        padding: 20px 36px;
+      }
+
+      @media (--m) {
+        padding-left: 70px;
+        padding-right: 70px;
+      }
+
+      @media (--l) {
+        padding-left: 120px;
+        padding-right: 120px;
+      }
+    }
+  }
+
+  .text-and-image__inner--content-left {
+    .text-and-image__media {
+      @media (--s) {
+        width: 56.81%;
+      }
+    }
+
+    .text-and-image__content {
+      @media (--s) {
+        width: 45.19%;
+        padding-left: 0;
+        padding-right: 45px;
+      }
+
+      @media (--m) {
+        padding-right: 70px;
+      }
+
+      @media (--l) {
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+    }
+  }
+
+  .text-and-image__inner--inverted {
+    .text-and-image__title {
+      padding-left: 25px;
+      padding-right: 25px;
+
+      @media (--s) {
+        padding-left: 0;
+        padding-right: 10px;
+      }
+    }
+
+    .text-and-image__media {
+      @media (--s) {
+        width: 50%;
+      }
+    }
+
+    .text-and-image__content {
+      padding-top: 50px;
+      padding-bottom: 50px;
+
+      @media (--s) {
+        width: 50%;
+        padding-left: 47px;
+        padding-right: 47px;
+      }
+
+      @media (--m) {
+        padding-left: 65px;
+        padding-right: 65px;
+      }
+
+      @media (--l) {
+        padding-left: 120px;
+        padding-right: 120px;
+      }
+    }
+  }
+
+  .text-and-image__title {
+    @media (--s) {
+      max-width: 22ch;
+    }
+  }
+
+  .button__el {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}

@@ -1,0 +1,8 @@
+.text-and-image-list__title {
+  max-width: 940px;
+  margin: 0 auto 40px;
+
+  @media (--m) {
+    margin-bottom: 50px;
+  }
+}

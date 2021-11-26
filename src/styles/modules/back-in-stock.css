@@ -1,0 +1,12 @@
+.back-in-stock {
+  margin: 10px 0 20px;
+
+  @media (--s) {
+    margin: 8px 0 40px;
+  }
+
+  /* !important property might be used to overwrite default app styles, please ignore */
+  .klaviyo-bis-trigger {
+    display: inline !important;
+  }
+}

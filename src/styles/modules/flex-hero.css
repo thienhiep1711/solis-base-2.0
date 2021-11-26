@@ -1,0 +1,53 @@
+.flex-hero {
+  .hero__title {
+    margin-bottom: 10px;
+
+    @media (--m) {
+      margin-bottom: 15px;
+    }
+
+    @media (--l) {
+      max-width: 25ch;
+    }
+  }
+
+  .hero__content {
+    font-size: 15px;
+    line-height: 1.27;
+    max-width: 70ch;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (--m) {
+      font-size: 18px;
+      line-height: 1.33;
+    }
+  }
+
+  .video__controls {
+    flex-direction: row-reverse;
+    left: unset;
+    right: 15px;
+
+    @media (--s) {
+      right: 30px;
+    }
+
+    @media (--m) {
+      right: 40px;
+    }
+
+    @media (--l) {
+      right: 50px;
+    }
+  }
+
+  .video__volume-button {
+    margin-left: 0;
+    margin-right: 10px;
+
+    @media (--m) {
+      margin-right: 20px;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.splash {
+  align-items: center;
+  animation-delay: 2.25s;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-name: fade-out;
+
+  @supports (clip-path: inset(0 0 0 0)) {
+    animation-name: slide-out;
+  }
+
+  animation-timing-function: ease-in-out;
+  background: var(--red);
+  bottom: 0;
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1500;
+
+  body.showing-overlay & {
+    display: flex;
+  }
+}
+
+.splash__logo {
+  display: block;
+  left: 0;
+  top: 0;
+  z-index: 100;
+
+  .logo {
+    width: 290px;
+    height: 25px;
+    transition: height 0.2s;
+
+    @media (--xs) {
+      width: 580px;
+      height: 50px;
+    }
+  }
+}
+
+.splash__container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+}

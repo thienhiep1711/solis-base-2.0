@@ -1,0 +1,25 @@
+.afterpay-text1 {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.afterpay-text1::first-letter {
+  text-transform: uppercase;
+}
+
+.afterpay-logo {
+  max-width: 70px !important;
+}
+
+.product-form--sticky .afterpay-priceline-wrapper {
+  display: none;
+}
+
+.product-form__wrapper .afterpay-priceline-wrapper {
+  margin-top: 5px;
+}
+
+.cart__footer-bottom .afterpay-priceline-wrapper {
+  margin: 10px 0 0;
+  text-align: center;
+}

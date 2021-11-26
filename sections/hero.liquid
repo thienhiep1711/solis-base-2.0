@@ -1,0 +1,61 @@
+{{ 'entry-hero.css' | asset_url | stylesheet_tag }}
+
+<div class="column column--9">
+  {%- render 'hero-cta',
+    heading: section.settings.heading,
+    paragraph: section.settings.paragraph,
+    button_label: section.settings.button_label,
+    button_url: section.settings.button_url
+  -%}
+</div>
+
+<div class="column column--9">
+  {%- render 'hero-carousel',
+    slides: section.blocks
+  -%}
+</div>
+
+<script defer src="{{ 'entry-hero.js' | asset_url }}"></script>
+
+{% schema %}
+{
+  "name": "Hero",
+  "tag": "section",
+  "class": "hero grid",
+  "settings": [
+    {
+      "id": "heading",
+      "label": "Heading",
+      "type": "text"
+    },
+    {
+      "id": "paragraph",
+      "label": "Paragraph",
+      "type": "textarea"
+    },
+    {
+      "id": "button_label",
+      "label": "Button Label",
+      "type": "text"
+    },
+    {
+      "id": "button_url",
+      "label": "Button URL",
+      "type": "url"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings": [
+        {
+          "id": "image",
+          "label": "Image",
+          "type": "image_picker"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

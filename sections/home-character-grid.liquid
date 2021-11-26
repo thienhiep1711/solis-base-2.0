@@ -1,0 +1,44 @@
+{% schema %}
+{
+  "name": "Character Grid",
+  "tag": "section",
+  "class": "character-grid",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "label": "Heading",
+      "id": "heading",
+      "type": "text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "character",
+      "name": "Character",
+      "settings": [
+        {
+          "id": "image",
+          "label": "Image",
+          "type": "image_picker"
+        },
+        {
+          "id": "title",
+          "label": "Title",
+          "type": "text"
+        },
+        {
+          "id": "sub_title",
+          "label": "Sub-title",
+          "type": "text"
+        },
+        {
+          "id": "description",
+          "label": "Description",
+          "type": "textarea"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}

@@ -1,0 +1,253 @@
+.footer {
+  .template-quiz & {
+    display: none;
+  }
+}
+
+.footer__wrapper {
+  padding: 40px 0 30px;
+  background: var(--c-footer-background);
+
+  @media (--s) {
+    padding-top: 40px;
+    padding-bottom: 25px;
+  }
+
+  @media (--m) {
+    padding-top: 70px;
+    padding-bottom: 30px;
+  }
+}
+
+.footer__grid {
+  margin: 0 -10px;
+}
+
+.footer__column {
+  margin-bottom: 20px;
+
+  @media (--s) {
+    margin-bottom: 0;
+  }
+}
+
+.footer__column-inner {
+  padding: 0 10px;
+}
+
+.footer__column--about {
+  width: 100%;
+
+  @media (--s) {
+    width: 25%;
+    max-width: 242px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+    flex-grow: 1;
+  }
+
+  @media (--m) {
+    max-width: 320px;
+  }
+
+  @media (--l) {
+    max-width: 430px;
+  }
+}
+
+.footer__column--nav {
+  width: 100%;
+  order: 5;
+  margin-bottom: 0;
+
+  @media (--s) {
+    width: 18%;
+    min-width: 140px;
+    flex-shrink: 1;
+    order: unset;
+  }
+
+  .footer__menu {
+    @media (--s-max) {
+      column-count: 2;
+      display: block;
+    }
+  }
+}
+
+.footer__column--newsletter {
+  width: 100%;
+  background-color: var(--snow);
+  color: var(--c-text);
+  padding: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  @media (--s) {
+    width: 35%;
+    max-width: 275px;
+    flex-grow: 1;
+  }
+
+  @media (--m) {
+    max-width: 360px;
+  }
+
+  @media (--l) {
+    padding: 32px 50px;
+    max-width: 500px;
+  }
+
+  .footer__column-inner {
+    padding: 0;
+  }
+
+  .footer__column-title,
+  .footer__column-text {
+    color: inherit;
+  }
+
+  .footer__column-text {
+    @media (--m) {
+      margin-bottom: 15px;
+    }
+  }
+
+  .footer__column-title {
+    font-family: var(--body-font-family);
+    font-size: 15px;
+    letter-spacing: 0;
+    font-weight: normal;
+    text-transform: none;
+
+    @media (--m) {
+      font-size: 18px;
+    }
+  }
+
+  .text-input__el {
+    height: auto;
+    padding: 10px 0;
+    border: 0;
+    border-bottom: 1px solid var(--asphalt);
+    background-color: transparent;
+    font-family: var(--buttons-font-family);
+    font-size: 11px;
+    line-height: 1.36;
+
+    @media (--m) {
+      font-size: 13px;
+    }
+  }
+}
+
+.footer__column-title,
+.footer__column-text {
+  margin-bottom: 5px;
+
+  @media (--s) {
+    margin-bottom: 10px;
+  }
+}
+
+.footer__column-title {
+  color: var(--c-footer-heading);
+  font-family: var(--buttons-font-family);
+  font-size: var(--buttons-font-size-mobile);
+  font-weight: var(--buttons-font-weight);
+  font-style: var(--buttons-font-style);
+  text-transform: var(--buttons-text-transform);
+  letter-spacing: 1px;
+
+  @media (--m) {
+    font-size: var(--buttons-font-size);
+    letter-spacing: 1.5px;
+  }
+}
+
+.footer__column-text,
+.footer__nav-link {
+  color: var(--c-footer-text);
+}
+
+.footer__nav-link {
+  &:hover {
+    color: var(--c-link-hover);
+    text-decoration: none;
+  }
+}
+
+.footer__nav-item {
+  margin-bottom: 8px;
+
+  @media (--s-max) {
+    display: inline-block;
+  }
+
+  @media (--s) {
+    margin-bottom: 10px;
+  }
+
+  &:last-child {
+    @media (--s) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.footer-bottom {
+  padding-bottom: 20px;
+  font-family: var(--buttons-font-family);
+  font-weight: 300;
+  background-color: var(--c-footer-background);
+  color: var(--c-footer-text);
+
+  @media (--m) {
+    font-weight: normal;
+  }
+
+  &.footer-bottom--has-image {
+    padding-bottom: 0;
+  }
+}
+
+.footer-bottom__block {
+  width: 100%;
+  font-size: 11px;
+  line-height: 1.64;
+  margin-bottom: 11px;
+
+  @media (--s) {
+    width: auto;
+    text-align: left;
+  }
+
+  @media (--m) {
+    font-size: 13px;
+  }
+
+  .link {
+    @extend %link;
+
+    color: var(--c-footer-text);
+  }
+}
+
+.footer-bottom__nav-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.footer-bottom__nav-link {
+  font-size: inherit;
+  border-bottom: 1px solid var(--c-link-hover);
+}
+
+.footer-bottom__image {
+  max-width: var(--bottom-image-max-width);
+  margin: 0 auto;
+
+  svg {
+    display: block;
+  }
+}

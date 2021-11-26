@@ -1,0 +1,15 @@
+.page-title {
+  margin: 50px auto 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .account-forms & {
+    margin-bottom: 18px;
+
+    @media (--m) {
+      margin-bottom: 25px;
+    }
+  }
+}
