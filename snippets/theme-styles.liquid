@@ -6,5 +6,7 @@
 {%- endcomment -%}
 
 <link type="text/css" href="{{- 'settings.css' | asset_url -}}" rel="stylesheet">
-{{ 'commons.css' | asset_url | stylesheet_tag }}
+<style>
+  {%- render 'main-critical-css' -%}
+</style>
 <link type="text/css" href="{{- 'main.css' | asset_url -}}" rel="stylesheet">
