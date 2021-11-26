@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwknd_nation=self.webpackChunkwknd_nation||[]).push([[2743],{2743:function(n,e,t){t.r(e);var u=t(2934),a=t.n(u);e.default=function(n){return new(a())({el:n})}}}]);

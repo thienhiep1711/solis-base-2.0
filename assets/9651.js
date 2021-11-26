@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwknd_nation=self.webpackChunkwknd_nation||[]).push([[9651],{99651:function(n,t,e){e.r(t);var s=e(2934),u=e.n(s),a=e(20629),o=e(19038);u().use(a.ZP);t.default=new a.ZP.Store({state:{selectedProduct:null,focusEl:null},actions:o.actions,mutations:o.mutations})}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwknd_nation=self.webpackChunkwknd_nation||[]).push([[45],{50045:function(n,t,i){i.r(t);var o=i(2934),c=i.n(o),e=i(31968);c().component("account-login-form",{data:function(){return{}},computed:{active:function(){return"login"===this.$parent.activeForm}},mixins:[e.Z]})}}]);

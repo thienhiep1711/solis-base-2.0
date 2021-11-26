@@ -1,0 +1,22 @@
+"use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+(self["webpackChunkwknd_nation"] = self["webpackChunkwknd_nation"] || []).push([["src_scripts_modules_account-address_account-address_js"],{
+
+/***/ "./src/scripts/modules/account-address/account-address.js":
+/*!****************************************************************!*\
+  !*** ./src/scripts/modules/account-address/account-address.js ***!
+  \****************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.js\");\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var vue_scrollto__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-scrollto */ \"./node_modules/vue-scrollto/vue-scrollto.js\");\n/* harmony import */ var vue_scrollto__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_scrollto__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvue__WEBPACK_IMPORTED_MODULE_1___default().use((vue_scrollto__WEBPACK_IMPORTED_MODULE_0___default()));\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (el) {\n  return new (vue__WEBPACK_IMPORTED_MODULE_1___default())({\n    el: el,\n    data: function data() {\n      return {\n        activeAddress: {},\n        showNewAddressForm: false\n      };\n    },\n    methods: {\n      toggleNewAddressForm: function toggleNewAddressForm(show) {\n        var _this = this;\n\n        this.showNewAddressForm = show;\n        show && this.$nextTick(function () {\n          _this.$scrollTo(_this.$refs['newAddressForm']);\n        });\n      },\n      populateAddressForm: function populateAddressForm(data) {\n        this.activeAddress = data;\n        this.toggleNewAddressForm(true);\n      },\n      showEmptyForm: function showEmptyForm() {\n        for (var key in this.activeAddress) {\n          this['activeAddress'][key] = '';\n        }\n\n        this.toggleNewAddressForm(true);\n      }\n    }\n  });\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvc2NyaXB0cy9tb2R1bGVzL2FjY291bnQtYWRkcmVzcy9hY2NvdW50LWFkZHJlc3MuanMuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7QUFBQTtBQUNBO0FBRUE7QUFFQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUZBO0FBSUE7QUFDQTtBQUNBO0FBQUE7O0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7O0FBQ0E7QUFDQTtBQWhCQTtBQVJBO0FBMkJBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vd2tuZC1uYXRpb24vLi9zcmMvc2NyaXB0cy9tb2R1bGVzL2FjY291bnQtYWRkcmVzcy9hY2NvdW50LWFkZHJlc3MuanM/YmI5ZiJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgVnVlIGZyb20gJ3Z1ZSdcbmltcG9ydCBWdWVTY3JvbGxUbyBmcm9tICd2dWUtc2Nyb2xsdG8nXG5cblZ1ZS51c2UoVnVlU2Nyb2xsVG8pXG5cbmV4cG9ydCBkZWZhdWx0IGVsID0+IHtcbiAgcmV0dXJuIG5ldyBWdWUoe1xuICAgIGVsLFxuICAgIGRhdGEgKCkge1xuICAgICAgcmV0dXJuIHtcbiAgICAgICAgYWN0aXZlQWRkcmVzczoge30sXG4gICAgICAgIHNob3dOZXdBZGRyZXNzRm9ybTogZmFsc2VcbiAgICAgIH1cbiAgICB9LFxuICAgIG1ldGhvZHM6IHtcbiAgICAgIHRvZ2dsZU5ld0FkZHJlc3NGb3JtIChzaG93KSB7XG4gICAgICAgIHRoaXMuc2hvd05ld0FkZHJlc3NGb3JtID0gc2hvd1xuICAgICAgICBzaG93ICYmIHRoaXMuJG5leHRUaWNrKCgpID0+IHtcbiAgICAgICAgICB0aGlzLiRzY3JvbGxUbyh0aGlzLiRyZWZzWyduZXdBZGRyZXNzRm9ybSddKVxuICAgICAgICB9KVxuICAgICAgfSxcbiAgICAgIHBvcHVsYXRlQWRkcmVzc0Zvcm0gKGRhdGEpIHtcbiAgICAgICAgdGhpcy5hY3RpdmVBZGRyZXNzID0gZGF0YVxuICAgICAgICB0aGlzLnRvZ2dsZU5ld0FkZHJlc3NGb3JtKHRydWUpXG4gICAgICB9LFxuICAgICAgc2hvd0VtcHR5Rm9ybSAoKSB7XG4gICAgICAgIGZvciAobGV0IGtleSBpbiB0aGlzLmFjdGl2ZUFkZHJlc3MpIHtcbiAgICAgICAgICB0aGlzWydhY3RpdmVBZGRyZXNzJ11ba2V5XSA9ICcnXG4gICAgICAgIH1cbiAgICAgICAgdGhpcy50b2dnbGVOZXdBZGRyZXNzRm9ybSh0cnVlKVxuICAgICAgfVxuICAgIH1cbiAgfSlcbn1cbiJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/scripts/modules/account-address/account-address.js\n");
+
+/***/ })
+
+}]);

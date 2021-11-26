@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwknd_nation=self.webpackChunkwknd_nation||[]).push([[6374],{66374:function(n,o,t){t.r(o);t(29254);var e=t(2934);t.n(e)().component("flex-lookbook-product",{data:function(){return{isModalOpen:!1}},methods:{openModal:function(){this.isModalOpen=!0},closeModal:function(){this.isModalOpen=!1,this.$refs.link.focus()}}})}}]);

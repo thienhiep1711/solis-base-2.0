@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwknd_nation=self.webpackChunkwknd_nation||[]).push([[6554],{86554:function(n,t,e){e.r(t);var a=e(2934),c=e.n(a),o=e(31968);c().component("account-reset-form",{data:function(){return{}},mixins:[o.Z]})}}]);

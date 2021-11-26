@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwknd_nation=self.webpackChunkwknd_nation||[]).push([[4265],{94265:function(n,t,a){a.r(t);var e=a(49910);t.default=function(n){e.ajax({url:"/cart/update.js",method:"POST",body:"attributes[hide_overlay]=1"},(function(){}))}}}]);

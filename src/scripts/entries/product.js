@@ -1,5 +1,3 @@
-// __webpack_public_path__ = BRRL_PATH(BRRL_PUBLIC_PATH) // eslint-disable-line
-
 import {set, isIEorEdge, isTouch} from 'lib/util'
 import initializer from 'lib/initializer'
 import lazyModule from 'lib/lazy-module'

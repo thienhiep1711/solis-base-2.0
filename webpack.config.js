@@ -75,7 +75,7 @@ module.exports = env => {
     plugins: [
       new VueLoaderPlugin(),
       new MiniCssExtractPlugin({
-        filename: env.production ? '[name].css.liquid' : '[name].[hash].css'
+        filename: '[name].css.liquid'
       }),
       new BundleAnalyzerPlugin({
         analyzerMode: 'static',
