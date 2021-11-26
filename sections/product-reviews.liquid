@@ -1,0 +1,32 @@
+{%- assign settings = section.settings -%}
+
+{%- if settings.enable_section -%}
+  {%- render 'product-reviews',
+    enable_reviews: settings.enable_reviews.
+    title: settings.title -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Product Reviews",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "Enable this Section",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_reviews",
+      "label": "Enable Reviews",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,35 @@
+{%- comment -%}
+  Parameters
+  * tagline
+  * title
+  * menu
+  * enabled
+{%- endcomment -%}
+
+{%- if enabled -%}
+<div class="relative category-navigation">
+  <div class="container container--xl category-navigation__container">
+    {%- if tagline != blank -%}
+      <p class="p2 bold align-c category-navigation__tagline">{{- tagline -}}</p>
+    {%- endif -%}
+
+    {%- if title != blank -%}
+      <h2 class="h2 align-c category-navigation__title">{{- title -}}</h2>
+    {%- endif -%}
+
+    {%- if menu != blank -%}
+      <ul class="align-c category-navigation__list">
+        {%- for link in linklists[menu].links -%}
+          {%- assign request_path = request.path | split: '/' | last -%}
+          {%- assign url_path = link.url | split: '/' | last -%}
+          <li class="category-navigation__item{% if request_path == url_path %} category-navigation__item--selected{% endif %}">
+            <a href="{{ link.url }}" class="block underline category-navigation__link">{{ link.title }}</a>
+          </li>
+          {%- assign request_path = nil -%}
+          {%- assign url_path = nil -%}
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+</div>
+{%- endif -%}

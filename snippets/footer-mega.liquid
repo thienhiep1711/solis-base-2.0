@@ -1,0 +1,91 @@
+<section class="footer-mega bg-yellow black" data-module="footer-mega">
+  <div class="footer-mega__newsletter">
+
+    {%- if main['newsletter_title'] -%}
+    <div class="f fdc">
+      <h1 class="footer-mega__newsletter__title align-c h4">{{- main['newsletter_title'] -}}</h1>
+    </div>
+    {%- endif -%}
+
+    {%- if main['newsletter_text'] -%}
+    <div class="f fdc">
+      <div class="footer-mega__newsletter__text">{{- main['newsletter_text'] -}}</div>
+    </div>
+    {%- endif -%}
+
+    {%- render 'newsletter-form',
+      class: 'footer-mega__newsletter__form',
+      provider: newsletter.provider,
+      klaviyo_url: newsletter.klaviyo_url,
+      klaviyo_group: newsletter.klaviyo_group
+      mailchimp_url: newsletter.mailchimp_url,
+      placeholder: newsletter.form_placeholder,
+      error_msg: newsletter.form_error_message,
+      success_msg: newsletter.form_success_message,
+      btn_text: newsletter.form_btn_text -%}
+  </div>
+  <div class="footer-mega__main">
+    <div class="footer-mega__main__container container container--l">
+      <div class="footer-mega__main__holder">
+        <div class="footer-mega__links">
+          {%- for block in section.blocks -%}
+            {%- assign item = block.settings -%}
+            {%- assign menu = linklists['footer'] -%}
+
+            <ul class="footer-mega__links__list">
+              <li class="footer-mega__links__item footer-mega__links__item--title h5">{{ menu.title }}</li>
+              {%- for link in menu.links -%}
+                <li class="footer-mega__links__item p2">
+                  <a class="footer-mega__links__link a1" href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+                </li>
+              {%- endfor -%}
+            </ul>
+
+            {%- assign item = nil -%}
+            {%- assign menu = nil -%}
+          {%- endfor -%}
+        </div>
+
+        <div class="footer-mega__contacts align-c">
+          {%- if main['contacts_title'] != blank -%}
+            <h2 class="footer-mega__contacts__title h4">{{ main['contacts_title'] }}</h2>
+          {%- endif -%}
+
+          {%- if main['contacts_text'] != blank -%}
+            {%- capture description -%}
+            <p class="footer-mega__contacts__content p2">{{ main['contacts_text'] }}</p>
+            {%- endcapture -%}
+          {%- endif -%}
+
+          {%- render 'contacts-info', description: description, class: 'contacts-info--footer' -%}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-mega__socials">
+    <div class="footer-mega__socials__container container container--l">
+      {%- render 'social-links' -%}
+    </div>
+  </div>
+  <div class="footer-mega__bottom p2">
+    <div class="footer-mega__bottom__container container container--l">
+      {%- assign menu = linklists['footer-bottom'] -%}
+
+      <ul class="footer-mega__bottom__list">
+        {%- if main['bottom_text'] != blank -%}
+          <li class="footer-mega__bottom__item">
+            <p class="footer-mega__bottom__text">{{ main['bottom_text'] }}</p>
+          </li>
+        {%- endif -%}
+
+        {%- for link in menu.links -%}
+          <li class="footer-mega__bottom__item">
+            <a class="footer-mega__bottom__link a1" href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+
+      {%- assign menu = nil -%}
+    </div>
+  </div>
+</section>

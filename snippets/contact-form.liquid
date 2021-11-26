@@ -1,0 +1,91 @@
+{%- assign label_name = 'contact.form.name' | t -%}
+{%- assign label_email = 'contact.form.email' | t -%}
+{%- assign label_phone = 'contact.form.phone' | t -%}
+{%- assign label_message = 'contact.form.message' | t -%}
+{%- assign label_subject = 'contact.form.subject' | t -%}
+{%- assign label_send = 'contact.form.send' | t -%}
+{%- assign error = 'contact.form.error' | t -%}
+
+<div is="contact-form" inline-template>
+  <div @submit="validate">
+    {%- form 'contact', class: 'contact-form__el' -%}
+      {%- if form.posted_successfully? -%}
+        <p class="note mb1 contact-form-success">
+          {{- 'contact.form.post_success' | t -}}
+        </p>
+      {%- endif -%}
+      <div class="rel contact-form-error">
+        {%- render 'form-errors', errors: form.errors -%}
+      </div>
+
+      {%- if customer -%}
+        {%- assign value = customer.name -%}
+      {%- endif -%}
+      {%- render 'text-input' with
+        class: 'contact-form__field w1',
+        label: label_name,
+        type: 'text',
+        name: 'contact[name]',
+        initial_value: value,
+        required: true,
+        error: error -%}
+
+      {%- if customer -%}
+        {%- assign value = customer.email -%}
+      {%- endif -%}
+      {%- render 'text-input' with
+        class: 'contact-form__field w1',
+        label: label_email,
+        type: 'email',
+        name: 'contact[email]',
+        initial_value: value,
+        required: true,
+        error: error -%}
+
+      {%- if form['phone'] -%}
+        {%- assign value = form['phone'] -%}
+        {%- elsif customer -%}
+        {%- assign value = customer.phone -%}
+      {%- endif -%}
+      {%- render 'text-input' with
+        class: 'contact-form__field w1',
+        label: label_phone,
+        type: 'tel',
+        name: 'contact[phone]',
+        initial_value: value -%}
+
+      <div class="mb15">
+        {%- if subject_options != blank -%}
+          {%- capture v_options -%}
+            [
+            {%- for option in subject_options -%}
+              {label:'{{- option | strip_newlines -}}',value:'{{- option | strip_newlines -}}'}{%- unless forloop.last -%},{%- endunless -%}
+            {%- endfor -%}
+            ]
+          {%- endcapture -%}
+
+          {%- render 'select-input' with
+            name: 'contact[message]',
+            label: label_subject,
+            dynamic_options: v_options
+          -%}
+        {%- endif -%}
+      </div>
+
+      <div class="text-input contact-form__field w1 text-input--default" aria-label="{{ label_message }}">
+        <div class="text-input__wrapper">
+          <label class="text-input__label">
+            {{ label_message }}
+          </label>
+          <textarea class="contact-form__textarea" name="contact[message]" rows="10"></textarea>
+        </div>
+      </div>
+
+      {%- render 'button',
+        class: 'w1 btn--primary contact-form__submit-button',
+        value: label_send,
+        type: 'submit' -%}
+
+    {%- endform -%}
+  </div>
+</div>

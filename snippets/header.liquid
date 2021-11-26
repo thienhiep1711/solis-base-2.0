@@ -1,0 +1,151 @@
+{%- assign main = section.settings -%}
+{%- assign main_links = linklists[main.navigation_menu].links | default: false -%}
+{%- assign item_class = '' %}
+{%- assign item_aria = '' %}
+{%- assign logo = main.logo | default: nil -%}
+{%- assign logo_max_width = main.logo_max_width | default: 140 -%}
+{%- assign logo_mobile_max_width = main.mobile_logo_max_width | default: 90 -%}
+{%- assign show_icons = main.show_icons | default: false -%}
+{%- assign nav_styles = main.navigation_style | default: 'left' -%}
+{%- assign transparent_logo = main.transparent_logo | default: nil -%}
+
+{%- capture css -%}
+  header js-header js-mobile-content header--navigation-{{ nav_styles }}
+{%- endcapture -%}
+
+{%- if main.use_sticky_header == true -%}
+  {%- assign css = css | append: ' sticky-header' -%}
+{%- endif -%}
+
+{%- if main.show_transparent_header_border == true -%}
+  {%- assign css = css | append: ' header--border-bottom' -%}
+{%- endif -%}
+
+{%- if template contains 'index' and main.enable_transparent_header == true -%}
+  {%- assign css = css | append: ' header--transparent' -%}
+{%- endif -%}
+
+{%- if template contains 'collection' and main.enable_transparent_header_collection == true -%}
+  {%- assign css = css | append: ' header--transparent' -%}
+{%- endif -%}
+
+{%- if template contains 'page' and main.enable_transparent_header_page == true -%}
+  {%- assign css = css | append: ' header--transparent' -%}
+{%- endif -%}
+
+{%- if transparent_logo != blank -%}
+  {%- assign css = css | append: ' header--has-transparent-logo' -%}
+{%- endif -%}
+
+<div class="{{- css | strip -}}" id="header" data-module="header" {% if logo != blank %}style="--logo-max-width-mobile: {{ logo_mobile_max_width }}px; --logo-max-width: {{ logo_max_width }}px;"{% endif %}>
+  <div class="header__container container container--xl">
+    <a class="f aic header-logo" href="/" title="{{- shop.name -}}">
+      {%- if logo != blank -%}
+        <img class="header-logo__img header-logo__img--main" src="{{- logo | img_url: 'master' -}}" alt="{{- shop.name -}}">
+
+        {%- if transparent_logo != blank -%}
+          <img class="header-logo__img header-logo__img--transparent" src="{{- transparent_logo | img_url: 'master' -}}" alt="{{- shop.name -}}">
+        {%- endif -%}
+      {%- else -%}
+        <span class="logo-placeholder">{{- shop.name -}}</span>
+        <span class="hidden">{{- shop.name -}}</span>
+      {%- endif -%}
+    </a>
+    {%- if main_links -%}
+      <div class="header__nav-backdrop js-nav-backdrop"></div>
+
+      <nav class="header__nav js-nav" aria-label="Primary">
+        <div class="header__nav-container">
+          <a class="header__nav-logo logo block" href="/" title="{{- shop.name -}}">
+            {%- comment -%} {%- render 'logo' with 'logo-main' -%} {%- endcomment -%}
+          </a>
+          <ul class="header__nav-list">
+            {%- for link in main_links -%}
+              {%- capture title -%}
+                {{- link.title -}}
+              {%- endcapture -%}
+
+              {%- if link.links != blank -%}
+                {%- assign item_class = ' header__nav-item--has-children js-nav-parent-item' -%}
+                {%- assign item_aria = ' aria-expanded="false"' -%}
+
+                {%- if link.type == 'collection_link' -%}
+                  {%- assign item_class = item_class | append: ' header__nav-item--mega' -%}
+                {%- endif -%}
+
+                  {% assign is_sub_products = true %}
+                  {% for _item in link.links %}
+                      {% if _item.type != 'product_link' %}
+                         {% assign is_sub_products = false %}
+                      {% endif %}
+                  {% endfor %}
+              {%- endif -%}
+              <li class="header__nav-item{% if item_class != blank %}{{ item_class }}{% endif %}">
+                {%- if link.links != blank -%}
+
+                  <div class="header__nav-link a1 lb2 {% if link.url == '#' %} header__nav-link--no-link{% endif %}"{% if item_aria != blank %}{{ item_aria }}{% endif %}>
+                    <a href="{{ link.url }}">{{- title | strip -}}</a>
+                    <span aria-hidden="true" class="header__nav-icon icon js-nav-link">
+                      {%- render 'icon' with 'icon-arrow-down' -%}
+                    </span>
+                  </div>
+                  <div class="header__subnav js-subnav {% if link.type == 'collection_link' and is_sub_products %} header__subnav--mega{% endif %}">
+                    {%- if link.type == 'collection_link' and is_sub_products -%}
+                      {%- render 'header-mega-nav', link: link, content_for_products: main.content_for_products -%}
+                    {%- else -%}
+                      <ul class="header__subnav-list">
+                        {%- for childlink in link.links -%}
+                          <li class="header__subnav-item js-link">
+                            <a class="header__subnav-link a1 p2" href="{{- childlink.url -}}" title="{{- childlink.title -}}">{{- childlink.title -}}</a>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    {%- endif -%}
+                  </div>
+                {%- else -%}
+                  <a class="header__nav-link a1 lb2{% if link.active %} is-active{% endif %}" href="{{- link.url -}}" title="{{- link.title -}}">
+                    {{- title | strip -}}
+                  </a>
+                {%- endif -%}
+              </li>
+              {%- assign title = nil -%}
+              {%- assign item_class = nil -%}
+              {%- assign item_aria = nil -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+      </nav>
+
+      <button class="header__btn-mobile js-btn-mobile" aria-expanded="false">
+        <span class="header__btn-mobile-el"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+    {%- endif -%}
+
+    {%- if show_icons -%}
+      <div class="header-side">
+        <ul class="header-side__list{% if show_icons == true %} header-side__list--show-icons{% endif %}">
+          {%- render 'header-search-icon' -%}
+
+          {%- comment -%}
+            If customer accounts are enabled, provide login and create account links
+          {%- endcomment -%}
+          {% if shop.customer_accounts_enabled %}
+            <li class="header-side__item">
+              <a href="/account" class="header-side__link is-icon a1">
+                <span class="header-side__item-icon header-side__item-icon--account">
+                  {%- render 'icon' with 'icon-account' -%}
+                </span>
+                <span class="header-side__item-text">Account</span>
+              </a>
+            </li>
+          {%- endif -%}
+
+          {%- render 'header-cart-icon', count: cart.item_count -%}
+
+        </ul>
+      </div>
+    {%- endif -%}
+  </div>
+  {%- render 'header-search' -%}
+</div>

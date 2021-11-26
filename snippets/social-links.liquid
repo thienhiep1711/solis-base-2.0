@@ -1,0 +1,13 @@
+<div class="social-links {{ class }}">
+  {%- for link in linklists.social-menu.links -%}
+    <div class="social-links__icon">
+      <a href="{{- link.url -}}" target="_blank">
+        {%- assign icon = 'icon-' | append: link.title | downcase | handleize -%}
+
+        {%- render 'icon' with icon -%}
+
+        <span class="sr-only">{{ link.title }}</span>
+      </a>
+    </div>
+  {%- endfor -%}
+</div>

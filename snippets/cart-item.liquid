@@ -1,0 +1,106 @@
+{%- capture quantity_selector -%}
+  <div class="f aic">
+    <div
+      is="quantity-selector"
+      :key="variantId + '-' + quantity"
+      :initial="quantity"
+      @change="updateQuantity"
+      :max="maxQuantity"
+      >
+    </div>
+    <button
+      class="cart-item__remove p2"
+      :aria-label="'Remove ' + title"
+      @click.prevent="remove">
+      Remove
+    </button>
+  </div>
+{%- endcapture -%}
+
+<div
+  v-for="(item, index) in cart.items"
+  is="cart-item"
+  class="cart__body-item"
+  :url="item.url"
+  :image="item.image"
+  :item="item"
+  :price="item.price"
+  :discounted-price="item.final_price"
+  :title="item.product_title"
+  :quantity="item.quantity"
+  :type="item.product_type"
+  :index="index"
+  :key="'id--' + item.product_id + 'index--' + index"
+  :variant-id="item.variant_id"
+  :variant-title="getVariantTitle(item)"
+  :compare-at-price="compareAtPriceData[index]"
+  inline-template>
+
+  <div class="cart-item relative">
+    <div class="cart-item__info relative clear align-t">
+      <div class="cart-item__featured-wrapper">
+        <a href="{{- url -}}" :href="url" class="cart-item__featured block ratio">
+          <div is="vue-image" :src="image" :size="960" :alt="title" spinner-size="sm" css="fit-cover"></div>
+        </a>
+
+        <button
+          class="cart-item__featured-remove p2"
+          :aria-label="'Remove ' + title"
+          @click.prevent="remove">
+          Remove
+        </button>
+      </div>
+      <div class="cart-item__details">
+        <h4 class="cart-item__details__heading"><a href="{{- url -}}" :href="url" v-html="title"></a></h4>
+
+        <div class="cart-item__details-descriptions mb05">
+          <p class="cart-item__details-description p2">
+            <span v-if="isGiftCard">{{- 'products.product.amount' | t -}}</span>
+            <span v-else v-html="variantTitle"></span>
+          </p>
+          <p class="cart-item__details-description cart-item__details-description--price p2">
+            <template v-if="isDiscounted">
+              <del v-html="totalFormattedPrice"></del>
+              <span v-html="totalDiscountedPrice"></span>
+            </template>
+            <template v-else>
+              <del v-if="totalCompareAtPrice" v-html="totalCompareAtPrice"></del>
+              <span v-html="totalFormattedPrice"></span>
+            </template>
+          </p>
+        </div>
+
+        <div class="cart-item__details-quantity">
+            <div class="cart-item__label-quantity p2">{{- 'cart.label.quantity' | t -}}</div>
+          {{- quantity_selector -}}
+        </div>
+      </div>
+      {%- if template == 'cart' -%}
+        <div class="inline-block w1">
+          {%- render 'discount-callout' -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="cart-item__price hide align-t align-l">
+      <p class="mv05 p2" v-html="formattedPrice"></p>
+    </div>
+    {%- unless location == 'mini-cart' -%}
+    <div class="cart-item__quantity align-t align-l">
+      {{- quantity_selector -}}
+    </div>
+    {%- endunless -%}
+    <div class="cart-item__total align-r p2">
+      <template v-if="isDiscounted">
+        <del v-html="totalFormattedPrice"></del>
+        <p class="{% if template == 'cart' %} inline-block {% endif %}" v-html="totalDiscountedPrice"></p>
+      </template>
+      <template v-else>
+        <del v-if="totalCompareAtPrice" v-html="totalCompareAtPrice"></del>
+        <p class="{% if template == 'cart' %} inline-block {% endif %}" v-html="totalFormattedPrice"></p>
+      </template>
+    </div>
+
+    <p class="sr-only" ref="cartItemStatus" aria-live="polite"></p>
+  </div>
+</div>

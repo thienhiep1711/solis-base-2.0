@@ -1,0 +1,58 @@
+{%- assign error_msg = 'customer.login.error' | t -%}
+
+<div is="account-login-form" inline-template>
+  <div @submit="validate" v-if="active" class="container container--xxs" data-a-group>
+
+    {%- assign title = 'customer.login.title' | t -%}
+    {%- render 'page-title', title: title -%}
+
+    <div data-a-stagger>
+      {%- form 'customer_login' -%}
+
+        {%- render 'form-errors', errors: form.errors -%}
+
+        <div class="form-row">
+          {%- assign label = 'customer.login.email' | t -%}
+          {%- assign placeholder = 'customer.login.email_placeholder' | t -%}
+          {%- render 'text-input' with
+            name: 'customer[email]',
+            type: 'email',
+            label: label,
+            placeholder: placeholder,
+            show_placeholder: true,
+            error: error_msg,
+            class: 'text-input--account',
+            required: true -%}
+        </div>
+
+        <div class="form-row">
+          {%- assign label = 'customer.login.password' | t -%}
+          {%- assign placeholder = 'customer.login.password_placeholder' | t -%}
+          {%- render 'text-input' with
+            name: 'customer[password]',
+            type: 'password',
+            label: label,
+            placeholder: placeholder,
+            show_placeholder: true,
+            error: error_msg,
+            class: 'text-input--account',
+            required: true -%}
+        </div>
+
+        <div class="form-row">
+          {%- assign value = 'customer.login.submit' | t -%}
+          {%- render 'button',
+            value: value,
+            type: 'submit',
+            class: 'btn--primary btn--outlined btn--full-width' -%}
+        </div>
+
+        <div class="form-row align-c form-footer">
+          <p class="p"><a class="p underline" href="javascript:void(0)" @click="$parent.changeForm('recover')">{{- 'customer.login.forgot_password' | t -}}</a></p>
+          <p class="p">{{ 'customer.login.not_registered' | t }} <a class="underline" href="/account/register">{{ 'customer.login.create_account' | t }}</a></p>
+          <p class="p pt2 mt1"><a class="p underline" href="/">{{- 'customer.login.return_home' | t -}}</a></p>
+        </div>
+      {%- endform -%}
+    </div>
+  </div>
+</div>

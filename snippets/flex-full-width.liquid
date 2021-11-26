@@ -1,0 +1,126 @@
+{%- comment -%}
+  Parameters
+  * fields
+{%- endcomment -%}
+
+{%- if fields != blank -%}
+  {%- for enable in fields.enable -%}
+    {%- if enable -%}
+      {%- assign order = fields.order[forloop.index0] -%}
+      {%- assign inverted_mode = fields.inverted_mode[forloop.index0] -%}
+      {%- assign enable_overlay = fields.enable_overlay[forloop.index0] -%}
+      {%- assign overlay_opacity = fields.overlay_opacity[forloop.index0] -%}
+      {%- assign background_type = fields.background_type[forloop.index0] -%}
+      {%- assign image = fields.image[forloop.index0][0].src -%}
+      {%- assign image_s = fields.image_s[forloop.index0][0].src -%}
+      {%- assign image_l = fields.image_l[forloop.index0][0].src -%}
+      {%- assign video = fields.video[forloop.index0] -%}
+      {%- assign video_s = fields.video_s[forloop.index0] -%}
+      {%- assign video_l = fields.video_l[forloop.index0] -%}
+      {%- assign image_alt = fields.image_l[forloop.index0][0].alt -%}
+      {%- assign tagline = fields.tagline[forloop.index0] -%}
+      {%- assign title = fields.title[forloop.index0] -%}
+      {%- assign title_image = fields.title_image[forloop.index0][0].src -%}
+      {%- assign title_image_aspect_ratio = fields.title_image[forloop.index0][0].aspect_ratio -%}
+      {%- assign text = fields.text[forloop.index0] -%}
+
+      {%- assign icon_text_enable_1 = fields.icon_text_enable_1[forloop.index0] -%}
+      {%- assign icon_text_label_1 = fields.icon_text_label_1[forloop.index0] -%}
+      {%- assign icon_text_text_1 = fields.icon_text_text_1[forloop.index0] -%}
+      {%- assign icon_text_image_1 = fields.icon_text_image_1[forloop.index0][0].src -%}
+      {%- assign icon_text_enable_2 = fields.icon_text_enable_2[forloop.index0] -%}
+      {%- assign icon_text_label_2 = fields.icon_text_label_2[forloop.index0] -%}
+      {%- assign icon_text_text_2 = fields.icon_text_text_2[forloop.index0] -%}
+      {%- assign icon_text_image_2 = fields.icon_text_image_2[forloop.index0][0].src -%}
+      {%- assign icon_text_enable_3 = fields.icon_text_enable_3[forloop.index0] -%}
+      {%- assign icon_text_label_3 = fields.icon_text_label_3[forloop.index0] -%}
+      {%- assign icon_text_text_3 = fields.icon_text_text_3[forloop.index0] -%}
+      {%- assign icon_text_image_3 = fields.icon_text_image_3[forloop.index0][0].src -%}
+
+      {%- if icon_text_enable_1 or icon_text_enable_2 or icon_text_enable_3-%}
+        {%- capture additional_content -%}
+          <div class="icon-text-grid icon-text-grid--full-width">
+            <div class="icon-text-grid__inner">
+              <div class="icon-text-grid__list">
+                {%- if icon_text_enable_1 -%}
+                  {%- render 'icon-text',
+                    class: 'icon-text-grid__item',
+                    label: icon_text_label_1,
+                    text: icon_text_text_1,
+                    icon_src: icon_text_image_1
+                  -%}
+                {%- endif -%}
+
+                {%- if icon_text_enable_2 -%}
+                  {%- render 'icon-text',
+                    class: 'icon-text-grid__item',
+                    label: icon_text_label_2,
+                    text: icon_text_text_2,
+                    icon_src: icon_text_image_2
+                  -%}
+                {%- endif -%}
+
+                {%- if icon_text_enable_3 -%}
+                  {%- render 'icon-text',
+                    class: 'icon-text-grid__item',
+                    label: icon_text_label_3,
+                    text: icon_text_text_3,
+                    icon_src: icon_text_image_3
+                  -%}
+                {%- endif -%}
+              </div>
+            </div>
+          </div>
+        {%- endcapture -%}
+      {%- endif -%}
+
+
+      {%- capture image_sources -%}
+        {%- if image != blank -%}
+          {{- image -}}
+        {%- endif -%}
+        {%- if image_s != blank -%}
+          |{{- image_s -}}
+        {%- endif -%}
+        {%- if image_l != blank -%}
+          |{{- image_l -}}
+        {%- endif -%}
+      {%- endcapture -%}
+
+      {%- capture breakpoints -%}
+        {%- if image != blank -%}
+          (max-width: 767px)
+        {%- endif -%}
+        {%- if image_s != blank -%}
+          |(max-width: 999px)
+        {%- endif -%}
+        {%- if image_l != blank -%}
+          |(min-width: 1000px)
+        {%- endif -%}
+      {%- endcapture -%}
+
+      {%- render 'full-width' with background_type,
+        class: 'page-flex__item flex-full-width',
+        order: order,
+        inverted_mode: inverted_mode,
+        enable_overlay: enable_overlay,
+        overlay_opacity: overlay_opacity,
+        breakpoints: breakpoints,
+        image_sources: image_sources,
+        image_alt: image_alt,
+        video: video,
+        video_s: video_s,
+        video_l: video_l,
+        fallback: image,
+        fallback_s: image_s,
+        fallback_l: image_l,
+        tagline: tagline,
+        title: title,
+        title_image: title_image,
+        title_image_aspect_ratio: title_image_aspect_ratio,
+        text: text,
+        additional_content: additional_content
+      -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}

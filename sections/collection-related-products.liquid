@@ -1,0 +1,45 @@
+{%- assign settings = section.settings -%}
+
+{%- render 'related-products',
+  enable: settings.enable_related_products,
+  tagline: settings.tagline,
+  title: settings.title,
+  blocks: section.blocks -%}
+
+{% schema %}
+{
+  "name": "Recommended Products",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_related_products",
+      "label": "Enable Recommended Products",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline (Optional)"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "max_blocks": 8,
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

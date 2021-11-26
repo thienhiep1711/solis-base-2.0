@@ -1,0 +1,165 @@
+{%- case icon -%}
+
+  {%- when 'icon-search' -%}
+    {%- if settings.icon_search == blank -%}
+    <svg viewBox="0 0 16 16">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search" x="0" y="0"></use>
+    </svg>
+    {%- else -%}
+      {{- settings.icon_search -}}
+    {%- endif -%}
+
+  {%- when 'icon-search-input' -%}
+    <svg viewBox="0 0 17 17">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search" x="0" y="0"></use>
+    </svg>
+
+  {%- when 'icon-search-close' -%}
+    {%- if settings.icon_search_close == blank -%}
+      <svg viewBox="0 0 17 17">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close" x="0" y="0"></use>
+      </svg>
+    {%- else -%}
+      {{- settings.icon_search_close -}}
+    {%- endif -%}
+
+  {%- when 'icon-account' -%}
+    {%- if settings.icon_account == blank -%}
+      <svg viewBox="0 0 48 48">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-account" x="0" y="0"></use>
+      </svg>
+    {%- else -%}
+      {{- settings.icon_account -}}
+    {%- endif -%}
+
+  {%- when 'icon-checkbox' -%}
+    <svg viewBox="0 0 13 9">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search" x="0" y="0"></use>
+    </svg>
+
+  {%- when 'icon-search-stroke' -%}
+    <svg viewBox="0 0 24.9 24.8">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search-stroke" x="0" y="0"></use>
+    </svg>
+
+  {%- when 'icon-close' -%}
+    <svg viewBox="0 0 17 17">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close" x="0" y="0"></use>
+    </svg>
+
+  {%- when 'arrow-left' -%}
+    <svg viewBox="0 0 18 18">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-left" x="0" y="0"></use>
+    </svg>
+
+  {%- when 'arrow-right' -%}
+    <svg viewBox="0 0 18 18">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right" x="0" y="0"></use>
+    </svg>
+
+  {%- when 'icon-arrow-down' -%}
+    <svg viewBox="0 0 13 8">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-down" x="0" y="0"></use>
+    </svg>
+
+  {%- when 'icon-star-full' -%}
+    <svg viewBox="0 0 15.6 15.2">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-star-full" x="0" y="0"></use>
+    </svg>
+
+  {%- when 'icon-star-half' -%}
+    <svg viewBox="0 0 13.6 12.8">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-star-half" x="0" y="0"></use>
+    </svg>
+
+  {%- when 'icon-star-empty' -%}
+    <svg viewBox="0 0 13.6 12.8">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-star-empty" x="0" y="0"></use>
+    </svg>
+
+  {%- when 'icon-nav-arrow-right' -%}
+    <svg viewBox="0 0 18 9">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-nav-arrow-right" x="0" y="0"></use>
+    </svg>
+
+  {%- when 'icon-facebook' -%}
+    {%- if settings.icon_facebook == blank -%}
+    <svg width="9" height="15" viewBox="0 0 9 15">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook" x="0" y="0"></use>
+    </svg>
+    {%- else -%}
+      {{- settings.icon_facebook -}}
+    {%- endif -%}
+
+  {%- when 'icon-instagram' -%}
+    {%- if settings.icon_instagram == blank -%}
+    <svg width="15" height="14" viewBox="0 0 15 14">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram" x="0" y="0"></use>
+    </svg>
+    {%- else -%}
+      {{- settings.icon_instagram -}}
+    {%- endif -%}
+
+  {%- when 'icon-twitter' -%}
+    {%- if settings.icon_twitter == blank -%}
+    <svg width="16" height="16" viewBox="0 0 14 12">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter" x="0" y="0"></use>
+    </svg>
+    {%- else -%}
+      {{- settings.icon_twitter -}}
+    {%- endif -%}
+
+  {%- when 'icon-youtube' -%}
+    {%- if settings.icon_youtube == blank -%}
+    <svg class="w1" viewBox="0 0 1792 1792">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-youtube" x="0" y="0"></use>
+    </svg>
+    {%- else -%}
+      {{- settings.icon_youtube -}}
+    {%- endif -%}
+
+  {%- when 'icon-cart' -%}
+    {%- if settings.icon_cart == blank -%}
+      <svg class="w1" viewBox="0 0 21 18">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cart" x="0" y="0"></use>
+      </svg>
+    {%- else -%}
+      {{- settings.icon_cart -}}
+    {%- endif -%}
+
+  {%- when 'icon-404' -%}
+    <svg viewBox="0 0 43 29">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-404" x="0" y="0"></use>
+    </svg>
+
+  {%- when 'arrow-small' -%}
+    <svg viewBox="0 0 9 6">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-small" x="0" y="0"></use>
+    </svg>
+
+  {%- when 'icon-checkmark' -%}
+    <svg viewBox="0 0 11 10">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-checkmark" x="0" y="0"></use>
+    </svg>
+
+  {%- when 'check-width-background' -%}
+    <svg viewBox="0 0 45 45">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-with-background" x="0" y="0"></use>
+    </svg>
+
+  {%- when 'icon-email' -%}
+    <svg viewBox="0 0 17 13" width="15" height="15" >
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-email" x="0" y="0"></use>
+    </svg>
+
+  {%- when 'icon-play' -%}
+    <svg viewBox="0 0 50 51">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-play" x="0" y="0"></use>
+    </svg>
+
+  {%- when 'icon-refresh' -%}
+    <svg viewBox="0 0 14 14">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-refresh" x="0" y="0"></use>
+    </svg>
+
+{%- endcase -%}

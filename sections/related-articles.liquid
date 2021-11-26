@@ -1,0 +1,43 @@
+{%- assign title = article.metafields.related_articles.title | default: section.settings.title -%}
+{%- assign related_articles = article.metafields.related_articles.articles | split: '|' | slice: 0, 3 | default: section.blocks -%}
+
+{%- if section.settings.enable_section and related_articles != blank -%}
+  {%- render 'related-articles',
+    title: title,
+    post_cards: related_articles
+  -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Related Articles",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "Enable this Section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Related Articles"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "article",
+      "name": "Article",
+      "settings": [
+        {
+          "type": "article",
+          "id": "article",
+          "label": "Article Picker"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3
+}
+{% endschema %}

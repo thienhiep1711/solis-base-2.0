@@ -1,0 +1,62 @@
+{%- comment -%}
+  Parameters
+  * value
+  * v_value
+  * type
+  * name
+  * id
+  * class
+  * attr
+  * href
+  * style
+  * target
+{%- endcomment -%}
+
+{%- assign value = value | default: 'Click Here' -%}
+{%- assign type = type | default: button | default: 'button' -%}
+{%- assign href = href | default: '/' -%}
+
+{%- capture css -%}
+  btn {{ class | strip }} {%- if style != blank -%}btn--{{- style -}}{%- endif -%}
+{%- endcapture -%}
+
+{%- case type -%}
+  {%- when 'link' -%}
+    <a
+      class="{{- css | strip -}}"
+      {% if href != blank %}
+        href="{{- href -}}"
+      {%- endif -%}
+      {% if id != blank %}
+        id="{{- id -}}"
+      {%- endif -%}
+      {% if attr != blank %}
+        {{- attr -}}
+      {% endif %}
+      {% if target != blank %}
+        target="{{- target -}}"
+      {% endif %}
+    >
+      <div class="button__el"{% if v_value != blank %} v-text="{{ v_value }}"{% endif %}>
+        {{- value -}}
+      </div>
+    </a>
+  {%- else -%}
+    <button
+      class="{{- css | strip -}}"
+      type="{{- type -}}"
+      {% if id != blank %}
+        id="{{- id -}}"
+      {%- endif -%}
+      {% if name != blank %}
+        name="{{- name -}}"
+      {%- endif -%}
+      {% if attr != blank %}
+        {{- attr -}}
+      {%- endif -%}
+    >
+      <div class="button__el"{% if v_value != blank %} v-text="{{ v_value }}"{% endif %}>
+        {{- value -}}
+      </div>
+    </button>
+{%- endcase -%}

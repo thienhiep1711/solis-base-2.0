@@ -1,0 +1,33 @@
+{%- comment -%}
+  Parameters
+  * tagline
+  * tagline_class
+  * title
+  * title_class
+  * class
+{%- endcomment -%}
+
+{%- capture css -%}
+  module-header {{- class -}}
+{%- endcapture -%}
+
+{%- if tagline != blank or title != blank -%}
+<div class="{{- css | strip -}}">
+  <div class="module-header__wrapper">
+    <div class="module-header__header align-c">
+      {%- if tagline != blank -%}
+        <p class="module-header__tagline tagline{% if tagline_class != blank %} {{ tagline_class }}{% endif %}" data-a-stagger>
+          {{- tagline -}}
+        </p>
+      {%- endif -%}
+      {%- if title != blank -%}
+        <h2 class="module-header__title h1 mt05{% if title_class != blank %} {{ title_class }}{% endif %}" data-a-stagger>
+          {{- title -}}
+        </h2>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+{%- endif -%}
+
+

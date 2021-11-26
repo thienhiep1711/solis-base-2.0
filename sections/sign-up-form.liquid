@@ -1,0 +1,106 @@
+{%- assign settings = section.settings -%}
+{%- assign image = settings.image | img_url: '2160x' -%}
+{%- assign image_intermediate = settings.image_intermediate | img_url: '1200x' -%}
+{%- assign image_mobile = settings.image_mobile | img_url: '700x' -%}
+
+{%- capture image_sources -%}
+  {%- if image_mobile != blank -%}
+    {{- image_mobile -}}
+  {%- endif -%}
+  {%- if image_intermediate != blank -%}
+    |{{- image_intermediate -}}
+  {%- endif -%}
+  {%- if image != blank -%}
+    |{{- image -}}
+  {%- endif -%}
+{%- endcapture  -%}
+
+{%- capture breakpoints -%}
+  {%- if image_mobile != blank -%}
+    (max-width: 767px)
+  {%- endif -%}
+  {%- if image_intermediate != blank -%}
+    |(max-width: 999px)
+  {%- endif -%}
+  {%- if image != blank -%}
+    |(min-width: 1000px)
+  {%- endif -%}
+{%- endcapture  -%}
+
+{%- render 'sign-up-form'
+  title: settings.title,
+  description: settings.description,
+  image_sources: image_sources,
+  breakpoints: breakpoints,
+  image_alt: settings.image.alt
+-%}
+
+{%- schema -%}
+{
+  "name": "Sign Up Form (Flexible)",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image (Mobile)",
+      "info": "Upload a JPEG of ~ 700px."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_intermediate",
+      "label": "Image (Intermediate)",
+      "info": "Upload a JPEG of ~ 1200px."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image (Desktop)",
+      "info": "Upload a JPEG of ~ 2160px."
+    },
+    {
+      "type": "header",
+      "content": "Klaviyo config"
+    },
+    {
+      "type": "text",
+      "id": "klaviyo_id",
+      "label": "Klaviyo ID",
+      "info": "Input the ID of the Klaviyo list. Can be copied from URL when viewing list in Klaviyo."
+    },
+    {
+      "type": "text",
+      "id": "newsletter_placeholder",
+      "label": "Newsletter Placeholder",
+      "default": "Enter Your Email Address"
+    },
+    {
+      "type": "text",
+      "id": "name_placeholder",
+      "label": "Name Placeholder",
+      "default": "Enter Your Name"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_button_text",
+      "label": "Newsletter Button text",
+      "default": "Sign Up"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sign Up Form (Flexible)",
+      "category": "Flexible"
+    }
+  ]
+}
+{%- endschema -%}

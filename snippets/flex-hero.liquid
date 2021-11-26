@@ -1,0 +1,149 @@
+{%- comment -%}
+  Parameters
+  * fields
+  * class
+{%- endcomment -%}
+
+{%- if fields != blank and fields.enable -%}
+  {%- capture css -%}
+    flex-hero {{ class }}
+  {%- endcapture -%}
+
+  {%- assign id = 'flex-hero' -%}
+
+  <section class="{{- css | strip -}}">
+    <div class="flex-hero__wrapper">
+      <div class="flex-hero__inner">
+        {%- case fields.background_type -%}
+        {%- when 'image' -%}
+          {%- assign image = fields.image[0].src -%}
+          {%- assign image_s = fields.image_s[0].src -%}
+          {%- assign image_l = fields.image_l[0].src -%}
+
+          {%- capture image_sources -%}
+            {%- if image != blank -%}
+              {{- image -}}
+            {%- endif -%}
+            {%- if image_s != blank -%}
+              |{{- image_s -}}
+            {%- endif -%}
+            {%- if image_l != blank -%}
+              |{{- image_l -}}
+            {%- endif -%}
+          {%- endcapture -%}
+
+          {%- capture breakpoints -%}
+            {%- if image != blank -%}
+              (max-width: 767px)
+            {%- endif -%}
+            {%- if image_s != blank -%}
+              |(max-width: 999px)
+            {%- endif -%}
+            {%- if image_l != blank -%}
+              |(min-width: 1000px)
+            {%- endif -%}
+          {%- endcapture -%}
+
+          {%- render 'hero' with 'image',
+            inverted_mode: fields['inverted_mode'],
+            enable_overlay: fields['enable_overlay'],
+            overlay_opacity: fields['overlay_opacity'],
+            tagline: fields['tagline'],
+            title: fields['title'],
+            title_style: fields['title_style'],
+            text: fields['text'],
+            btn_text_1: fields['btn_text_1'],
+            btn_link_1: fields['btn_link_1'],
+            btn_style_1: fields['btn_style_1'],
+            btn_text_2: fields['btn_text_2'],
+            btn_link_2: fields['btn_link_2'],
+            btn_style_2: fields['btn_style_2'],
+            position: fields['position'],
+            alignment: fields['alignment'],
+            margin_top: fields['margin_top'],
+            margin_top_s: fields['margin_top_s'],
+            margin_top_l: fields['margin_top_l'],
+            image_sources: image_sources,
+            breakpoints: breakpoints,
+            ratio: fields['ratio'],
+            ratio_s: fields['ratio_s'],
+            ratio_l: fields['ratio_l'],
+            max_height: fields['max_height'],
+            max_height_s: fields['max_height_s'],
+            max_height_l: fields['max_height_l'],
+            id: id
+          -%}
+
+        {%- when 'video' %}
+          {%- assign fallback = fields.image[0].src -%}
+          {%- assign fallback_s = fields.image_s[0].src -%}
+          {%- assign fallback_l = fields.image_l[0].src -%}
+
+          {%- render 'hero' with 'video',
+            inverted_mode: fields['inverted_mode'],
+            enable_overlay: fields['enable_overlay'],
+            overlay_opacity: fields['overlay_opacity'],
+            tagline: fields['tagline'],
+            title: fields['title'],
+            title_style: fields['title_style'],
+            text: fields['text'],
+            btn_text_1: fields['btn_text_1'],
+            btn_link_1: fields['btn_link_1'],
+            btn_style_1: fields['btn_style_1'],
+            btn_text_2: fields['btn_text_2'],
+            btn_link_2: fields['btn_link_2'],
+            btn_style_2: fields['btn_style_2'],
+            position: fields['position'],
+            alignment: fields['alignment'],
+            margin_top: fields['margin_top'],
+            margin_top_s: fields['margin_top_s'],
+            margin_top_l: fields['margin_top_l'],
+            video: fields['video'],
+            video_s: fields['video_s'],
+            video_l: fields['video_l'],
+            fallback: fallback,
+            fallback_s: fallback_s,
+            fallback_l: fallback_l,
+            ratio: fields['ratio'],
+            ratio_s: fields['ratio_s'],
+            ratio_l: fields['ratio_l'],
+            max_height: fields['max_height'],
+            max_height_s: fields['max_height_s'],
+            max_height_l: fields['max_height_l'],
+            id: id,
+            enable_audio: fields['enable_audio']
+          -%}
+
+        {%- when 'none' %}
+          {%- render 'hero' with 'none',
+            inverted_mode: fields['inverted_mode'],
+            enable_overlay: fields['enable_overlay'],
+            overlay_opacity: fields['overlay_opacity'],
+            tagline: fields['tagline'],
+            title: fields['title'],
+            title_style: fields['title_style'],
+            text: fields['text'],
+            btn_text_1: fields['btn_text_1'],
+            btn_link_1: fields['btn_link_1'],
+            btn_style_1: fields['btn_style_1'],
+            btn_text_2: fields['btn_text_2'],
+            btn_link_2: fields['btn_link_2'],
+            btn_style_2: fields['btn_style_2'],
+            position: fields['position'],
+            alignment: fields['alignment'],
+            margin_top: fields['margin_top'],
+            margin_top_s: fields['margin_top_s'],
+            margin_top_l: fields['margin_top_l'],
+            ratio: fields['ratio'],
+            ratio_s: fields['ratio_s'],
+            ratio_l: fields['ratio_l'],
+            max_height: fields['max_height'],
+            max_height_s: fields['max_height_s'],
+            max_height_l: fields['max_height_l'],
+            id: id
+          -%}
+        {%- endcase -%}
+      </div>
+    </div>
+  </section>
+{%- endif -%}

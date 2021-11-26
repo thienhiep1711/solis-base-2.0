@@ -1,0 +1,130 @@
+{%- assign settings = section.settings -%}
+{%- assign blocks = section.blocks -%}
+
+{%- render 'text-and-image-list',
+  media_type: 'image'
+  title: settings.title,
+  settings: settings,
+  blocks: blocks
+-%}
+
+{% schema %}
+{
+  "name": "Text and Image List",
+  "class": "text-and-image-list-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Text and Image",
+      "type": "item",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Media"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image (Mobile)",
+          "info": "Upload a JPEG of ~ 700px."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_intermediate",
+          "label": "Image (Intermediate)",
+          "info": "Upload a JPEG of ~ 1200px."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image (Desktop)",
+          "info": "Upload a JPEG of ~ 2160px."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_small",
+          "label": "Small Image"
+        },
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "tagline",
+          "label": "Tagline (Optional)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA Text"
+        },
+        {
+          "type": "url",
+          "id": "cta_url",
+          "label": "CTA URL"
+        },
+        {
+          "type": "checkbox",
+          "id": "cta_new_window",
+          "label": "CTA Open in New Window"
+        },
+        {
+          "type": "select",
+          "id": "content_alignment",
+          "label": "Content Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            }
+          ],
+          "default": "left"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text and Image List",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

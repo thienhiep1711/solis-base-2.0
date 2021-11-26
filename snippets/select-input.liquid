@@ -1,0 +1,38 @@
+{%- comment -%}
+  Parameters
+  * class
+  * name
+  * label
+  * validate
+  * value
+  * v_value
+  * dynamic_value
+  * dynamic_options
+  * change
+  * required
+  * error
+  * options
+{%- endcomment -%}
+
+{%- capture css -%}
+  select-input {{ class }}
+{%- endcapture -%}
+
+<select
+  is="select-input"
+  class="{{- css | strip -}}"
+  {%- if name -%}name="{{- name -}}"{%- endif -%}
+  {%- if label -%}label="{{- label -}}"{%- endif -%}
+  {%- if v_value -%}
+    :value="{{ v_value }}"
+  {%- elsif value -%}
+    value="{{ value }}"
+  {%- endif -%}
+  {%- if dynamic_options -%}
+    :options="{{dynamic_options}}"
+    {%- if validate -%}:validate="{{- validate -}}"{%- endif -%}
+    {%- if dynamic_value -%}:get-value="{{- dynamic_value -}}"{%- endif -%}
+    {%- if change -%}@change="{{- change -}}"{%- endif -%}
+  {%- endif -%}
+  {%- if required -%}required="true"{%- endif -%}
+  error="{{- error -}}">{%- if options -%}{{- options -}}{%- endif -%}</select>

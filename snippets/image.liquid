@@ -1,0 +1,55 @@
+{%- comment -%}
+  Parameters
+  * class
+  * fit
+  * text
+  * src
+  * srcset
+  * src_media
+  * src_retina
+  * loader
+  * transparent
+{%- endcomment -%}
+{%- if loader == false -%}
+  {%- assign loader = false -%}
+{%- else -%}
+  {%- assign loader = true -%}
+{%- endif -%}
+{%- assign fit = fit | default: 'cover' -%}
+
+{%- capture css -%}
+  img fit-{{ fit }} {{ class }}{%- if transparent -%} is-transparent{%- endif -%}
+{%- endcapture -%}
+
+{%- capture attr -%}
+  {%- if text %}title="{{- text | escape -}}" alt="{{- text | escape -}}"{%- endif -%}
+{%- endcapture -%}
+
+<picture class="{{- css | strip -}}" data-module="image">
+  <noscript>
+    <img
+      class="img__el is-fallback"
+      src="{{- src -}}"
+      {{ attr }}>
+  </noscript>
+
+  {%- if loader -%}
+    <i class="img__loader"></i>
+  {%- endif -%}
+
+  {%- if src_media -%}
+    {{- src_media -}}
+  {%- endif -%}
+
+  <img
+    class="img__el"
+    data-js-class="img_el"
+    data-normal="{{- src -}}"
+    {%- if src_retina -%}
+      data-retina="{{- src_retina -}}"
+    {%- endif -%}
+    {%- if srcset -%}
+      data-srcset="{{- srcset -}}"
+    {%- endif -%}
+    {{ attr }}>
+</picture>

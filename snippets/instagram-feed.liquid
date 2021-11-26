@@ -1,0 +1,63 @@
+{%- comment -%}
+  Parameters
+  * class
+  * tagline
+  * title
+  * title_image
+  * showcase_gallery_id
+{%- endcomment -%}
+
+{%- capture css -%}
+  instagram-feed {{ class }}
+{%- endcapture -%}
+
+{%- if showcase_gallery_id != blank -%}
+  <section class="{{- css | strip -}}" data-module="instagram-feed" data-gallery-id="{{- showcase_gallery_id -}}" data-a-group>
+    <div class="instagram-feed__wrapper">
+      <div class="container container--xl">
+        <div class="instagram-feed__inner">
+          {%- if title_image != blank -%}
+            {%- capture image_sources -%}
+              {{- title_image | img_url: '700x' -}}
+              |{{- title_image | img_url: '1200x' -}}
+              |{{- title_image | img_url: '2160x' -}}
+            {%- endcapture  -%}
+
+            {%- assign breakpoints = '(max-width: 767px)|(max-width: 999px)|(min-width: 1000px)' -%}
+            {%- assign image_alt = title_image.alt | default: title -%}
+            {%- assign aspect_ratio = title_image.aspect_ratio -%}
+
+            <div class="instagram-feed__title ratio aspect-ratio" style="--aspect-ratio: {{- aspect_ratio -}}">
+              {%- render 'picture',
+                class: 'instagram-feed__title-image',
+                sources: image_sources,
+                breakpoints: breakpoints,
+                alt: image_alt,
+                loader: false,
+                is_vue: false
+              -%}
+            </div>
+          {%- else -%}
+            {%- render 'module-header',
+              tagline: tagline,
+              title: title
+            -%}
+          {%- endif -%}
+
+          <div class="instagram-feed__grid js-showcase-embed">
+          </div>
+          {%- if cta_text != blank and cta_url != blank -%}
+            <div class="align-c instagram-feed__footer">
+              {%- render 'button'
+                class: 'btn--primary instagram-feed__button',
+                type: 'link',
+                value: cta_text,
+                href: cta_url
+              -%}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </section>
+{%- endif -%}

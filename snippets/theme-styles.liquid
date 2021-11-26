@@ -1,0 +1,13 @@
+{%- comment -%}
+  Renders the styles of the theme
+
+  Params
+  * is_dev_mode
+{%- endcomment -%}
+
+{%- if is_dev_mode -%}
+  <link type="text/css" href="{{- 'settings.css' | asset_url -}}" rel="stylesheet">
+{%- else -%}
+  <link type="text/css" href="{{- 'main.css' | asset_url -}}" rel="stylesheet">
+  <!-- <link type="text/css" href="{{- 'main.css' | asset_url -}}" rel="stylesheet" media="print" onload="this.media='all'; window.dispatchEvent(new Event('resize'));"> -->
+{%- endif -%}

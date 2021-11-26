@@ -1,0 +1,39 @@
+{%- comment -%}
+  Parameters
+  * tagline
+  * title
+  * cta_text
+  * cta_url
+  * class
+  * post_cards
+{%- endcomment -%}
+
+<section class="related-articles{% if class != blank %} {{ class }}{% endif %}">
+  <div class="related-articles__container container container--xl" data-a-group>
+    {%- render 'module-header',
+      tagline: tagline,
+      title: title -%}
+    <div class="related-articles__wrapper" data-a-stagger>
+      {%- render 'carousel',
+        class: 'related-articles__carousel',
+        columns: 2,
+        columns_s: 3,
+        columns_m: 3,
+        columns_l: 3,
+        card: 'article-card',
+        class_card: 'related-articles__slide',
+        items: post_cards,
+        page_dots: false,
+        prev_next_buttons: false,
+        watch_css: true,
+        bind_dynamic_props: false,
+        is_vue: false,
+        align_arrows_to_image: true,
+        group_cells: true,
+        contain: true,
+        cell_align: 'left',
+        mobile_options: '{"alignArrowsToImage": false}'
+      -%}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+<section class="article-metadata">
+  <div class="article-metadata__container container container--ms">
+    <div class="article-metadata__inner align-c">
+      <p class="mx0 metadata__post-on">
+        <span>{{ 'blogs.article.posted_on' | t }}</span>
+        {{ article.created_at | date: format: 'abbreviated_date' }}
+      </p>
+      <p class="mx0 metadata__post-by">
+        <span>{{ 'blogs.article.posted_by' | t }}</span>
+        {{ article.author }}
+      </p>
+      {%- if article.tags.size > 0 -%}
+        <p class="mx0 metadata__post-tags">
+          <span>{{ 'blogs.article.tags' | t }}</span>
+            {%- for tag in article.tags -%}
+              {%- assign tag_start = tag | slice: 0, 9 -%}
+              {%- unless tag_start == 'category-' -%}
+                <a class="underline" href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+                {%- unless forloop.last -%},{%- endunless -%}
+              {%- endunless -%}
+            {%- endfor -%}
+        </p>
+      {%- endif -%}
+    </div>
+  </div>
+</section>

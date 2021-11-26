@@ -1,0 +1,28 @@
+<div class="flexible-review">
+  <div class="flexible-review__inner">
+    <div class="ratio ro-1 flexible-review__image">
+      {%- render 'picture',
+        sources: item.settings.image,
+        alt: item.settings.image.alt,
+        object_fit: 'cover',
+        loader: false
+      -%}
+    </div>
+    <div class="flexible-review__content">
+      {%- if item.settings.star_count != blank -%}
+        {%- render 'star-rating', value: item.settings.star_count -%}
+      {%- endif -%}
+      {%- if item.settings.text_content != blank -%}
+        <blockquote class="flexible-review__text h4 bq">
+          <p>
+            {{- item.settings.text_content -}}
+          </p>
+        </blockquote>
+      {%- endif -%}
+
+      {%- if item.settings.author != blank -%}
+        <p class="flexible-review__author">{{ item.settings.author }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+</div>

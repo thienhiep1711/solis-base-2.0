@@ -10,3 +10,5 @@ Thumbs.db
 
 node_modules
 .vscode
+/assets/stats.json
+/assets/report.html

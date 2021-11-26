@@ -1,0 +1,14 @@
+{%- assign state = state | default: 'view' -%}
+
+{%- if state == 'view' -%}
+  <div class="recently-viewed hide bg-parchment page-bottom-spacing" data-module="recently-viewed">
+    {%- render 'product-three-up',
+      class: 'product-three-up--is-4up'
+      is_vue: true,
+      items: 'products',
+      bind_dynamic_props: true,
+      title: 'Recently Viewed' -%}
+  </div>
+{%- elsif state == 'capture' -%}
+  <div data-module="recently-viewed" data-sku="{{- product.first_available_variant.sku -}}"></div>
+{%- endif -%}

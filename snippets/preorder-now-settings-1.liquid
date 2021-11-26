@@ -1,0 +1,68 @@
+<script type="text/javascript">
+  {% if cart %}
+    window.pn.cart = {};
+  	window.pn.cart = {{cart | json}}
+    window.pn.cart.items = [];
+
+    {% for item in cart.items %}
+      var cart_item = {{item | json}};
+      cart_item["collection_ids"] = [];
+      {% for c in item.product.collections %}
+        cart_item["collection_ids"].push({{c.id}})
+        {% endfor %}
+      window.pn.cart.items.push(cart_item);
+    {% endfor %}
+
+    if (typeof window.pn.cart.items == "object") {
+      for (var i=0; i<window.pn.cart.items.length; i++) {
+        ["sku", "vendor", "url", "image", "handle", "product_type", "product_description"].map(function(a) {
+          delete window.pn.cart.items[i][a]
+        })
+      }
+    }
+  {% endif %}
+</script>
+
+{% raw %}
+<script>
+if(typeof pn === "undefined"){
+  pn = {};
+}
+if(typeof pn.settings === "undefined"){
+  pn.settings = {};
+}
+pn.settings.defaultSetting={"id":18819340,"a":"Preorder Now","b":true,"c":null,"d":"Out of stock","e":false,"f":"Only {{qty}} remaining","g":"","h":"below","i":false,"j":null,"k":null,"l":null,"m":"default","n":null,"o":true,"handle":null,"p":null,"y":null,"q":true,"r":true,"s":null,"t":null,"u":1,"v":false,"w":"ribbon","tag":null,"x":null,"z":"no_discount","aa":"0.0","ab":0,"price":"0.0","compare_at_price":"0.0"};
+pn.settings.singleProductSettings=[{"id":18819500,"a":"Preorder Now","b":false,"c":null,"d":"Out of stock","e":false,"f":"Only {{qty}} remaining","g":"Shipping 12/9","h":"below","i":false,"j":null,"k":"2021-11-27T02:48:00.000Z","l":"2021-12-10T02:48:00.000Z","m":"variant","n":"39511039770679","o":false,"handle":"cinderella-coat","p":"6602899816503","y":"https://cdn.shopify.com/s/files/1/0265/6298/6039/products/19_CinderellaRobe_CloudyGrey_0159.jpg?v=1635282478","q":true,"r":true,"s":25,"t":null,"u":1,"v":false,"w":"ribbon","tag":null,"x":"","z":"no_discount","aa":"0.0","ab":0,"price":"0.0","compare_at_price":"0.0"},{"id":18819514,"a":"Preorder Now","b":true,"c":11,"d":"Out of stock","e":true,"f":"Only {{qty}} remaining","g":"Shipping 12/9","h":"below","i":true,"j":"","k":"2021-11-22T06:51:00.000Z","l":"2021-12-10T06:51:00.000Z","m":"variant","n":"39511040262199","o":false,"handle":"cinderella-coat","p":"6602899816503","y":"https://cdn.shopify.com/s/files/1/0265/6298/6039/products/19_CinderellaRobe_CloudyGrey_0159.jpg?v=1635282478","q":true,"r":false,"s":13,"t":null,"u":1,"v":false,"w":"ribbon","tag":null,"x":"Pre-order Item","z":"no_discount","aa":"0.0","ab":0,"price":"0.0","compare_at_price":"0.0"}];
+pn.settings.tagSettings=[];
+</script>
+<style type="text/css">
+  .pn-original-subtotal{
+    text-decoration: line-through;
+    display:inline-block;
+  }
+  .pn-discounted-subtotal{
+    font-weight:bold;
+    margin-left:20px;
+    display:inline-block;
+    font-size: 1.3em;
+  }
+
+  .pn-line-item-original-price {
+    text-decoration: line-through;
+  }
+
+  .pn-line-item-discounted-price {
+    font-size: 1.2em;
+    margin-left: 8px;
+  }
+</style>
+{% endraw %}
+
+
+<div id="pn-mixed-cart-warning" class="pn-modal">
+  <div id="pn-mixed-cart-warning-content">
+    <span id="pn-modal-close-btn">x</span>
+    <h2 id="pn-mixed-cart-warning-title"></h2>
+    <div id="pn-mixed-cart-warning-text"></div>
+  </div>
+</div>

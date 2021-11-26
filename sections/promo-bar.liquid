@@ -1,0 +1,23 @@
+{%- assign item = section.settings -%}
+
+{%- render 'promo-bar', item: item -%}
+
+{% schema %}
+  {
+    "name": "Promo Bar",
+    "settings": [{
+      "type": "checkbox",
+      "id": "promobar_enabled",
+      "label": "Enable",
+      "default": false
+    }, {
+      "type": "checkbox",
+      "id": "promobar_homepage_only",
+      "label": "Enable to only show promobar on the homepage"
+    }, {
+      "type": "richtext",
+      "id": "promobar_content",
+      "label": "Text Content"
+    }]
+  }
+{% endschema %}

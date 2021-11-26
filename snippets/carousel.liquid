@@ -1,0 +1,260 @@
+{%- comment %}
+  # Summary
+  - This module has vanillaJS and Vue.js implementations. The `is_vue` variable should be set on the parent section module to initialize the appropriate script.
+  - This module references a card module by name.
+  - Number of columns can be configured by breakpoint.
+  - Options can be modified for mobile sizes.
+  - `fade_transitions` adds css overrides to make the slides fade instead of slide transition.
+  - Cell heights get updated to be the same as the tallest.
+  - The 'previous' and 'next' buttons update linked carousel when using asNavFor.
+
+  # Usage
+  ```
+  {%- include 'carousel',
+    class: 'product-gallery__carousel',
+    columns: 1,
+    columns_s: 2,
+    columns_m: 3,
+    columns_l: 4,
+    card: 'product-card',
+    bind_dynamic_props: false,
+    items: product.images,
+    fade_transitions: false,
+    cell_align: 'left',
+    contain: true,
+    draggable: true,
+    free_scroll: false,
+    wrap_around: true,
+    group_cells: true,
+    auto_play: false,
+    pause_auto_play_on_hover: true,
+    watch_css: false,
+    initial_index: false,
+    prev_next_buttons: false,
+    carousel_enable: true,
+    page_dots: true,
+    arrow_shape: 'M0,50L30,20L35,25L13,46.65L100,46.65L100,53.35L13,53.35L35,75L30,80z',
+    as_nav_for: '',
+    mobile_options: '{"cellAlign": "left"}',
+    align_arrows_to_image: false
+  -%}
+  ```
+
+  # Parameters
+  This module accepts the following arguments:
+  - `attrs` (type: string): Custom attribute to carousel module
+  - `class` (type: string): Additional classes
+  - `columns` (type: number, default = 1): # of columns on mobile
+  - `columns_s` (type: number, default = 2): # of columns on tablet
+  - `columns_m` (type: number, default = 3): # of columns on large tablet
+  - `columns_l` (type: number, default = 4): # of columns on desktop
+  - `card` (type: string): Name of card module to include
+  - `card_attrs` (type: string): Custom attribute to card module
+  - `bind_dynamic_props` (type: boolean, default: false): Dynamically bind the `items` attributes to an expression
+  - `items` (type: object): Items to loop over
+  - `v_on_ready` (type: string): Vue.js methods name which is used when slider ready
+  - `fade_transitions` (type: boolean, default = false): Fade transition override
+  - `as_nav_for` (type: string): Selector string for nav to sync with
+  - `mobile_options` (type: string): Format mobile override options as a JSON string with option keys formatted in camelCase
+  - Reference [Flickity docs](https://flickity.metafizzy.co/options.html) for carousel option values
+{% endcomment -%}
+{%- comment %}
+  The `is_vue` variable should be set on the parent section module to initialize the appropriate scripts.
+{% endcomment -%}
+{%- assign is_vue = is_vue | default: false -%}
+
+{%- assign bind_dynamic_props = bind_dynamic_props | default: false -%}
+{%- assign columns = columns | default: 1 -%}
+{%- assign columns_s = columns_s | default: 2 -%}
+{%- assign columns_m = columns_m | default: 3 -%}
+{%- assign columns_l = columns_l | default: 4 -%}
+{%- assign fade_transitions = fade_transitions | default: false -%}
+
+{%- comment %}
+  Flickity options Parameters
+  * cell_align
+  * contain
+  * draggable
+  * free_scroll
+  * wrap_around
+  * group_cells
+  * auto_play
+  * pause_auto_play_on_hover
+  * watch_css
+  * initial_index
+  * prev_next_buttons
+  * page_dots
+  * arrow_shape
+  * as_nav_for
+  * adaptive_height
+  * align_arrows_to_image
+{% endcomment -%}
+
+{%- if carousel_enable == false -%}
+  {%- assign carousel_enable = false -%}
+{%- else -%}
+  {%- assign carousel_enable = true -%}
+{%- endif -%}
+
+{%- capture custom_options -%}
+  {
+    "cellAlign": "{{- cell_align -}}",
+    "contain": {% if contain == false %}false{% else %}true{% endif %},
+    "draggable": {% if draggable == false %}false{% else %}true{% endif %},
+    "freeScroll": {% if free_scroll %}true{% else %}false{% endif %},
+    "wrapAround": {% if wrap_around %}true{% else %}false{% endif %},
+    "groupCells": {% if group_cells == false %}false{% else %}true{% endif %},
+    "autoPlay": {% if auto_play %}true{% else %}false{% endif %},
+    "pauseAutoPlayOnHover": {% if pause_auto_play_on_hover == false %}false{% else %}true{% endif %},
+    "watchCSS": {% if watch_css %}true{% else %}false{% endif %},
+    "initialIndex": "{{- initial_index -}}",
+    "prevNextButtons": {% if prev_next_buttons == false %}false{% else %}true{% endif %},
+    "pageDots": {% if page_dots == false %}false{% else %}true{% endif %},
+    "adaptiveHeight": {% if adaptive_height == false %}false{% else %}true{% endif %},
+    "alignArrowsToImage": {% if align_arrows_to_image %}true{% else %}false{% endif %},
+    "arrowShape": "{{- arrow_shape -}}",
+    "breakpoints":
+      {
+        "mobile": "{{- columns -}}",
+        "tablet": "{{- columns_s -}}",
+        "tabletHorizontal": "{{- columns_m -}}",
+        "desktop": "{{- columns_l -}}"
+      }
+    {%- if as_nav_for != blank -%}, "asNavFor": "{{- as_nav_for -}}"{%- endif -%}
+  }
+{%- endcapture -%}
+{%- assign mobile_options = mobile_options | default: nil -%}
+
+<div
+  class="carousel
+  carousel--col-{{- columns }}
+  carousel--col-s-{{- columns_s }}
+  carousel--col-m-{{- columns_m }}
+  carousel--col-l-{{- columns_l }}
+  carousel--margin-{{- columns | plus: 1 }}
+  carousel--margin-s-{{- columns_s | plus: 1 }}
+  carousel--margin-m-{{- columns_m | plus: 1 }}
+  carousel--margin-l-{{- columns_l | plus: 1 }}
+  relative"
+  {%- if is_vue %}
+    is="carousel" inline-template
+    {% if v_on_ready %}@ready="{{ v_on_ready }}"{% endif %}
+    {% if bind_dynamic_props -%}
+      :items="{{- items -}}"
+    {%- endif -%}
+  {%- else %}
+    data-module="carousel"
+  {%- endif -%}
+  {%- if custom_options != blank %} custom-options-encoded="{{- custom_options | url_encode -}}"{%- endif -%}
+  {%- if mobile_options != blank %} mobile-options-encoded="{{- mobile_options | url_encode -}}"{%- endif -%}
+  {{- attrs -}}>
+  {%- if is_vue %}<div class="w1">{%- endif %}
+    <div class="flickity js-carousel
+      {% if class != blank %} {{ class }}{% endif %}
+      {%- if fade_transitions %} flickity--fade{%- endif %}
+      {% unless carousel_enable -%} flickity--disabled{%- endunless -%}
+      {% if align_arrows_to_image -%} flickity--align-arrow-to-image{%- endif -%}
+      " ref="carousel">
+      {%- if bind_dynamic_props -%}
+        {%- comment -%}
+          Use the v-for directive to render a list of items based on an array
+        {%- endcomment -%}
+        <div
+          class="flickity-slide{%- if class_card != blank %} {{ class_card }}{%- endif -%}"
+          v-for="(item, index) in items"
+          ref="slide"
+          :key="item.id"
+          {%- if card_attrs != blank %} {{ card_attrs }}{%- endif -%}>
+
+          {%- case card -%}
+            {%- when 'product-gallery-item' -%}
+              {%- render 'product-gallery-item', item: 'item', object_fit: gallery_item_fit -%}
+            {%- when 'product-card' -%}
+              {%- render 'product-card',
+                product: nil,
+                is_vue: true,
+                bind_dynamic_props: true,
+                attr: ':product="item"' -%}
+          {%- endcase -%}
+        </div>
+      {%- else -%}
+        {%- for item in items -%}
+          {%- comment %}
+            Generates object variable
+          {% endcomment -%}
+          {%- if item.id != blank -%}
+            {%- assign fields = item.settings -%}
+            {%- if item.type == 'product' -%}
+              {%- assign object = all_products[fields.product] -%}
+              {%- assign image = fields.image -%}
+              {%- assign image_hover = fields.image_hover -%}
+              {%- assign collection_data = blank -%}
+              {%- if fields.collection != blank -%}
+                {%- assign collection_data = collections[fields.collection] -%}
+                {%- if object == blank -%}
+                  {%- assign object = collection_data.products.first -%}
+                {%- endif -%}
+              {%- endif -%}
+            {%- elsif item.type == 'collection' -%}
+              {%- assign object = collections[fields.collection] -%}
+            {%- elsif item.type == 'article' -%}
+              {%- assign object = articles[fields.article] -%}
+            {%- else -%}
+              {%- assign object = item -%}
+            {%- endif -%}
+
+            {%- assign fields = nil -%}
+          {%- elsif card == 'product-card' -%}
+            {%- assign object = all_products[item] -%}
+          {%- elsif card == 'collection-card' -%}
+            {%- assign object = collections[item] -%}
+          {%- elsif card == 'article-card' -%}
+            {%- assign object = articles[item] -%}
+          {%- elsif card == 'upsell-item' -%}
+            {%- assign object = all_products[item] -%}
+          {%- else -%}
+            {%- assign object = item -%}
+          {%- endif -%}
+
+          {%- if object != blank -%}
+            {%- if card == 'press-item-nav' -%}
+              {%- capture card_attrs -%}
+                style="--image-ratio: {{ item.settings.image.aspect_ratio }};"
+              {%- endcapture -%}
+            {%- endif -%}
+            <div class="flickity-slide js-slide{%- if class_card != blank %} {{ class_card }}{%- endif -%}" {%- if card_attrs != blank %} {{ card_attrs }}{%- endif -%}>
+              {%- case card -%}
+                {%- when 'testimonial-card' -%}
+                  {%- render 'testimonial-card', item: object -%}
+                {%- when 'logo-carousel-card' -%}
+                  {%- render 'logo-carousel-card', item: object -%}
+                {%- when 'product-card' -%}
+                  {%- render 'product-card'
+                    product: object,
+                    image: image,
+                    image_hover: image_hover,
+                    collection_data: collection_data,
+                    is_vue: is_vue -%}
+                {%- when 'header-mega-nav-item' -%}
+                  {%- render 'header-mega-nav-item', item: object, content_for_products: content_for_products -%}
+                {%- when 'shop-the-look-item' -%}
+                  {%- render 'shop-the-look-item', item: object -%}
+                {%- when 'press-item' -%}
+                  {%- render 'press-item', item: object -%}
+                {%- when 'press-item-nav' -%}
+                  {%- render 'press-item-nav', item: object -%}
+                {%- when 'upsell-item' -%}
+                  {%- render 'product-upsell-item', product: object -%}
+                {%- when 'article-card' -%}
+                  {%- render 'post-card', item: object -%}
+                {%- when 'flexible-review' -%}
+                  {%- render 'flexible-review', item: object -%}
+              {%- endcase -%}
+            </div>
+          {%- endif -%}
+          {%- assign object = nil -%}
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  {%- if is_vue %}</div>{%- endif %}
+</div>

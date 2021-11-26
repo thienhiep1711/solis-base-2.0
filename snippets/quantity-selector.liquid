@@ -1,0 +1,40 @@
+{%- comment -%}
+  Parameters
+  * class
+  * id
+  * name
+  * initial
+  * min
+  * max
+  * value
+  * on_change
+  * disabled
+  * key
+{%- endcomment -%}
+{%- assign value = value | default: min | default: '0' -%}
+
+{%- capture css -%}
+  quantity-selector {{ class }}
+{%- endcapture -%}
+
+{%- capture attr -%}
+  {% if id %}id="{{- id -}}"{% endif %}
+  {% if name %}name="{{- name -}}"{% endif %}
+  {% if initial %}:initial="{{- initial -}}"{% endif %}
+  {% if min %}:min="{{- min -}}"{% endif %}
+  {% if max %}:max="{{- max -}}"{% endif %}
+  {% if value %}value="{{- value -}}"{% endif %}
+  {% if disabled %}:disabled="{{- disabled -}}"{% endif %}
+  {% if key %}:key="{{ key }}"{% endif %}
+  {% if on_change %}@change="{{- on_change -}}"{% endif %}
+{%- endcapture -%}
+
+<div
+  class="{{ css | strip }}"
+  is="quantity-selector"
+  {{ attr | strip }}
+>
+  <button class="quantity-selector__action" type="button" data-count="-"></button>
+  <input class="quantity-selector__field" type="number" name="quantity">
+  <button class="quantity-selector__action quantity-selector__action--plus" type="button" data-count="+"></button>
+</div>

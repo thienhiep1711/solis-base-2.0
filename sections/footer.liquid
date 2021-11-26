@@ -1,50 +1,124 @@
-<nav class="grid gutter">
-  <div class="column column--6">
-    <img
-      class="footer__group-shot"
-      src="{{ 'SeaMonsters-Group_Shot.svg' | asset_url }}"
-      alt="Sea Monsters Group Shot"
-    />
-  </div>
-  <div class="column column--12 grid">
-    <div class="column column--6">
-      {%- render 'footer-column',
-        menu: section.settings.primary_menu
-      -%}
-    </div>
-    <div class="column column--6">
-      {%- render 'footer-column',
-        menu: section.settings.secondary_menu
-      -%}
-    </div>
-    <div class="column column--6">
-      {%- render 'footer-column',
-        menu: section.settings.tertiary_menu
-      -%}
-    </div>
-  </div>
-</nav>
+{%- unless section.settings.disable -%}
+  {%- render 'newsletter-modal',
+    enable: settings.newsletter_modal_enable,
+    delay: settings.newsletter_modal_delay,
+    subtitle: settings.newsletter_modal_subtitle,
+    title: settings.newsletter_modal_title -%}
+  {%- render 'footer', section: section.settings -%}
+{%- endunless -%}
 
 {% schema %}
 {
   "name": "Footer",
-  "tag": "footer",
-  "class": "footer",
   "settings": [
     {
-      "label": "Primary Menu",
-      "id": "primary_menu",
-      "type": "link_list"
+      "type": "checkbox",
+      "id": "disable",
+      "label": "Disable Footer",
+      "default": false
     },
     {
-      "label": "Secondary Menu",
-      "id": "secondary_menu",
-      "type": "link_list"
+      "type": "header",
+      "content": "About"
     },
     {
-      "label": "Tertiary Menu",
-      "id": "tertiary_menu",
-      "type": "link_list"
+      "type": "text",
+      "id": "about_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "about_text",
+      "label": "Text"
+    },
+    {
+      "type": "checkbox",
+      "id": "about_show_social_media",
+      "label": "Show Social Media",
+      "default": true,
+      "info": "Make sure to have properly configured your social media in the theme settings."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_types",
+      "label": "Show accepted payment methods",
+      "default": true,
+      "info": "Payment types are populated using those listed in Settings > Payment"
+    },
+    {
+      "type": "header",
+      "content": "Menus"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_1",
+      "label": "Menu #1"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_2",
+      "label": "Menu #2"
+    },
+    {
+      "type": "header",
+      "content": "Email signup"
+    },
+    {
+      "type": "text",
+      "id": "email_signup_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "email_signup_text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Terms & Condition menu"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_bottom",
+      "label": "Select Menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_bottom_image",
+      "label": "Show Bottom Image",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "bottom_image_type",
+      "label": "Image Type",
+      "options": [
+        {
+          "value": "svg",
+          "label": "SVG"
+        },
+        {
+          "value": "image",
+          "label": "Image (JPG, PNG, GIF)"
+        }
+      ],
+      "default": "svg"
+    },
+    {
+      "type": "textarea",
+      "id": "bottom_image_svg",
+      "label": "Image SVG"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "bottom_image_max_width",
+      "label": "Image Max Width",
+      "default": "1100"
     }
   ]
 }

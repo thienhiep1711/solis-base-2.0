@@ -1,0 +1,447 @@
+{%- assign section_settings = section.settings -%}
+
+{%- for block in section.blocks -%}
+    {%- if block.settings.page == page.handle -%}
+      {%- assign section_settings = block.settings -%}
+      {% break %}
+    {%- endif -%}
+  {%- endfor -%}
+
+{%- if section_settings.enable_section -%}
+  {%- assign title = section_settings['title'] | default: page_title -%}
+  {%- assign type = section_settings['background_type'] -%}
+
+  {%- case type -%}
+    {%- when 'image' -%}
+      {%- assign image = section_settings['image'] | img_url: '2160x' -%}
+      {%- assign image_intermediate = section_settings['image_intermediate'] | img_url: '1200x' -%}
+      {%- assign image_mobile = section_settings['image_mobile'] | img_url: '700x' -%}
+
+      {%- capture image_sources -%}
+        {%- if image_mobile != blank -%}
+          {{- image_mobile -}}
+        {%- endif -%}
+        {%- if image_intermediate != blank -%}
+          |{{- image_intermediate -}}
+        {%- endif -%}
+        {%- if image != blank -%}
+          |{{- image -}}
+        {%- endif -%}
+      {%- endcapture  -%}
+
+      {%- capture breakpoints -%}
+        {%- if image_mobile != blank -%}
+          (max-width: 767px)
+        {%- endif -%}
+        {%- if image_intermediate != blank -%}
+          |(max-width: 999px)
+        {%- endif -%}
+        {%- if image != blank -%}
+          |(min-width: 1000px)
+        {%- endif -%}
+      {%- endcapture  -%}
+
+      {%- render 'hero-small',
+        type: type,
+        hero_style: section_settings['hero_style'],
+        content_alignment: section_settings['content_alignment'],
+        text_alignment: section_settings['text_alignment'],
+        is_dynamic: false,
+        inverted_mode: section_settings['inverted_mode'],
+        enable_overlay: section_settings['enable_overlay'],
+        overlay_opacity: section_settings['overlay_opacity'],
+        tagline: section_settings['tagline'],
+        title: title,
+        description: section_settings['text'],
+        breakpoints: breakpoints,
+        image_sources: image_sources -%}
+
+    {%- when 'video' %}
+      {%- assign fallback_desktop = section_settings['image'] | img_url: '2160x' -%}
+      {%- assign fallback_intermediate = section_settings['image_intermediate'] | img_url: '1200x' -%}
+      {%- assign fallback_mobile = section_settings['image_mobile'] | img_url: '700x' -%}
+
+      {%- render 'hero-small',
+        type: type,,
+        hero_style: section_settings['hero_style'],
+        content_alignment: section_settings['content_alignment'],
+        text_alignment: section_settings['text_alignment'],
+        is_dynamic: false,
+        inverted_mode: section_settings['inverted_mode'],
+        enable_overlay: section_settings['enable_overlay'],
+        overlay_opacity: section_settings['overlay_opacity'],
+        tagline: section_settings['tagline'],
+        title: title,
+        description: section_settings['text'],
+        video: section_settings['video'],
+        video_s: section_settings['video_s'],
+        video_l: section_settings['video_l'],
+        fallback: fallback_mobile,
+        fallback_s: fallback_intermediate,
+        fallback_l: fallback_desktop -%}
+
+    {%- when 'none' -%}
+      {%- render 'hero-small',
+        type: type,,
+        hero_style: section_settings['hero_style'],
+        content_alignment: section_settings['content_alignment'],
+        text_alignment: section_settings['text_alignment'],
+        is_dynamic: false,
+        inverted_mode: section_settings['inverted_mode'],
+        enable_overlay: section_settings['enable_overlay'],
+        overlay_opacity: section_settings['overlay_opacity'],
+        tagline: section_settings['tagline'],
+        title: title,
+        description: section_settings['text'] -%}
+  {%- endcase -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Small Hero",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "Enable this Section",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "inverted_mode",
+      "label": "Inverted mode"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_overlay",
+      "label": "Enable overlay"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Featured"
+    },
+    {
+      "type": "select",
+      "id": "hero_style",
+      "label": "Hero Style",
+      "options": [
+        {
+          "value": "2-up",
+          "label": "2 Up"
+        },
+        {
+          "value": "fullwidth-image",
+          "label": "Full Width Image"
+        },
+        {
+          "value": "fullwidth-video",
+          "label": "Full Width Video"
+        },
+        {
+          "value": "none",
+          "label": "None"
+        }
+      ],
+      "default": "2-up"
+    },
+    {
+      "type": "select",
+      "id": "background_type",
+      "label": "Background Type",
+      "options": [
+        {
+          "value": "image",
+          "label": "Image"
+        },
+        {
+          "value": "video",
+          "label": "Video"
+        },
+        {
+          "value": "none",
+          "label": "None"
+        }
+      ],
+      "default": "image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image (Mobile)",
+      "info": "Upload a JPEG of ~ 700px."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_intermediate",
+      "label": "Image (Intermediate)",
+      "info": "Upload a JPEG of ~ 1200px."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image (Desktop)",
+      "info": "Upload a JPEG of ~ 2160px."
+    },
+    {
+      "type": "text",
+      "id": "video",
+      "label": "Video URL (Mobile)",
+      "info": "MP4 url. E.g. MP4 link from Vimeo Pro."
+    },
+    {
+      "type": "text",
+      "id": "video_s",
+      "label": "Video URL (Intermediate)",
+      "info": "MP4 url. E.g. MP4 link from Vimeo Pro."
+    },
+    {
+      "type": "text",
+      "id": "video_l",
+      "label": "Video URL (Desktop)",
+      "info": "MP4 url. E.g. MP4 link from Vimeo Pro."
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Content Alignment",
+      "options": [
+        {
+          "value": "bottom-left",
+          "label": "Bottom Left"
+        },
+        {
+          "value": "bottom-center",
+          "label": "Bottom Center"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "bottom-left"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text (Optional)"
+    }
+  ],
+  "blocks":[
+    {
+      "type": "page_hero",
+      "name": "Page Hero",
+      "settings":[
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Page"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_section",
+          "label": "Enable this Section",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "inverted_mode",
+          "label": "Inverted mode"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_overlay",
+          "label": "Enable overlay"
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Overlay opacity",
+          "default": 50
+        },
+        {
+          "type": "header",
+          "content": "Featured"
+        },
+        {
+          "type": "select",
+          "id": "hero_style",
+          "label": "Hero Style",
+          "options": [
+            {
+              "value": "2-up",
+              "label": "2 Up"
+            },
+            {
+              "value": "fullwidth-image",
+              "label": "Full Width Image"
+            },
+            {
+              "value": "fullwidth-video",
+              "label": "Full Width Video"
+            },
+            {
+              "value": "none",
+              "label": "None"
+            }
+          ],
+          "default": "2-up"
+        },
+        {
+          "type": "select",
+          "id": "background_type",
+          "label": "Background Type",
+          "options": [
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "video",
+              "label": "Video"
+            },
+            {
+              "value": "none",
+              "label": "None"
+            }
+          ],
+          "default": "image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image (Mobile)",
+          "info": "Upload a JPEG of ~ 700px."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_intermediate",
+          "label": "Image (Intermediate)",
+          "info": "Upload a JPEG of ~ 1200px."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image (Desktop)",
+          "info": "Upload a JPEG of ~ 2160px."
+        },
+        {
+          "type": "text",
+          "id": "video",
+          "label": "Video URL (Mobile)",
+          "info": "MP4 url. E.g. MP4 link from Vimeo Pro."
+        },
+        {
+          "type": "text",
+          "id": "video_s",
+          "label": "Video URL (Intermediate)",
+          "info": "MP4 url. E.g. MP4 link from Vimeo Pro."
+        },
+        {
+          "type": "text",
+          "id": "video_l",
+          "label": "Video URL (Desktop)",
+          "info": "MP4 url. E.g. MP4 link from Vimeo Pro."
+        },
+        {
+          "type": "select",
+          "id": "content_alignment",
+          "label": "Content Alignment",
+          "options": [
+            {
+              "value": "bottom-left",
+              "label": "Bottom Left"
+            },
+            {
+              "value": "bottom-center",
+              "label": "Bottom Center"
+            },
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            }
+          ],
+          "default": "bottom-left"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text (Optional)"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

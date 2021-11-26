@@ -1,0 +1,41 @@
+{%- comment -%}
+  Parameters
+  * enable
+  * delay
+  * subtitle
+  * title
+{%- endcomment -%}
+
+{%- if enable -%}
+  <div class="fixed newsletter-modal" role="dialog" aria-label="{{- 'general.newsletter_signup.newsletter_modal' | t -}}" :class="{'newsletter-modal--is-active': isActive}" data-module="newsletter-modal" data-modal-delay={{- delay | json -}}>
+    <div class="fixed newsletter-modal__overlay" @click="closeNewsletterModal"></div>
+    <div class="relative newsletter-modal__wrapper" tabindex="-1" ref="newsletterModalWrapper">
+      <button class="absolute newsletter-modal__close" @click="closeNewsletterModal">
+        <span class="newsletter-modal__close-text">{{- 'general.newsletter_signup.close_button' | t -}}</span>
+        <span class="relative newsletter-modal__close-icon" aria-hidden="true"></span>
+      </button>
+
+      <div class="newsletter-modal__inner">
+        {%- if subtitle != blank -%}
+          <p class="p bold align-c newsletter-modal__subtitle">{{- subtitle -}}</p>
+        {%- endif -%}
+
+        {%- if title != blank -%}
+          <h2 class="h2 align-c newsletter-modal__title">{{- title -}}</h2>
+        {%- endif -%}
+
+        {%- render 'newsletter-form',
+          provider: 'klaviyo',
+          class: 'newsletter-form--newsletter-modal',
+          klaviyo_url: settings.klaviyo_url,
+          klaviyo_group: settings.klaviyo_id,
+          placeholder: settings.newsletter_placeholder,
+          btn_text: settings.newsletter_button_text,
+          error_msg: settings.newsletter_error,
+          success_msg: settings.newsletter_success,
+          subscribed_msg: settings.newsletter_subscribed,
+          attrs: '@success="handleSuccessSignUp"' -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}

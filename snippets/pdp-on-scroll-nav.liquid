@@ -1,0 +1,45 @@
+<nav
+  class="pdp-on-scroll-nav"
+  data-module="pdp-on-scroll-nav"
+  v-cloak
+  aria-hidden="true">
+  <div ref="anchor"></div>
+  <div class="pdp-on-scroll-nav__wrapper">
+    <div class="container container--xl pdp-on-scroll-nav__container">
+      <div class="pdp-on-scroll-nav__inner">
+        <div class="pdp-on-scroll-nav__block pdp-on-scroll-nav__block--left">
+          <div class="ratio ro-1 pdp-on-scroll-nav__product-image">
+            {%- render 'picture',
+              is_vue: true,
+              bind_dynamic_props: true,
+              sources: 'featuredImage',
+              width: 100,
+              width_s: 50,
+              width_m: 50,
+              width_l: 33,
+              alt: 'product.title',
+              loader: false
+            -%}
+          </div>
+          <div class="pdp-on-scroll-nav__product-details">
+            <h3 class="pdp-on-scroll-nav__product-title h5">
+              {{ product.title }}
+            </h3>
+            <ul class="p2 pdp-on-scroll-nav__product-metas" v-if="state.selectedOptions">
+              <li class="pdp-on-scroll-nav__product-meta" v-for="(value, option) in state.selectedOptions">
+                <p>{% raw %}{{ option }}: {{ value }}{% endraw %}</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="pdp-on-scroll-nav__block pdp-on-scroll-nav__block--right">
+          {%- render 'product-form',
+            afterpay_id: 'sticky-pdp-afterpay',
+            class: 'product-form--sticky',
+            is_component: true,
+            show_price_in_button: true -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

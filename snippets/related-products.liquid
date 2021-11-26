@@ -1,0 +1,69 @@
+{%- comment -%}
+  Parameters
+  * enable
+  * title
+  * blocks
+  * class
+  * is_list
+{%- endcomment -%}
+{%- assign enable = enable | default: false -%}
+{%- assign is_list = is_list | default: false -%}
+{%- capture css -%}
+  related-products {{ class }}
+{%- endcapture -%}
+
+{%- assign shop_now = 'products.product_card.shop_now' | t -%}
+
+{%- if enable == true and blocks.size > 0 -%}
+  <div class="{{- css | strip -}}" data-module="related-products" v-cloak>
+    <div class="container container--xl related-products__container">
+      <div class="related-products__inner" data-a-group>
+        {%- if title != blank or tagline != blank -%}
+          {%- render 'module-header',
+            tagline: tagline,
+            title: title -%}
+        {%- endif -%}
+
+        {%- if is_list -%}
+          <div class="related-products__list" data-a-stagger>
+            {%- for item in blocks -%}
+              {%- assign object = all_products[item] -%}
+
+              <div class="related-products__item">
+                {%- render 'product-card',
+                  product: object,
+                  class: 'product-card--list',
+                  show_view_product_button: true,
+                  btn_text: shop_now,
+                  is_vue: true
+                -%}
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- else -%}
+          <div data-a-stagger>
+            {%- render 'carousel',
+              class: 'related-products__carousel',
+              columns: 2,
+              columns_s: 3,
+              columns_m: 3,
+              columns_l: 3,
+              card: 'product-card',
+              class_card: 'related-products__slide',
+              items: blocks,
+              page_dots: false,
+              prev_next_buttons: true,
+              watch_css: true,
+              bind_dynamic_props: false,
+              is_vue: true,
+              align_arrows_to_image: true,
+              group_cells: true,
+              contain: true,
+              cell_align: 'left',
+              mobile_options: '{"alignArrowsToImage": false}' -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}

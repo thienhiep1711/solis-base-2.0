@@ -1,0 +1,37 @@
+<section class="flexible-reviews">
+  <div class="flexible-reviews__container container container--xl">
+    {%- if section.settings.title != blank -%}
+      <div class="flexible-reviews__header">
+        <h2 class="h1 mt05 align-c">{{ section.settings.title }}</h2>
+      </div>
+    {%- endif -%}
+
+    <div class="flexible-reviews__carousel">
+      <div class="ratio ro-1 flexible-reviews__logo">
+        {%- render 'picture',
+          sources: section.settings.icon,
+          alt: section.settings.icon.alt,
+          object_fit: 'contain',
+          loader: false
+        -%}
+      </div>
+      {%- render 'carousel',
+        columns: 1,
+        columns_s: 2,
+        columns_m: 2,
+        columns_l: 2,
+        card: 'flexible-review',
+        items: section.blocks,
+        page_dots: true,
+        prev_next_buttons: true,
+        watch_css: false,
+        bind_dynamic_props: false,
+        is_vue: false,
+        align_arrows_to_image: true,
+        group_cells: true,
+        contain: true,
+        cell_align: 'left',
+        mobile_options: '{"prevNextButtons": false}' -%}
+    </div>
+  </div>
+</section>

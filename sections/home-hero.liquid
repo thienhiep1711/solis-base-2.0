@@ -1,0 +1,314 @@
+{%- render 'home-hero', section: section.settings, id: section.id -%}
+
+{% schema %}
+{
+  "name": "Homepage Hero",
+  "class": "home-hero",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "inverted_mode",
+      "label": "Inverted mode"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_overlay",
+      "label": "Enable overlay"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 50
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_newsletter",
+      "label": "Enable Newsletter",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Klaviyo config"
+    },
+    {
+      "type": "text",
+      "id": "klaviyo_id",
+      "label": "Klaviyo ID",
+      "info": "Input the ID of the Klaviyo list. Can be copied from URL when viewing list in Klaviyo."
+    },
+    {
+      "type": "text",
+      "id": "newsletter_placeholder",
+      "label": "Newsletter Placeholder",
+      "default": "Enter Your Email Address"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_button_text",
+      "label": "Newsletter Button text",
+      "default": "Sign Up"
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "select",
+      "id": "background_type",
+      "label": "Background Type",
+      "options": [
+        {
+          "value": "image",
+          "label": "Image"
+        },
+        {
+          "value": "video",
+          "label": "Video"
+        },
+        {
+          "value": "none",
+          "label": "None"
+        }
+      ],
+      "default": "image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image (Mobile)",
+      "info": "Upload a JPEG of ~ 700px."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_intermediate",
+      "label": "Image (Intermediate)",
+      "info": "Upload a JPEG of ~ 1200px."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image (Desktop)",
+      "info": "Upload a JPEG of ~ 2160px."
+    },
+    {
+      "type": "text",
+      "id": "video",
+      "label": "Video URL (Mobile)",
+      "info": "MP4 url. E.g. MP4 link from Vimeo Pro."
+    },
+    {
+      "type": "text",
+      "id": "video_s",
+      "label": "Video URL (Intermediate)",
+      "info": "MP4 url. E.g. MP4 link from Vimeo Pro."
+    },
+    {
+      "type": "text",
+      "id": "video_l",
+      "label": "Video URL (Desktop)",
+      "info": "MP4 url. E.g. MP4 link from Vimeo Pro."
+    },
+    {
+      "type": "header",
+      "content": "Size"
+    },
+    {
+      "type": "text",
+      "id": "ratio",
+      "label": "Ratio (Mobile)",
+      "default": "1.375"
+    },
+    {
+      "type": "text",
+      "id": "ratio_s",
+      "label": "Ratio (Intermediate)",
+      "default": "0.4514"
+    },
+    {
+      "type": "text",
+      "id": "ratio_l",
+      "label": "Ratio (Desktop)",
+      "default": "0.4514"
+    },
+    {
+      "type": "text",
+      "id": "max_height",
+      "label": "Max Height (Mobile)",
+      "default": "500"
+    },
+    {
+      "type": "text",
+      "id": "max_height_s",
+      "label": "Max Height (Intermediate)",
+      "default": "500"
+    },
+    {
+      "type": "text",
+      "id": "max_height_l",
+      "label": "Max Height (Desktop)",
+      "default": "650"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "select",
+      "id": "position",
+      "label": "Content Alignment",
+      "options": [
+        {
+          "value": "bottom-left",
+          "label": "Bottom Left"
+        },
+        {
+          "value": "bottom-center",
+          "label": "Bottom Center"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "bottom-left"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Text Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top (Mobile)",
+      "default": "0"
+    },
+    {
+      "type": "text",
+      "id": "margin_top_s",
+      "label": "Margin Top (Intermediate)",
+      "default": "0"
+    },
+    {
+      "type": "text",
+      "id": "margin_top_l",
+      "label": "Margin Top (Desktop)",
+      "default": "0"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline (Optional)",
+      "default": "Subheadline"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Headline for Hero"
+    },
+    {
+      "type": "select",
+      "id": "title_style",
+      "label": "Title Style",
+      "options": [
+        {
+          "value": "h1",
+          "label": "Heading 1"
+        },
+        {
+          "value": "h2",
+          "label": "Heading 2"
+        }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text (Optional)"
+    },
+    {
+      "type": "text",
+      "id": "btn_text_1",
+      "label": "Button #1 - Text"
+    },
+    {
+      "type": "url",
+      "id": "btn_link_1",
+      "label": "Button #1 - Url"
+    },
+    {
+      "type": "select",
+      "id": "btn_style_1",
+      "label": "Button Style",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "primary"
+    },
+    {
+      "type": "text",
+      "id": "btn_text_2",
+      "label": "Button #2 - Text"
+    },
+    {
+      "type": "url",
+      "id": "btn_link_2",
+      "label": "Button #2 - Url"
+    },
+    {
+      "type": "select",
+      "id": "btn_style_2",
+      "label": "Button Style",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "secondary"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Homepage Hero"
+    }
+  ]
+}
+{% endschema %}

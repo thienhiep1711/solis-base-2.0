@@ -1,0 +1,84 @@
+{%- render 'three-up',
+  title: section.settings.title,
+  post_cards: section.blocks,
+  button_style: 'button',
+  hide_bottom_button: 'hide'
+-%}
+
+{% schema %}
+{
+  "name": "Featured Posts (Flexible)",
+  "class": "three-up--flexible",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "This is us"
+    }
+  ],
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "post_card",
+      "name": "Post Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "The title for this content"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "The description to go along with the title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_intermediate",
+          "label": "Image Intermediate"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image Mobile"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA Text"
+        },
+        {
+          "type": "url",
+          "id": "cta_url",
+          "label": "CTA URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Posts (Flexible)",
+      "category": "Flexible",
+      "blocks": [
+        {
+          "type": "post_card"
+        },
+        {
+          "type": "post_card"
+        },
+        {
+          "type": "post_card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

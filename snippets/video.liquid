@@ -1,0 +1,179 @@
+{%- comment -%}
+  Parameters
+  * video
+  * video_s
+  * video_l
+  * fallback
+  * fallback_s
+  * fallback_l
+  * poster
+  * is_vue
+  * class
+  * offset
+  * attr
+  * autoplay
+  * loop
+  * show_play_button
+  * enable_audio
+{%- endcomment -%}
+
+{%- if is_vue == false -%}
+  {%- assign is_vue = false -%}
+{%- else -%}
+  {%- assign is_vue = true -%}
+{%- endif -%}
+
+{%- if autoplay == false -%}
+  {%- assign autoplay = false -%}
+{%- else -%}
+  {%- assign autoplay = true -%}
+{%- endif -%}
+
+{%- if loop == false -%}
+  {%- assign loop = false -%}
+{%- else -%}
+  {%- assign loop = true -%}
+{%- endif -%}
+
+{%- assign show_play_button = show_play_button | default: enable_audio | default: false -%}
+{%- assign enable_audio = enable_audio | default: false -%}
+
+{%- unless is_vue -%}
+  {%- capture video_source -%}
+    {%- if video != blank -%}
+      <source media="(max-width: 767px)" data-src="{{- video -}}" type="video/mp4">
+    {%- endif -%}
+    {%- if video_s != blank -%}
+      <source media="(min-width: 768px) and (max-width: 999px)" data-src="{{- video_s -}}" type="video/mp4">
+    {%- endif -%}
+    {%- if video_l != blank -%}
+      <source media="(min-width: 1000px)" data-src="{{- video_l -}}" type="video/mp4">
+    {%- endif -%}
+  {%- endcapture -%}
+{%- endunless -%}
+
+{%- unless image_source -%}
+  {%- capture image_source -%}
+    {%- if fallback != blank -%}
+      |{{- fallback -}}
+    {%- endif -%}
+    {%- if fallback_s != blank -%}
+      |{{- fallback_s -}}
+    {%- endif -%}
+    {%- if fallback_l != blank -%}
+      |{{- fallback_l -}}
+    {%- endif -%}
+  {%- endcapture -%}
+  {%- assign image_source = image_source | remove_first: '|' -%}
+{%- endunless -%}
+
+{%- unless breakpoints -%}
+  {%- capture breakpoints -%}
+    {%- if fallback != blank -%}
+      |(max-width: 767px)
+    {%- endif -%}
+    {%- if fallback_s != blank -%}
+      |(min-width:768px) and (max-width: 999px)
+    {%- endif -%}
+    {%- if fallback_l != blank -%}
+      |(min-width: 1000px)
+    {%- endif -%}
+  {%- endcapture  -%}
+  {%- assign breakpoints = breakpoints | remove_first: '|' -%}
+{%- endunless -%}
+
+<div
+  class="video {{ class }} {% if is_vue %}video--is-vue{% endif %} {% if autoplay and show_play_button == false %}video--no-play-button{% endif %} {% if enable_audio == false %}video--no-volume-button{% endif %}"
+  data-offset="{{ offset }}"
+  {% if is_vue %}
+    is="vue-video"
+    inline-template
+    {% if source != blank %}
+      :source="{{ source }}"
+    {% endif %}
+    {% if poster != blank %}
+      :poster="'{{ poster }}'"
+    {% endif %}
+  {% else %}
+    data-module="video"
+  {% endif %}>
+
+  {%- if is_vue -%}
+    <div>
+  {%- endif -%}
+
+  <div class="video__controls">
+    <button
+      class="video__play-button"
+      {% if is_vue %}
+        @click.prevent="togglePlay"
+        :class="{ 'video__play-button--pause': isPlaying }"
+      {% endif %}
+      aria-label="Play/Pause"
+    ></button>
+    <button
+      class="video__volume-button"
+      {% if is_vue %}
+        @click.prevent="toggleAudio"
+        :class="{ 'video__volume-button--muted': isMuted }"
+      {% endif %}
+      aria-label="Mute/Unmute"
+    ></button>
+  </div>
+
+  <video
+    class="video__el"
+    {% if is_vue %}
+      ref="video"
+      @canplay="onCanPlay"
+      @play="onPlay"
+      @pause="onPause"
+      @volumechange="onVolumeChange"
+      {%- if poster != blank -%}
+        :poster="poster"
+      {%- endif -%}
+      :class="{ 'is-loaded': isLoaded }"
+    {% endif %}
+    {% if poster != blank and is_vue != true %}
+      poster="{{ poster }}"
+    {% endif %}
+    {% if autoplay %}
+      autoplay
+    {% endif %}
+    {% if loop %}
+      loop
+    {% endif %}
+    muted
+    playsinline>
+
+    {%- if is_vue -%}
+      <source
+        v-for="(item, index) in source"
+        ref="source"
+        :type="item.type"
+        :media="item.media"
+        :data-src="item.src">
+    {%- else -%}
+      {{- video_source -}}
+    {%- endif -%}
+  </video>
+
+  {%- if image_source != blank -%}
+    {%- render 'picture',
+      class: 'video__fallback-image',
+      bind_dynamic_props: false,
+      sources: image_source,
+      breakpoints: breakpoints,
+      width: 100,
+      width_s: 50,
+      width_m: 50,
+      width_l: 33,
+      loader: false,
+      is_vue: is_vue
+    -%}
+  {%- endif -%}
+
+  {%- if is_vue -%}
+    </div>
+  {%- endif -%}
+</div>

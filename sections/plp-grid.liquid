@@ -1,0 +1,150 @@
+{%- for block in section.blocks -%}
+  {%- if block.settings.collection == collection.handle -%}
+    {%- assign collection_settings = block.settings -%}
+    {% break %}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if section.settings.enable_section -%}
+  {%- render 'plp-grid',
+    section: section.settings,
+    collection_settings: collection_settings,
+    items: collection.products -%}
+{%- endif -%}
+{% schema %}
+{
+  "name": "Product Grid",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "Enable this Section",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_filters",
+      "label": "Enable Filters",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "grid_view",
+      "label": "Grid View",
+      "options": [
+        {
+          "value": "large",
+          "label": "Large"
+        },
+        {
+          "value": "small",
+          "label": "Small"
+        }
+      ],
+      "default": "small"
+    },
+    {
+      "type": "header",
+      "content": "CTA Module"
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_enable",
+      "label": "Enable CTA Module"
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_inverted",
+      "label": "Inverted Mode"
+    },
+    {
+      "type": "image_picker",
+      "id": "cta_image",
+      "label": "Background Image (Mobile)"
+    },
+    {
+      "type": "image_picker",
+      "id": "cta_image_s",
+      "label": "Background Image (Intermediate)"
+    },
+    {
+      "type": "image_picker",
+      "id": "cta_image_l",
+      "label": "Background Image (Desktop)"
+    },
+    {
+      "type": "text",
+      "id": "cta_aspect_ratio",
+      "label": "Aspect Ratio"
+    },
+    {
+      "type": "text",
+      "id": "cta_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "cta_button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_button_url",
+      "label": "Button URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "cta",
+      "name": "CTA",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "checkbox",
+          "id": "inverted",
+          "label": "Inverted Mode"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Background Image (Mobile)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_s",
+          "label": "Background Image (Intermediate)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_l",
+          "label": "Background Image (Desktop)"
+        },
+        {
+          "type": "text",
+          "id": "aspect_ratio",
+          "label": "Aspect Ratio"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

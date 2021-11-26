@@ -1,0 +1,36 @@
+{%- if article.tags.size > 0 -%}
+  {%- for tag in article.tags -%}
+    {%- if tag contains 'category-' -%}
+      {%- capture category -%}
+        {{ tag | remove_first: 'category-' }}
+      {%- endcapture -%}
+      {%- assign category_tag = tag -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{%- assign current_tag = category | capitalize -%}
+
+{%- render 'breadcrumbs',
+  current_tag: current_tag,
+  class: 'breadcrumbs--article'
+-%}
+
+{%- section 'article-hero' -%}
+
+{%- capture related_products -%}
+  {%- section 'article-related-products' -%}
+{%- endcapture -%}
+
+{%- if article.content contains '{{related_products}}' -%}
+  {%- assign content = article.content | replace: '{{related_products}}', related_products -%}
+{%- else -%}
+  {%- assign content = article.content | append: related_products -%}
+{%- endif -%}
+
+{%- render 'wysiwyg',
+  content: content,
+  class: 'wysiwyg--basic' -%}
+
+{%- section 'related-articles' -%}

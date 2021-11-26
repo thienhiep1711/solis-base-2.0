@@ -1,0 +1,51 @@
+{%- comment -%}
+  Parameters
+  * title
+  * subtitle
+  * blocks
+{%- endcomment -%}
+
+<section class="press" data-a-group>
+  <div class="press__container container container--xl align-c">
+    {%- render 'module-header',
+      tagline: subtitle,
+      title: title,
+      tagline_class: 'press-headline'
+    -%}
+    {%- if blocks.size > 0 -%}
+      <div data-a-stagger class="press__carousel-nav">
+        {%- render 'carousel',
+          class: 'press__carousel-nav',
+          columns: 1,
+          columns_s: 1,
+          columns_m: 5,
+          columns_l: 5,
+          card: 'press-item-nav',
+          free_scroll: true,
+          wrap_around: false,
+          items: blocks,
+          group_cells: false,
+          page_dots: false,
+          cell_align: 'center',
+          prev_next_buttons: true,
+          adaptive_height: false,
+          contain: true,
+          as_nav_for: '.press__carousel'
+        -%}
+      </div>
+      <div data-a-stagger>
+        {%- render 'carousel',
+          class: 'press__carousel',
+          columns: 1,
+          columns_s: 1,
+          columns_m: 1,
+          columns_l: 1,
+          card: 'press-item',
+          items: blocks,
+          page_dots: false,
+          prev_next_buttons: false
+        -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>

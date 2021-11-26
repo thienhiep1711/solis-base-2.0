@@ -1,0 +1,453 @@
+{
+  "sections": {
+    "163116298255a25ada": {
+      "type": "flexible-header",
+      "settings": {
+        "enable_sticky": true,
+        "disable_header_sticky": true,
+        "title": "FALL 2021 COLLECTION",
+        "cta_text": "Shop",
+        "cta_link": "shopify:\/\/collections\/all-day-pjs"
+      }
+    },
+    "hero": {
+      "type": "home-hero",
+      "settings": {
+        "inverted_mode": false,
+        "enable_overlay": false,
+        "overlay_opacity": 50,
+        "enable_newsletter": false,
+        "klaviyo_id": "",
+        "newsletter_placeholder": "Enter Your Email Address",
+        "newsletter_button_text": "Sign Up",
+        "background_type": "image",
+        "image_mobile": "shopify:\/\/shop_images\/Screen_Shot_2021-08-04_at_12.08_1_1.png",
+        "image_intermediate": "shopify:\/\/shop_images\/Screen_Shot_2021-08-04_at_12.08_1.png",
+        "image": "shopify:\/\/shop_images\/Screen_Shot_2021-08-04_at_12.08_1.png",
+        "video": "",
+        "video_s": "",
+        "video_l": "",
+        "ratio": "1.3125",
+        "ratio_s": "0.4861",
+        "ratio_l": "0.4861",
+        "max_height": "500",
+        "max_height_s": "500",
+        "max_height_l": "650",
+        "position": "bottom-center",
+        "alignment": "center",
+        "margin_top": "0",
+        "margin_top_s": "0",
+        "margin_top_l": "0",
+        "tagline": "",
+        "title": "Explore Fall 2021 COLLECTION",
+        "title_style": "h1",
+        "text": "Sign up to our newsletter to get a heads up on future collection releases",
+        "btn_text_1": "",
+        "btn_link_1": "",
+        "btn_style_1": "primary",
+        "btn_text_2": "",
+        "btn_link_2": "",
+        "btn_style_2": "secondary"
+      }
+    },
+    "1631072791ccb28eef": {
+      "type": "intro-text",
+      "settings": {
+        "enable_section": true,
+        "title": "make EVERY ZONE YOUR COMFORT ZONE",
+        "description": "Reimagined and mindfully designed essentials for crazy comfort and cool style."
+      }
+    },
+    "163107240390e7ecf2": {
+      "type": "text-and-image-list",
+      "blocks": {
+        "42aeda24-6e80-4467-8133-82bae8a85fda": {
+          "type": "item",
+          "settings": {
+            "image_mobile": "shopify:\/\/shop_images\/images.accentuate_1.png",
+            "image_intermediate": "shopify:\/\/shop_images\/images.accentuate_1.png",
+            "image": "shopify:\/\/shop_images\/images.accentuate_1.png",
+            "image_small": "shopify:\/\/shop_images\/Screen_Shot_2021-08-22_at_12.53_1.png",
+            "tagline": "",
+            "title": "Comfort – inside and out",
+            "text": "It’s that liberating feeling of being at your most comfortable (inside and out) and it’s what we bring to our community – because the world is best when you feel yours.",
+            "cta_text": "",
+            "cta_url": "",
+            "cta_new_window": false,
+            "content_alignment": "right",
+            "text_alignment": "left"
+          }
+        },
+        "04e3f3b3-56db-4b16-9062-65fa2bf33079": {
+          "type": "item",
+          "settings": {
+            "image_mobile": "shopify:\/\/shop_images\/images_1_725c5258-98cc-402e-a46d-295b2536538d.png",
+            "image_intermediate": "shopify:\/\/shop_images\/images_1_725c5258-98cc-402e-a46d-295b2536538d.png",
+            "image": "shopify:\/\/shop_images\/images_1_725c5258-98cc-402e-a46d-295b2536538d.png",
+            "image_small": "shopify:\/\/shop_images\/images-2.accentuate_1.png",
+            "tagline": "",
+            "title": "HOME.WORK.SOCIAL",
+            "text": "So you never have to stop. Our pieces fuse style and comfort and can be dressed up or down, styled to fit you wherever you’re at.",
+            "cta_text": "",
+            "cta_url": "",
+            "cta_new_window": false,
+            "content_alignment": "left",
+            "text_alignment": "left"
+          }
+        },
+        "a3f05a75-f79a-4511-88d6-46c69ed4dc9b": {
+          "type": "item",
+          "settings": {
+            "image_mobile": "shopify:\/\/shop_images\/images_2.png",
+            "image_intermediate": "shopify:\/\/shop_images\/images_2.png",
+            "image": "shopify:\/\/shop_images\/images_2.png",
+            "image_small": "shopify:\/\/shop_images\/pexels-photo-7232406_1.png",
+            "tagline": "",
+            "title": "The Wknd Way",
+            "text": "Each collection is made of only the best essentials, and we produce in small batches to minimize waste. Most of our styles are sustainable and it’s our goal to be 100% sustainable by 2023 (we’re a work in progress – aren’t we all?)",
+            "cta_text": "",
+            "cta_url": "",
+            "cta_new_window": false,
+            "content_alignment": "right",
+            "text_alignment": "left"
+          }
+        }
+      },
+      "block_order": [
+        "42aeda24-6e80-4467-8133-82bae8a85fda",
+        "04e3f3b3-56db-4b16-9062-65fa2bf33079",
+        "a3f05a75-f79a-4511-88d6-46c69ed4dc9b"
+      ],
+      "settings": {
+        "title": "what makes us “us”"
+      }
+    },
+    "press": {
+      "type": "press",
+      "blocks": {
+        "04e2d0e1-a597-4309-b350-73b68b832d98": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Harpers_Bazaar_logo_logotype_1_e6e6d339-b284-488e-8fdc-0df14a83c2e3.png",
+            "description": "SPORTY TENNIS MEETS POLO VIBES IN THIS TRACK SET—PLUS I'M NOT READY TO BE DONE WITH COZY SETS, THANK YOU VERY MUCH.",
+            "url": "#",
+            "open_in_new_window": false
+          }
+        },
+        "fd48311a-292b-4418-8fd1-e526bc0fe13d": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/forbes-logo-black-transparent_1_e13a39e6-9023-41ca-9c7e-bc35e5081641.png",
+            "description": "SPORTY TENNIS MEETS POLO VIBES IN THIS TRACK SET—PLUS I'M NOT READY TO BE DONE WITH COZY SETS, THANK YOU VERY MUCH.SPORTY TENNIS MEETS POLO VIBES IN THIS TRACK SET—PLUS I'M NOT READY TO BE DONE WITH COZY SETS, THANK YOU VERY MUCH.",
+            "url": "#",
+            "open_in_new_window": false
+          }
+        },
+        "5f4559d1-2991-4889-9587-1359009ae355": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/new-york-times-logo_1_84982c8e-02d3-475d-b985-65cc6274ec43.png",
+            "description": "SPORTY TENNIS MEETS POLO VIBES IN THIS TRACK SET—PLUS I'M NOT READY TO BE DONE WITH COZY SETS, THANK YOU VERY MUCH.SPORTY TENNIS MEETS POLO VIBES IN THIS TRACK SET",
+            "url": "#",
+            "open_in_new_window": false
+          }
+        },
+        "f13af2f4-7efe-483b-a896-48a5ef297bb9": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Shopify_White_BUG_3840x2160_1_100x_1_eb10e22b-00cb-4c3a-a651-5b23f4d90ddc.png",
+            "description": "SPORTY TENNIS MEETS POLO VIBES IN THIS TRACK SET",
+            "url": "#",
+            "open_in_new_window": false
+          }
+        },
+        "8cf40f1e-6156-41d6-a6d0-f07c706ddfc1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Harpers_Bazaar_logo_logotype_1_e6e6d339-b284-488e-8fdc-0df14a83c2e3.png",
+            "description": "SPORTY TENNIS MEETS POLO VIBES IN THIS TRACK SET—PLUS I'M NOT READY TO BE DONE WITH COZY SETS, THANK YOU VERY MUCH.",
+            "url": "#",
+            "open_in_new_window": false
+          }
+        },
+        "9dadef2d-6032-4da7-8235-cb69b093e204": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/forbes-logo-black-transparent_1_e13a39e6-9023-41ca-9c7e-bc35e5081641.png",
+            "description": "SPORTY TENNIS MEETS POLO VIBES IN THIS TRACK SET—PLUS I'M NOT READY TO BE DONE WITH COZY SETS, THANK YOU VERY MUCH.",
+            "url": "#",
+            "open_in_new_window": false
+          }
+        }
+      },
+      "block_order": [
+        "04e2d0e1-a597-4309-b350-73b68b832d98",
+        "fd48311a-292b-4418-8fd1-e526bc0fe13d",
+        "5f4559d1-2991-4889-9587-1359009ae355",
+        "f13af2f4-7efe-483b-a896-48a5ef297bb9",
+        "8cf40f1e-6156-41d6-a6d0-f07c706ddfc1",
+        "9dadef2d-6032-4da7-8235-cb69b093e204"
+      ],
+      "settings": {
+        "subtitle": "IN THE NEWS",
+        "title": ""
+      }
+    },
+    "1631172732a1230d4d": {
+      "type": "content-grid-page-404",
+      "blocks": {
+        "da8e721d-3298-4573-bae5-15c3c941e6a7": {
+          "type": "block",
+          "settings": {
+            "tagline": "FALL 2021",
+            "title": "shop our new drops",
+            "cta_text": "shop new",
+            "cta_url": "shopify:\/\/collections\/whats-hot-1",
+            "background_type": "image",
+            "image": "shopify:\/\/shop_images\/image_1.png",
+            "image_intermediate": "shopify:\/\/shop_images\/image_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/image_1.png",
+            "video": ""
+          }
+        },
+        "476ac9f9-9bf5-4185-82c7-ad466fd5a750": {
+          "type": "block",
+          "settings": {
+            "tagline": "FALL 2021",
+            "title": "shop our new drops",
+            "cta_text": "shop new",
+            "cta_url": "shopify:\/\/collections\/all-day-pjs",
+            "background_type": "image",
+            "image": "shopify:\/\/shop_images\/image_1.png",
+            "image_intermediate": "shopify:\/\/shop_images\/image_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/image_1.png",
+            "video": ""
+          }
+        }
+      },
+      "block_order": [
+        "da8e721d-3298-4573-bae5-15c3c941e6a7",
+        "476ac9f9-9bf5-4185-82c7-ad466fd5a750"
+      ],
+      "settings": {
+        "inverted_mode": true,
+        "enable_overlay": false,
+        "overlay_opacity": 50,
+        "title": ""
+      }
+    },
+    "163118241423ab3725": {
+      "type": "flexible-reviews",
+      "blocks": {
+        "69cb7a52-85e5-4565-8a97-90cb200ede0b": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pexels-photo-8789402_1.png",
+            "star_count": 5,
+            "text_content": "SPORTY TENNIS MEETS POLO VIBES IN THIS TRACK SET—PLUS I'M NOT READY TO BE DONE WITH COZY SETS, THANK YOU VERY MUCH.",
+            "author": "— Jessica. S in the All Day PJ Set"
+          }
+        },
+        "b06df93e-a21f-481b-b8fc-9d589268f025": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2020-10-22_at_1.50_3.png",
+            "star_count": 5,
+            "text_content": "SPORTY TENNIS MEETS POLO VIBES IN THIS TRACK SET—PLUS I'M NOT READY TO BE DONE WITH COZY SETS, THANK YOU VERY MUCH.",
+            "author": "— Jessica. S in the All Day PJ Set"
+          }
+        },
+        "6492f4c7-463f-4ff0-803f-9f6abe9deaf3": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pexels-photo-8789402_1.png",
+            "star_count": 5,
+            "text_content": "SPORTY TENNIS MEETS POLO VIBES IN THIS TRACK SET—PLUS I'M NOT READY TO BE DONE WITH COZY SETS, THANK YOU VERY MUCH.",
+            "author": "— Jessica. S in the All Day PJ Set"
+          }
+        },
+        "2895f260-7348-4556-8789-e5ba57b9824c": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2020-10-22_at_1.50_3.png",
+            "star_count": 5,
+            "text_content": "SPORTY TENNIS MEETS POLO VIBES IN THIS TRACK SET—PLUS I'M NOT READY TO BE DONE WITH COZY SETS, THANK YOU VERY MUCH.",
+            "author": "— Jessica. S in the All Day PJ Set"
+          }
+        }
+      },
+      "block_order": [
+        "69cb7a52-85e5-4565-8a97-90cb200ede0b",
+        "b06df93e-a21f-481b-b8fc-9d589268f025",
+        "6492f4c7-463f-4ff0-803f-9f6abe9deaf3",
+        "2895f260-7348-4556-8789-e5ba57b9824c"
+      ],
+      "settings": {
+        "title": "From the people",
+        "icon": "shopify:\/\/shop_images\/WkndNation__HWS2_DropShadowStamp_1_1.png"
+      }
+    },
+    "1631172318e2c8fd1b": {
+      "type": "flexible-icon-list",
+      "blocks": {
+        "922c5658-f446-47db-807d-a77390e46824": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon-1.png",
+            "text": "FREE SHIPPING  ON ORDERS $75+"
+          }
+        },
+        "9664026a-3f29-49ab-996f-ebdc98e750aa": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon-1.png",
+            "text": "FAST EXPRESS SHIPPING"
+          }
+        },
+        "3c187c5a-c5bd-4ff1-9fa3-84d8b56c5247": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon-2.png",
+            "text": "EASY RETURNS & EXCHANGES"
+          }
+        }
+      },
+      "block_order": [
+        "922c5658-f446-47db-807d-a77390e46824",
+        "9664026a-3f29-49ab-996f-ebdc98e750aa",
+        "3c187c5a-c5bd-4ff1-9fa3-84d8b56c5247"
+      ],
+      "settings": {}
+    },
+    "1631505990ea928ccc": {
+      "type": "featured-posts-flexible",
+      "blocks": {
+        "1631505990ea928ccc-0": {
+          "type": "post_card",
+          "settings": {
+            "title": "Comfiest Materials in the World",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "shopify:\/\/shop_images\/image_1_1.png",
+            "image_intermediate": "shopify:\/\/shop_images\/image_1_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/image_1_1.png"
+          }
+        },
+        "1631505990ea928ccc-1": {
+          "type": "post_card",
+          "settings": {
+            "title": "unparalleled fit",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "shopify:\/\/shop_images\/image_3_b93687ef-95b9-467c-9ebf-9e9ac377a63f.png",
+            "image_intermediate": "shopify:\/\/shop_images\/image_3_b93687ef-95b9-467c-9ebf-9e9ac377a63f.png",
+            "image_mobile": "shopify:\/\/shop_images\/image_3_b93687ef-95b9-467c-9ebf-9e9ac377a63f.png"
+          }
+        },
+        "1631505990ea928ccc-2": {
+          "type": "post_card",
+          "settings": {
+            "title": "Intentional design and detail",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "shopify:\/\/shop_images\/image_2_1.png",
+            "image_intermediate": "shopify:\/\/shop_images\/image_2_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/image_2_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "1631505990ea928ccc-0",
+        "1631505990ea928ccc-1",
+        "1631505990ea928ccc-2"
+      ],
+      "settings": {
+        "title": "This is us"
+      }
+    },
+    "product-grid": {
+      "type": "product-grid",
+      "blocks": {
+        "bc25d77f-a7fc-4f9f-9d96-823dcb8b25ee": {
+          "type": "product",
+          "settings": {
+            "product": "pj-pants"
+          }
+        },
+        "44761984-3b53-4239-a5bc-00fdfce03bf6": {
+          "type": "product",
+          "settings": {
+            "product": "boardroom-joggers"
+          }
+        },
+        "71f585a7-690d-44a8-a7e2-9728dca089ea": {
+          "type": "product",
+          "settings": {
+            "product": "homeworksocial-set"
+          }
+        },
+        "055c2258-536c-4546-b4bf-be19df8503cb": {
+          "type": "product",
+          "settings": {
+            "product": "homeworksocial-sweatshirt"
+          }
+        },
+        "9ab1c919-309f-4955-adaa-ad36ccf1796c": {
+          "type": "product",
+          "settings": {
+            "product": "double-tank"
+          }
+        }
+      },
+      "block_order": [
+        "bc25d77f-a7fc-4f9f-9d96-823dcb8b25ee",
+        "44761984-3b53-4239-a5bc-00fdfce03bf6",
+        "71f585a7-690d-44a8-a7e2-9728dca089ea",
+        "055c2258-536c-4546-b4bf-be19df8503cb",
+        "9ab1c919-309f-4955-adaa-ad36ccf1796c"
+      ],
+      "settings": {
+        "tagline": "",
+        "title": "SHOP OUR MUST HAVES",
+        "collection": "whats-hot-1"
+      }
+    },
+    "163118234577b79e98": {
+      "type": "sign-up-form",
+      "settings": {
+        "title": "SOHO STORE NOW OPEN",
+        "description": "Sign up for our opening event",
+        "image_mobile": "shopify:\/\/shop_images\/karl-bewick-I8RIQ5O6is8-unsplash_1_1.png",
+        "image_intermediate": "shopify:\/\/shop_images\/karl-bewick-I8RIQ5O6is8-unsplash_1.png",
+        "image": "shopify:\/\/shop_images\/karl-bewick-I8RIQ5O6is8-unsplash_1.png",
+        "klaviyo_id": "",
+        "newsletter_placeholder": "Enter Your Email Address",
+        "name_placeholder": "Enter Your Name",
+        "newsletter_button_text": "Sign Up"
+      }
+    },
+    "163116979420457848": {
+      "type": "instagram-feed",
+      "settings": {
+        "tagline": "",
+        "title": "SEE @WKNDNATION ON US",
+        "showcase_gallery_id": "19281",
+        "cta_text": "follow",
+        "cta_url": "https:\/\/www.instagram.com\/wkndnation\/?hl=en"
+      }
+    }
+  },
+  "order": [
+    "163116298255a25ada",
+    "hero",
+    "1631072791ccb28eef",
+    "163107240390e7ecf2",
+    "press",
+    "1631172732a1230d4d",
+    "163118241423ab3725",
+    "1631172318e2c8fd1b",
+    "1631505990ea928ccc",
+    "product-grid",
+    "163118234577b79e98",
+    "163116979420457848"
+  ]
+}

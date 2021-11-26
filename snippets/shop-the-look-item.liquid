@@ -1,0 +1,42 @@
+{%- comment -%}
+  Parameters
+  * item
+{%- endcomment -%}
+
+{%- assign image = item.settings['image'] | img_url: '2160x' -%}
+<div
+  class="shop-the-look-item"
+  is="shop-the-look-item"
+  inline-template
+>
+  <div class="shop-the-look-item__image-wrapper ratio">
+    {%- render 'picture',
+      class: 'shop-the-look-item__image',
+      bind_dynamic_props: false,
+      sources: image,
+      object_fit: 'cover',
+      is_vue: true -%}
+
+    {%- for i in (1..3) -%}
+      {%- assign product_setting = 'product_' | append: i -%}
+      {%- assign product = all_products[item.settings[product_setting]] -%}
+      {%- assign product_horizontal_position_setting = 'product_' | append: i | append: '_horizontal_position' -%}
+      {%- assign product_vertical_position_setting = 'product_' | append: i | append: '_vertical_position' -%}
+      {%- assign product_horizontal_position = item.settings[product_horizontal_position_setting] -%}
+      {%- assign product_vertical_position = item.settings[product_vertical_position_setting] -%}
+      {%- if product != blank -%}
+        <div
+          class="shop-the-look-item__dot shop-the-look-item__dot--{{ item.settings.dot_style }}{% if forloop.first %} is-active{% endif %}"
+          data-product-index="{{ i }}"
+          style="left: {{ product_horizontal_position }}%; top: {{ product_vertical_position }}%">
+          <button
+            class="shop-the-look-item__dot-button"
+            @click.prevent="openModal('{{ product.id }}:{{ i }}')"
+            aria-label="Open modal of {{ product.title }}"
+            ref="modalTrigger">
+          </button>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>

@@ -1,0 +1,54 @@
+{%- comment -%}
+  Parameters
+  * api_key
+  * locations_url
+{%- endcomment -%}
+
+<div
+  class="store-locator"
+  data-api-key="{{ api_key }}"
+  data-locations-url="{{ locations_url }}"
+  data-module="store-locator">
+
+  <div class="store-locator__container container">
+    <form class="store-locator__form js-form">
+      {%- assign address_label = 'general.store_locator.address_label' | t -%}
+      {%- assign submit_value = 'general.store_locator.search' | t -%}
+
+      {%- render 'text-input',
+        label: address_label,
+        class: 'store-locator__input',
+        initial_value: 'getAddress'
+        attr: ':key="address.length"'
+        name: 'address' -%}
+
+      {%- render 'select-input',
+        dynamic_options: 'getDistanceOptions',
+        class: 'store-locator__input',
+        name: 'distance' -%}
+
+      {%- render 'button',
+        value: submit_value,
+        class: 'btn btn--primary store-locator__submit',
+        type: 'submit' -%}
+    </form>
+    <div class="store-locator__main">
+      <div class="store-locator__map js-map">
+        <!-- The map will be rendered here -->
+      </div>
+      <div class="store-locator__sidebar">
+        <div class="store-locator__locations js-sidebar">
+          <p class="p1 mb1">{{- 'general.store_locator.geolocation_title' | t -}}</p>
+          <p class="p2 mb1">{{- 'general.store_locator.geolocation_text' | t -}}</p>
+          {%- render 'button',
+            value: 'Use my location',
+            class: 'js-geolocation btn btn--primary',
+            type: 'button' -%}
+            <p class="store-locator__geolocation-feedback p2 js-geolocation-feedback">{{ 'general.store_locator.geolocation_feedback' | t }}</p>
+          <!-- The list of locations will be rendered here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

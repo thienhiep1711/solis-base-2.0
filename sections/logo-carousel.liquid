@@ -1,0 +1,29 @@
+{%- render 'logo-carousel',
+  blocks: section.blocks -%}
+
+{% schema %}
+{
+  "name": "Logo Carousel",
+  "class": "logo-carousel",
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logo Carousel",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

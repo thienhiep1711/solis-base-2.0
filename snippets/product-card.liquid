@@ -1,0 +1,231 @@
+{%- comment -%}
+  Parameters
+  * product
+  * attr
+  * class
+  * title
+  * text
+  * is_vue
+  * show_view_product_button
+  * image - Custom product card image
+  * image_hover - Custom product card image
+  * show_color_swatch
+  * btn_text
+  * enable_quick_add_to_cart
+{%- endcomment -%}
+{%- assign title = title | default: product.title -%}
+{%- assign is_vue = is_vue | default: false -%}
+{%- assign add_to_cart = 'products.product.add_to_cart' | t -%}
+{%- assign sold_out = 'products.product.sold_out' | t -%}
+{%- assign unavailable = 'products.product.unavailable' | t -%}
+{%- assign enable_quick_add_to_cart = enable_quick_add_to_cart | default: settings.enable_quick_add_to_cart | default: false -%}
+
+{%- capture css -%}
+  product-card {{ class }}{% if enable_quick_add_to_cart == true %} product-card--quick-add{% endif %}
+{%- endcapture -%}
+
+{%- assign product_image_ratio = settings.product_image_ratio -%}
+
+{%- if is_vue -%}
+  {%- assign sources = 'imageSrc' -%}
+  {%- assign title = 'title' -%}
+  {%- capture inline_style -%}
+    {%- if product_image_ratio == 'natural' -%}
+      :style="ratioStyles"
+    {%- endif -%}
+  {%- endcapture -%}
+
+{%- else -%}
+  {%- assign sources = product.featured_image | img_url: '600x' -%}
+  {%- assign title = title -%}
+  {%- assign image_ratio = product.featured_image.aspect_ratio -%}
+  {%- capture inline_style -%}
+    {%- if product_image_ratio == 'natural' -%}
+      style="padding-bottom: {{ 100.0 | divided_by: image_ratio }}%; --aspect-ratio: {{ image_ratio }}"
+    {%- endif -%}
+  {%- endcapture  -%}
+{%- endif -%}
+
+{%- capture shop_now_button -%}
+  {%- if show_shop_now_button or template contains 'page' -%}
+    {%- assign btn_text = 'products.product_card.shop' | t -%}
+    {%- render 'button' with 'link',
+      value: btn_text,
+      href: product.url,
+      attr: ':href="link"',
+      class: 'product-card__btn btn--primary product-card__shop' -%}
+  {%- endif -%}
+{%- endcapture -%}
+
+
+<div
+  class="{{- css -}}"
+  is="product-card"
+  {%- if product -%}
+    key="{{- product.id -}}"
+    product="{%- render 'product-json', item: product -%}" decode="true"
+  {%- endif -%}
+  {%- if collection_data != blank -%}
+    collection="{{ collection_data | json | url_encode }}"
+  {%- endif -%}
+  {%- if image != blank -%}
+    image="{{- image | img_url: '600x' -}}"
+    image-ratio="{{- image.aspect_ratio -}}"
+  {%- endif -%}
+  {%- if image_hover != blank -%}
+    image-hover="{{- image_hover | img_url: '600x' -}}"
+  {%- endif -%}
+  {%- if attr -%}
+    {{ attr }}
+  {%- endif -%}
+  inline-template
+>
+  {%- if is_vue -%}<div>{%- endif -%}
+    <div class="product-card__image-wrapper relative">
+      <a class="product-card__featured bg-parchment ratio aspect-ratio aspect-ratio--{{ product_image_ratio }}"
+        {{ inline_style }}
+        {%- if is_vue -%}
+          :href="link"
+        {%- else -%}
+          href="{{ product.url }}"
+        {%- endif -%}>
+
+        {%- if is_vue -%}
+          <div v-if="badge" class="product-card__badge" :class="'product-card__badge--' + badge">
+            <img :alt="badge" :src="badgeImage(badge)" />
+          </div>
+        {%- else -%}
+          {%- assign badge = product.featured_image.alt | split: '::' | last -%}
+
+          {%- if badge != product.featured_image.alt -%}
+            <div class="product-card__badge" class="product-gallery__card--{{- badge -}}">
+              <img alt="{{- badge -}}" src="{{- badge | append: '-badge.svg' | file_url -}}"
+            </div>
+          {%- endif -%}
+        {%- endif -%}
+
+        {%- render 'picture',
+          is_vue: is_vue,
+          class: 'product-card__image',
+          bind_dynamic_props: is_vue,
+          sources: sources,
+          width: 100,
+          width_s: 50,
+          width_m: 50,
+          width_l: 33,
+          alt: title,
+          loader: false -%}
+
+          {%- if is_vue -%}
+            <template v-if="hoverImageSrc">
+              {%- render 'picture',
+                is_vue: true,
+                class: 'product-card__image product-card__image--hover',
+                bind_dynamic_props: true,
+                sources: 'hoverImageSrc',
+                width: 100,
+                width_s: 50,
+                width_m: 50,
+                width_l: 33,
+                alt: title,
+                loader: false
+              -%}
+            </template>
+          {%- endif -%}
+      </a>
+
+      {%- if enable_quick_add_to_cart == true -%}
+        {%- render 'quick-add-to-cart',
+          active_color: 'activeColor',
+          product: 'productData',
+          variants: 'variants',
+          options_with_values: 'optionsWithValues',
+          on_change: 'updateProductOptions',
+          selected_variant: 'selectedVariant',
+          in_viewport: 'inViewport',
+          has_only_default_variant: 'hasOnlyDefaultVariant',
+          first_available_variant: 'firstAvailableVariant',
+          class: 'quick-add-to-cart--within'
+        -%}
+      {%- endif -%}
+    </div>
+    <div class="product-card__bottom relative">
+      <div class="product-card__details">
+        <div class="product-card__header">
+          <div class="product-card__reviews">
+            <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+          </div>
+          <h4 class="p product-card__title">
+            {%- if is_vue -%}
+              <a :href="link" v-html="activeTitle">{{- title -}}</a>
+            {%- else -%}
+              <a href="{{ product.url }}">{{- title -}}</a>
+            {%- endif -%}
+          </h4>
+          <p class="product-card__price"{%- if is_vue -%} v-if="!isCollectionCard"{% endif %}>
+            {%- if is_vue -%}
+              <del
+                v-html="formattedCompareAtPrice"
+                v-if="isOnSale">
+                {{ product.compare_at_price | money }}
+              </del>
+              <span v-html="formattedPrice">{{- product.price | money -}}</span>
+              <span class="product-card__discount-message" v-html="discountMessage" v-if="isOnSale"></span>
+              <span class="product-card__discount-message-mobile" v-html="discountMessageMobile" v-if="isOnSale"></span>
+            {%- else -%}
+              {%- if product.compare_at_price_max > product.price -%}
+                <del>{{ product.compare_at_price | money }}</del>
+              {%- endif -%}
+              <span>{{- product.price | money -}}</span>
+            {%- endif -%}
+          </p>
+          <template v-else>{{ shop_now_button }}</template>
+        </div>
+        {%- if is_vue and hide_color_swatch != true -%}
+          {% comment %} <p class="small color-light-text product-card__variants" v-show="variantsAvailable > 1">
+            <span v-text="variantsAvailable"></span> Options Available
+          </p> {% endcomment %}
+          <div class="product-card__footer" :class="{'product-card__footer--no-color': !allColors || allColors.length === 0}" v-if="!isCollectionCard">
+            <div
+              is="color-selector"
+              @change="updateActiveColor"
+              :options="allColors"
+              :active="activeColor"
+              v-if="(allColors && allColors.length > 0)"></div>
+            {{ shop_now_button }}
+          </div>
+        {%- endif -%}
+
+        {%- if text != blank -%}
+          <p class="product-card__text p2" v-html="{{ text }}">
+            {{- text -}}
+          </p>
+        {%- endif -%}
+
+        {%- if show_view_product_button and enable_quick_add_to_cart == false -%}
+          {%- assign default_btn_text = 'products.product_card.view_this_product' | t -%}
+          {%- assign btn_text = btn_text | default: default_btn_text -%}
+          {%- render 'button' with 'link',
+            value: btn_text,
+            href: product.url,
+            attr: ':href="link"',
+            class: 'product-card__btn btn--secondary btn--full-width' -%}
+        {%- endif -%}
+      </div>
+
+      {%- if enable_quick_add_to_cart == true -%}
+        {%- render 'quick-add-to-cart',
+          active_color: 'activeColor',
+          product: 'productData',
+          variants: 'variants',
+          options_with_values: 'optionsWithValues',
+          on_change: 'updateProductOptions',
+          selected_variant: 'selectedVariant',
+          in_viewport: 'inViewport',
+          has_only_default_variant: 'hasOnlyDefaultVariant',
+          first_available_variant: 'firstAvailableVariant',
+          class: 'quick-add-to-cart--below' -%}
+      {%- endif -%}
+    </div>
+    {%- if is_vue -%}</div>{%- endif -%}
+{% render 'preorder-now-collection-item', product: product %}</div>

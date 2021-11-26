@@ -1,0 +1,11 @@
+{
+  "callout": {
+    "settings": {
+      "text": "Lorem ipsum dolor sit amet consectetur",
+      "cta_text": "Click Here",
+      "cta_url": "#",
+      "image": "\/\/via.placeholder.com\/2160x450",
+      "image_mobile": "\/\/via.placeholder.com\/930x375"
+    }
+  }
+}

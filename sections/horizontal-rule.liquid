@@ -1,0 +1,46 @@
+{%- render 'horizontal-rule',
+  is_fullwidth: section.settings.is_fullwidth,
+  top_spacing: section.settings.top_spacing,
+  bottom_spacing: section.settings.bottom_spacing -%}
+
+{% schema %}
+{
+  "name": "Horizontal Rule",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Configuration"
+    },
+    {
+      "type": "checkbox",
+      "id": "is_fullwidth",
+      "label": "Enable full width"
+    },
+    {
+      "type": "range",
+      "id": "top_spacing",
+      "min": 0,
+      "max": 50,
+      "step": 10,
+      "unit": "px",
+      "label": "Top spacing",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "bottom_spacing",
+      "min": 0,
+      "max": 50,
+      "step": 10,
+      "unit": "px",
+      "label": "Bottom spacing",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Horizontal Rule"
+    }
+  ]
+}
+{% endschema %}

@@ -3,6 +3,8 @@ const fs = require('fs')
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const TerserPlugin = require("terser-webpack-plugin")
 
 const ROOT = path.resolve(__dirname)
 const ASSETS_DIR = path.join(ROOT, 'assets')
@@ -18,14 +20,14 @@ fs.readdirSync(SCRIPT_ENTRIES_DIR).forEach(
   file => {
     if (!/(^|\/)\.[^/.]/g.test(file)) {
       const name = path.parse(file).name
-      entry[`entry-${name}`] = [path.join(SCRIPT_ENTRIES_DIR, file)]
+      entry[name] = [path.join(SCRIPT_ENTRIES_DIR, file)]
     }
   }
 )
 
 module.exports = env => {
   const mode = env.production ? 'production' : 'development'
-  const devtool = env.production ? 'source-map': 'inline-source-map'
+  const devtool = env.production ? 'cheap-module-source-map' : 'eval-cheap-module-source-map'
   const minimize = Boolean(env.production)
 
   return {
@@ -64,7 +66,12 @@ module.exports = env => {
     },
     plugins: [
       new VueLoaderPlugin(),
-      new MiniCssExtractPlugin({ filename: '[name].css' })
+      new MiniCssExtractPlugin({ filename: '[name].css' }),
+      new BundleAnalyzerPlugin({
+        analyzerMode: 'static',
+        openAnalyzer: false,
+        generateStatsFile: env.production
+      })
     ],
     resolve: {
       alias: {
@@ -79,13 +86,28 @@ module.exports = env => {
     },
     optimization: {
       minimize,
-      runtimeChunk: 'single',
+      // disable .LICENSE.txt file
+      minimizer: [
+        (compiler) => {
+          new TerserPlugin({
+            terserOptions: {
+              format: {
+                comments: false
+              }
+            },
+            extractComments: false
+          }).apply(compiler);
+        }
+      ],
       splitChunks: {
         minSize: 0,
         cacheGroups: {
-          commons: {
+          vendors: {
             chunks: 'all',
-            name: 'commons',
+            name (module, chunks, cacheGroupKey) {
+              const allChunksNames = chunks.map((item) => item.name).filter(v => v).join('@')
+              return `${cacheGroupKey}@${allChunksNames}`
+            },
             test: /\/node_modules\/|lib\//,
             filename: '[name].js',
             priority: 0,

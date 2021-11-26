@@ -1,0 +1,46 @@
+{%- comment -%}
+  Parameters
+  * product
+  * variant
+{%- endcomment -%}
+
+{%- if product != nil and variant != nil -%}
+  {%- capture modal_content -%}
+  {%- render 'product-card',
+    class: 'product-grid__item shop-the-look__product align-l',
+    product: product,
+    show_view_product_button: true,
+    is_vue: true -%}
+  {%- endcapture -%}
+
+  {%- capture modal_attr -%}
+    :key="{{ product.id }}"
+  {%- endcapture -%}
+
+  {%- assign variant_image_src = variant.image | default: product.featured_image | img_url: '150x' -%}
+
+  <div class="flex-lookbook-product" is="flex-lookbook-product" inline-template>
+    <div>
+      <a href="{{- variant.url-}}" class="flex-lookbook-product__link" ref="link" @click.prevent="openModal">
+        <div class="flex-lookbook-product__image ratio ro-1">
+          {%- render 'picture',
+            class: 'flex-lookbook-product__img',
+            sources: variant_image_src,
+            alt: product.title,
+            loader: true,
+            is_vue: true
+          -%}
+        </div>
+
+        <span class="flex-lookbook-product__title">{{- product.title -}}</span>
+      </a>
+
+      {%- render 'modal',
+        attr: modal_attr,
+        on_close: 'closeModal'
+        show_modal: 'isModalOpen',
+        content: modal_content
+      -%}
+    </div>
+  </div>
+{%- endif -%}

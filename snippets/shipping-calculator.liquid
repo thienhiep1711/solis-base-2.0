@@ -1,0 +1,33 @@
+{%- assign goal = settings.free_shipping_goal | times: 100 -%}
+
+<div
+  is="shipping-calculator"
+  class="shipping-calculator"
+  ref="shippingCalculator"
+  {% if goal %}:goal="{{- goal -}}"{% endif %}
+  inline-template
+>
+  <transition name="fade" mode="out-in">
+    <div>
+      <span class="shipping-calculator__progress">
+        <i class="shipping-calculator__indicator" v-bind:style="{ width: progress }" ref="indicator"></i>
+      </span>
+
+      <div v-if="goalReached" key="2" class="shipping-calculator__message">
+        <p class="p3 align-c">
+          Congratulations! Enjoy Free Shipping!
+        </p>
+      </div>
+      <div v-else-if="goalStarted" key="1" class="shipping-calculator__message">
+        <p class="p3 align-c">
+          You're $<strong v-text="price"></strong> away from Free Shipping!
+        </p>
+      </div>
+      <div v-else key="0" class="shipping-calculator__message">
+        <p class="p3 align-c">
+          Spend $<strong v-text="price"></strong> or more and enjoy Free Shipping!
+        </p>
+      </div>
+    </div>
+  </transition>
+</div>

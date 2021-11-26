@@ -1,0 +1,34 @@
+{%- comment -%}
+  Parameters
+  * link
+  * content_for_products
+{%- endcomment -%}
+
+{%- if link != blank -%}
+  <div class="header-mega-nav">
+    <div class="container container--xl header-mega-nav__container">
+      <div class="header-mega-nav__list">
+        {%- render 'carousel',
+          columns: 2,
+          columns_s: 3,
+          columns_m: 4,
+          columns_l: 6,
+          card: 'header-mega-nav-item',
+          items: link.links,
+          page_dots: false,
+          prev_next_buttons: false,
+          watch_css: true,
+          bind_dynamic_props: false,
+          cell_align: 'left',
+          contain: true,
+          accessibility: false,
+          content_for_products: content_for_products
+        -%}
+      </div>
+
+      <p class="bold p header-mega-nav__view-all">
+        <a class="underline" href="{{- link.url -}}">{{- 'layout.navigation.view_all' | t -}}</a>
+      </p>
+    </div>
+  </div>
+{%- endif -%}

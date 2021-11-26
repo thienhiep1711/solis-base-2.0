@@ -1,0 +1,75 @@
+{%- assign products = collections[section.settings.collection].products -%}
+{%- if section.blocks.size > 0 -%}
+  {%- assign products = section.blocks -%}
+{%- endif -%}
+
+{%- render 'product-grid'
+  tagline: section.settings.tagline,
+  title: section.settings.title,
+  blocks: products
+-%}
+
+{% schema %}
+{
+  "name": "Product Grid",
+  "class": "product-grid-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline (Optional)",
+      "default": "Subheadline"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Headline for Product Grid"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Pick a collection"
+    }
+  ],
+  "max_blocks": 8,
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Pick a collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Custom Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_hover",
+          "label": "Custom Image - Hover"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Grid",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

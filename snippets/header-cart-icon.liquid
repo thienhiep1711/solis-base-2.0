@@ -1,0 +1,15 @@
+{%- assign count = count | default: 0 -%}
+<li class="header-side__item" data-module="header-cart-icon">
+  <a class="header-side__link a1 js-side-link" title="Your Bag" href="/cart"{% if settings.enable_mini_cart %} @click.prevent="toggleMiniCart"{% endif %}>
+    <span class="header-side__item-icon">
+      <span class="f aic">
+        <span aria-hidden="true" class="header-side__icon--cart">
+          {%- render 'icon' with 'icon-cart' -%}
+        </span>
+        <span class="p2 header-side__cart-count" aria-hidden="true" v-text="itemCount"></span>
+      </span>
+    </span>
+    <span class="header-side__item-text" aria-hidden="true" aria-describedby="cart-info">Cart</span>
+    <span id="cart-info" class="sr-only" v-text="itemCountText">Your bag - <span v-text="itemCount"></span></span>
+  </a>
+</li>

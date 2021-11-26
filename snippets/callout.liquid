@@ -1,0 +1,36 @@
+{%- assign item = callout.settings -%}
+{%- assign image = item['image'] -%}
+{%- assign image_mobile = item['image_mobile'] -%}
+{%- assign cta_text = item['cta_text'] -%}
+{%- assign cta_url = item['cta_url'] -%}
+
+<section class="callout">
+  <div class="callout__featured ratio">
+    {%- capture image_src_media -%}
+      <source media="(max-width: 619px)" data-srcset="{{- image_mobile -}}">
+      <source media="(min-width: 620px)" data-srcset="{{- image -}}">
+    {%- endcapture -%}
+
+    {%- render 'image',
+      src: item['image'],
+      src_media: image_src_media,
+      loader: false -%}
+  </div>
+
+  {%- assign text = item['text'] -%}
+
+  <div class="callout__container container container--s align-c">
+    {%- if text != blank -%}
+      <h2 class="callout__text h3">
+        {{- text -}}
+      </h2>
+    {%- endif -%}
+
+    {%- if cta_text != blank and cta_url != blank -%}
+      {%- render 'button',
+        class: 'callout__btn btn--primary',
+        value: cta_text,
+        href: cta_url -%}
+    {%- endif -%}
+  </div>
+</section>

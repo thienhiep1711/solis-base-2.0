@@ -1,0 +1,26 @@
+<div class="text-focus">
+  {%- assign item = section.settings -%}
+    {%- render 'text-focus',
+      item: item -%}
+</div>
+
+{% schema %}
+  {
+    "name": "Text Focus",
+    "settings": [{
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }, {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"
+    }],
+    "presets": [
+      {
+        "name": "Text Focus",
+        "blocks": []
+      }
+    ]
+  }
+{% endschema %}

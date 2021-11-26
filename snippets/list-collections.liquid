@@ -1,0 +1,74 @@
+{%- comment -%}
+  Parameters
+  * menu
+  * shop_collection
+  * browse_all_text
+  * browse_all_link
+{%- endcomment -%}
+
+{%- if menu != blank -%}
+  {%- assign collections_links = linklists[menu].links | default: false -%}
+  {%- if collections_links -%}
+    <section class="list-collections">
+      <div class="list-collections__wrapper">
+        <div class="container container--l">
+          <div class="list-collections__inner">
+            <div class="list-collections__items">
+              {%- for item in collections_links -%}
+                {%- assign collection = item.object -%}
+                <div class="list-collections__item">
+                  {%- assign image = collection.image | img_url: '2160x' -%}
+                  {%- assign image_intermediate = collection.image | img_url: '1200x' -%}
+                  {%- assign image_mobile = collection.image | img_url: '700x' -%}
+
+                  {%- capture image_sources -%}
+                    {%- if image_mobile != blank -%}
+                      {{- image_mobile -}}
+                    {%- endif -%}
+                    {%- if image_intermediate != blank -%}
+                      |{{- image_intermediate -}}
+                    {%- endif -%}
+                    {%- if image != blank -%}
+                      |{{- image -}}
+                    {%- endif -%}
+                  {%- endcapture  -%}
+
+                  {%- capture breakpoints -%}
+                    {%- if image_mobile != blank -%}
+                      (max-width: 767px)
+                    {%- endif -%}
+                    {%- if image_intermediate != blank -%}
+                      |(max-width: 999px)
+                    {%- endif -%}
+                    {%- if image != blank -%}
+                      |(min-width: 1000px)
+                    {%- endif -%}
+                  {%- endcapture  -%}
+
+                  {%- render 'text-and-image'
+                    class: 'text-and-image--collections-list',
+                    image_sources: image_sources,
+                    breakpoints: breakpoints,
+                    image_alt: collection.title,
+                    title: collection.title,
+                    text: collection.description,
+                    cta_url: collection.url,
+                    content_alignment: 'right',
+                    cta_text: shop_collection -%}
+                </div>
+              {%- endfor -%}
+            </div>
+            {%- if browse_all_link != blank and browse_all_text != blank -%}
+              <div class="list-collections__bottom align-c">
+                {%- render 'button' with 'link'
+                  class: 'btn--primary list-collections__button',
+                  href: browse_all_link,
+                  value: browse_all_text -%}
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </section>
+  {%- endif -%}
+{%- endif -%}

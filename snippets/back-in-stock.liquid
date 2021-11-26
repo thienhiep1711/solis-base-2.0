@@ -1,0 +1,11 @@
+{%- assign has_soldout_variant = false -%}
+{%- for variant in product.variants -%}
+  {%- unless variant.available -%}
+  {%- assign has_soldout_variant = true -%}
+  {%- break -%}
+  {%- endunless -%}
+{%- endfor -%}
+
+{%- if settings.klaviyo_bis_enable and settings.klaviyo_bis_trigger_text and has_soldout_variant -%}
+  <div class="back-in-stock rte">{{- settings.klaviyo_bis_trigger_text -}}</div>
+{%- endif -%}

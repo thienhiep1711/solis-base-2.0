@@ -1,0 +1,18 @@
+{%- assign tagged = tagged | default: nil -%}
+{%- assign location = location | default: nil -%}
+
+<div class="discount-callout {% if location contains 'mini-cart' -%}discount-callout--mini-cart {%- endif -%}">
+  <p class="align-c tagline">{{ 'general.discounts.title' | t }}</p>
+  <div class="discount-callout__content">
+    {%- if tagged contains 'tees' -%}
+    <p class="align-c">{{ 'general.discounts.offer_1' | t }}</p>
+    {%- endif -%}
+    {%- if tagged contains 'sweats' -%}
+    <p class="align-c">{{ 'general.discounts.offer_2' | t }}</p>
+    {%- endif -%}
+    {%- if tagged contains 'both' or template == 'cart' -%}
+      <p class="align-c">{{ 'general.discounts.offer_1' | t }}</p>
+      <p class="align-c">{{ 'general.discounts.offer_2' | t }}</p>
+    {%- endif -%}
+  </div>
+</div>

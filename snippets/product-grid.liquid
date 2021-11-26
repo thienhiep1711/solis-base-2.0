@@ -1,0 +1,49 @@
+{%- comment -%}
+  Parameters
+  * tagline
+  * title
+  * class
+  * blocks
+{%- endcomment -%}
+
+{%- capture css -%}
+  product-grid product-grid--{{ request.page_type | handle }} {{ class }}
+{%- endcapture -%}
+
+{%- if blocks.size > 0 -%}
+  <div data-module="product-grid" v-cloak data-a-group>
+    <div class="{{- css | strip -}}">
+      <div class="product-grid__wrapper">
+        <div class="container container--xl">
+          <div class="product-grid__inner">
+            {%- render 'module-header',
+              tagline: tagline,
+              title: title -%}
+
+            <div data-a-stagger>
+              {%- render 'carousel',
+                class: 'product-grid__carousel',
+                columns: 2,
+                columns_s: 3,
+                columns_m: 3,
+                columns_l: 3,
+                card: 'product-card',
+                class_card: 'related-products__slide',
+                items: blocks,
+                page_dots: false,
+                prev_next_buttons: true,
+                watch_css: true,
+                bind_dynamic_props: false,
+                is_vue: true,
+                align_arrows_to_image: true,
+                group_cells: true,
+                contain: true,
+                cell_align: 'left',
+                mobile_options: '{"alignArrowsToImage": false}' -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}

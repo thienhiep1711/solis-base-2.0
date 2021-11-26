@@ -1,0 +1,44 @@
+{%- comment -%}
+  Parameters
+  * item
+{%- endcomment -%}
+
+{%- assign image = item.object.featured_image.src | img_url: '500x' -%}
+{%- assign truncate_at = 44 -%}
+{%- assign product_image_ratio = settings.product_image_ratio -%}
+{%- assign image_ratio = item.object.featured_image.aspect_ratio -%}
+{%- capture inline_style -%}
+  {%- if product_image_ratio == 'natural' -%}
+    style="padding-bottom: {{ 100.0 | divided_by: image_ratio }}%; --aspect-ratio: {{ image_ratio }}"
+  {%- endif -%}
+{%- endcapture  -%}
+
+{%- if item.type == 'product_link' -%}
+  <div class="header-mega-nav-item">
+    <a class="relative block ratio header-mega-nav-item__link aspect-ratio aspect-ratio--{{ product_image_ratio }}" href="{{- item.url -}}" {{ inline_style }}>
+      {%- render 'picture',
+        class: 'header-mega-nav-item__image',
+        bind_dynamic_props: false,
+        sources: image,
+        width: 100,
+        width_s: 50,
+        width_m: 50,
+        width_l: 33,
+        alt: item.title,
+        loader: false
+      -%}
+    </a>
+    <div class="align-c header-mega-nav-item__content">
+      <p class="p bold header-mega-nav-item__title">
+        <a href={{- item.url -}}>{{- item.title -}}</a>
+      </p>
+      <div class="p header-mega-nav-item__description">
+        {%- if content_for_products == 'price' -%}
+          <span>{{ item.object.price | money }}</span>
+        {%- else -%}
+          {{ item.object.description | strip_html | truncate: truncate_at }}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}

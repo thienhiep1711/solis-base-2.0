@@ -1,0 +1,19 @@
+{%- comment -%}
+  Parameters
+  * fields
+{%- endcomment -%}
+
+{%- for enable in fields.quote_enable -%}
+  {%- if enable -%}
+    {%- assign order = fields.quote_order[forloop.index0] -%}
+    {%- assign content = fields.quote_content[forloop.index0] -%}
+
+    <div class="flex-quote" style="order: {{ order }}">
+      <div class="container container--xl">
+        <blockquote class="flex-quote__content bq">
+          <p>{{- content -}}</p>
+        </blockquote>
+      </div>
+    </div>
+  {%- endif -%}
+{%- endfor -%}

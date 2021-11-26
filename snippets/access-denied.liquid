@@ -1,0 +1,10 @@
+<section class="age-gate age-gate--visible align-c black">
+  <div class="age-gate__inner mxa f fdc jcc aic">
+    <div class="age-gate__logo">
+      {%- assign src = 'logo.png' | asset_url -%}
+      {%- render 'image', src: src, text: 'logo' -%}
+    </div>
+    <h2>{{- 'general.age_gate.denied' | t -}}</h2>
+    <p>{{- 'general.age_gate.denied_message' | t -}}</p>
+  </div>
+</section>

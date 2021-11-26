@@ -1,0 +1,56 @@
+{%- comment -%}
+  Parameters
+  * blocks
+  * class
+  * is_vue
+{%- endcomment -%}
+{%- if blocks.size > 0 -%}
+  {%- capture css -%}
+    content-grid content-grid--{{ blocks.size }}{{ blocks.size | pluralize: '-item', '-items' }} {{ class }}
+  {%- endcapture -%}
+
+  <div class="{{- css | strip -}}" data-a-group>
+    <div class="container container--xl content-grid__container">
+      <div class="content-grid__inner">
+        {%- if section.title != blank -%}
+          <h2 class="h3 content-grid__title" data-a-stagger>{{- section.title -}}</h2>
+        {%- endif -%}
+
+        <div class="f fw content-grid__list">
+          {%- for block in blocks -%}
+            {%- if block.settings.image_mobile != blank -%}
+              {%- assign image_mobile = block.settings.image_mobile | img_url: '700x' -%}
+            {%- endif -%}
+
+            {%- if block.settings.image_intermediate != blank -%}
+              {%- assign image_intermediate = block.settings.image_intermediate | img_url: '1200x' -%}
+            {%- endif -%}
+
+            {%- if block.settings.image != blank -%}
+              {%- assign image = block.settings.image | img_url: '2160x' -%}
+            {%- endif -%}
+
+            {%- render 'content-grid-item' with block.settings['background_type'] as background_type,
+              inverted_mode: section.inverted_mode,
+              enable_overlay: section.enable_overlay,
+              overlay_opacity: section.overlay_opacity,
+              tagline: block.settings.tagline,
+              title: block.settings.title,
+              cta_text: block.settings.cta_text
+              cta_url: block.settings.cta_url,
+              image_mobile: image_mobile,
+              image_intermediate: image_intermediate,
+              image: image,
+              image_alt: block.settings.image.alt,
+              video: block.settings.video,
+              id: block.id
+              is_vue: is_vue
+            -%}
+
+            {%- assign video_url = nil -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}

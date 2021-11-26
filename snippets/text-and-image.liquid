@@ -1,0 +1,130 @@
+{%- comment -%}
+  Parameters
+  * class
+  * media_type
+  * image_sources
+  * image_alt
+  * breakpoints
+  * video
+  * video_s
+  * video_l
+  * fallback
+  * fallback_s
+  * fallback_l
+  * tagline
+  * title
+  * text
+  * cta_url
+  * cta_text
+  * cta_new_window
+  * content_alignment
+  * text_alignment
+  * additional_content
+  * inverted_mode
+  * order
+{%- endcomment -%}
+
+{%- assign media_type = media_type | default: 'image' -%}
+{%- assign content_alignment = content_alignment | default: 'left' -%}
+{%- assign text_alignment = text_alignment | default: 'left' -%}
+{%- if cta_new_window == blank -%}
+  {%- assign cta_new_window = false -%}
+{%- endif -%}
+
+{%- capture css -%}
+  text-and-image text-and-image--{{ media_type }} {{ class }}
+{%- endcapture -%}
+
+{%- if title != blank or text != blank or image_sources -%}
+  <div class="{{- css | strip -}}" {% if order != blank %}style="order: {{- order -}}"{% endif %}>
+    <div class="text-and-image__wrapper" data-a-group>
+      <div class="text-and-image__container container container--xl">
+        <div class="text-and-image__inner text-and-image__inner--content-{{ content_alignment }}{% if inverted_mode != blank %} text-and-image__inner--inverted{% endif %}">
+          <div class="relative text-and-image__block text-and-image__media">
+            <div class="text-and-image__featured ratio">
+              {%- if media_type == 'image' -%}
+                {%- if image_sources != blank and breakpoints != blank -%}
+                  {%- render 'picture',
+                    class: 'text-and-image__image',
+                    bind_dynamic_props: false,
+                    sources: image_sources,
+                    breakpoints: breakpoints,
+                    width: 100,
+                    width_s: 50,
+                    width_m: 50,
+                    width_l: 33,
+                    alt: image_alt,
+                    loader: false
+                  -%}
+                {%- endif -%}
+              {%- elsif media_type == 'video' -%}
+                {%- render 'video',
+                  video: video,
+                  video_s: video_s,
+                  video_l: video_l,
+                  fallback: fallback,
+                  fallback_s: fallback_s,
+                  fallback_l: fallback_l,
+                  class: 'text-and_image__video',
+                  is_vue: false -%}
+              {%- endif -%}
+            </div>
+          </div>
+          <div class="text-and-image__block text-and-image__content text-and-image__content--{{- text_alignment -}}">
+            <div class="text-and-image__content-inner">
+              {%- if image_s != blank -%}
+                <div class="relative ratio ro-1 text-and-image__image-small-wrapper">
+                  {%- render 'picture',
+                    class: 'text-and-image__image-small',
+                    bind_dynamic_props: false,
+                    sources: image_s,
+                    breakpoints: breakpoints,
+                    alt: image_s_alt,
+                    loader: false
+                  -%}
+                </div>
+              {%- endif -%}
+
+              {%- if tagline != blank -%}
+                <p class="tagline text-and-image__tagline" data-a-stagger>{{- tagline -}}</p>
+              {%- endif -%}
+
+              {%- if title != blank -%}
+                <h2 class="h3 text-and-image__title" data-a-stagger>
+                  {{- title -}}
+                </h2>
+              {%- endif -%}
+
+              {%- if text != blank -%}
+                <div class="text-and-image__intro" data-a-stagger>
+                  {{- text -}}
+                </div>
+              {%- endif -%}
+
+              {%- if cta_text != blank and cta_url != blank -%}
+                <div data-a-stagger>
+                  {%- if cta_new_window -%}
+                    {%- assign target = '_blank' -%}
+                  {%- endif -%}
+
+                  {%- render 'button' with 'link'
+                    class: 'btn--primary text-and-image__btn',
+                    href: cta_url,
+                    value: cta_text,
+                    target: target
+                  -%}
+                </div>
+              {%- endif -%}
+
+              {%- if additional_content != blank -%}
+                <div class="text-and-image__additional-content" data-a-stagger>
+                  {{- additional_content -}}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}

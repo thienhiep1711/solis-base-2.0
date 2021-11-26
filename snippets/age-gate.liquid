@@ -1,0 +1,155 @@
+{%- assign show_age_gate = settings.show_age_gate | default: false -%}
+{%- assign min_age = settings.age_gate_min_age | default: 21 -%}
+{%- assign image = settings.age_gate_image_desktop | img_url: '2160x' -%}
+{%- assign image_intermediate = settings.age_gate_image_intermediate | img_url: '1200x' -%}
+{%- assign image_mobile = settings.age_gate_image_mobile | img_url: '700x' -%}
+{%- assign video_mobile = settings.age_gate_video_mobile -%}
+{%- assign video_intermediate = settings.age_gate_video_intermediate -%}
+{%- assign video_desktop = settings.age_gate_video_desktop -%}
+{%- assign image_alt = settings.age_gate_image_desktop.alt -%}
+{%- assign logo = settings.age_gate_logo -%}
+{%- assign title = settings.age_gate_title -%}
+{%- assign description = settings.age_gate_description -%}
+{%- assign enter_text = settings.age_gate_enter_text -%}
+{%- assign error_text = settings.age_gate_error_text -%}
+{%- assign background_type = settings.age_gate_background_type -%}
+{%- assign background_type = settings.age_gate_background_type -%}
+{%- assign overlay = settings.age_gate_overlay -%}
+{%- assign overlay_opacity = settings.age_gate_overlay_opacity -%}
+{%- assign invert = settings.age_gate_invert -%}
+{%- assign invert_color = settings.age_gate_invert_color -%}
+{%- assign invert_background = settings.age_gate_invert_background -%}
+
+{%- capture images -%}
+  {%- if image_mobile != blank -%}
+    {{- image_mobile -}}
+  {%- endif -%}
+  {%- if image_intermediate != blank -%}
+    |{{- image_intermediate -}}
+  {%- endif -%}
+  {%- if image != blank -%}
+    |{{- image -}}
+  {%- endif -%}
+{%- endcapture  -%}
+
+{%- capture breakpoints -%}
+  {%- if image_mobile != blank -%}
+    (max-width: 767px)
+  {%- endif -%}
+  {%- if image_intermediate != blank -%}
+    |(max-width: 999px)
+  {%- endif -%}
+  {%- if image != blank -%}
+    |(min-width: 1000px)
+  {%- endif -%}
+{%- endcapture  -%}
+
+{%- assign months = 'January|February|March|April|May|June|July|August|September|October|November|December' | split: '|' -%}
+
+{%- assign current_year = 'now' | date: '%Y' | times: 1 -%}{%- comment -%}lint:ignore{%- endcomment -%}
+{%- assign start_year = current_year | minus: 100 -%}
+
+{%- capture years_str -%}
+  {%- for i in (start_year..current_year) -%}
+    {{- i -}}{%- unless forloop.last -%}|{%- endunless -%}
+  {%- endfor -%}
+{%- endcapture  -%}
+
+{%- assign years = years_str | split: '|' | reverse -%}
+
+{%- if show_age_gate -%}
+  <section class="age-gate age-gate--{{ background_type }}{% if invert %} age-gate--inverted{% endif %} fixed f fdc jcc aic align-c" data-module="age-gate" data-min-age="{{- min_age -}}">
+    {%- if images != blank and background_type == 'image' -%}
+      {%- if images -%}
+        {%- render 'picture',
+          class: 'age-gate__back-ground-image',
+          sources: images,
+          alt: image_alt,
+          object_fit: 'cover',
+          breakpoints: breakpoints,
+          alt: image_alt,
+          loader: false
+        -%}
+      {%- endif -%}
+    {%- elsif background_type == 'video' -%}
+      {%- render 'video',
+        video: video_mobile,
+        video_s: video_intermediate,
+        video_l: video_desktop,
+        fallback: image_mobile,
+        fallback_s: image_intermediate,
+        fallback_l: image,
+        class: 'age-gate__video',
+        is_vue: false -%}
+    {%- endif -%}
+    {%- if overlay -%}
+      <div class="age-gate__overlay fill" style="opacity: {{- overlay_opacity -}}"></div>
+    {%- endif -%}
+    <div class="age-gate__inner">
+      {%- if logo -%}
+        <img class="age-gate__logo" src="{{- logo | img_url: 'master' -}}" alt="{{- shop.name -}}">
+      {%- endif -%}
+
+      {%- if title != blank -%}
+        <h2 class="h2 age-gate__title"{% if background_type == 'none' and invert %} {{ invert_color_style }}{% endif %}>{{- title -}}</h2>
+      {%- endif -%}
+
+      {%- if description != blank -%}
+        <p class="p1 age-gate__description">{{- description -}}</p>
+      {%- endif -%}
+
+      <form class="age-gate__form js-age-gate-form">
+        <div class="age-gate__form__inputs f mb1">
+          <div class="select-input w1 mr1">
+            <div class="select-input__el-wrap">
+              <label class="sr-only" for="month">{{ 'general.age_gate.month' | t }}</label>
+              <select id="month" class="age-gate__form__select-input select-input__el" name="month">
+                {%- for month in months -%}
+                  <option value="{{- forloop.index -}}">{{- month -}}</option>
+                {%- endfor -%}
+              </select>
+              <span class="select-input__outline"></span>
+              <i class="select-input__icon"></i>
+            </div>
+          </div>
+
+          <div class="select-input w1 mr1">
+            <div class="select-input__el-wrap">
+              <label class="sr-only" for="day">{{ 'general.age_gate.day' | t }}</label>
+              <select id="day" class="age-gate__form__select-input select-input__el" name="day">
+                {%- for i in (1..31) -%}
+                  <option value="{{- i -}}">{{- i -}}</option>
+                {%- endfor -%}
+              </select>
+              <span class="select-input__outline"></span>
+              <i class="select-input__icon"></i>
+            </div>
+          </div>
+
+          <div class="select-input w1">
+            <div class="select-input__el-wrap">
+              <label class="sr-only" for="year">{{ 'general.age_gate.year' | t }}</label>
+              <select id="year" class="age-gate__form__select-input select-input__el" name="year">
+                {%- for year in years -%}
+                  <option value="{{- year -}}">{{- year -}}</option>
+                {%- endfor -%}
+              </select>
+              <span class="select-input__outline"></span>
+              <i class="select-input__icon"></i>
+            </div>
+          </div>
+        </div>
+
+        {%- render 'button' with 'button',
+          type: 'submit',
+          class: 'btn--primary age-gate__button w1',
+          value: enter_text
+        -%}
+
+        {%- if error_text != blank -%}
+          <p class="p1 age-gate__error color-errors small">{{- error_text -}}</p>
+        {%- endif -%}
+      </form>
+    </div>
+  </section>
+{%- endif -%}

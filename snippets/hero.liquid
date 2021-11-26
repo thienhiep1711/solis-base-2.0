@@ -1,0 +1,272 @@
+{%- comment -%}
+  Parameters
+  * type
+  * enable_newsletter
+  * inverted_mode
+  * enable_overlay
+  * overlay_opacity
+  * class
+  * tagline
+  * title
+  * text
+  * btn_text_1
+  * btn_link_1
+  * btn_style_1
+  * btn_text_2
+  * btn_link_2
+  * btn_style_2
+  * position
+  * alignment
+  * image_sources
+  * breakpoints
+  * video
+  * video_s
+  * video_l
+  * fallback
+  * fallback_s
+  * fallback_l
+  * ratio
+  * ratio_s
+  * ratio_l
+  * max_height
+  * max_height_s
+  * max_height_l
+  * id
+  * is_vue
+  * enable_audio
+  * lazy_load
+{%- endcomment -%}
+
+{%- if is_vue == blank -%}
+  {%- assign is_vue = false -%}
+{%- endif -%}
+
+{%- assign type = type | default: 'featured' -%}
+{%- assign btn_style_1 = btn_style_1 | default: 'primary' -%}
+{%- assign btn_style_2 = btn_style_2 | default: 'secondary' -%}
+{%- assign position = position | default: 'left' -%}
+{%- assign alignment = alignment | default: 'left' -%}
+
+{%- capture alignment -%}
+  {%- if alignment == 'right' -%}
+    align-r
+  {%- elsif alignment == 'center' -%}
+    align-c
+  {%- else -%}
+    align-l
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- capture css -%}
+  hero hero--{{ hero }} is-{{ position }} {{ alignment }} js-hover {{ class }}
+  {% if inverted_mode %}hero--inverted{% endif %}
+{%- endcapture -%}
+
+<section class="{{- css | strip -}}" {% if id != blank %}id="hero-{{ id }}"{% endif %} data-a-group>
+  <div class="hero__{{ type }} ratio">
+    {%- case hero -%}
+      {%- when 'video' -%}
+        {%- render 'video',
+          video: video,
+          video_s: video_s,
+          video_l: video_l,
+          fallback: fallback,
+          fallback_s: fallback_s,
+          fallback_l: fallback_l,
+          class: 'hero__video',
+          is_vue: is_vue,
+          enable_audio: enable_audio
+        -%}
+      {%- else -%}
+        {%- render 'picture',
+          class: 'hero__img',
+          bind_dynamic_props: false,
+          sources: image_sources,
+          breakpoints: breakpoints,
+          width: 100,
+          width_s: 50,
+          width_m: 50,
+          width_l: 33,
+          alt: title,
+          loader: false,
+          is_vue: is_vue,
+          lazy_load: lazy_load
+        -%}
+    {%- endcase -%}
+  </div>
+
+  {%- if title != blank or text != blank or btn_text_1 != blank or btn_text_2 != blank -%}
+    <div class="hero__container container container--xl">
+      <div class="hero__wrapper">
+        {%- if tagline != blank -%}
+          <p class="hero__tagline tagline" data-a-stagger>
+            {{- tagline -}}
+          </p>
+        {%- endif -%}
+
+        {%- if title != blank -%}
+          <h1 class="hero__title {{ title_style }}" data-a-stagger>
+            {{- title -}}
+          </h1>
+        {%- endif -%}
+
+        {%- if text != blank -%}
+          <p class="hero__content" data-a-stagger>
+            {{- text -}}
+          </p>
+        {%- endif -%}
+
+        {%- if btn_text_1 != blank or btn_text_2 != blank -%}
+          <div class="hero__ctas js-cta" data-a-stagger>
+            {%- if btn_text_1 != '' -%}
+              {%- capture btn_class_1 -%}
+                hero__btn btn--{{ btn_style_1 }}
+              {%- endcapture -%}
+              {%- render 'button' with 'link',
+                class: btn_class_1,
+                value: btn_text_1,
+                href: btn_link_1
+              -%}
+            {%- endif -%}
+
+            {%- if btn_text_2 != '' -%}
+              {%- capture btn_class_2 -%}
+                hero__btn btn--{{ btn_style_2 }}
+              {%- endcapture -%}
+              {%- render 'button' with 'link',
+                class: btn_class_2,
+                value: btn_text_2,
+                href: btn_link_2
+              -%}
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- if enable_newsletter -%}
+          <div class="hero__form" data-module="sign-up-form">
+            {%- render 'newsletter-form',
+              provider: 'klaviyo',
+              class: 'hero__sign-up-form relative',
+              klaviyo_url: settings.klaviyo_url,
+              klaviyo_group: klaviyo_id,
+              placeholder: newsletter_placeholder,
+              btn_text: newsletter_button_text,
+              error_msg: settings.newsletter_error,
+              success_msg: settings.newsletter_success,
+              subscribed_msg: settings.newsletter_subscribed
+            -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+  {%- if enable_overlay -%}
+    <div class="hero__overlay fill" style="opacity: {{ overlay_opacity }}%"></div>
+  {%- endif -%}
+</section>
+
+{%- if is_vue -%}
+  <component is="style">
+{%- else -%}
+  <style>
+{%- endif -%}
+  {%- if ratio != blank -%}
+    {% if id != blank %}#hero-{{ id }}{% endif %} .hero__featured::before {
+      content: '';
+      padding-top: {{ ratio | times: 100 }}%;
+    }
+  {%- else -%}
+    {% if id != blank %}#hero-{{ id }}{% endif %} .hero__featured::before {
+      content: none;
+    }
+  {%- endif -%}
+
+  {%- if max_height != blank -%}
+    {% if id != blank %}#hero-{{ id }}{% endif %} .hero__featured {
+      {%- if ratio != blank -%}
+          height: unset;
+        max-height: {{ max_height }}px;
+      {%- else -%}
+        height: {{ max_height }}px;
+      {%- endif -%}
+    }
+  {%- endif -%}
+
+  @media (min-width: 768px) {
+    {%- if ratio_s != blank -%}
+      {% if id != blank %}#hero-{{ id }}{% endif %} .hero__featured::before {
+        content: '';
+        padding-top: {{ ratio_s | times: 100 }}%;
+      }
+    {%- else -%}
+      {% if id != blank %}#hero-{{ id }}{% endif %} .hero__featured::before {
+        content: none;
+      }
+    {%- endif -%}
+  }
+
+  {%- if max_height_s != blank -%}
+    @media (min-width: 768px) {
+      {% if id != blank %}#hero-{{ id }}{% endif %} .hero__featured {
+        {%- if ratio_s != blank -%}
+          height: unset;
+          max-height: {{ max_height_s }}px;
+        {%- else -%}
+          height: {{ max_height_s }}px;
+        {%- endif -%}
+      }
+    }
+  {%- endif -%}
+
+  @media (min-width: 1200px) {
+    {%- if ratio_l != blank -%}
+      {% if id != blank %}#hero-{{ id }}{% endif %} .hero__featured::before {
+        content: '';
+        padding-top: {{ ratio_l | times: 100 }}%;
+      }
+    {%- else -%}
+      {% if id != blank %}#hero-{{ id }}{% endif %} .hero__featured::before {
+        content: none;
+      }
+    {%- endif -%}
+  }
+
+  {%- if max_height_l != blank -%}
+    @media (min-width: 1200px) {
+      {% if id != blank %}#hero-{{ id }}{% endif %} .hero__featured {
+        {%- if ratio_l != blank -%}
+          height: unset;
+          max-height: {{ max_height_l }}px;
+        {%- else -%}
+          height: {{ max_height_l }}px;
+        {%- endif -%}
+      }
+    }
+  {%- endif -%}
+
+  {%- if margin_top != blank -%}
+    {% if id != blank %}#hero-{{ id }}{% endif %} .hero__wrapper {
+      margin-top: {{ margin_top }}px;
+    }
+  {%- endif -%}
+
+  {%- if margin_top_s != blank -%}
+    @media (min-width: 768px) {
+      {% if id != blank %}#hero-{{ id }}{% endif %} .hero__wrapper {
+        margin-top: {{ margin_top_s }}px;
+      }
+    }
+  {%- endif -%}
+
+  {%- if margin_top_l != blank -%}
+    @media (min-width: 1200px) {
+      {% if id != blank %}#hero-{{ id }}{% endif %} .hero__wrapper {
+        margin-top: {{ margin_top_l }}px;
+      }
+    }
+  {%- endif -%}
+{%- if is_vue -%}
+  </component>
+{%- else -%}
+  </style>
+{%- endif -%}

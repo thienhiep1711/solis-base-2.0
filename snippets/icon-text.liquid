@@ -1,0 +1,47 @@
+{%- comment -%}
+  Parameters
+  * icon_type
+  * label
+  * text
+  * icon_svg
+  * icon_jpeg_png
+  * class
+  * icon_src
+{%- endcomment -%}
+{%- assign icon_type = icon_type | default: 'jpeg-png' -%}
+
+{%- if icon_src == blank -%}
+  {%- capture icon_src -%}
+    {%- if icon_type == 'jpeg-png' and icon_jpeg_png != blank -%}
+      {{ icon_jpeg_png | img_url: '90x' }}
+    {%- elsif icon_type == 'svg' and icon_svg != blank -%}
+      {{ icon_svg | file_url }}
+    {%- endif -%}
+  {%- endcapture -%}
+{%- endif -%}
+
+{%- if icon_src != blank -%}
+  <div class="icon-text{% if class != blank %} {{ class }}{% endif %}">
+    <div class="icon-text__featured ratio ro-1">
+      {%- render 'picture',
+        class: 'icon-text__image',
+        bind_dynamic_props: false,
+        sources: icon_src,
+        alt: label,
+        loader: false
+      -%}
+    </div>
+
+    {%- if label != blank or text != blank -%}
+      <div class="icon-text__content">
+        {%- if label != blank -%}
+          <h3 class="label icon-text__label">{{ label }}</h3>
+        {%- endif -%}
+
+        {%- if text != blank -%}
+          <p class="icon-text__text">{{ text }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+{%- endif -%}

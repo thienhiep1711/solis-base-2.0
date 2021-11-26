@@ -1,0 +1,63 @@
+{%- assign settings = section.settings -%}
+
+{%- render 'breadcrumbs' -%}
+{%- render 'blog-hero-basic', title: settings.title -%}
+
+{%- if settings.enable_section -%}
+  {%- render 'list-collections',
+    menu: settings.collection_menu,
+    shop_collection: settings.shop_collection,
+    browse_all_text: settings.browse_all_cta_text,
+    browse_all_link: settings.browse_all_cta_link
+  -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Collections List",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "Enable this Section",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Shop Barrel’s Products"
+    },
+    {
+      "type": "link_list",
+      "id": "collection_menu",
+      "label": "Collection Menu"
+    },
+    {
+      "type": "text",
+      "id": "shop_collection",
+      "label": "Shop CTA Text",
+      "default": "Shop Collection"
+    },
+    {
+      "type": "header",
+      "content": "Browse All"
+    },
+    {
+      "type": "text",
+      "id": "browse_all_cta_text",
+      "label": "Browse All CTA text",
+      "default": "Browse All Products"
+    },
+    {
+      "type": "url",
+      "id": "browse_all_cta_link",
+      "label": "Browse All CTA link"
+    }
+  ]
+}
+{% endschema %}

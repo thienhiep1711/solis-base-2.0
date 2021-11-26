@@ -1,0 +1,26 @@
+{%- comment -%}
+  Parameters
+  * section
+  * blocks
+{%- endcomment -%}
+
+<section class="testimonials" style="background-color: {{ section['bg_color'] }}">
+  <div class="testimonials__container container container--xl align-c">
+    {%- render 'module-header',
+      tagline: section['tag'],
+      title: section['title'] -%}
+    <div class="testimonials__carousel">
+      {%- render 'carousel',
+        columns_s: 1,
+        columns_m: 1,
+        columns_l: 1,
+        card: 'testimonial-card',
+        items: blocks,
+        page_dots: true,
+        prev_next_buttons: true,
+        watch_css: true,
+        bind_dynamic_props: false
+      -%}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,122 @@
+{%- comment -%}
+  Parameters
+  * settings
+{%- endcomment -%}
+{%- assign image = settings.gift_card_image | img_url: '2160x' -%}
+{%- assign image_intermediate = settings.gift_card_image_intermediate | img_url: '1200x' -%}
+{%- assign image_mobile = settings.gift_card_image_mobile | img_url: '700x' -%}
+{%- capture image_sources -%}
+  {%- if settings.gift_card_image_mobile != blank -%}
+    {{- image_mobile -}}
+  {%- endif -%}
+  {%- if settings.gift_card_image_intermediate != blank -%}
+    |{{- image_intermediate -}}
+  {%- endif -%}
+  {%- if settings.gift_card_image != blank -%}
+    |{{- image -}}
+  {%- endif -%}
+{%- endcapture  -%}
+
+{%- capture breakpoints -%}
+  {%- if settings.gift_card_image_mobile != blank -%}
+    (max-width: 767px)
+  {%- endif -%}
+  {%- if settings.gift_card_image_intermediate != blank -%}
+    |(max-width: 999px)
+  {%- endif -%}
+  {%- if settings.gift_card_image != blank -%}
+    |(min-width: 1000px)
+  {%- endif -%}
+{%- endcapture  -%}
+
+{%- assign fallback_desktop = settings.gift_card_fallback_desktop | img_url: '2160x' -%}
+{%- assign fallback_intermediate = settings.gift_card_fallback_intermediate | img_url: '1200x' -%}
+{%- assign fallback_mobile = settings.gift_card_fallback_mobile | img_url: '700x' -%}
+{%- assign video = settings.gift_card_video -%}
+
+{%- capture image_fallback -%}
+  {%- if settings.gift_card_fallback_mobile != blank -%}
+    {{- fallback_mobile -}}
+  {%- endif -%}
+  {%- if settings.gift_card_fallback_intermediate != blank -%}
+    |{{- fallback_intermediate -}}
+  {%- endif -%}
+{%- endcapture  -%}
+
+<section class="gift-card">
+  <div class="gift-card__wrapper">
+    <div class="gift-card__content align-c">
+      <div class="gift-card__content-inner">
+        {%- if settings.gift_card_title != blank -%}
+          <h1 class="h2 gift-card__title">{{- settings.gift_card_title -}}</h1>
+        {%- endif -%}
+        <div id="gift-card-holder">
+          <div class="corner top-left"></div>
+          <div class="corner bottom-right"></div>
+          <div class="corner top-right"></div>
+          <div class="corner bottom-left"></div>
+          <div id="gift-card" class="gift-card__amount">
+            <div id="gift-card-amount">
+              {{ gift_card.balance | money_without_trailing_zeros }}
+            </div>
+            {%- assign code_size = gift_card.code | format_code | size -%}
+            <div id="gift-card-code-outer" class="{% if code_size <= 25 %}large{% elsif code_size > 25 and code_size <= 30 %}medium{% else %}small{% endif %}" onclick="selectText('gift-card-code-digits');">
+              <div id="gift-card-code-inner">
+                <strong id="gift-card-code-digits" class="bold">{{ gift_card.code | format_code }}</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        {%- if settings.gift_card_text != blank -%}
+          <div class="p1 gift-card__description">{{- settings.gift_card_text -}}</div>
+        {%- endif -%}
+        <div id="qr-code" class="gift-card__code"></div>
+        <script>
+          new QRCode(document.getElementById("qr-code"), {
+            text: "{{ gift_card.qr_identifier }}",
+            width: 40,
+            height: 41
+          });
+        </script>
+      </div>
+
+      <div id="gift-card-actions" class="gift-card__footer">
+        {%- if settings.print_cta_text != blank -%}
+          <a href="#" class="gift-card__action-link left underline" onclick="window.print();"><i class="ico-16 print"></i>{{- settings.print_cta_text -}}</a>
+        {%- endif -%}
+        {%- if settings.continue_cta_text != blank -%}
+          <a href="{{ shop.url }}" class="btn center btn--primary gift-card__button" target="_blank">{{- settings.continue_cta_text -}}</a>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="gift-card__background ratio">
+      {%- case settings.featured_type -%}
+      {%- when 'image' -%}
+        {%- if image_sources != blank -%}
+          {%- render 'picture',
+            bind_dynamic_props: false,
+            sources: image_sources,
+            breakpoints: breakpoints,
+            width: 100,
+            width_s: 50,
+            width_m: 50,
+            width_l: 33,
+            loader: false
+          -%}
+        {%- endif -%}
+
+      {%- when 'video' %}
+        {%- render 'video',
+          video: video,
+          video_s: settings['gift_card_video_s'],
+          video_l: settings['gift_card_video_l'],
+          fallback: fallback_mobile,
+          fallback_s: fallback_intermediate,
+          fallback_l: fallback_desktop,
+          is_vue: false
+        -%}
+      {%- endcase -%}
+    </div>
+  </div>
+</section>

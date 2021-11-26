@@ -6,3 +6,5 @@ README.md
 LICENSE.md
 babel.config.json
 postcss.config.js
+/assets/stats.json
+/assets/report.html

@@ -1,0 +1,34 @@
+{%- assign settings = section.settings -%}
+{%- assign products = page.metafields.lookbook_products.products | split: '|' -%}
+
+{%- render 'related-products',
+  enable: settings.enable_products,
+  class: 'lookbook-product-grid',
+  tagline: settings.tagline,
+  title: settings.title,
+  blocks: products
+-%}
+
+{% schema %}
+{
+  "name": "Lookbook Product Grid",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_products",
+      "label": "Enable",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline (Optional)"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,22 @@
+{%- assign value = value | default: 0 | plus: 0 -%}
+<div class="star-rating">
+  <ul class="star-rating__list">
+    {%- for i in (1..5) -%}
+      {%- assign j = i | minus: 1 -%}
+
+      <li class="star-rating__item icon">
+        <i class="star-rating__icon icon">
+          {%- if i <= value -%}
+            {%- render 'icon' with 'icon-star-full' -%}
+          {%- elsif i > value and value > j -%}
+            {%- render 'icon' with 'icon-star-half' -%}
+          {%- else -%}
+            {%- render 'icon' with 'icon-star-empty' -%}
+          {%- endif -%}
+        </i>
+      </li>
+
+      {%- assign j = nil -%}
+    {%- endfor -%}
+  </ul>
+</div>

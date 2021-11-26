@@ -1,0 +1,89 @@
+{%- comment -%}
+  Parameters
+  * background_type
+  * image
+  * image_s
+  * image_l
+  * alt
+  * video
+  * video_s
+  * video_l
+  * aspect_ratio
+  * classes
+  * attrs
+  * is_vue
+  * autoplay
+  * loop
+  * show_play_button
+{%- endcomment -%}
+
+<div
+  class="ratio aspect-ratio media media--{{ media }} {{ classes }}"
+  style="--aspect-ratio: {{- aspect_ratio -}}"
+  {% if attrs != blank %}
+    {{ attrs }}
+  {% endif %}
+>
+  {%- case media -%}
+    {%- when 'image' -%}
+      {%- capture image_sources -%}
+        {%- if image != blank -%}
+          {{- image -}}
+        {%- endif -%}
+        {%- if image_s != blank -%}
+          |{{- image_s -}}
+        {%- endif -%}
+        {%- if image_l != blank -%}
+          |{{- image_l -}}
+        {%- endif -%}
+      {%- endcapture -%}
+
+      {%- capture breakpoints -%}
+        {%- if image != blank -%}
+          (max-width: 767px)
+        {%- endif -%}
+        {%- if image_s != blank -%}
+          |(max-width: 999px)
+        {%- endif -%}
+        {%- if image_l != blank -%}
+          |(min-width: 1000px)
+        {%- endif -%}
+      {%- endcapture -%}
+
+      {%- render 'picture'
+        class: 'media__img',
+        sources: image_sources,
+        breakpoints: breakpoints,
+        alt: alt,
+        loader: true,
+        is_vue: is_vue
+      -%}
+    {%- else -%}
+      {%- if image != blank -%}
+        {%- assign fallback = image -%}
+      {%- endif -%}
+      {%- if image_s != blank -%}
+        {%- assign fallback_s = image_s -%}
+      {%- endif -%}
+      {%- if image_l != blank -%}
+        {%- assign fallback_l = image_l -%}
+      {%- endif -%}
+
+      {%- assign poster = fallback_l | default: fallback_s | default: fallback -%}
+
+      {%- render 'video',
+        class: 'lookbook-hero__video'
+        video: video,
+        video_s: video_s,
+        video_l: video_l,
+        fallback: fallback,
+        fallback_s: fallback_s,
+        fallback_l: fallback_l,
+        is_vue: is_vue,
+        autoplay: autoplay,
+        loop: loop,
+        show_play_button: show_play_button,
+        poster: poster
+      -%}
+  {%- endcase -%}
+</div>

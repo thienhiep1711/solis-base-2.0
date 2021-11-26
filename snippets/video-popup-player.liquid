@@ -1,0 +1,39 @@
+{%- comment -%}
+  Parameters
+  * video_url
+  * is_vue
+{%- endcomment -%}
+
+{%- unless is_vue -%}
+  <div data-module="video-popup-player">
+{%- endunless -%}
+
+  <div
+    is="video-popup-player"
+    video-url="{{- video_url -}}"
+    inline-template
+  >
+    <div class="video-popup-player">
+      <button class="video-popup-player__button {{ button_class }}" @click="toggleModal(true)">
+        {%- render 'icon' with 'icon-play' -%}
+      </button>
+
+      {%- capture modal_content -%}
+        <div class="modal__player" data-type="youtube" ref="modal-player">
+          <youtube class="modal__video" :video-id="data" :player-vars="{ autoplay: 1 }" ref="youtube"></youtube>
+        </div>
+      {%- endcapture -%}
+
+      {%- render 'modal',
+        class: 'is-video-player',
+        content: modal_content,
+        attrs: ':data="videoId" ref="modal"'
+        show_modal: 'isModalOpen',
+        on_close: 'toggleModal()'
+      -%}
+    </div>
+  </div>
+
+{%- unless is_vue -%}
+  </div>
+{%- endunless -%}

@@ -1,0 +1,102 @@
+{%- render 'three-up',
+  tagline: section.settings.tagline,
+  title: section.settings.title,
+  cta_text_bottom: section.settings.cta_text_bottom,
+  cta_url: section.settings.cta_url,
+  post_cards: section.blocks -%}
+
+{% schema %}
+{
+  "name": "Featured Posts",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline (Optional)",
+      "default": "tagline"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Blog Headline Goes Here"
+    },
+    {
+      "type": "text",
+      "id": "cta_text_bottom",
+      "label": "CTA Text (Optional)",
+      "default": "View All Blog Posts"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA Url (Optional)",
+      "default": "/"
+    }
+  ],
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "post_card",
+      "name": "Post Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "The title for this content"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "The description to go along with the title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_intermediate",
+          "label": "Image Intermediate"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image Mobile"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA Text",
+          "default": "A call to action"
+        },
+        {
+          "type": "url",
+          "id": "cta_url",
+          "label": "CTA Url",
+          "default": "/"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Posts",
+      "blocks": [
+        {
+          "type": "post_card"
+        },
+        {
+          "type": "post_card"
+        },
+        {
+          "type": "post_card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

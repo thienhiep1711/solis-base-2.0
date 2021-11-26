@@ -1,0 +1,17 @@
+{%- comment -%}
+  Parameters
+  * item
+{%- endcomment -%}
+
+<div class="press-item-nav">
+  <div
+    class="press-item-nav__image-wrapper ratio w1"
+    style="padding-bottom: {{ 100.0 | divided_by: item.settings.image.aspect_ratio }}%;">
+    {%- render 'picture',
+      sources: item.settings.image,
+      alt: item.settings.image.alt,
+      object_fit: 'contain',
+      loader: false
+    -%}
+  </div>
+</div>

@@ -1,0 +1,51 @@
+{%- assign error_msg = 'customer.recover_password.error' | t -%}
+
+<div is="account-recover-form" inline-template>
+  <div @submit="validate" v-if="active" class="container container--xxs" data-a-group>
+
+    {%- assign title = 'customer.recover_password.title' | t -%}
+    <div class="account-forms__header">
+      {%- render 'page-title', title: title -%}
+      <p class="p align-c" data-a-stagger>{{- 'customer.recover_password.subtext' | t -}}</p>
+    </div>
+
+    <div data-a-stagger>
+      {%- form 'recover_customer_password', class: 'mha' -%}
+
+        {%- if form['posted_successfully?'] -%}
+          <div class="form-row">
+            <p class="p bold">{{- 'customer.recover_password.reset_success' | t -}}</p>
+          </div>
+        {%- else -%}
+          {%- render 'form-errors', errors: form.errors -%}
+
+          <div class="form-row">
+            {%- assign label = 'customer.recover_password.email' | t -%}
+            {%- assign placeholder = 'customer.recover_password.email_placeholder' | t -%}
+            {%- render 'text-input' with
+              name: 'email',
+              type: 'email',
+              label: label,
+              placeholder: placeholder,
+              show_placeholder: true,
+              error: error_msg,
+              class: 'text-input--account',
+              required: true -%}
+          </div>
+
+          <div class="form-row">
+            {%- assign value = 'customer.recover_password.submit' | t -%}
+            {%- render 'button',
+              value: value,
+              type: 'submit',
+              class: 'btn--primary  btn--full-width' -%}
+          </div>
+
+          <div class="form-row align-c form-footer">
+            <p class="p"><a href="javascript:void(0)" class="underline" @click="$parent.changeForm('login')">{{- 'customer.recover_password.cancel' | t -}}</a></p>
+          </div>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+  </div>
+</div>

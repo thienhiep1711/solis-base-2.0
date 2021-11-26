@@ -1,0 +1,107 @@
+{%- comment -%}
+  Parameters
+  * section
+{%- endcomment -%}
+{%- if is_collection == false -%}
+  {%- assign is_collection = false -%}
+{%- else -%}
+  {%- assign is_collection = true -%}
+{%- endif -%}
+
+<div class="plp__wrap">
+  <div class="container container--xl plp__container">
+    <div class="plp__inner">
+      <a id="skip_to_grid" href="#plp__grid-wrap" class="skip_link skip_link--sidebar">Skip sidebar navigation</a>
+      {%- if section.enable_filters == true -%}
+        <div class="plp-sidebar" is="plp-sidebar">
+
+        </div>
+      {%- endif -%}
+      <div class="plp__grid-wrap{% if section.grid_view == 'small' %} plp__grid-wrap--small{% else %} plp__grid-wrap--large{% endif %}" id="plp__grid-wrap" :class="{'is-empty': !visibleProducts.length && ajaxing && mounted}">
+
+        <div class="plp__sort-bar" :class="{'is-empty': !selectedFacets.length}">
+          <div class="plp__sort-bar__left">
+            <p
+              class="label no-wrap plp__sort-bar-filter-trigger"
+              @click="toggleFilterMenu(true)">Filter By +</p>
+          </div>
+          {%- if is_collection -%}
+            <div class="plp__sort-bar__right">
+              <label for="plpSelect" class="plp-select__pre label">Sort By</label>
+              <select id="plpSelect" is="plp-select" name="sort" :value="sort">
+                <option value="manual">Recommended</option>
+                <option value="title-ascending">Title Ascending</option>
+                <option value="title-descending">Title Descending</option>
+                <option value="best-selling">Best Selling</option>
+              </select>
+            </div>
+          {%- endif -%}
+        </div>
+        <div class="plp__grid plp__grid--not-ajaxing" v-if="!ajaxing || !mounted">
+          {%- for item in items -%}
+            {%- if forloop.index0 >= 9 -%}
+              {%- assign attr = 'v-if="!compactView"' -%}
+            {%- endif -%}
+            {%- if item.tags contains 'hidden' -%}
+              {%- continue -%}
+            {%- endif -%}
+            {%- render 'product-card',
+              class: 'plp__grid-item plp__grid-item--normal',
+              attr: attr,
+              product: item,
+              is_vue: true,
+              hide_color_swatch: true -%}
+          {%- endfor -%}
+
+          {%- unless items.size > 0 -%}
+            {%- render 'product-card', class: 'hide', is_vue: true -%}
+          {%- endunless -%}
+
+          {%- if section.cta_enable -%}
+            {%- render 'plp-cta',
+              section_settings: section,
+              collection_settings: collection_settings
+            -%}
+          {%- endif -%}
+        </div>
+        <div class="plp__grid plp__grid--ajaxing" v-else>
+          <template
+            v-if="(compactView && i < 50) || !compactView"
+            v-for="(product, i) in visibleProducts">
+            {%- render 'product-card',
+              class: 'plp__grid-item plp__grid-item--normal',
+              attr: ':product="product" :key="`${product.id}${product.displayOnlyColor}${collection.handle}`"',
+              is_vue: true,
+              hide_color_swatch: true -%}
+          </template>
+          {%- if section.cta_enable -%}
+            {%- render 'plp-cta',
+              attr: 'v-if="!compactView || visibleProducts.length < 50"',
+              section_settings: section,
+              collection_settings: nil
+            -%}
+          {%- endif -%}
+        </div>
+        <div class="align-c" :class="{hide: visibleProducts.length || !ajaxing}" v-cloak>
+          No products to show..
+        </div>
+        <div class="align-c plp__button"  v-if="compactView && visibleProducts.length > 50">
+          {%- assign href = collection.url | append: '?compactView=false' -%}
+          {%- render 'button',
+            value: 'Show All',
+            class: 'btn--primary',
+            href: href,
+            attr: '@click.prevent="toggleCompactView(false)"' -%}
+        </div>
+        <div v-if="compactView && visibleProducts.length > 50">
+          {%- if section.cta_enable -%}
+            {%- render 'plp-cta',
+              section_settings: section,
+              collection_settings: nil
+            -%}
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

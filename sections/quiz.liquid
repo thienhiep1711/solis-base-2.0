@@ -1,0 +1,180 @@
+{%- render 'quiz', fields: section.settings, blocks: section.blocks -%}
+
+{% schema %}
+  {
+    "name": "Quiz",
+    "settings": [ {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Side Image"
+    }, {
+      "type": "text",
+      "id": "loading_text",
+      "label": "Loading Text",
+      "default": "Please wait while we formulate your results..."
+    }, {
+      "type": "text",
+      "id": "result_text",
+      "label": "Result Text",
+      "default": "Thanks [name], here are the products curated for you!",
+      "info": "[name] will be replaced with name of the quiz-taker"
+    }, {
+      "type": "text",
+      "id": "no_result_text",
+      "label": "No Result Text",
+      "default": "Sorry, we couldn't find any matching products."
+    }, {
+      "type": "text",
+      "id": "retake_text",
+      "label": "Retake Text",
+      "default": "Retake Quiz"
+    } ],
+    "blocks": [
+      {
+        "name": "Name",
+        "type": "name",
+        "limit": 1,
+        "settings": [ {
+          "type": "text",
+          "id": "key",
+          "label": "Key",
+          "default": "name",
+          "info": "Input a unique identifer name (e.g. name)"
+        }, {
+          "type": "text",
+          "id": "input_type",
+          "label": "Input Type",
+          "default": "text"
+        }, {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Intro"
+        }, {
+          "type": "textarea",
+          "id": "question",
+          "label": "Question",
+          "default": "Let’s begin, we want to get to know you better!"
+        }, {
+          "type": "text",
+          "id": "placeholder",
+          "label": "Placeholder",
+          "default": "Full Name"
+        }, {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Next Question"
+        } ]
+      },
+      {
+        "name": "Email",
+        "type": "email",
+        "limit": 1,
+        "settings": [ {
+          "type": "text",
+          "id": "key",
+          "label": "Key",
+          "default": "email",
+          "info": "Input a unique identifer name (e.g. email)"
+        }, {
+          "type": "text",
+          "id": "input_type",
+          "label": "Input Type",
+          "default": "email"
+        }, {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Email"
+        }, {
+          "type": "textarea",
+          "id": "question",
+          "label": "Question",
+          "default": "Enter your email address so we can save your results"
+        }, {
+          "type": "text",
+          "id": "placeholder",
+          "label": "Placeholder",
+          "default": "Email Address"
+        }, {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Submit + See Results"
+        } ]
+      },
+      {
+        "name": "Text",
+        "type": "text",
+        "settings": [ {
+          "type": "text",
+          "id": "key",
+          "label": "Key",
+          "default": "email",
+          "info": "Input a unique identifer name (e.g. concern). This should match the prefix of the product tags that will be referenced (e.g. concern-dryness)."
+        }, {
+          "type": "text",
+          "id": "input_type",
+          "label": "Input Type",
+          "default": "text"
+        }, {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        }, {
+          "type": "textarea",
+          "id": "question",
+          "label": "Question"
+        }, {
+          "type": "text",
+          "id": "placeholder",
+          "label": "Placeholder"
+        }, {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Next Question"
+        } ]
+      },
+      {
+        "name": "Select",
+        "type": "select",
+        "settings": [ {
+          "type": "text",
+          "id": "key",
+          "label": "Key",
+          "info": "Input a unique identifer name (e.g. goal). This should match the prefix of the product tags that will be referenced (e.g. goal-hydration)."
+        }, {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        }, {
+          "type": "textarea",
+          "id": "question",
+          "label": "Question",
+          "info": "[name] will be replaced with name of the quiz-taker"
+        }, {
+          "type": "textarea",
+          "id": "options",
+          "label": "Options",
+          "info": "Enter each option on a new line. Use this format for each option: [Title|Search Values|Image_URL]. Image/SVG icons can be uploaded in Settings/Files."
+        }, {
+          "type": "checkbox",
+          "id": "multiple_select",
+          "label": "Allow selection of multiple values",
+          "default": false
+        }, {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Next Question"
+        }, {
+          "type": "textarea",
+          "id": "tip",
+          "label": "Tip"
+        } ]
+      }
+    ]
+  }
+{% endschema %}

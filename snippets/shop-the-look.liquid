@@ -1,0 +1,101 @@
+{%- comment -%}
+  Parameters
+  * section
+  * blocks
+{%- endcomment -%}
+
+{%- if blocks.size > 0 -%}
+  <section
+    class="shop-the-look"
+    data-module="shop-the-look"
+    v-cloak
+    data-a-group>
+    <div class="shop-the-look__container container container--xl align-c">
+      {%- if section.title_image != blank -%}
+        {%- capture image_sources -%}
+          {{- section.title_image | img_url: '700x' -}}
+          |{{- section.title_image | img_url: '1200x' -}}
+          |{{- section.title_image | img_url: '2160x' -}}
+        {%- endcapture  -%}
+
+        {%- assign breakpoints = '(max-width: 767px)|(max-width: 999px)|(min-width: 1000px)' -%}
+        {%- assign image_alt = section.title_image.alt | default: section.title -%}
+        {%- assign aspect_ratio = section.title_image.aspect_ratio -%}
+
+        <div class="shop-the-look__title ratio aspect-ratio" style="--aspect-ratio: {{- aspect_ratio -}}" data-a-stagger>
+          {%- render 'picture',
+            class: 'shop-the-look__title-image',
+            sources: image_sources,
+            breakpoints: breakpoints,
+            alt: image_alt,
+            loader: false,
+            is_vue: true
+          -%}
+        </div>
+      {%- else -%}
+        {%- render 'module-header',
+          tagline: section.subtitle,
+          title: section.title
+        -%}
+      {%- endif -%}
+
+      <div class="shop-the-look__carousel" data-a-stagger>
+        {%- render 'carousel',
+          columns_s: 1,
+          columns_m: 1,
+          columns_l: 1,
+          card: 'shop-the-look-item',
+          items: blocks,
+          page_dots: true,
+          prev_next_buttons: true,
+          watch_css: true,
+          bind_dynamic_props: false,
+          is_vue: true,
+          align_arrows_to_image: true
+        -%}
+      </div>
+
+      {%- comment -%}
+        Modal module should be placed outside Flickity because it ruins modal position
+      {%- endcomment -%}
+      {%- for block in blocks -%}
+        {%- assign image = block.settings['image'] | img_url: '2160x' -%}
+        {%- for i in (1..3) -%}
+          {%- assign product_setting = 'product_' | append: i -%}
+          {%- assign product = all_products[block.settings[product_setting]] -%}
+          {%- if product != blank -%}
+            {%- capture modal_content -%}
+            {%- render 'product-card',
+              class: 'product-grid__item shop-the-look__product align-l',
+              product: product,
+              show_view_product_button: true,
+              is_vue: true -%}
+            {%- endcapture -%}
+            {%- capture modal_attr -%}
+              :key="{{ product.id }}"
+            {%- endcapture -%}
+
+            {%- capture show_modal -%}
+              selectedProduct === '{{ product.id }}:{{ i }}'
+            {%- endcapture -%}
+
+            {%- render 'modal',
+              attr: modal_attr,
+              on_close: 'closeModal'
+              show_modal: show_modal,
+              content: modal_content -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
+
+      {%- if section.button_text != blank and section.button_link != blank -%}
+        {%- render 'button'
+          class: 'btn--primary shop-the-look__button',
+          type: 'link',
+          value: section.button_text,
+          href: section.button_link
+        -%}
+      {%- endif -%}
+    </div>
+  </section>
+{%- endif -%}

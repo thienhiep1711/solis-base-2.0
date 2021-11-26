@@ -1,0 +1,41 @@
+{%- comment -%}
+  Parameters
+  * settings
+  * is_collection
+  * items
+  * disable_featured_product
+{%- endcomment -%}
+{%- if is_collection == false -%}
+  {%- assign is_collection = false -%}
+{%- else -%}
+  {%- assign is_collection = true -%}
+{%- endif -%}
+{%- assign disable_featured_product = disable_featured_product | default: false -%}
+{%- assign image = collection.image | img_url: '1440x' -%}
+{%- if is_collection == false -%}
+{%- assign disable_featured_product = 1 -%}
+{%- endif -%}
+
+<div
+  class="plp{% unless is_collection %} plp--search{% endunless %}"
+  data-module="plp"{% if is_collection %}
+  data-initial='{%- render 'plp-json' -%}'{%- endif -%}>
+  <transition name="fade-in-down">
+    <div class="loader-overlay" v-if="loading" v-cloak>
+      {%- render 'loader', class: 'loader-circle' -%}
+    </div>
+  </transition>
+
+  {%- if is_collection -%}
+    {%- section 'hero-small-plp' -%}
+  {%- else -%}
+    <div class="plp__hero--search align-c bg-parchment">
+      <div class="h2">Search Results</div>
+      {%- assign search_string = search.terms | split: '*' -%}
+      <p class="p2">Showing {{ search.results_count }} result(s) for "{{ search_string[1] }}" in Products</p>
+      {%- assign search_string = nil -%}
+    </div>
+  {%- endif -%}
+
+  {%- section 'plp-grid' -%}
+</div>

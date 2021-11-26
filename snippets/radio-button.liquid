@@ -1,0 +1,27 @@
+{%- comment -%}
+  Parameters
+  * class
+  * id
+  * name
+  * value
+  * checked
+  * label
+{%- endcomment -%}
+
+{%- capture css -%}
+  radio-button {{- class -}}
+{%- endcapture -%}
+
+{%- capture attr -%}
+  {% if id %}id="{{- id -}}"{% endif %} {% if name %}name="{{- name -}}"{% endif %} {% if value %}value="{{- value -}}"{% endif %} {% if checked -%}checked{% endif %}
+{%- endcapture -%}
+
+<div class="{{- css | strip -}}">
+  <span class="radio-button__holder">
+    <input class="radio-button__el" type="radio" {{- attr | strip -}}>
+    <i class="radio-button__checked"></i>
+  </span>
+  {%- if label -%}
+    <label class="radio-button__label" {%- if id -%}for="{{- id -}}"{%- endif -%}>{{- label -}}</label>
+  {%- endif -%}
+</div>

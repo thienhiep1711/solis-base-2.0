@@ -1,0 +1,31 @@
+{%- comment -%}
+  Parameters
+  * encode
+  * title
+  * description
+  * excerpt
+  * more
+{%- endcomment -%}
+
+{%- assign encode = encode | default: false -%}
+{%- assign title = collection.title -%}
+{%- assign description = collection.description -%}
+{%- assign excerpt = collection.description -%}
+{%- assign more = more | default: 'more' -%}
+{%- assign description = description | replace: '"', "&#34;" -%}
+{%- assign excerpt = excerpt | replace: '"', "&#34;" -%}
+{%- assign more = more | replace: '"', "&#34;" -%}
+{%- capture json -%}
+{
+  "handle":"/collections/{{ collection.handle }}",
+  "title": {{ title | escape | json }},
+  "description": {{ description | json | replace: "'", "&#39;" }},
+  "image":"{%- if collection.image -%}{{ collection.image | img_url: '1440x' }}{%- endif -%}",
+  "fetched": true
+}
+{%- endcapture -%}
+{%- if encode -%}
+  {{- json | strip | strip_newlines | url_encode -}}
+{%- else -%}
+  {{- json -}}
+{%- endif -%}

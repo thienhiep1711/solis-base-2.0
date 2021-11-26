@@ -1,0 +1,18 @@
+{%- comment -%}
+  Parameters
+  * item
+{%- endcomment -%}
+
+<div class="press-item w1">
+  <blockquote class="press-item__text bq">
+    <p class="press-content">
+      {%- if item.settings.url -%}
+        <a class="press-item__link" href="{{- item.settings.url -}}"{% if item.settings.open_in_new_window %} target="_blank"{% endif %}>
+          {{- item.settings['description'] -}}
+        </a>
+      {%- else -%}
+        {{- item.settings['description'] -}}
+      {%- endif -%}
+    </p>
+  </blockquote>
+</div>

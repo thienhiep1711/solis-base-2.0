@@ -1,0 +1,18 @@
+{%- comment -%}
+  Parameters
+  * item
+{%- endcomment -%}
+
+{%- assign logo = item.settings.image -%}
+{%- if logo != blank -%}
+  {%- assign image = logo | img_url: 'master' -%}
+  <div class="logo-carousel__card">
+    <div class="logo-carousel__card-image ratio">
+      {%- render 'picture',
+        sources: image,
+        alt: logo.alt,
+        object_fit: 'contain'
+      -%}
+    </div>
+  </div>
+{%- endif -%}

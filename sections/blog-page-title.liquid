@@ -1,0 +1,64 @@
+{%- if section.settings.enable_section -%}
+  {%- assign section_settings = section.settings -%}
+
+  {%- for block in section.blocks -%}
+    {%- if block.settings.blog == blog.handle -%}
+      {%- assign section_settings = block.settings -%}
+      {% break %}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- assign tagline = section_settings.tagline | default: blog.title -%}
+  {%- assign title = section_settings.title | default: '' -%}
+
+  {%- render 'blog-page-title',
+    tagline: tagline,
+    title: title
+  -%}
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Blog Page Title",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_section",
+        "label": "Enable Section"
+      },
+      {
+        "type": "text",
+        "id": "tagline",
+        "label": "Tagline"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "blog-title",
+        "name": "Blog Title",
+        "settings": [
+          {
+            "type": "blog",
+            "id": "blog",
+            "label": "Blog"
+          },
+          {
+            "type": "text",
+            "id": "tagline",
+            "label": "Tagline"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

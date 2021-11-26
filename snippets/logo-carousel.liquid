@@ -1,0 +1,25 @@
+{%- comment -%}
+  Parameters
+  * blocks
+{%- endcomment -%}
+
+<div class="logo-carousel">
+  <div class="logo-carousel__container container container--xl">
+    <div class="logo-carousel__wrapper">
+      {%- render 'carousel',
+        columns: 2,
+        columns_s: 3,
+        columns_m: 4,
+        columns_l: 5,
+        card: 'logo-carousel-card',
+        items: blocks,
+        page_dots: false,
+        prev_next_buttons: false,
+        watch_css: true,
+        contain: true,
+        cell_align: 'center',
+        bind_dynamic_props: false
+      -%}
+    </div>
+  </div>
+</div>

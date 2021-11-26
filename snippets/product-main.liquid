@@ -1,0 +1,48 @@
+{%- comment -%}
+  Parameters
+  * enhanced_zoom
+  * blocks
+  * section
+  * video_url
+{%- endcomment -%}
+{%- assign enhanced_zoom = enhanced_zoom | default: false -%}
+{%- assign fields = product.metafields -%}
+{%- assign upsell_title = product.metafields.upsell.title | default: section.upsell_title -%}
+{%- assign upsell_products = product.metafields.upsell.products | split: '|' -%}
+
+<script>
+BARREL.product = {{- product | json -}};
+BARREL.product['options_with_values'] = {{- product.options_with_values | json -}};
+BARREL.product['collections'] = {{ product.collections | map:'title' | json }};
+
+</script>
+<section class="product-main">
+  {%- render 'breadcrumbs' class: 'breadcrumbs--product' -%}
+  <div class="product-main__container container container--xl">
+    <div class="product-main__gallery">
+      {%- if enhanced_zoom -%}
+        {%- render 'product-gallery-enhanced' -%}
+      {%- else -%}
+        {%- render 'product-gallery', section: section -%}
+      {%- endif -%}
+    </div>
+    <div class="product-main__form">
+      {%- render 'product-form',
+        selector_style: section.selector_style,
+        show_color_swatch: section.show_color_swatch,
+        section: section,
+        blocks: blocks
+      -%}
+      {%- render 'product-description',
+        blocks: blocks
+      -%}
+    </div>
+
+    <div class="product-main__upsell">
+      {%- render 'product-upsell',
+        title: upsell_title,
+        products: upsell_products
+      -%}
+    </div>
+  </div>
+</section>

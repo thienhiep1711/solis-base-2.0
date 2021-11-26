@@ -1,0 +1,32 @@
+{%- comment -%}
+  Parameters
+  * items
+{%- endcomment -%}
+{%- assign title_tag = title_tag | default: 'h2' -%}
+
+<ul>
+  {%- for item in items -%}
+    <li>
+      {%- if item.url -%}
+        <a href="{{- item.url -}}">
+          {{- item.title -}}
+        </a>
+      {%- else -%}
+        <p id="{{- item.title | handleize -}}" class="p" href="#{{- item.title | handleize -}}">
+          <strong>{{- item.title -}}</strong>
+        </p>
+      {%- endif -%}
+
+      {%- if item.description -%}
+        {{- item.description -}}
+      {%- endif -%}
+
+      {%- if item.items -%}
+        {%- render 'nested-list',
+          items: item.items,
+          title_tag: 'p'
+        -%}
+      {%- endif -%}
+    </li>
+  {%- endfor -%}
+</ul>

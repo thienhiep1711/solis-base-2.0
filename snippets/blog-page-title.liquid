@@ -1,0 +1,21 @@
+{%- comment -%}
+  Parameters
+  * tagline
+  * title
+{%- endcomment -%}
+
+{%- if tagline != blank or title != blank -%}
+  <h1 class="blog-page-title" data-a-group>
+    {%- if tagline != blank -%}
+      <div class="blog-page-title__tagline tagline" data-a-stagger>
+        {{- tagline -}}
+      </div>
+    {%- endif -%}
+
+    {%- if title != blank -%}
+      <div class="blog-page-title__title h3" data-a-stagger data-a-type="slide">
+        {{- title -}}
+      </div>
+    {%- endif -%}
+  </h1>
+{%- endif -%}

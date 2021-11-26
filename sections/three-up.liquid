@@ -1,0 +1,40 @@
+{%- if section.settings.enable_section -%}
+  {%- render 'three-up',
+    title: section.settings.title,
+    post_cards: section.blocks
+  -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Article Three Up",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "Enable this Section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Read More"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "post",
+      "name": "post",
+      "settings": [
+        {
+          "type": "article",
+          "id": "article",
+          "label": "Article Picker"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3
+}
+{% endschema %}

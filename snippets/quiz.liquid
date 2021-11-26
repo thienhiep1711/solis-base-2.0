@@ -1,0 +1,93 @@
+{%- comment -%}
+  Parameters
+  * fields
+  * blocks
+{%- endcomment -%}
+
+{%- if settings != blank and fields != blank -%}
+  <script>
+    const quizData = {%- render 'quiz-json', fields: fields, blocks: blocks, decode: false -%}
+  </script>
+{%- endif -%}
+
+<div class="quiz abs fit">
+  <div class="container quiz__container f fill-h">
+    <div class="quiz__left">
+        <div class="quiz__image">
+          {%- render 'picture',
+            sources: fields.image,
+            alt: image_alt,
+            object_fit: 'cover',
+            breakpoints: breakpoints,
+            alt: image_alt
+          -%}
+        </div>
+    </div>
+
+    <div class="quiz__right">
+      <div class="quiz__app fit" data-module="quiz">
+        <div class="quiz__header label" v-if="state === 'questions' && questions[currentQuestion].title">
+          <ul class="quiz__menu list--reset">
+            <li v-for="title in questionTitles" class="quiz__menu__item inline-block" :class="{'quiz__menu__item--active': title === questions[currentQuestion].title}">
+              <span v-html="title"></span>
+            </li>
+          </ul>
+        </div>
+
+        <transition-group name="slide-left" tag="div" class="quiz__questions fill" v-if="questionsState">
+          <div
+            is="quiz-question"
+            class="quiz__question abs fit"
+            v-for="(question, index) in questions"
+            :newsletter-url="question.newsletter_url"
+            :key="question.key"
+            :name="answers['name']"
+            :question="question"
+            :saved-answer="answers[question.key] || ''"
+            :button-text="question.button_text"
+            @answer="handleAnswer"
+            v-if="currentQuestion === index"
+          ></div>
+        </transition-group>
+
+        <transition name="slide-left">
+          <div class="quiz__loading abs fit f fdc jcc aic align-c" v-if="loadingState">
+            <div class="quiz__loading__icon icon--xl mb2">
+              {%- render 'icon' with 'icon-flask' -%}
+            </div>
+            <h1 class="h2 quiz__loading__text">{{- fields.loading_text -}}</h1>
+          </div>
+        </transition>
+
+        <transition name="slide-left">
+          <div class="quiz__results f fdc jcc aic " v-if="resultsState">
+            <div class="quiz__results__wrapper" v-if="results.length">
+              <h1 class="h2 quiz-results__text" v-html="updatedResultText"></h1>
+
+              <ul class="list--reset quiz-results__list f fw">
+                <template v-for="(product, i) in results">
+                  <div class="quiz-result">
+                    {%- render 'product-card',
+                      class: 'quiz-results__item',
+                      title: 'product.title',
+                      attr: ':product="product"',
+                      is_vue: true -%}
+                  </div>
+                </template>
+              </ul>
+            </div>
+
+            <h1 class="h2 quiz-results__text" v-else v-html="noResultText"></h1>
+
+            <button class="quiz__retake f ff aic mt2" @click.prevent="retakeQuiz">
+              <span class="quiz__retake__icon icon--xs">
+                {%- render 'icon' with 'icon-refresh' -%}
+              </span>
+              <span class="quiz__retake__text label">{{- fields.retake_text -}}</span>
+            </button>
+          </div>
+        </transition>
+    </div>
+    </div>
+  </div>
+</div>
