@@ -944,6 +944,7 @@
           "newsletter_placeholder": "Enter Your Email Address",
           "newsletter_button_text": "Sign Up",
           "background_type": "video",
+          "background_style": "cover",
           "image_mobile": "shopify:\/\/shop_images\/2_3bc56955-f81c-4aaf-b5ed-7f8a30f796ff.png",
           "image_intermediate": "shopify:\/\/shop_images\/2_3bc56955-f81c-4aaf-b5ed-7f8a30f796ff.png",
           "image": "shopify:\/\/shop_images\/Untitled_design_3.png",
@@ -965,7 +966,7 @@
           "title": "",
           "title_style": "h1",
           "text": "",
-          "btn_text_1": "Shop 25% Off",
+          "btn_text_1": "Shop 25% Off Test",
           "btn_link_1": "shopify:\/\/collections\/all-products",
           "btn_style_1": "primary",
           "btn_text_2": "",
@@ -1158,6 +1159,7 @@
           "newsletter_placeholder": "Enter Your Email Address",
           "newsletter_button_text": "Sign Up",
           "background_type": "image",
+          "background_style": "cover",
           "image_mobile": "shopify:\/\/shop_images\/collage02-mobile-320x440.jpg",
           "image_intermediate": "shopify:\/\/shop_images\/collage02-tablet-1024x500.jpg",
           "image": "shopify:\/\/shop_images\/collage02-desktop-1440x650.jpg",
@@ -1324,7 +1326,8 @@
       },
       "product-features": {
         "type": "product-features",
-        "settings": {}
+        "settings": {
+        }
       },
       "instagram-feed-product": {
         "type": "instagram-feed-product",
@@ -1501,7 +1504,8 @@
       },
       "page-flex": {
         "type": "page-flex",
-        "settings": {}
+        "settings": {
+        }
       },
       "viral-loops": {
         "type": "viral-loops",
