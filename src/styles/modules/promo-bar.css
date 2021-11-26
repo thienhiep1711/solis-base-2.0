@@ -1,3 +1,4 @@
+/* critical:start */
 .promo-bar {
   display: block;
   background-color: var(--c-promobar-background);
@@ -45,3 +46,5 @@
 .no-touch .promo-bar__close:hover {
   opacity: 0.6;
 }
+
+/* critical:end */

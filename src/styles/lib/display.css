@@ -88,9 +88,12 @@
   }
 }
 
+/* critical:start */
 .hide {
   display: none;
 }
+
+/* critical:end */
 
 .hide--xxs {
   @media (--xxs) {

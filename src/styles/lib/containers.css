@@ -1,3 +1,4 @@
+/* critical:start */
 .container {
   margin: 0 auto;
   position: relative;
@@ -55,3 +56,9 @@
 .container--fluid {
   margin: 0 auto;
 }
+
+[v-cloak] {
+  display: none;
+}
+
+/* critical:end */

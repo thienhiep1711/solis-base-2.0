@@ -1,3 +1,4 @@
+/* critical:start */
 .intro-text {
   padding: 72px 0;
 
@@ -27,3 +28,5 @@
   max-width: 840px;
   color: var(--cobalt-blue);
 }
+
+/* critical:end */

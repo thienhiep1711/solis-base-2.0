@@ -14,7 +14,6 @@ export default () => {
     let content = select('.js-content', el).innerHTML
 
     const showPromoBar = () => {
-      el.style.display = 'block'
       set(main, 'has-promo')
       unset(main, 'has-promo-closed')
       window.dispatchEvent(event)

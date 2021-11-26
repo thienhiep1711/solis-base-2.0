@@ -1,3 +1,4 @@
+/* critical:start */
 .f { display: flex; }
 .fw { flex-wrap: wrap; }
 .ais { align-items: flex-start; }
@@ -16,3 +17,5 @@
 }
 .ff { flex-shrink: 0; }
 .fdc { flex-direction: column; }
+
+/* critical:end */

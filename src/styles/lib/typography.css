@@ -1,6 +1,9 @@
 /* Global */
 html {
+  /* critical:start */
   font-size: 62.5%; /* Set base font-size to 10px */
+
+  /* critical:end */
 }
 
 body {
@@ -17,6 +20,8 @@ body {
     font-size: var(--body-font-size);
   }
 }
+
+/* critical:start */
 
 /* Headings */
 .h1,
@@ -127,6 +132,8 @@ body {
   }
 }
 
+/* critical:end */
+
 .h5,
 .h6 {
   font-family: var(--body-font-family);
@@ -154,6 +161,7 @@ body {
   }
 }
 
+/* critical:start */
 %p2,
 .p2 {
   font-family: var(--buttons-font-family);
@@ -164,6 +172,8 @@ body {
     font-size: 15px;
   }
 }
+
+/* critical:end */
 
 /* Blockquote */
 %bq,

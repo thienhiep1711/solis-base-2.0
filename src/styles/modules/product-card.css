@@ -98,6 +98,14 @@
     top: 18px;
     right: 18px;
   }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    /* stylelint-disable */
+    aspect-ratio: 75 / 75;
+    /* stylelint-enable */
+  }
 }
 
 .product-card__image--hover {

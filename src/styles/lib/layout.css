@@ -1,9 +1,27 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 #main {
   display: flex;
   flex-direction: column;
   max-width: 100vw;
   min-height: 100vh;
   background-color: var(--c-background);
+
+  /* stylelint-disable */
+
+  body:not(.template-index):not(.template-collection) & {
+    opacity: 0;
+  }
+
+  body:not(.template-index):not(.template-collection) & {
+    opacity: 1;
+  }
+
+  /* stylelint-enable */
 
   .content {
     flex: 1 1 auto;
@@ -29,4 +47,13 @@
 .footer {
   flex: 0 0 auto;
   width: 100%;
+}
+
+.shopify-section {
+  /* critical:start */
+  display: none;
+
+  /* critical:end */
+
+  display: inherit;
 }

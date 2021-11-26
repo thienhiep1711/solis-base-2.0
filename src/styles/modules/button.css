@@ -110,6 +110,8 @@ button,
   }
 }
 
+/* critical:start */
+
 .skip_link {
   @extend .btn;
 
@@ -133,6 +135,8 @@ button,
     pointer-events: auto;
   }
 }
+
+/* critical:end */
 
 .skip_link--sidebar {
   top: 0;

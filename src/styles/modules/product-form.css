@@ -1,3 +1,4 @@
+/* critical:start */
 .product-form__title {
   margin-bottom: 5px;
 
@@ -378,3 +379,5 @@
 .product-form__preorder {
   margin-top: 20px;
 }
+
+/* critical:end */

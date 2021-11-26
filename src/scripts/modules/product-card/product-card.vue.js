@@ -53,6 +53,7 @@ Vue.component('product-card', {
 
     return {
       ...product,
+      hovered: false,
       collectionData: this.collection ? JSON.parse(decode(this.collection)) : this.collection,
       productData: product,
       isColorSelected: false,
@@ -107,6 +108,13 @@ Vue.component('product-card', {
     }, {})
 
     on(window, 'scroll', this.scrollHandler)
+
+    // show second image on hovered only
+    if (!this.hovered) {
+      on(this.$el, 'mouseenter', () => {
+        this.hovered = true
+      })
+    }
   },
   destroyed () {
     on.off(window, 'scroll', this.scrollHandler)

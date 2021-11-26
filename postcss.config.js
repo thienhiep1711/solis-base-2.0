@@ -1,6 +1,11 @@
+const target = process.env.npm_lifecycle_event
+
 const config = {
   plugins: [
-    require('precss'),
+    require('precss')({
+      // Disable warning "used without a fallback"
+      'properties': { warnings: false }
+    }),
     require('postcss-easy-import'),
     require('postcss-mixins'),
     require('postcss-inline-svg'),
@@ -9,7 +14,10 @@ const config = {
     require('postcss-automath'),
     require('postcss-hexrgba'),
     require('postcss-extend'),
-    require('postcss-each')
+    require('postcss-each'),
+    require('postcss-critical-split')({
+      'output': target === 'build' ? 'rest' : 'input'
+    })
   ]
 }
 
