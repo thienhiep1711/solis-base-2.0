@@ -12,7 +12,7 @@ export default (module, options = {}) => new Promise(resolve => {
 
   inViewport(element, options, () => resolve(
     import(
-      /* webpackMode: "lazy" */
+      /* webpackMode: "eager" */
       `root/modules/${module}/${module}.js`
     )
   ))

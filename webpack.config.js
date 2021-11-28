@@ -27,9 +27,11 @@ fs.readdirSync(SCRIPT_ENTRIES_DIR).forEach(
 )
 
 module.exports = env => {
-  const mode = env.production ? 'production' : 'development'
-  const devtool = env.production ? 'cheap-module-source-map' : 'eval-cheap-module-source-map'
-  const minimize = Boolean(env.production)
+  const target = process.env.npm_lifecycle_event
+  const isProduction = target === 'build'
+  const mode = isProduction ? 'production' : 'development'
+  const devtool = isProduction ? 'cheap-module-source-map' : 'eval-cheap-module-source-map'
+  const minimize = Boolean(isProduction)
 
   return {
     mode,
@@ -80,7 +82,7 @@ module.exports = env => {
       new BundleAnalyzerPlugin({
         analyzerMode: 'static',
         openAnalyzer: false,
-        generateStatsFile: env.production
+        generateStatsFile: isProduction
       })
     ],
     resolve: {
@@ -91,7 +93,7 @@ module.exports = env => {
         'modules': path.resolve(__dirname, 'src/scripts/modules'),
         'mixins': path.resolve(__dirname, 'src/scripts/mixins'),
         'root': path.resolve(__dirname, 'src/scripts'),
-        'vue': env.production ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js'
+        'vue': isProduction ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js'
       }
     },
     optimization: {
