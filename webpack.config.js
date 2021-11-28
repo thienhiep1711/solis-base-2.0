@@ -28,10 +28,10 @@ fs.readdirSync(SCRIPT_ENTRIES_DIR).forEach(
 
 module.exports = env => {
   const target = process.env.npm_lifecycle_event
-  const isProduction = target === 'build'
-  const mode = isProduction ? 'production' : 'development'
-  const devtool = isProduction ? 'cheap-module-source-map' : 'eval-cheap-module-source-map'
-  const minimize = Boolean(isProduction)
+  const isProductionMode = target === 'build'
+  const mode = isProductionMode ? 'production' : 'development'
+  const devtool = isProductionMode ? 'cheap-module-source-map' : 'eval-cheap-module-source-map'
+  const minimize = Boolean(isProductionMode)
 
   return {
     mode,
@@ -67,7 +67,7 @@ module.exports = env => {
         {
           test: /\.css$/,
           use: [
-            MiniCssExtractPlugin.loader,
+            isProductionMode ? MiniCssExtractPlugin.loader : 'style-loader',
             'css-loader?importLoaders=1',
             'postcss-loader'
           ]
@@ -76,14 +76,20 @@ module.exports = env => {
     },
     plugins: [
       new VueLoaderPlugin(),
-      new MiniCssExtractPlugin({
-        filename: '[name].css.liquid'
-      }),
-      new BundleAnalyzerPlugin({
-        analyzerMode: 'static',
-        openAnalyzer: false,
-        generateStatsFile: isProduction
-      })
+      ...(isProductionMode
+        ? [
+            new MiniCssExtractPlugin({
+              filename: '[name].css.liquid'
+            }),
+            new BundleAnalyzerPlugin({
+              analyzerMode: 'static',
+              openAnalyzer: false,
+              generateStatsFile: isProductionMode
+            })
+          ]
+        : [
+          ]
+      )
     ],
     resolve: {
       alias: {
@@ -93,7 +99,7 @@ module.exports = env => {
         'modules': path.resolve(__dirname, 'src/scripts/modules'),
         'mixins': path.resolve(__dirname, 'src/scripts/mixins'),
         'root': path.resolve(__dirname, 'src/scripts'),
-        'vue': isProduction ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js'
+        'vue': isProductionMode ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js'
       }
     },
     optimization: {
