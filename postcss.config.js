@@ -2,11 +2,11 @@ const target = process.env.npm_lifecycle_event
 
 const config = {
   plugins: [
+    require('./postcss-tasks/postcss-module-import'),
     require('precss')({
       // Disable warning "used without a fallback"
       'properties': { warnings: false }
     }),
-    require('postcss-easy-import'),
     require('postcss-mixins'),
     require('postcss-inline-svg'),
     require('postcss-color-function'),

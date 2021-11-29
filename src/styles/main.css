@@ -29,5 +29,4 @@
 @import "overrides/easylockdown.css";
 @import "overrides/typography.css";
 @import "lib/animate.css";
-
-@import "modules/*.css";
+@import "<Modules>";

@@ -37,7 +37,6 @@
     "postcss-color-function": "^4.1.0",
     "postcss-critical-split": "^2.5.3",
     "postcss-each": "^0.10.0",
-    "postcss-easy-import": "^3.0.0",
     "postcss-extend": "^1.0.5",
     "postcss-fontpath": "^1.0.0",
     "postcss-hexrgba": "^1.0.2",
