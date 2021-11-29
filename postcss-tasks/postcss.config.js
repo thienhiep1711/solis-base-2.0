@@ -5,6 +5,7 @@ const append = [
   require('postcss-critical-split')({
     output: 'critical'
   }),
+  require('cssnano'),
   require('./postcss-shopify-css-vars')({
     vars: '../assets/settings.css.liquid'
   })
