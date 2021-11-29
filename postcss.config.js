@@ -1,4 +1,5 @@
 const target = process.env.npm_lifecycle_event
+const isProductionMode = target === 'build'
 
 const config = {
   plugins: [
@@ -16,8 +17,18 @@ const config = {
     require('postcss-extend'),
     require('postcss-each'),
     require('postcss-critical-split')({
-      'output': target === 'build' ? 'rest' : 'input'
-    })
+      'output': isProductionMode ? 'rest' : 'input'
+    }),
+    ...(isProductionMode
+        ? [
+          require('cssnano')({
+            autoprefixer: false,
+            zindex: false
+          })
+        ]
+        : [
+        ]
+    )
   ]
 }
 
