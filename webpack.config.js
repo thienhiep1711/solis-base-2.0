@@ -72,7 +72,7 @@ module.exports = env => {
         {
           test: /\.css$/,
           use: [
-            isProductionMode ? MiniCssExtractPlugin.loader : 'style-loader',
+            MiniCssExtractPlugin.loader,
             'css-loader?importLoaders=1',
             'postcss-loader'
           ]
@@ -81,15 +81,11 @@ module.exports = env => {
     },
     plugins: [
       new VueLoaderPlugin(),
-      new WrapperPlugin({
-        test: /\.css\.liquid$/,
-        header: cssVariables
+      new MiniCssExtractPlugin({
+        filename: '[name].css'
       }),
       ...(isProductionMode
         ? [
-            new MiniCssExtractPlugin({
-              filename: '[name].css.liquid'
-            }),
             new BundleAnalyzerPlugin({
               analyzerMode: 'static',
               openAnalyzer: false,
