@@ -16,15 +16,27 @@ const VENDORS_DIR = path.join(ROOT, 'node_modules')
 
 const entry = {}
 
-fs.readdirSync(SCRIPT_ENTRIES_DIR).forEach(
-  file => {
-    /* Exclude hidden file */
-    if (!/(^|\/)\.[^/.]/g.test(file)) {
-      const name = path.parse(file).name
-      entry[name] = [path.join(SCRIPT_ENTRIES_DIR, file)]
+const isHiddenFile = (name) => /(^|\/)\.[^/.]/g.test(name)
+
+const getEntry = (dir = SCRIPT_ENTRIES_DIR) => {
+  const isMainEntry = dir === SCRIPT_ENTRIES_DIR
+  const scanDir = isMainEntry ? dir : path.join(SCRIPT_ENTRIES_DIR, dir)
+  fs.readdirSync(scanDir, { withFileTypes: true }).forEach(
+    file => {
+      if (file.isFile()) {
+        // main entries
+        const fileName = file.name
+        if (!isHiddenFile(fileName)) {
+          const name = path.parse(fileName).name
+          entry[`${isMainEntry ? '' : `${dir}-`}${name}`] = [path.join(scanDir, fileName)]
+        }
+      } else {
+        getEntry(file.name)
+      }
     }
-  }
-)
+  )
+  return entry
+}
 
 module.exports = env => {
   const target = process.env.npm_lifecycle_event
@@ -36,7 +48,7 @@ module.exports = env => {
   return {
     mode,
     devtool,
-    entry,
+    entry: getEntry(),
     ignoreWarnings: [
       {
         // Hide warning from postcss loader
