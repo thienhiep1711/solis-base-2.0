@@ -1,3 +1,0 @@
-iframe[src*="localhost"]#preview-bar-iframe {
-  display: none;
-}

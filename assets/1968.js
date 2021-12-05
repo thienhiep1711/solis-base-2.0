@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwknd_nation=self.webpackChunkwknd_nation||[]).push([[1968],{31968:function(n,t,e){e(41539),e(21249),e(57327);t.Z={methods:{validate:function(n){this.$children.filter((function(n){return void 0!==n.validate})).map((function(n){return n.validate()})).every((function(n){return n}))||n.preventDefault()}}}}}]);

@@ -1,0 +1,127 @@
+{%- render 'header' -%}
+
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "use_sticky_header",
+        "label": "Use sticky header",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Image",
+        "info": "200 x 60px .png recommended"
+      },
+      {
+        "type": "range",
+        "id": "logo_max_width",
+        "min": 50,
+        "max": 350,
+        "step": 5,
+        "unit": "px",
+        "label": "Image width",
+        "default": 140
+      },
+      {
+        "type": "range",
+        "id": "mobile_logo_max_width",
+        "min": 50,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "label": "Mobile image width",
+        "default": 90
+      },
+      {
+        "type": "header",
+        "content": "Navigation"
+      },
+      {
+        "type": "link_list",
+        "id": "navigation_menu",
+        "label": "Menu",
+        "default": "main-menu"
+      },
+      {
+        "type": "select",
+        "id": "navigation_style",
+        "label": "Navigation style",
+        "info": "Setting will default to center style if screen width cannot fit all the links.",
+        "options": [
+          {
+            "value": "left",
+            "label": "Navigation left, logo centered"
+          },
+          {
+            "value": "center",
+            "label": "Navigation centered, logo left"
+          }
+        ],
+        "default": "left"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_icons",
+        "label": "Show icons",
+        "info": "Text for account, search, and cart are replaced by icons.",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Megamenu"
+      },
+      {
+        "type": "radio",
+        "id": "content_for_products",
+        "label": "Content for products",
+        "options": [
+          { "value": "price", "label": "Price" },
+          { "value": "description", "label": "Description" }
+        ],
+        "default":   "price"
+      },
+      {
+        "type": "header",
+        "content": "Transparent header"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_transparent_header",
+        "label": "Enable on homepage",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_transparent_header_collection",
+        "label": "Enable on collection pages",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_transparent_header_page",
+        "label": "Enable on basic pages",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_transparent_header_border",
+        "label": "Show separation border",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "transparent_logo",
+        "label": "Logo image",
+        "info": "200 x 60px .png recommended"
+      }
+    ]
+  }
+{% endschema %}

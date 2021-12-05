@@ -1,8 +1,0 @@
-.logo-carousel {
-  background-color: var(--grey-light);
-  padding: 30px 0;
-
-  @media (--s) {
-    padding: 50px 0;
-  }
-}

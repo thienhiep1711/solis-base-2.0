@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwknd_nation=self.webpackChunkwknd_nation||[]).push([[6943],{46943:function(n,t,e){e.r(t);var c=e(2934),r=e.n(c),o=e(31968);r().component("account-recover-form",{data:function(){return{}},computed:{active:function(){return"recover"===this.$parent.activeForm}},mixins:[o.Z]})}}]);

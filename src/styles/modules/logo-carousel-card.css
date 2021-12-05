@@ -1,5 +1,0 @@
-.logo-carousel__card-image {
-  &::before {
-    padding-bottom: calc(40 / 155 * 100%);
-  }
-}

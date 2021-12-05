@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwknd_nation=self.webpackChunkwknd_nation||[]).push([[3492],{53492:function(n,t,e){e.r(t);var a=e(2934),c=e.n(a),i=e(31968);c().component("account-register-form",{data:function(){return{}},mixins:[i.Z]})}}]);

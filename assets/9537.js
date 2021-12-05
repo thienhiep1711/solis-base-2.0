@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwknd_nation=self.webpackChunkwknd_nation||[]).push([[9537],{9537:function(n,a,r){r.r(a),r.d(a,{getSearchTabFromUrl:function(){return e}});r(74916),r(64765);var t=r(17563),e=function(){return{activatedType:t.parse(window.location.search,{arrayFormat:"bracket"}).tab}}}}]);

@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const TerserPlugin = require("terser-webpack-plugin")
-const WrapperPlugin = require('wrapper-webpack-plugin')
 
 const ROOT = path.resolve(__dirname)
 const ASSETS_DIR = path.join(ROOT, 'assets')
@@ -14,10 +13,6 @@ const SCRIPTS_DIR = path.join(SRC_DIR, 'scripts')
 const STYLES_DIR = path.join(SRC_DIR, 'styles')
 const SCRIPT_ENTRIES_DIR = path.join(SCRIPTS_DIR, 'entries')
 const VENDORS_DIR = path.join(ROOT, 'node_modules')
-const cssVariables = fs.readFileSync(
-  'assets/settings.css.liquid',
-  'utf8'
-)
 
 const entry = {}
 

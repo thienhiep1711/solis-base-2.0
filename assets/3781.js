@@ -1,1 +1,0 @@
-(self.webpackChunkwknd_nation=self.webpackChunkwknd_nation||[]).push([[3781],{93781:function(){}}]);

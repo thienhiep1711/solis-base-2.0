@@ -1,165 +1,51 @@
 <!DOCTYPE html>
-<html lang="{{ shop.locale }}" {% unless template contains 'password' or template contains 'access-denied' %} class="js-age-gate"{% endunless %}>
+<html lang="{{ shop.locale }}">
 <head>
-{% comment %}EasylockdownHeadBegin{% endcomment %}{% capture elhRender %}{% render 'easylockdown_head', easylockdownRender: true, easylockdownCustomPriceSelector: easylockdownCustomPriceSelector %}{% endcapture %}{% assign elhRender = elhRender | split: '--elhResults--'%}{{ elhRender[0] }}{% comment %}EasylockdownHeadEnd{% endcomment %}
   <meta charset="utf-8">
   <link rel="canonical" href="{{ canonical_url }}">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+  <title>{{ page_title | strip }}</title>
 
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-TVQ33M5');</script>
-  <!-- End Google Tag Manager -->
+  {% comment %}REQUIRED: Render fonts{% endcomment %}
+  <style>
+    @font-face {
+      font-family: 'font-name';
+      src:
+        url("{{ 'font-name.woff2' | asset_url }}") format('woff2'),
+        url("{{ 'font-name.woff' | asset_url }}") format('woff'),
+        url("{{ 'font-name.ttf' | asset_url }}") format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: optional;
+    }
+  </style>
 
-  {%- render 'preconnect-required-origins' -%}
+  {% comment %}If we have settings.css.liquid - variables from settings{% endcomment %}
+  <link type="text/css" href="{{- 'settings.css' | asset_url -}}" rel="stylesheet">
 
-  {%- render 'favicon' -%}
+  {% comment %}If we have critical CSS{% endcomment %}
+  <style>
+    {%- render 'main-critical-css' -%}
+  </style>
 
-  {%- capture seo_title -%}
-    {%- if request.page_type == 'search' and search.performed == true -%}
-      {{ 'general.search.results_for_html' | t: terms: search.terms, number: search.results_count }}
-    {%- else -%}
-      {{ page_title }}
-    {%- endif -%}
-    {%- if current_tags -%}
-      {%- assign meta_tags = current_tags | join: ', ' -%} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
-    {%- endif -%}
-    {%- if current_page != 1 -%}
-      &ndash; {{ 'general.meta.page' | t: page: current_page }}
-    {%- endif -%}
-  {%- assign escaped_page_title = page_title | escape -%}
-    {%- unless escaped_page_title contains shop.name -%}
-      &ndash; {{ shop.name }}
-    {%- endunless -%}
-  {%- endcapture -%}
-  <title>{{ seo_title | strip }}</title>
-
-  {%- render 'social-meta' -%}
-  {%- render 'structured-data' -%}
-  {%- render 'font-faces' -%}
-
-  {%- render 'theme-styles',
-    is_dev_mode: settings.is_dev_mode
-  -%}
-
-  {%- if settings.allow_bug_capture -%}
-  {% assign jira_handle = 'com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector' %}
-  <script type="text/javascript" src="https://barrel.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/8ur02a/b/23/a44af77267a987a660377e5c46e0fb64/_/download/batch/{{ jira_handle }}/{{ jira_handle }}.js?locale=en-US&collectorId={{ settings.jira_collector_id }}"></script>
-  {%- endif -%}
-  {%- if settings.allow_app_monitoring -%}
-  <script src="https://browser.sentry-cdn.com/5.20.0/bundle.min.js" integrity="sha384-mmBh0B1uYbzmP0q9QcqWr4el7gVXBSY0hWB2U8cNhNZi/RIuVQRp7pm1NlPOa644" crossorigin="anonymous"></script>
-  {%- endif -%}
-
-  <script type="text/javascript" id="wb-script">
-    var SENTRY = {
-      enabled: {{ settings.allow_app_monitoring }},
-      dsn: '{{ settings.sentry_dsn }}'
-    };
-    var SHOPIFY_CDN = "{{ 'test.jpg' | asset_url }}".split('test.jpg').shift();
-    var FILE_CDN = "{{ 'test.jpg' | file_url }}".split('test.jpg').shift();
-    var BARREL = {
-      cart: {{ cart | json }},
-      defaultImage: "{%- if settings.default_image != blank -%}{{ settings.default_image | img_url: 'master' }}{%- endif -%}",
-      userLoggedIn: {%- if customer -%}true{%- else -%}false{%- endif -%},
-      moneyFormat: {{ shop.money_format | json }},
-      shop: {{ shop.permanent_domain | split: '.' | first | json }},
-      secureUrl: {{ shop.secure_url | json }},
-      storefrontAccessToken: {{ settings.storefront_access_token | json }},
-      discountMessage: {{ settings.product_discount_message | json }},
-      setDiscountMessage: {{ settings.set_discount_message | json }}
-    };
-  </script>
-
-  {% assign exclude_pages = settings.exclude_pages | split: "|" %}
-
-  {% for handle in exclude_pages %}
-    {% if page.handle == handle %}
-      {% assign is_exclude_page = true %}
-    {% endif %}
-  {% endfor %}
-
-  {%- if is_exclude_page -%}
-    {{ content_for_header }}
-  {%- else -%}
-    {%- capture header_scripts -%}
-      {{ content_for_header }}
-    {%- endcapture -%}
-
-    {%- render 'header-scripts',
-      content: header_scripts,
-      unload_apps: true
-    -%}
-  {%- endif -%}
-
-
-  {%- render 'afterpay' -%}
-
-  {%- render 'globo.formbuilder.scripts' -%}
-  {% include "loyaltylion" %}
-
-  {% render 'easy-gdpr-settings' %}
-  <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/tfEIq1npcPM_ckjrf1MIfg" async></script>
-  {% include 'talkable-partial' %}
-  {%- render 'layer0-scripts' -%}
+  {% comment %}REQUIRED: theme styles{% endcomment %}
+  <link type="text/css" href="{{- 'main.css' | asset_url -}}" rel="stylesheet">
 </head>
 
 <body class="wheelbarrow-v0 no-touch template template-{{ template.name }} template-{{- template | split: '.' | last | handle -}}">
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVQ33M5"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  {%- render 'age-gate' -%}
-
   <a class="skip_link" id="skip_to_content" href="#main">Skip to Main Content</a>
 
-  {%- render 'site-header' -%}
+  {%- section 'header' -%}
 
   <main class="main js-mobile-content js-main" id="main" role="main">
     <div class="content">
-      {% comment %}{{ content_for_layout }}{% endcomment %}{% render 'easylockdown_body', content_for_layout: content_for_layout, elhDefines: elhRender[1] %}
+      {{ content_for_layout }}
     </div>
-
-    {%- section 'footer' -%}
   </main>
 
-  {%- if settings.enable_mini_cart -%}
-    {%- render 'mini-cart' -%}
-  {%- endif -%}
-
-  {%- render 'icon-paths' -%}
-
-  {%- render 'theme-scripts',
-    is_dev_mode: settings.is_dev_mode
-  -%}
-
-  {%- capture urls -%}
-    https://cdn.attn.tv/wkndnation/dtag.js|
-    https://www.dwin1.com/19038.js|
-  {%- endcapture -%}
-
-  {%- render 'delay-load',
-    urls: urls,
-    snippets: '',
-    on_delay_load: on_delay_load,
-    load_apps: true,
-    delay: 1000,
-    delay_load: true
-  -%}
-  {%- render 'delayed-scripts' -%}
-
-  {%- if template contains 'product' and settings.klaviyo_bis_enable -%}
-    {%- render 'klaviyo-back-in-stock' -%}
-  {%- endif -%}
-
-  <div id="quick-add-to-cart"></div>
-  {% include 'smile-initializer' %}
-
-  <script src="https://rebuyengine.com/js/rebuy?shop={{ shop.permanent_domain }}" async></script>
-  <div data-rebuy-id="13674"></div>
-
+  {% comment %}REQUIRED: theme scripts{% endcomment %}
+  <script src="{{ 'runtime.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'commons.js' | asset_url }}" defer="defer"></script>
+  <script src="{{- 'main.js' | asset_url -}}" defer></script>
 </body>
 </html>
