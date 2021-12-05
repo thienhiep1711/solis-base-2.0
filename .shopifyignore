@@ -1,4 +1,13 @@
-src
+# OS generated files #
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Enviroment files #
+src/
 package.json
 package-lock.json
 webpack.config.js
@@ -8,4 +17,4 @@ babel.config.json
 postcss.config.js
 /assets/stats.json
 /assets/report.html
-postcss-tasks
+postcss-tasks/
