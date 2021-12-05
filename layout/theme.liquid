@@ -30,11 +30,11 @@
 
   {% comment %}REQUIRED: theme styles{% endcomment %}
   <link type="text/css" href="{{- 'main.css' | asset_url -}}" rel="stylesheet">
+
+  {{content_for_header}}
 </head>
 
 <body class="wheelbarrow-v0 no-touch template template-{{ template.name }} template-{{- template | split: '.' | last | handle -}}">
-  <a class="skip_link" id="skip_to_content" href="#main">Skip to Main Content</a>
-
   {%- section 'header' -%}
 
   <main class="main js-mobile-content js-main" id="main" role="main">

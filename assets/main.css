@@ -1,3 +1,11 @@
-.header{background:#00f}
+/*!**********************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js?importLoaders=1!./node_modules/postcss-loader/lib/index.js!./src/styles/main.css ***!
+  \**********************************************************************************************************************************/
+/**
+Import all other libs using this markup
+@import "lib/reset.css";
+ */
+.header {
+  background: blue;
+}
 
-/*# sourceMappingURL=main.css.map*/

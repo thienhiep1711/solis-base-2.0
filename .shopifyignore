@@ -7,7 +7,7 @@ ehthumbs.db
 Thumbs.db
 
 # Enviroment files #
-src/
+src/*
 package.json
 package-lock.json
 webpack.config.js
@@ -17,4 +17,4 @@ babel.config.json
 postcss.config.js
 /assets/stats.json
 /assets/report.html
-postcss-tasks/
+postcss-tasks/*
