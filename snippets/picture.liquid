@@ -1,0 +1,203 @@
+{%- comment %}
+  The `is_vue` variable should be set on the parent section module to initialize the appropriate scripts.
+{%- endcomment -%}
+{%- comment -%}
+  Parameters
+  * is_vue
+  * class
+  * bind_dynamic_props
+  * sources
+  * breakpoints
+  * width
+  * width_s
+  * width_m
+  * width_l
+  * alt
+  * object_fit
+  * loader
+  * lazy_load
+{%- endcomment -%}
+{%- assign is_vue = is_vue | default: false -%}
+{%- assign bind_dynamic_props = bind_dynamic_props | default: false -%}
+{%- assign width = width | default: 100 -%}
+{%- assign width_s = width_s | default: 100 -%}
+{%- assign width_m = width_m | default: 100 -%}
+{%- assign width_l = width_l | default: 100 -%}
+{%- assign object_fit = object_fit | default: 'cover' -%}
+{%- if loader == false -%}
+  {%- assign loader = false -%}
+{%- else -%}
+  {%- assign loader = true -%}
+{%- endif -%}
+
+{%- comment %}
+  Default image from Theme settings
+{%- endcomment -%}
+{%- assign default_image = settings.default_image -%}
+
+{%- comment %}
+  If sources are not dynamic props convert string to array
+{%- endcomment -%}
+{%- if bind_dynamic_props == false -%}
+  {%- assign sources_arr = sources | split: '|' -%}
+{%- endif -%}
+
+{%- assign breakpoints_arr = breakpoints | split: '|' -%}
+
+{%- if lazy_load == false -%}
+  {%- assign lazy_load = false -%}
+{%- else -%}
+  {%- assign lazy_load = true -%}
+{%- endif -%}
+
+{%- capture module_class -%}
+  picture
+  {%- if is_vue %} picture--vue{%- endif -%}{%- if bind_dynamic_props %}--bind-dynamic{%- endif -%}
+  {% unless lazy_load %} is-loaded{% endunless %}
+  {{- object_fit | prepend: ' fit-' -}}
+  {%- if class != blank %} {{ class }}{%- endif -%}
+{%- endcapture -%}
+
+{%- capture sizes -%}
+  (min-width: 1440px) {{ width_l | append: 'vw ,' -}}
+  (min-width: 1024px) {{ width_m | append: 'vw ,' -}}
+  (min-width: 768px) {{ width_s | append: 'vw ,' -}}
+  {{ width | append: 'vw' -}}
+{%- endcapture %}
+
+<div
+  class="{{- module_class -}}"
+  {%- if is_vue -%}
+    {%- if bind_dynamic_props %}
+      :sources="{{- sources -}}"
+      {%- if breakpoints %}:breakpoints="{{- breakpoints -}}"{%- endif %}
+      :alt="{{- alt | default: 'null' -}}"
+    {%- else %}
+      sources="{{- sources -}}"
+      breakpoints="{{- breakpoints -}}"
+      alt="{{- alt -}}"
+    {%- endif %}
+    is="vue-picture" inline-template
+  {%- else %}
+    data-module="picture"
+  {%- endif -%}>
+  <picture{%- if is_vue %} :class="{ 'is-loaded': isLoaded }"{%- endif -%}>
+    {%- if loader != blank %}
+      <i class="picture__loader"></i>
+    {%- endif -%}
+
+    {%- if is_vue %}
+      <source
+        v-for="(srcset, index) in srcsets"
+        :media="breakpointsArr[index]"
+        {% if lazy_load %}
+          :data-srcset="srcset"
+        {% else %}
+          :srcset="srcset"
+        {% endif %}
+        sizes="{{- sizes -}}"
+        :key="sourcesArr[index]"
+        ref="source">
+    {%- else -%}
+      {%- for source in sources_arr -%}
+        {%- if source == blank -%}
+          {% continue %}
+        {%- endif -%}
+        {%- comment %}
+          Picture resizing
+        {%- endcomment -%}
+        {%- if source contains '.svg' -%}
+          {%- assign image_large = source -%}
+        {%- else -%}
+          {%- comment -%}
+            Prepares images for picture module based on image source
+          {%- endcomment -%}
+          {%- assign accentuate_cdn = '//images.accentuate.io?c_options=' -%}
+          {%- capture options -%}
+            &shop={{- shop.permanent_domain -}}&image={{- source -}}
+          {%- endcapture -%}
+
+          {%- if source contains 'cdn.accentuate.io' -%}
+            {%- capture image_large -%}
+              {{- accentuate_cdn -}}w_2160{{- options -}}
+            {%- endcapture -%}
+            {%- capture image_normal -%}
+              {{- accentuate_cdn -}}w_1080{{- options -}}
+            {%- endcapture -%}
+            {%- capture image_small -%}
+              {{- accentuate_cdn -}}w_640{{- options -}}
+            {%- endcapture -%}
+            {%- capture image_xsmall -%}
+              {{- accentuate_cdn -}}w_320{{- options -}}
+            {%- endcapture -%}
+          {%- elsif source contains 'cdn.shopify.com/s/assets/no-image' and default_image != blank -%}
+            {%- comment %}
+              No image detected, get default image replace
+            {%- endcomment -%}
+            {%- assign image_large = default_image | img_url: '2160x' -%}
+            {%- assign image_normal = default_image | img_url: '1080x' -%}
+            {%- assign image_small = default_image | img_url: '640x' -%}
+            {%- assign image_xsmall = default_image | img_url: '320x' -%}
+          {%- elsif source contains '//' -%}
+            {%- assign image_large = source -%}
+          {%- else -%}
+            {%- comment %}
+              Converts image to image object if it is only a string
+            {%- endcomment -%}
+            {%- if source.src != blank -%}
+              {%- assign image_obj = source -%}
+            {%- else -%}
+              {%- assign filename = source | split: '/' | last -%}
+              {%- assign image_obj = images[filename] -%}
+            {%- endif -%}
+
+            {%- assign image_large = image_obj | img_url: '2160x' -%}
+            {%- assign image_normal = image_obj | img_url: '1080x' -%}
+            {%- assign image_small = image_obj | img_url: '640x' -%}
+            {%- assign image_xsmall = image_obj | img_url: '320x' -%}
+          {%- endif -%}
+
+          {%- comment -%}
+            Assigns srcset
+          {%- endcomment -%}
+          {%- capture srcset -%}
+            {{ image_large }}{%- if image_normal != blank %} 2160w, {{ image_normal }} 1080w, {{ image_small }} 640w, {{ image_xsmall }} 320w{%- endif -%}
+          {%- endcapture -%}
+        {%- endif %}
+
+        <source
+          media="{{- breakpoints_arr[forloop.index0] -}}"
+          {% if lazy_load %}
+            data-srcset="{{- srcset -}}"
+          {% else %}
+            srcset={{- srcset -}}
+          {% endif %}
+          sizes="{{- sizes -}}">
+      {%- endfor -%}
+    {%- endif %}
+
+    <noscript>
+      <img class="picture__img is-fallback" src="{{- image_large -}}" alt="{{- alt -}}">
+    </noscript>
+
+    <img
+      class="picture__img"
+      {%- if is_vue %}
+        {% if lazy_load %}
+          :data-src="sourcesArr[sourcesArr.length - 1]"
+        {% else %}
+          :src="sourcesArr[sourcesArr.length - 1]"
+        {% endif %}
+        :alt="alt"
+        ref="img"
+      {%- else %}
+        {% if lazy_load %}
+          data-src="{{- image_large -}}"
+        {% else %}
+          src="{{- image_large -}}"
+        {% endif %}
+        alt="{{- alt -}}"
+      {%- endif %}
+      loading="{% if lazy_load %}lazy{% else %}eager{% endif %}">
+  </picture>
+</div>
