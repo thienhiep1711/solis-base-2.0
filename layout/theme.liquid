@@ -48,15 +48,13 @@
 </head>
 
 <body class="no-touch template template-{{ template.name }} template-{{- template | split: '.' | last | handle -}}">
-  {%- render 'site-header' -%}
-
+  {% section 'header' %}
   <main class="main js-mobile-content js-main" id="main" role="main">
     <div class="content">
       {{ content_for_layout }}
     </div>
-    {% section 'footer' %}
   </main>
-
+  {% section 'footer' %}
   {%- if settings.enable_mini_cart -%}
     {%- render 'mini-cart' -%}
   {%- endif -%}

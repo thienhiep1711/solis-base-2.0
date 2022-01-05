@@ -521,5 +521,16 @@
         "label": "Display buttons in uppercase"
       }
     ]
+  },
+  {
+    "name": "Checkouts",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "checkout_enable_attentive",
+        "label": "Enable Attentive Checkboxes",
+        "default": false
+      }
+    ]
   }
 ]

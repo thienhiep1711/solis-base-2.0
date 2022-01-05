@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "video"
+    },
+    "content": {
+      "type": "content"
+    }
+  },
+  "order": [
+    "main",
+    "content"
+  ]
+}

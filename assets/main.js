@@ -140,6 +140,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue_
 
 /***/ }),
 
+/***/ "./src/scripts/modules/checkbox/checkbox.vue.js":
+/*!******************************************************!*\
+  !*** ./src/scripts/modules/checkbox/checkbox.vue.js ***!
+  \******************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ \"./node_modules/core-js/modules/es.function.name.js\");\n/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.js\");\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);\n\n\nvue__WEBPACK_IMPORTED_MODULE_1___default().component('checkbox', {\n  props: ['checked', 'value', 'name', 'required', 'label'],\n  data: function data() {\n    return {\n      isValid: true,\n      isChecked: !!this.checked,\n      publicValue: this.value || true\n    };\n  },\n  methods: {\n    validate: function validate() {\n      this.isValid = !this.required || this.required && this.isChecked;\n      return this.isValid;\n    },\n    onChange: function onChange() {\n      this.isChecked = !this.isChecked;\n      var value = this.isChecked ? this.publicValue : false;\n      this.$emit('change', {\n        name: this.name,\n        value: value\n      });\n    }\n  },\n  template: \"\\n  <label class=\\\"checkbox\\\">\\n    <span class=\\\"checkbox__icon\\\" :class=\\\"{'is-active': isChecked, 'is-error': !isValid}\\\">\\n      <input\\n        class=\\\"checkbox__icon-el\\\"\\n        type=\\\"checkbox\\\"\\n        :name=\\\"name\\\"\\n        :value=\\\"value\\\"\\n        :checked=\\\"isChecked\\\"\\n        @change=\\\"onChange\\\" />\\n        <svg class=\\\"checkbox__icon-tick\\\" viewBox=\\\"0 0 11 10\\\">\\n          <use xmlns:xlink=\\\"http://www.w3.org/1999/xlink\\\" xlink:href=\\\"#icon-checkmark\\\" x=\\\"0\\\" y=\\\"0\\\"></use>\\n        </svg>\\n    </span>\\n    <span class=\\\"checkbox__text\\\" v-if=\\\"label\\\" v-text=\\\"label\\\"></span>\\n  </label>\\n  \"\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvc2NyaXB0cy9tb2R1bGVzL2NoZWNrYm94L2NoZWNrYm94LnZ1ZS5qcy5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7QUFBQTtBQUVBO0FBQ0E7QUFPQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBSEE7QUFLQTtBQUNBO0FBQ0E7QUFDQTtBQUlBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUFBO0FBQUE7QUFBQTtBQUNBO0FBWkE7QUFjQTtBQTdCQSIsInNvdXJjZXMiOlsid2VicGFjazovL3Nob3BpZnktYmFzZS0yLjAvLi9zcmMvc2NyaXB0cy9tb2R1bGVzL2NoZWNrYm94L2NoZWNrYm94LnZ1ZS5qcz84MjgzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBWdWUgZnJvbSAndnVlJ1xuXG5WdWUuY29tcG9uZW50KCdjaGVja2JveCcsIHtcbiAgcHJvcHM6IFtcbiAgICAnY2hlY2tlZCcsXG4gICAgJ3ZhbHVlJyxcbiAgICAnbmFtZScsXG4gICAgJ3JlcXVpcmVkJyxcbiAgICAnbGFiZWwnXG4gIF0sXG4gIGRhdGEgKCkge1xuICAgIHJldHVybiB7XG4gICAgICBpc1ZhbGlkOiB0cnVlLFxuICAgICAgaXNDaGVja2VkOiAhIXRoaXMuY2hlY2tlZCxcbiAgICAgIHB1YmxpY1ZhbHVlOiB0aGlzLnZhbHVlIHx8IHRydWVcbiAgICB9XG4gIH0sXG4gIG1ldGhvZHM6IHtcbiAgICB2YWxpZGF0ZSAoKSB7XG4gICAgICB0aGlzLmlzVmFsaWQgPSAoXG4gICAgICAgICF0aGlzLnJlcXVpcmVkIHx8XG4gICAgICAgICh0aGlzLnJlcXVpcmVkICYmIHRoaXMuaXNDaGVja2VkKVxuICAgICAgKVxuICAgICAgcmV0dXJuIHRoaXMuaXNWYWxpZFxuICAgIH0sXG4gICAgb25DaGFuZ2UgKCkge1xuICAgICAgdGhpcy5pc0NoZWNrZWQgPSAhdGhpcy5pc0NoZWNrZWRcbiAgICAgIGxldCB2YWx1ZSA9IHRoaXMuaXNDaGVja2VkID8gdGhpcy5wdWJsaWNWYWx1ZSA6IGZhbHNlXG4gICAgICB0aGlzLiRlbWl0KCdjaGFuZ2UnLCB7bmFtZTogdGhpcy5uYW1lLCB2YWx1ZX0pXG4gICAgfVxuICB9LFxuICB0ZW1wbGF0ZTogYFxuICA8bGFiZWwgY2xhc3M9XCJjaGVja2JveFwiPlxuICAgIDxzcGFuIGNsYXNzPVwiY2hlY2tib3hfX2ljb25cIiA6Y2xhc3M9XCJ7J2lzLWFjdGl2ZSc6IGlzQ2hlY2tlZCwgJ2lzLWVycm9yJzogIWlzVmFsaWR9XCI+XG4gICAgICA8aW5wdXRcbiAgICAgICAgY2xhc3M9XCJjaGVja2JveF9faWNvbi1lbFwiXG4gICAgICAgIHR5cGU9XCJjaGVja2JveFwiXG4gICAgICAgIDpuYW1lPVwibmFtZVwiXG4gICAgICAgIDp2YWx1ZT1cInZhbHVlXCJcbiAgICAgICAgOmNoZWNrZWQ9XCJpc0NoZWNrZWRcIlxuICAgICAgICBAY2hhbmdlPVwib25DaGFuZ2VcIiAvPlxuICAgICAgICA8c3ZnIGNsYXNzPVwiY2hlY2tib3hfX2ljb24tdGlja1wiIHZpZXdCb3g9XCIwIDAgMTEgMTBcIj5cbiAgICAgICAgICA8dXNlIHhtbG5zOnhsaW5rPVwiaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGlua1wiIHhsaW5rOmhyZWY9XCIjaWNvbi1jaGVja21hcmtcIiB4PVwiMFwiIHk9XCIwXCI+PC91c2U+XG4gICAgICAgIDwvc3ZnPlxuICAgIDwvc3Bhbj5cbiAgICA8c3BhbiBjbGFzcz1cImNoZWNrYm94X190ZXh0XCIgdi1pZj1cImxhYmVsXCIgdi10ZXh0PVwibGFiZWxcIj48L3NwYW4+XG4gIDwvbGFiZWw+XG4gIGBcbn0pXG4iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/scripts/modules/checkbox/checkbox.vue.js\n");
+
+/***/ }),
+
 /***/ "./src/scripts/modules/pagination/pagination.vue.js":
 /*!**********************************************************!*\
   !*** ./src/scripts/modules/pagination/pagination.vue.js ***!
@@ -200,6 +211,7 @@ var map = {
 	"./account-recover-form/account-recover-form.vue.js": "./src/scripts/modules/account-recover-form/account-recover-form.vue.js",
 	"./account-register-form/account-register-form.vue.js": "./src/scripts/modules/account-register-form/account-register-form.vue.js",
 	"./account-reset-form/account-reset-form.vue.js": "./src/scripts/modules/account-reset-form/account-reset-form.vue.js",
+	"./checkbox/checkbox.vue.js": "./src/scripts/modules/checkbox/checkbox.vue.js",
 	"./pagination/pagination.vue.js": "./src/scripts/modules/pagination/pagination.vue.js",
 	"./password/password.js": "./src/scripts/modules/password/password.js",
 	"./text-input/text-input.vue.js": "./src/scripts/modules/text-input/text-input.vue.js"
@@ -241,6 +253,7 @@ var map = {
 	"./account-recover-form/account-recover-form.vue.js": "./src/scripts/modules/account-recover-form/account-recover-form.vue.js",
 	"./account-register-form/account-register-form.vue.js": "./src/scripts/modules/account-register-form/account-register-form.vue.js",
 	"./account-reset-form/account-reset-form.vue.js": "./src/scripts/modules/account-reset-form/account-reset-form.vue.js",
+	"./checkbox/checkbox.vue.js": "./src/scripts/modules/checkbox/checkbox.vue.js",
 	"./pagination/pagination.vue.js": "./src/scripts/modules/pagination/pagination.vue.js",
 	"./text-input/text-input.vue.js": "./src/scripts/modules/text-input/text-input.vue.js"
 };
