@@ -1,0 +1,209 @@
+{%- capture tracking_number -%}
+  {%- if order.line_items[0].fulfillment.tracking_number -%}
+    {{- order.line_items[0].fulfillment.tracking_number -}}
+  {%- else -%}
+    &mdash;
+  {%- endif -%}
+{%- endcapture -%}
+<section class="order-details">
+  <div class="mha order-details__inner">
+    <div class="order-details__header">
+      <h4 class="p1 medium mx0 black order-details__title"><span>Order </span><span>{{ order.name }}</span></h4>
+      <h5 class="block mx0 order-details__date-desktop">{{order.created_at | date: '%b %d, %Y at %I:%M%P'}}</h5>
+    </div>
+    <div class="order__meta order-details__date-mobile">
+      <span>{{ 'customer.account.date_colon' | t }}</span><span>{{order.created_at | date: '%b %d, %Y'}}</span>
+    </div>
+    <div class="order__meta">
+      <span>{{- 'customer.account.payment_colon' | t -}}</span><span>{{- order.financial_status_label -}}</span>
+    </div>
+    <div class="order__meta">
+      <span>{{- 'customer.account.shipping_colon' | t -}}</span><span>{{- order.fulfillment_status_label -}}</span>
+    </div>
+    <div class="order__meta">
+      <span>{{- 'customer.account.track_colon' | t -}}</span><span>{{- tracking_number -}}</span>
+    </div>
+    <div class="order__meta order__meta--total">
+      <span>{{- 'customer.account.total_colon' | t -}}</span><span>{{- order.total_price | money -}}</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="mha">
+    {%- if order.cancelled -%}
+      {%- assign cancelled_at = order.cancelled_at | date: "%b %d, %Y @ %I:%M %p" -%}
+      {%- capture alert_message -%}
+        <p class="p1">{{- 'customer.account.order_cancelled_colon' | t -}} {{- cancelled_at -}}</p>
+        <p class="p1">{{- 'customer.account.reason_colon' | t -}} {{- order.cancel_reason | capitalize -}}</p>
+      {%- endcapture -%}
+      {%- assign cancelled_at = nil -%}
+      {%- assign alert_type = 'error' -%}
+      {%- render 'alert',type: alert_type,message: alert_message -%}
+    {%- endif -%}
+  </div>
+</section>
+
+<section class="mt2">
+  <div class="mha pv1">
+    <h2 class="h3 mb0 mt0">{{- 'customer.order.title' | t -}}</h2>
+    <table class="p1 responsive-table orders order-details__table">
+      <thead>
+      <tr>
+        <th class="h5">{{- 'customer.order.item' | t -}}</th>
+        <th class="h5">{{- 'customer.order.price' | t -}}</th>
+        <th class="h5">{{- 'customer.order.quantity' | t -}}</th>
+        <th class="h5">{{- 'customer.order.total' | t -}}</th>
+      </tr>
+      </thead>
+      <tbody>
+        {%- for item in order.line_items -%}
+          {%- assign url = item.product.url -%}
+          {%- assign image = item.image | img_url: '150x' -%}
+          {%- assign title = item.product.title -%}
+          {%- assign variant = item.variant -%}
+          {%- assign price = item.price -%}
+          {%- assign props = item.properties -%}
+          {%- assign sku = item.sku -%}
+          {%- assign quantity = item.quantity -%}
+          {%- assign created_at = item.fulfillment.created_at | date: '%b %d, %Y' -%}
+          {%- assign tracking_url = line_item.fulfillment.tracking_url -%}
+          {%- assign tracking_number = line_item.fulfillment.tracking_number -%}
+          <tr class="order__details__row">
+            <td class="order-details__item">
+              <div class="order-details__image">
+                <a href="{{- url -}}"><img src="{{- image -}}" class="w1"/></a>{% comment %}lint:ignore{% endcomment %}
+              </div>
+
+              <div class="order-details__info">
+                <a class="order-details__item-title" href="{{- url -}}"><h4 class="inline-block mv0">{{- title -}}</h4></a>
+                <div class="mv0 order-details__item-variant">
+                  {%- if variant and variant.title != 'Default title'%}<p class="p2 order-details__item-variant-title">{{- variant.title -}}</p>{%- endif -%}
+                  {%- if sku != blank -%}<p class="p2 order-details__item-sku">{{- 'customer.account.sku_colon' | t -}} {{- sku -}}</p>{%- endif -%}
+                  {%- unless props == 'empty '%}
+                    <div class="mt05">
+                      {%- for p in props -%}
+                        <p class="p3">{{ p.first }}: {{ p.last }}</p>
+                      {%- endfor -%}
+                    </div>
+                  {%- endunless -%}
+                  {%- if quantity > 1 -%}<p class="p2 order-details__item-quantity">{{- 'customer.account.quantity_colon' | t -}} {{- quantity -}}</p>{%- endif -%}
+                  {%- if quantity > 1 -%}
+                    <p class="p2 order-details__item-total">{{- 'customer.account.total_colon' | t -}} {{- quantity | times: price | money -}}</p>
+                  {%- else -%}
+                    <p class="p2 order-details__item-total">{{- quantity | times: price | money -}}</p>
+                  {%- endif -%}
+                </div>
+              </div>
+            </td>
+            <td class="order-details__row-price p2" data-label="{{- 'customer.order.price' | t -}}">{{- price | money -}}</td>
+            <td class="order-details__row-quantity p2" data-label="Qty">{{- quantity -}}</td>
+            <td class="order-details__row-total p2" data-label="{{- 'customer.order.total' | t -}}">{{- quantity | times: price | money -}}</td>
+          </tr>
+          {%- assign url = nil -%}
+          {%- assign image = nil -%}
+          {%- assign title = nil -%}
+          {%- assign variant = nil -%}
+          {%- assign price = nil -%}
+          {%- assign props = nil -%}
+          {%- assign sku = nil -%}
+          {%- assign quantity = nil -%}
+          {%- assign created_at = nil -%}
+          {%- assign tracking_url = nil -%}
+          {%- assign tracking_number = nil -%}
+        {%- endfor -%}
+      </tbody>
+    </table>
+
+    <div class="order-details__total p2">
+      <div class="order-details__total-inner">
+        {%- assign subtotal = order.subtotal_price | money -%}
+        {%- assign total = order.total_price | money -%}
+
+        <div class="order__subtotal">
+          <div class="f fw aic">
+            <h6 class="mv0">{{ 'customer.order.subtotal' | t }}</h6>
+            <p class="fa mv0 align-r">{{- subtotal -}}</p>
+          </div>
+        </div>
+
+        {%- if order.shipping_methods.size > 0 -%}
+          <div class="order__shipping">
+            {%- for ship in order.shipping_methods -%}
+              <div class="f fw aic">
+                <h6 class="mv0">{{- ship.title | replace: 'Shipping', '' -}}</h6>
+                <p class="fa mv0 align-r">{{- ship.price | money -}}</p>
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        {%- if order.discounts.size > 0 -%}
+          <div class="order__discount">
+            {%- for discount in order.discounts -%}
+              <div class="f fw">
+                <h6 class="mv0">{{- discount.code -}}</h6>
+                <p class="fa mv0 align-r">{{- discount.savings | money -}}</p>
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        {%- if order.tax_lines.size > 0 -%}
+          <div class="order__tax">
+            {%- for tax in order.tax_lines -%}
+              <div class="f fw aic">
+                <h6 class="mv0">{{- tax.title | replace: 'Tax', ''-}} ({{- tax.rate | times: 100 -}}%)</h6>
+                <p class="fa mv0 align-r">{{- tax.price | money -}}</p>
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        <div class="order__total">
+          <div class="bold f fw aic">
+            <h6 class="mv0">{{ 'customer.account.total' | t }}</h6>
+            <p class="fa mv0 align-r">{{- total -}}</p>
+          </div>
+        </div>
+        {%- assign subtotal = nil -%}
+        {%- assign total = nil -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="order-details__billings">
+  <div class="f order-details__billings-group">
+    <div class="order-details__billings-address">
+      <h4 class="mv05 h4">{{- 'customer.account.billing' | t -}}</h4>
+
+      {%- assign billing = order.billing_address -%}
+      {%- render 'account-order-address',
+        name: billing.name,
+        company: billing.company,
+        street: billing.street,
+        city: billing.city,
+        province: billing.province,
+        zip: billing.zip,
+        country: billing.country,
+        phone: billing.phone -%}
+    </div>
+
+    <div class="order-details__shipping-address">
+      <h4 class="mv05 h4">{{- 'customer.account.shipping' | t -}}</h4>
+
+      {%- assign shipping = order.shipping_address -%}
+      {%- render 'account-order-address',
+        shipping: order.shipping_address,
+        name: shipping.name,
+        company: shipping.company,
+        street: shipping.street,
+        city: shipping.city,
+        province: shipping.province,
+        zip: shipping.zip,
+        country: shipping.country,
+        phone: shipping.phone -%}
+    </div>
+  </div>
+</section>

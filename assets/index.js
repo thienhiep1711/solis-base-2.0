@@ -6,16 +6,16 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-(self["webpackChunkshopify_base_2_0"] = self["webpackChunkshopify_base_2_0"] || []).push([["main"],{
+(self["webpackChunkshopify_base_2_0"] = self["webpackChunkshopify_base_2_0"] || []).push([["index"],{
 
-/***/ "./src/scripts/entries/main.js":
-/*!*************************************!*\
-  !*** ./src/scripts/entries/main.js ***!
-  \*************************************/
+/***/ "./src/scripts/entries/index.js":
+/*!**************************************!*\
+  !*** ./src/scripts/entries/index.js ***!
+  \**************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lib_init__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lib/init */ \"./src/scripts/lib/init.js\");\n/* harmony import */ var lib_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lib/util */ \"./src/scripts/lib/util.js\");\n/* harmony import */ var lib_animate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lib/animate */ \"./src/scripts/lib/animate.js\");\n/* harmony import */ var lib_easylockdown_fix__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lib/easylockdown-fix */ \"./src/scripts/lib/easylockdown-fix.js\");\n/* harmony import */ var styles_main_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styles/main.css */ \"./src/styles/main.css\");\n\n\n\n\n\ndocument.addEventListener('DOMContentLoaded', function () {\n  if ((0,lib_util__WEBPACK_IMPORTED_MODULE_1__.isIEorEdge)()) (0,lib_util__WEBPACK_IMPORTED_MODULE_1__.set)(document.body, 'ie');\n\n  if ((0,lib_util__WEBPACK_IMPORTED_MODULE_1__.isTouch)()) {\n    document.body.classList.remove('no-touch');\n  }\n\n  (0,lib_animate__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(document);\n  (0,lib_easylockdown_fix__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\n  (0,lib_init__WEBPACK_IMPORTED_MODULE_0__[\"default\"])().mount();\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvc2NyaXB0cy9lbnRyaWVzL21haW4uanMuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUE7QUFDQTtBQUNBO0FBQ0E7QUFFQTtBQUVBO0FBQ0E7O0FBRUE7QUFDQTtBQUNBOztBQUVBO0FBQ0E7QUFFQTtBQUNBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vc2hvcGlmeS1iYXNlLTIuMC8uL3NyYy9zY3JpcHRzL2VudHJpZXMvbWFpbi5qcz8wYjQyIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBpbml0IGZyb20gJ2xpYi9pbml0J1xuaW1wb3J0IHtzZXQsIGlzSUVvckVkZ2UsIGlzVG91Y2h9IGZyb20gJ2xpYi91dGlsJ1xuaW1wb3J0IGFuaW1hdGUgZnJvbSAnbGliL2FuaW1hdGUnXG5pbXBvcnQgZWFzeUxvY2tkb3duRml4IGZyb20gJ2xpYi9lYXN5bG9ja2Rvd24tZml4J1xuXG5pbXBvcnQgJ3N0eWxlcy9tYWluLmNzcydcblxuZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsICgpID0+IHtcbiAgaWYgKGlzSUVvckVkZ2UoKSkgc2V0KGRvY3VtZW50LmJvZHksICdpZScpXG5cbiAgaWYgKGlzVG91Y2goKSkge1xuICAgIGRvY3VtZW50LmJvZHkuY2xhc3NMaXN0LnJlbW92ZSgnbm8tdG91Y2gnKVxuICB9XG5cbiAgYW5pbWF0ZShkb2N1bWVudClcbiAgZWFzeUxvY2tkb3duRml4KClcblxuICBpbml0KCkubW91bnQoKVxufSlcbiJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/scripts/entries/main.js\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lib_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lib/util */ \"./src/scripts/lib/util.js\");\n/* harmony import */ var lib_initializer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lib/initializer */ \"./src/scripts/lib/initializer.js\");\n/* harmony import */ var lib_lazy_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lib/lazy-module */ \"./src/scripts/lib/lazy-module.js\");\n/* harmony import */ var lib_animate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lib/animate */ \"./src/scripts/lib/animate.js\");\n/* harmony import */ var styles_main_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styles/main.css */ \"./src/styles/main.css\");\n\n\n\n\nvar footer = (0,lib_lazy_module__WEBPACK_IMPORTED_MODULE_2__[\"default\"])('footer', {\n  offset: 120\n});\n\n(0,lib_initializer__WEBPACK_IMPORTED_MODULE_1__[\"default\"])({\n  'promo-bar': promoBar,\n  'header': header,\n  'animate': lib_animate__WEBPACK_IMPORTED_MODULE_3__[\"default\"],\n  'header-cart-icon': headerCartIcon,\n  'mini-cart': miniCart,\n  'header-search-icon': headerSearchIcon,\n  'header-search': headerSearch,\n  'picture': picture,\n  'product-grid': productGrid,\n  'shop-the-look': shopTheLook,\n  'video': video,\n  'instagram-feed': instagramFeed,\n  'carousel': carousel,\n  'footer': footer\n});\ndocument.addEventListener('DOMContentLoaded', function () {\n  if ((0,lib_util__WEBPACK_IMPORTED_MODULE_0__.isIEorEdge)()) (0,lib_util__WEBPACK_IMPORTED_MODULE_0__.set)(document.body, 'ie');\n\n  if (window.SENTRY.enabled) {\n    Sentry.init({\n      dsn: 'https://' + window.SENTRY.dsn\n    });\n  }\n\n  if ((0,lib_util__WEBPACK_IMPORTED_MODULE_0__.isTouch)()) {\n    document.body.classList.remove('no-touch');\n  }\n\n  (0,lib_animate__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(document);\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvc2NyaXB0cy9lbnRyaWVzL2luZGV4LmpzLmpzIiwibWFwcGluZ3MiOiI7Ozs7OztBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFBQTtBQUFBO0FBRUE7QUFFQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFkQTtBQWlCQTtBQUNBOztBQUNBO0FBQ0E7QUFDQTtBQURBO0FBR0E7O0FBRUE7QUFDQTtBQUNBOztBQUVBO0FBQ0EiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zaG9waWZ5LWJhc2UtMi4wLy4vc3JjL3NjcmlwdHMvZW50cmllcy9pbmRleC5qcz9hYjI0Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7c2V0LCBpc0lFb3JFZGdlLCBpc1RvdWNofSBmcm9tICdsaWIvdXRpbCdcbmltcG9ydCBpbml0aWFsaXplciBmcm9tICdsaWIvaW5pdGlhbGl6ZXInXG5pbXBvcnQgbGF6eU1vZHVsZSBmcm9tICdsaWIvbGF6eS1tb2R1bGUnXG5pbXBvcnQgYW5pbWF0ZSBmcm9tICdsaWIvYW5pbWF0ZSdcbmNvbnN0IGZvb3RlciA9IGxhenlNb2R1bGUoJ2Zvb3RlcicsIHsgb2Zmc2V0OiAxMjAgfSlcblxuaW1wb3J0ICdzdHlsZXMvbWFpbi5jc3MnXG5cbmluaXRpYWxpemVyKHtcbiAgJ3Byb21vLWJhcic6IHByb21vQmFyLFxuICAnaGVhZGVyJzogaGVhZGVyLFxuICAnYW5pbWF0ZSc6IGFuaW1hdGUsXG4gICdoZWFkZXItY2FydC1pY29uJzogaGVhZGVyQ2FydEljb24sXG4gICdtaW5pLWNhcnQnOiBtaW5pQ2FydCxcbiAgJ2hlYWRlci1zZWFyY2gtaWNvbic6IGhlYWRlclNlYXJjaEljb24sXG4gICdoZWFkZXItc2VhcmNoJzogaGVhZGVyU2VhcmNoLFxuICAncGljdHVyZSc6IHBpY3R1cmUsXG4gICdwcm9kdWN0LWdyaWQnOiBwcm9kdWN0R3JpZCxcbiAgJ3Nob3AtdGhlLWxvb2snOiBzaG9wVGhlTG9vayxcbiAgJ3ZpZGVvJzogdmlkZW8sXG4gICdpbnN0YWdyYW0tZmVlZCc6IGluc3RhZ3JhbUZlZWQsXG4gICdjYXJvdXNlbCc6IGNhcm91c2VsLFxuICAnZm9vdGVyJzogZm9vdGVyXG59KVxuXG5kb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKCdET01Db250ZW50TG9hZGVkJywgKCkgPT4ge1xuICBpZiAoaXNJRW9yRWRnZSgpKSBzZXQoZG9jdW1lbnQuYm9keSwgJ2llJylcbiAgaWYgKHdpbmRvdy5TRU5UUlkuZW5hYmxlZCkge1xuICAgIFNlbnRyeS5pbml0KHtcbiAgICAgIGRzbjogJ2h0dHBzOi8vJyArIHdpbmRvdy5TRU5UUlkuZHNuXG4gICAgfSlcbiAgfVxuXG4gIGlmIChpc1RvdWNoKCkpIHtcbiAgICBkb2N1bWVudC5ib2R5LmNsYXNzTGlzdC5yZW1vdmUoJ25vLXRvdWNoJylcbiAgfVxuXG4gIGFuaW1hdGUoZG9jdW1lbnQpXG59KVxuIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/scripts/entries/index.js\n");
 
 /***/ }),
 
@@ -184,10 +184,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
-/***/ "./src/scripts/modules sync recursive ^\\.\\/.*\\.js$":
-/*!************************************************!*\
-  !*** ./src/scripts/modules/ sync ^\.\/.*\.js$ ***!
-  \************************************************/
+/***/ "./src/scripts/modules eager recursive ^\\.\\/.*\\.js$":
+/*!******************************************************************!*\
+  !*** ./src/scripts/modules/ eager ^\.\/.*\.js$ namespace object ***!
+  \******************************************************************/
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 var map = {
@@ -206,71 +206,32 @@ var map = {
 };
 
 
-function webpackContext(req) {
-	var id = webpackContextResolve(req);
-	return __webpack_require__(id);
+function webpackAsyncContext(req) {
+	return webpackAsyncContextResolve(req).then(__webpack_require__);
 }
-function webpackContextResolve(req) {
-	if(!__webpack_require__.o(map, req)) {
-		var e = new Error("Cannot find module '" + req + "'");
-		e.code = 'MODULE_NOT_FOUND';
-		throw e;
-	}
-	return map[req];
+function webpackAsyncContextResolve(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncaught exception popping up in devtools
+	return Promise.resolve().then(function() {
+		if(!__webpack_require__.o(map, req)) {
+			var e = new Error("Cannot find module '" + req + "'");
+			e.code = 'MODULE_NOT_FOUND';
+			throw e;
+		}
+		return map[req];
+	});
 }
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = "./src/scripts/modules sync recursive ^\\.\\/.*\\.js$";
-
-/***/ }),
-
-/***/ "./src/scripts/modules sync recursive ^\\.\\/.*\\.vue\\.js$":
-/*!*****************************************************!*\
-  !*** ./src/scripts/modules/ sync ^\.\/.*\.vue\.js$ ***!
-  \*****************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-var map = {
-	"./account-activate-form/account-activate-form.vue.js": "./src/scripts/modules/account-activate-form/account-activate-form.vue.js",
-	"./account-address-item/account-address-item.vue.js": "./src/scripts/modules/account-address-item/account-address-item.vue.js",
-	"./account-login-form/account-login-form.vue.js": "./src/scripts/modules/account-login-form/account-login-form.vue.js",
-	"./account-new-address/account-new-address.vue.js": "./src/scripts/modules/account-new-address/account-new-address.vue.js",
-	"./account-recover-form/account-recover-form.vue.js": "./src/scripts/modules/account-recover-form/account-recover-form.vue.js",
-	"./account-register-form/account-register-form.vue.js": "./src/scripts/modules/account-register-form/account-register-form.vue.js",
-	"./account-reset-form/account-reset-form.vue.js": "./src/scripts/modules/account-reset-form/account-reset-form.vue.js",
-	"./pagination/pagination.vue.js": "./src/scripts/modules/pagination/pagination.vue.js",
-	"./text-input/text-input.vue.js": "./src/scripts/modules/text-input/text-input.vue.js"
-};
-
-
-function webpackContext(req) {
-	var id = webpackContextResolve(req);
-	return __webpack_require__(id);
-}
-function webpackContextResolve(req) {
-	if(!__webpack_require__.o(map, req)) {
-		var e = new Error("Cannot find module '" + req + "'");
-		e.code = 'MODULE_NOT_FOUND';
-		throw e;
-	}
-	return map[req];
-}
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = "./src/scripts/modules sync recursive ^\\.\\/.*\\.vue\\.js$";
+webpackAsyncContext.keys = function() { return Object.keys(map); };
+webpackAsyncContext.resolve = webpackAsyncContextResolve;
+webpackAsyncContext.id = "./src/scripts/modules eager recursive ^\\.\\/.*\\.js$";
+module.exports = webpackAsyncContext;
 
 /***/ })
 
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ __webpack_require__.O(0, ["commons"], function() { return __webpack_exec__("./src/scripts/entries/main.js"); });
+/******/ __webpack_require__.O(0, ["commons"], function() { return __webpack_exec__("./src/scripts/entries/index.js"); });
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);

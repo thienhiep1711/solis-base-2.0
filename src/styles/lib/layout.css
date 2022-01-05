@@ -17,12 +17,3 @@ body {
   flex: 0 0 auto;
   width: 100%;
 }
-
-.shopify-section {
-  /* critical:start */
-  display: none;
-
-  /* critical:end */
-
-  display: inherit;
-}

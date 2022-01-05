@@ -1,0 +1,11 @@
+{%- assign account_page_title = 'Order ' | append: order.name -%}
+<div class="container container--xl page-bottom-spacing">
+  <a class="p1 mx0 underline account-nav__link account-nav__link--logout" href="/account/logout">{{ 'customer.account.logout' | t }}</a>
+  {% if template contains 'order' %}
+    <a class="p1 mx0 underline account-nav__link account-nav__link--back" href="/account">{{ 'customer.order.back' | t }}</a>
+  {%- endif -%}
+</div>
+<div class="container container--xl page-bottom-spacing">
+  {% comment %} {%- render 'account-nav' -%} {% endcomment %}
+  {%- render 'account-order-details' with order: order -%}
+</div>

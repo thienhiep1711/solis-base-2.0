@@ -1,0 +1,89 @@
+{%- assign is_vue = is_vue | default: false -%}
+{%- assign class = class | default: nil -%}
+
+{%- if paginate.parts.size > 0 or is_vue -%}
+  <div class="pagination {{ class }}"
+    {%- if is_vue -%}
+      is="pagination"
+      :current-page="{{ current_page }}"
+      :total-count="{{ total }}"
+      :per-page="{{ per_page }}"
+      :limit="{{ paginate_limit }}"
+      v-model="{{ current_page }}"
+      @change="{{ on_change }}"
+      inline-template
+    {%- endif -%}
+  >
+    <ul
+      class="f aic jcc"
+      {%- if is_vue -%}
+        v-if="totalPage > 1"
+      {%- endif -%}
+    >
+        <li class="pagination__arrow">
+          <a
+            {% if is_vue %}
+              class="pagination__arrow-next-prev"
+              href="!#"
+              :class="[ isShowPrev ? '' : 'is-disabled' ]"
+              @click.prevent="handleClickPrev"
+            {% else %}
+              class="pagination__arrow-next-prev{% unless paginate.previous %} is-disabled{% endunless %}"
+              href="{{- paginate.previous.url -}}" title="{{- paginate.previous.title -}}"
+            {% endif %}
+          >
+            {%- render 'icon' with 'arrow-left' -%}
+          </a>
+        </li>
+        {%- if is_vue -%}
+          <li
+            v-for="(page, index) in pages"
+            class="pagination__page"
+            :key="index"
+            :class="{ 'is-active': page == currentPage }"
+          >
+            <a
+              href="!#"
+              @click.prevent="handleClickPage(page, $event)"
+              class="pagination__page-link"
+              :class="{ 'is-active': page == currentPage }"
+              v-text="page"
+            ></a>
+          </li>
+        {%- else -%}
+          {%- for part in paginate.parts -%}
+            {%- if part.is_link -%}
+              <li class="pagination__page">
+                <a href="{{- part.url -}}" class="pagination__page-link">{{- part.title -}}</a>
+              </li>
+            {%- else -%}
+              {%- if part.title == paginate.current_page -%}
+                <li class="pagination__page is-acitve">
+                  <span class="is-active pagination__page-link">{{- part.title -}}</span>
+                </li>
+              {%- else -%}
+                <li class="pagination__page is-disabled">
+                  <span class="pagination__page-link">{{- part.title -}}</span>
+                </li>
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+        <li class="pagination__arrow">
+          <a
+            {% if is_vue %}
+              class="pagination__arrow-next-prev"
+              href="!#"
+              @click.prevent="handleClickNext"
+              :class="[ isShowNext ? '' : 'is-disabled']"
+            {% else %}
+              class="pagination__arrow-next-prev{% unless paginate.next %} is-disabled{% endunless %}"
+              href="{{- paginate.next.url -}}" title="{{- paginate.next.title -}}"
+            {% endif %}
+          >
+            {%- render 'icon' with 'arrow-right' -%}
+          </a>
+        </li>
+    </ul>
+  </div>
+{%- endif -%}

@@ -1,0 +1,38 @@
+<div is="account-reset-form" inline-template>
+  <div @submit="validate" class="container container--xs">
+
+    {%- assign title = 'customer.activate_account.title' | t -%}
+    {%- render 'page-title', title: title -%}
+
+    <div>
+      {%- form 'activate_customer_password' -%}
+
+        {%- render 'form-errors', errors: form.errors -%}
+
+        <div class="form-row">
+          {%- assign placeholder = 'customer.activate_account.password' | t -%}
+          {%- render 'text-input' with
+            name: 'customer[password]',
+            type: 'password',
+            label: placeholder -%}
+        </div>
+
+        <div class="form-row">
+          {%- assign placeholder = 'customer.activate_account.confirm_password' | t -%}
+          {%- render 'text-input' with
+            name: 'customer[password_confirmation]',
+            type: 'password',
+            label: placeholder -%}
+        </div>
+
+        <div class="form-row">
+          {%- assign value = 'customer.activate_account.submit' | t -%}
+          {%- render 'button',
+            value: value,
+            type: 'submit',
+            style: 'outlined' -%}
+        </div>
+      {%- endform -%}
+    </div>
+  </div>
+</div>

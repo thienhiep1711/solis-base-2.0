@@ -7,11 +7,6 @@ import 'styles/main.css'
 
 document.addEventListener('DOMContentLoaded', () => {
   if (isIEorEdge()) set(document.body, 'ie')
-  if (window.SENTRY.enabled) {
-    Sentry.init({
-      dsn: 'https://' + window.SENTRY.dsn
-    })
-  }
 
   if (isTouch()) {
     document.body.classList.remove('no-touch')

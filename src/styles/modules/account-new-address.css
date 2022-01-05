@@ -1,0 +1,98 @@
+.account-new-addr {
+  margin-bottom: 50px;
+
+  @media (--s) {
+    margin-bottom: 75px;
+  }
+}
+
+.address-form__title {
+  margin-bottom: 28px;
+
+  @media (--m) {
+    margin-bottom: 38px;
+  }
+}
+
+.address-form__group {
+  @media (--s) {
+    margin-bottom: 20px;
+    display: flex;
+  }
+}
+
+.address-form__input {
+  width: 100%;
+  margin-bottom: 20px;
+
+  @media (--s) {
+    width: 50%;
+    margin-bottom: 0;
+  }
+}
+
+.address-form__input:first-child {
+  @media (--s) {
+    margin-right: 10px;
+  }
+
+  @media (--m) {
+    margin-right: 15px;
+  }
+
+  @media (--l) {
+    margin-right: 20px;
+  }
+}
+
+.address-form__input + .address-form__input {
+  @media (--s) {
+    margin-left: 10px;
+  }
+
+  @media (--m) {
+    margin-left: 15px;
+  }
+
+  @media (--l) {
+    margin-left: 20px;
+  }
+}
+
+.address-form__footer {
+  margin-top: 25px;
+  margin-bottom: 40px;
+
+  @media (--s) {
+    margin-top: 45px;
+    margin-bottom: 80px;
+  }
+}
+
+.address-form__group-button {
+  flex-direction: column;
+  padding-top: 25px;
+  align-items: flex-start;
+
+  .btn--primary {
+    width: 100%;
+
+    @media (--s) {
+      width: calc(50% - 10px);
+    }
+
+    @media (--m) {
+      width: calc(50% - 15px);
+    }
+
+    @media (--l) {
+      width: calc(50% - 20px);
+    }
+  }
+}
+
+.address-form__button-cancel {
+  @extend %link;
+
+  margin-top: 20px;
+}
