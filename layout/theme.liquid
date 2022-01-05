@@ -6,42 +6,65 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
   <title>{{ page_title | strip }}</title>
 
-  {% comment %}REQUIRED: Render fonts{% endcomment %}
-  <style>
-    @font-face {
-      font-family: 'font-name';
-      src:
-        url("{{ 'font-name.woff2' | asset_url }}") format('woff2'),
-        url("{{ 'font-name.woff' | asset_url }}") format('woff'),
-        url("{{ 'font-name.ttf' | asset_url }}") format('truetype');
-      font-weight: normal;
-      font-style: normal;
-      font-display: optional;
-    }
-  </style>
+  <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-TVQ33M5');</script>
+  <!-- End Google Tag Manager -->
+  {%- render 'preconnect-required-origins' -%}
+  {%- render 'favicon' -%}
+  {%- render 'seo-title' -%}
 
-  {% comment %}If we have settings.css.liquid - variables from settings{% endcomment %}
-  <link type="text/css" href="{{- 'settings.css' | asset_url -}}" rel="stylesheet">
+  {%- render 'social-meta' -%}
+  {%- render 'structured-data' -%}
+  {%- render 'font-faces' -%}
 
-  {% comment %}If we have critical CSS{% endcomment %}
-  <style>
-    {%- render 'main-critical-css' -%}
-  </style>
+  {%- render 'theme-styles',
+    is_dev_mode: settings.is_dev_mode
+  -%}
 
-  {% comment %}REQUIRED: theme styles{% endcomment %}
-  <link type="text/css" href="{{- 'main.css' | asset_url -}}" rel="stylesheet">
+  {%- render 'sls-state' -%}
 
-  {{content_for_header}}
+  {% assign exclude_pages = settings.exclude_pages | split: "|" %}
+  {% for handle in exclude_pages %}
+    {% if page.handle == handle %}
+      {% assign is_exclude_page = true %}
+    {% endif %}
+  {% endfor %}
+
+  {%- if is_exclude_page -%}
+    {{ content_for_header }}
+  {%- else -%}
+    {%- capture header_scripts -%}
+      {{ content_for_header }}
+    {%- endcapture -%}
+    {%- render 'header-scripts',
+      content: header_scripts,
+      unload_apps: true
+    -%}
+  {%- endif -%}
 </head>
 
-<body class="wheelbarrow-v0 no-touch template template-{{ template.name }} template-{{- template | split: '.' | last | handle -}}">
-  {%- section 'header' -%}
+<body class="no-touch template template-{{ template.name }} template-{{- template | split: '.' | last | handle -}}">
+  {%- render 'site-header' -%}
 
   <main class="main js-mobile-content js-main" id="main" role="main">
     <div class="content">
       {{ content_for_layout }}
     </div>
+    {%- section 'footer' -%}
   </main>
+
+  {%- if settings.enable_mini_cart -%}
+    {%- render 'mini-cart' -%}
+  {%- endif -%}
+
+  {%- render 'icon-paths' -%}
+  {%- render 'theme-scripts',
+    is_dev_mode: settings.is_dev_mode
+  -%}
 
   {% comment %}REQUIRED: theme scripts{% endcomment %}
   <script src="{{ 'runtime.js' | asset_url }}" defer="defer"></script>

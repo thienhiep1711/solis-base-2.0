@@ -1,0 +1,15 @@
+{%- comment -%}
+  Renders the scripts of the theme
+
+  Params
+  * is_dev_mode
+{%- endcomment -%}
+
+<script src="{{ 'runtime.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'commons.js' | asset_url }}" defer="defer"></script>
+
+{%- if template.name == 'index' -%}
+  <script src="{{- 'index.js' | asset_url -}}" defer></script>
+{%- else -%}
+  <script src="{{- 'main.js' | asset_url -}}" defer></script>
+{%- endif -%}

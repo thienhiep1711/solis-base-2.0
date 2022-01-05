@@ -1,0 +1,27 @@
+{%- comment -%}
+  Prevent loading third party scripts until a user has scrolled, along with some timeout.
+
+  https://www.gatsbyjs.com/blog/2019-08-30-speed-up-your-time-to-interactive-by-delaying-third-party-scripts/
+{%- endcomment -%}
+
+<script>
+  // Delay loop-returns
+  window.addEventListener('scroll',function () {
+    setTimeout(function () {
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.defer = true;
+      s.src = 'https://unpkg.com/@loophq/onstore-sdk@latest/dist/loop-onstore-sdk.js';
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+      s.onload = function () {
+        if (window.LoopOnstore) {
+          LoopOnstore.init({
+            key: "d39968053b99d78badeab6f2971d02076a86d144",
+            attach: "#checkout"
+          });
+        }
+      }
+    }, 1000);
+  }, { once: true });
+</script>

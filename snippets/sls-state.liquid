@@ -1,0 +1,16 @@
+
+{%- capture _cart_json -%}
+  {%- render 'cart-json' -%}
+{%- endcapture -%}
+
+<script type="text/javascript" id="globals-script">
+  var SHOPIFY_CDN = "{{ 'test.jpg' | asset_url }}".split('test.jpg').shift();
+  var FILE_CDN = "{{ 'test.jpg' | file_url }}".split('test.jpg').shift();
+  var SLS_STATE = {
+    cart: {{ _cart_json }},
+    defaultImage: "{%- if settings.default_image != blank -%}{{ settings.default_image | img_url: 'master' }}{%- endif -%}",
+    userLoggedIn: {%- if customer -%}true{%- else -%}false{%- endif -%},
+    moneyFormat: {{ shop.money_format | json }},
+    shop: {{ shop.permanent_domain | split: '.' | first | json }}
+  };
+</script>

@@ -7,5 +7,519 @@
         "content": "This is the very first theme option field."
       }
     ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Use [this tool](https:\/\/realfavicongenerator.net\/) to generate your favicon pack. "
+      },
+      {
+        "type": "image_picker",
+        "id": "apple_touch_icon",
+        "label": "Favicon (Apple Touch Devices)",
+        "info": "Upload PNG of 180x180px PNG for users on iOS devices."
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon_png_32",
+        "label": "Favicon (32x32)",
+        "info": "Upload PNG of 32x32px."
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon_png_16",
+        "label": "Favicon (16x16)",
+        "info": "Upload PNG of 16x16px."
+      },
+      {
+        "type": "color",
+        "id": "color_windows_tile",
+        "label": "Windows Tile Color",
+        "info": "Pick the Windows Tile color for Microsoft Windows devices."
+      },
+      {
+        "type": "color",
+        "id": "color_android_theme",
+        "label": "Android Theme Color",
+        "info": "Pick the Android Theme color for the browser titlebar style."
+      },
+      {
+        "type": "header",
+        "content": "Web App Manifest",
+        "info": "Please upload site.webmanifest to the store files section with remaining icon files. Make sure to update paths to each of the icon files inside of the site.webmanifest file. See: https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/Manifest"
+      }
+    ]
+  },
+  {
+    "name": "Apps",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "exclude_pages",
+        "label": "List page handle",
+        "info": "Exclude delaLoad for pages. Values are separated with |",
+        "default": "refer-a-friend"
+      }
+    ]
+  },
+  {
+    "name": "Cart",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_mini_cart",
+        "label": "Enable Mini Cart",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_notes_enable",
+        "label": "Enable cart notes",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_discount_code_enable",
+        "label": "Enable cart discount code",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_estimate_shipping_time_enable",
+        "label": "Enable cart estimate shipping time",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_final_related_products",
+        "label": "Enable Related Products",
+        "default": false
+      }
+    ]
+  },
+  {
+    "name": "Development",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "is_dev_mode",
+        "label": "Access site through BrowserSync?",
+        "default": false
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Typekit",
+        "info": "Check enable Typekit fonts and input a Typekit ID to import fonts."
+      },
+      {
+        "type": "checkbox",
+        "id": "use_typekit",
+        "label": "Enable Typekit fonts",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "typekit_id",
+        "label": "Typekit ID"
+      },
+      {
+        "type": "header",
+        "content": "Custom Font"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_custom_fonts",
+        "label": "Enable custom fonts",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Headings"
+      },
+      {
+        "type": "select",
+        "id": "headings_size",
+        "label": "Size",
+        "default": "medium",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ]
+      },
+      {
+        "type": "font_picker",
+        "id": "headings_font",
+        "label": "Font",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "text",
+        "id": "headings_typekit_font_family",
+        "label": "Typekit Font Family",
+        "info": "Prioritized list of one or more font family names and\/or generic family names. Font should be included in typekit specifed by 'Typekit ID' field."
+      },
+      {
+        "type": "text",
+        "id": "headings_custom_font_family",
+        "label": "Custom Font Family"
+      },
+      {
+        "type": "select",
+        "id": "headings_font_weight",
+        "label": "Font Weight (Typekit & Custom)",
+        "options": [
+          {
+            "group": "Named",
+            "value": "lighter",
+            "label": "Lighter"
+          },
+          {
+            "group": "Named",
+            "value": "normal",
+            "label": "Regular"
+          },
+          {
+            "group": "Named",
+            "value": "bold",
+            "label": "Bold"
+          },
+          {
+            "group": "Named",
+            "value": "bolder",
+            "label": "Bolder"
+          },
+          {
+            "group": "Number",
+            "value": "100",
+            "label": "100"
+          },
+          {
+            "group": "Number",
+            "value": "200",
+            "label": "200"
+          },
+          {
+            "group": "Number",
+            "value": "300",
+            "label": "300"
+          },
+          {
+            "group": "Number",
+            "value": "400",
+            "label": "400"
+          },
+          {
+            "group": "Number",
+            "value": "500",
+            "label": "500"
+          },
+          {
+            "group": "Number",
+            "value": "600",
+            "label": "600"
+          },
+          {
+            "group": "Number",
+            "value": "700",
+            "label": "700"
+          },
+          {
+            "group": "Number",
+            "value": "800",
+            "label": "800"
+          },
+          {
+            "group": "Number",
+            "value": "900",
+            "label": "900"
+          }
+        ],
+        "default": "normal"
+      },
+      {
+        "type": "select",
+        "id": "headings_font_style",
+        "label": "Font Style (Typekit & Custom)",
+        "options": [
+          {
+            "value": "normal",
+            "label": "Normal"
+          },
+          {
+            "value": "italic",
+            "label": "Italic"
+          }
+        ],
+        "default": "normal"
+      },
+      {
+        "type": "checkbox",
+        "id": "headings_uppercase",
+        "label": "Display headings in uppercase",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Body Text"
+      },
+      {
+        "type": "font_picker",
+        "id": "body_font",
+        "label": "Font",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "text",
+        "id": "body_typekit_font_family",
+        "label": "Typekit Font Family",
+        "info": "Prioritized list of one or more font family names and\/or generic family names. Font should be included in typekit specifed by 'Typekit ID' field."
+      },
+      {
+        "type": "text",
+        "id": "body_custom_font_family",
+        "label": "Custom Font Family"
+      },
+      {
+        "type": "select",
+        "id": "body_font_weight",
+        "label": "Font Weight (Typekit & Custom)",
+        "options": [
+          {
+            "group": "Named",
+            "value": "lighter",
+            "label": "Lighter"
+          },
+          {
+            "group": "Named",
+            "value": "normal",
+            "label": "Regular"
+          },
+          {
+            "group": "Named",
+            "value": "bold",
+            "label": "Bold"
+          },
+          {
+            "group": "Named",
+            "value": "bolder",
+            "label": "Bolder"
+          },
+          {
+            "group": "Number",
+            "value": "100",
+            "label": "100"
+          },
+          {
+            "group": "Number",
+            "value": "200",
+            "label": "200"
+          },
+          {
+            "group": "Number",
+            "value": "300",
+            "label": "300"
+          },
+          {
+            "group": "Number",
+            "value": "400",
+            "label": "400"
+          },
+          {
+            "group": "Number",
+            "value": "500",
+            "label": "500"
+          },
+          {
+            "group": "Number",
+            "value": "600",
+            "label": "600"
+          },
+          {
+            "group": "Number",
+            "value": "700",
+            "label": "700"
+          },
+          {
+            "group": "Number",
+            "value": "800",
+            "label": "800"
+          },
+          {
+            "group": "Number",
+            "value": "900",
+            "label": "900"
+          }
+        ],
+        "default": "normal"
+      },
+      {
+        "type": "select",
+        "id": "body_font_style",
+        "label": "Font Style (Typekit & Custom)",
+        "options": [
+          {
+            "value": "normal",
+            "label": "Normal"
+          },
+          {
+            "value": "italic",
+            "label": "Italic"
+          }
+        ],
+        "default": "normal"
+      },
+      {
+        "type": "range",
+        "id": "body_font_size",
+        "label": "Font Size",
+        "min": 13,
+        "max": 17,
+        "unit": "px",
+        "default": 14,
+        "info": "Mobile font size will be 2px smaller than this value."
+      },
+      {
+        "type": "header",
+        "content": "Buttons"
+      },
+      {
+        "type": "font_picker",
+        "id": "buttons_font",
+        "label": "Font",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "text",
+        "id": "buttons_typekit_font_family",
+        "label": "Typekit Font Family",
+        "info": "Prioritized list of one or more font family names and\/or generic family names. Font should be included in typekit specifed by 'Typekit ID' field."
+      },
+      {
+        "type": "text",
+        "id": "buttons_custom_font_family",
+        "label": "Custom Font Family"
+      },
+      {
+        "type": "select",
+        "id": "buttons_font_weight",
+        "label": "Font Weight (Typekit & Custom)",
+        "options": [
+          {
+            "group": "Named",
+            "value": "lighter",
+            "label": "Lighter"
+          },
+          {
+            "group": "Named",
+            "value": "normal",
+            "label": "Regular"
+          },
+          {
+            "group": "Named",
+            "value": "bold",
+            "label": "Bold"
+          },
+          {
+            "group": "Named",
+            "value": "bolder",
+            "label": "Bolder"
+          },
+          {
+            "group": "Number",
+            "value": "100",
+            "label": "100"
+          },
+          {
+            "group": "Number",
+            "value": "200",
+            "label": "200"
+          },
+          {
+            "group": "Number",
+            "value": "300",
+            "label": "300"
+          },
+          {
+            "group": "Number",
+            "value": "400",
+            "label": "400"
+          },
+          {
+            "group": "Number",
+            "value": "500",
+            "label": "500"
+          },
+          {
+            "group": "Number",
+            "value": "600",
+            "label": "600"
+          },
+          {
+            "group": "Number",
+            "value": "700",
+            "label": "700"
+          },
+          {
+            "group": "Number",
+            "value": "800",
+            "label": "800"
+          },
+          {
+            "group": "Number",
+            "value": "900",
+            "label": "900"
+          }
+        ],
+        "default": "normal"
+      },
+      {
+        "type": "select",
+        "id": "buttons_font_style",
+        "label": "Font Style (Typekit & Custom)",
+        "options": [
+          {
+            "value": "normal",
+            "label": "Normal"
+          },
+          {
+            "value": "italic",
+            "label": "Italic"
+          }
+        ],
+        "default": "normal"
+      },
+      {
+        "type": "range",
+        "id": "buttons_font_size",
+        "label": "Font Size",
+        "min": 11,
+        "max": 17,
+        "unit": "px",
+        "default": 14,
+        "info": "Mobile font size will be 2px smaller than this value."
+      },
+      {
+        "type": "checkbox",
+        "id": "buttons_uppercase",
+        "label": "Display buttons in uppercase"
+      }
+    ]
   }
 ]
