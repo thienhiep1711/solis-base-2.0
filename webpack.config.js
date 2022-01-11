@@ -111,7 +111,7 @@ module.exports = env => {
         'modules': path.resolve(__dirname, 'src/scripts/modules'),
         'mixins': path.resolve(__dirname, 'src/scripts/mixins'),
         'root': path.resolve(__dirname, 'src/scripts'),
-        'vue': isProductionMode ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js'
+        'vue': isProductionMode ? 'vue/dist/vue.cjs.prod.js' : 'vue/dist/vue.esm-bundler.js'
       }
     },
     optimization: {

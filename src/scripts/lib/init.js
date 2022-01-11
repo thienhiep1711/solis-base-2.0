@@ -29,16 +29,6 @@ function getModuleName (node) {
   return node.getAttribute('data-module') || ''
 }
 
-function getVueName (node) {
-  return (node.getAttribute('is') || '').replace('vue-', '')
-}
-
-function requireVueModule (vueName = '') {
-  if (vueName) {
-    const fn = require(`root/modules/${vueName}/${vueName}.vue.js`)
-  }
-}
-
 function requireModule (moduleName = '', node) {
   if (moduleName) {
     const fn = require(`root/modules/${moduleName}/${moduleName}.js`).default.bind(null, node)
@@ -51,16 +41,6 @@ function requireModule (moduleName = '', node) {
 
 function getNodes (ctx, selector) {
   return [].slice.call(ctx.querySelectorAll(selector))
-}
-
-export function loadVueModules (ctx = document) {
-  const nodes = getNodes(ctx, '[is]')
-
-  for (let i = 0; i < nodes.length; i++) {
-    if (nodes[i].getAttribute('is') !== 'style') {
-      requireVueModule(getVueName(nodes[i]))
-    }
-  }
 }
 
 function init (types, ctx = document) {
@@ -106,8 +86,6 @@ function init (types, ctx = document) {
           })
       }
 
-      loadVueModules(ctx)
-      loadModules('[data-vue-app]')
       loadModules('[data-module]')
 
       return this

@@ -410,6 +410,9 @@ const unset = (item, selector) => {
   }
 }
 
+const isTouch = () => 'ontouchstart' in document.documentElement
+
+
  export {
    add,
    addQueryVar,
@@ -461,5 +464,6 @@ const unset = (item, selector) => {
    isNaiveEqual,
    isIEorEdge,
    set,
-   unset
+   unset,
+   isTouch
  }

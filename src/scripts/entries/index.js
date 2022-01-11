@@ -1,15 +1,13 @@
-import {set, isIEorEdge, isTouch} from 'lib/util'
-import initializer from 'lib/initializer'
-import lazyModule from 'lib/lazy-module'
-import animate from 'lib/animate'
-const footer = lazyModule('footer', { offset: 120 })
+import { set, isIEorEdge, isTouch } from 'lib/utils'
+import { initComponent, initVueComponent } from 'lib/components'
+
+import test from 'modules/test/test.js'
+import testVue from 'modules/test/test.vue'
 
 import 'styles/main.css'
 
-initializer({
-  'animate': animate,
-  'footer': footer
-})
+initComponent(test, 'test')
+initVueComponent(testVue, 'testVue', 'test-2')
 
 document.addEventListener('DOMContentLoaded', () => {
   if (isIEorEdge()) set(document.body, 'ie')
@@ -17,6 +15,4 @@ document.addEventListener('DOMContentLoaded', () => {
   if (isTouch()) {
     document.body.classList.remove('no-touch')
   }
-
-  animate(document)
 })
