@@ -1,5 +1,5 @@
 const state = {
-  cart: ( window.INIT_STATE && window.INIT_STATE.cart ) || {}
+  cart: ( window.SLS_STATE && window.SLS_STATE.cart ) || {}
 }
 
 const getters = {
