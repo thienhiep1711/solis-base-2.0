@@ -1,5 +1,5 @@
 import inViewport from 'in-viewport'
-import select from 'select-dom'
+import { select } from 'lib/dom'
 
 /**
  * Lazy loads a Module

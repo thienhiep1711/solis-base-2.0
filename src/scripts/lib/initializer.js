@@ -1,4 +1,4 @@
-import select from 'select-dom'
+import { selectAll } from 'lib/dom'
 
 /**
  * Initializes JS modules within a DOM Element.
@@ -7,7 +7,7 @@ import select from 'select-dom'
  * @param {Element} parent - DOM element where Modules are contained
  */
 function initializer (modules = {}, parent = document) {
-  const moduleElements = select.all('[data-module]', parent)
+  const moduleElements = selectAll('[data-module]', parent)
 
   moduleElements.forEach(el => {
     const moduleName = el.dataset.module

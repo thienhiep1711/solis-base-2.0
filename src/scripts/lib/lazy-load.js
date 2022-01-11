@@ -1,7 +1,6 @@
-import on from 'dom-event'
-import select from 'select-dom'
+import { on } from 'lib/dom'
 import Layzr from 'lib/layzr-fork'
-import {set, isIEorEdge} from 'lib/util'
+import { set, isIEorEdge } from 'lib/utils'
 
 /* Setup LazyLoad */
 const instance = Layzr({

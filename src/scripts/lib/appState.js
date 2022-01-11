@@ -6,6 +6,5 @@ export default {
   headerSearchToggle: null,
   activeVariant: {},
   selectedOptions: [],
-  lineItemsData: [],
-  cart: window.BARREL.cart
+  lineItemsData: []
 }
