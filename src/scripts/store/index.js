@@ -6,7 +6,7 @@ import cart from './cart'
 const store = createStore({
   ...base,
   modules: {
-    cart,
+    cart
   },
 })
 
