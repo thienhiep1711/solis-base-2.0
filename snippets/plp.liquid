@@ -1,1 +1,8 @@
-<div data-module="plp">This is plp</div>
+<div data-module="plp">
+  This is plp
+  <sel-button class="button--reset header__icon-button" @click="open">
+    {% raw %}
+      Button {{ value }}
+    {% endraw %}
+  </sel-button>
+</div>

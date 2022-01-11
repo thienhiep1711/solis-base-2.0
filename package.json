@@ -57,7 +57,7 @@
   },
   "dependencies": {
     "@shopify/theme-a11y": "^4.0.0",
-    "@solislab/selene": "git+ssh://git@gitlab.com:solislab/sls_selene.git#develop",
+    "@solislab/selene": "git+ssh://git@gitlab.com:solislab/sls_selene.git#7d1d847",
     "animejs": "^3.2.1",
     "body-scroll-lock": "^2.6.4",
     "cookies-js": "^1.2.3",

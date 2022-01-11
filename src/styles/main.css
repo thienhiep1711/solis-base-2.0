@@ -1,6 +1,9 @@
 /**
 Import all other libs using this markup
  */
+
+@import '@solislab/selene/dist/selene.css';
+
 @import "lib/shopify.css";
 @import "lib/reset.css";
 @import "lib/variables.css";

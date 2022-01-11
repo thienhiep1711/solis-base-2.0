@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import store from './@store'
 import { useStore } from 'vuex'
+import selene from '@solislab/selene/dist/selene.umd'
 
 export default (el) => {
   const app = createApp({
@@ -13,7 +14,15 @@ export default (el) => {
       return {
         value: 'plp'
       }
+    },
+    methods: {
+      open () {
+        console.log(this.value)
+      }
     }
+  })
+  app.use(selene, {
+    'sel-button': 'sel-button'
   })
   app.use(store)
   app.mount(el)
