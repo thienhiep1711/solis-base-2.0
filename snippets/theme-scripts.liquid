@@ -10,6 +10,10 @@
 
 {%- if template.name == 'index' -%}
   <script src="{{- 'index.js' | asset_url -}}" defer></script>
+{%- elsif template.name == 'product' -%}
+  <script src="{{- 'product.js' | asset_url -}}" defer></script>
+{%- elsif template.name == 'collection' -%}
+  <script src="{{- 'collection.js' | asset_url -}}" defer></script>
 {%- else -%}
   <script src="{{- 'main.js' | asset_url -}}" defer></script>
 {%- endif -%}

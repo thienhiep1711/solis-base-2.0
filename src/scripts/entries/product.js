@@ -1,14 +1,12 @@
 import init from 'lib/init'
 import { set, isIEorEdge, isTouch } from 'lib/utils'
-import { initComponent, initVueComponent } from 'lib/components'
+import { initComponent } from 'lib/components'
 
-import test from 'modules/test/test.js'
-import testVue from 'modules/test/test.vue'
+import pdp from 'modules/pdp/pdp.js'
 
 import 'styles/main.css'
 
-initComponent(test, 'test')
-initVueComponent(testVue, 'testVue', 'test-2')
+initComponent(pdp, 'pdp')
 
 document.addEventListener('DOMContentLoaded', () => {
   if (isIEorEdge()) set(document.body, 'ie')

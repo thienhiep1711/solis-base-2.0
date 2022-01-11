@@ -1,10 +1,10 @@
 {
   "sections": {
-    "video": {
-      "type": "video"
+    "main": {
+      "type": "pdp"
     }
   },
   "order": [
-    "video"
+    "main"
   ]
 }
