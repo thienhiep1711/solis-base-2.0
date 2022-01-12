@@ -14,7 +14,7 @@ Import all other libs using this markup
 @import "lib/typography.css";
 @import "lib/forms.css";
 @import "lib/layout.css";
-@import "lib/container.css";
+@import "lib/containers.css";
 @import "lib/grid.css";
 @import "lib/colors.css";
 @import "lib/flex.css";
