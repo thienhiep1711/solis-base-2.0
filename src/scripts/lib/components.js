@@ -1,13 +1,13 @@
 import { createApp } from 'vue'
-import store from '@/store'
-import { selectAll } from '@/lib/dom'
+import store from 'scripts/store'
+import { selectAll } from 'scripts/lib/dom'
 import selene from '@solislab/selene/dist/selene.umd'
 
 const initComponent = (Component, selector) => {
-  const elements = selectAll(`[data-component="${selector}"]`)
+  const elements = selectAll(`[data-module="${selector}"]`)
 
   elements.forEach(element => {
-    element.removeAttribute('data-component')
+    element.removeAttribute('data-module')
     Component(element)
   })
 }

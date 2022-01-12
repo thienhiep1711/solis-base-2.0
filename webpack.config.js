@@ -105,10 +105,11 @@ module.exports = env => {
     ],
     resolve: {
       alias: {
-        '@': SCRIPTS_DIR,
+        '@': path.resolve(__dirname, 'src'),
+        scripts: SCRIPTS_DIR,
         styles: STYLES_DIR,
         'lib': path.resolve(__dirname, 'src/scripts/lib'),
-        'modules': path.resolve(__dirname, 'src/scripts/modules'),
+        'modules': path.resolve(__dirname, 'src/modules'),
         'mixins': path.resolve(__dirname, 'src/scripts/mixins'),
         'root': path.resolve(__dirname, 'src/scripts'),
         'vue': isProductionMode ? 'vue/dist/vue.cjs.prod.js' : 'vue/dist/vue.esm-bundler.js'

@@ -3,7 +3,6 @@ const isProductionMode = target === 'build'
 
 const config = {
   plugins: [
-    require('./postcss-tasks/postcss-module-import'),
     require('precss')({
       // Disable warning "used without a fallback"
       'properties': { warnings: false }

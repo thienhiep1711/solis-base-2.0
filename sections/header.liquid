@@ -1,1 +1,6 @@
-<h2>This is header</h2>
+{{ 'section-header.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'section-header.js' | asset_url }}" defer="defer"></script>
+
+{%- render 'top-bar' -%}
+{%- render 'header-nav' -%}
+{%- render 'header-cart' -%}

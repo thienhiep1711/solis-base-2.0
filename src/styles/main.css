@@ -36,5 +36,3 @@ Import all other libs using this markup
 @import "lib/button.css";
 
 @import "overrides/typography.css";
-
-@import "<Modules>";
