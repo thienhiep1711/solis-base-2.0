@@ -15,7 +15,6 @@ Import all other libs using this markup
 @import "lib/colors.css";
 @import "lib/containers.css";
 @import "lib/display.css";
-@import "lib/dropdown.css";
 @import "lib/flickity.css";
 @import "lib/forms.css";
 @import "lib/helpers.css";

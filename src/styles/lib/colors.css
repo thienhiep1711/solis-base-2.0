@@ -69,23 +69,3 @@
     background-color: var(--grey-light);
   }
 }
-
-.bg-headings {
-  background-color: var(--c-headings);
-}
-
-.bg-text {
-  background-color: var(--c-text);
-}
-
-.bg-light-text {
-  background-color: var(--c-light-text);
-}
-
-.bg-background {
-  background-color: var(--c-background);
-}
-
-.bg-secondary-background {
-  background-color: var(--c-secondary-background);
-}

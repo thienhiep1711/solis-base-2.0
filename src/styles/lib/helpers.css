@@ -8,38 +8,6 @@
   }
 }
 
-/* Square */
-.ro-1::before {
-  padding-bottom: 100%;
-}
-
-/* Rectangle */
-.ro-2::before {
-  padding-bottom: calc(575 / 765 * 100%);
-}
-
-/**
- * For dynamic one, we use CSS variables, which makes it only compatible for newer browsers
- * For older browsers we use the padding-bottom trick, so make sure to remove it here
- */
-.aspect-ratio--natural {
-  body:not(.ie) & {
-    padding-bottom: 0 !important;
-  }
-}
-
-.aspect-ratio::before {
-  padding-bottom: calc(100% / (var(--aspect-ratio)));
-}
-
-.aspect-ratio--square::before {
-  padding-bottom: 100%;
-}
-
-.aspect-ratio--tall::before {
-  padding-bottom: calc(7 / 5 * 100%);
-}
-
 .clear {
   &::before,
   &::after {

@@ -1,7 +1,3 @@
-.form-row + .form-row {
-  margin-top: 20px;
-}
-
 textarea,
 select {
   font-family: inherit;
@@ -14,27 +10,4 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px var(--white) inset !important;
-}
-
-.form-row {
-  .btn--primary {
-    margin-top: 5px;
-  }
-
-  + .form-footer {
-    margin-top: 30px;
-  }
-
-  .p + .p {
-    margin-top: 11px;
-
-    @media (--m) {
-      margin-top: 15px;
-    }
-  }
-
-  a,
-  .link {
-    @extend %link;
-  }
 }

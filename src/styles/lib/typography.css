@@ -88,21 +88,6 @@ body {
   }
 }
 
-.h2-new {
-  font-size: 35px;
-  line-height: 40px;
-
-  @media (--m) {
-    font-size: 40px;
-    line-height: 1.125;
-  }
-
-  @media (--l) {
-    font-size: 60px;
-    line-height: 70px;
-  }
-}
-
 .h3 {
   font-size: var(--h3-size-mobile);
   line-height: 1.2;

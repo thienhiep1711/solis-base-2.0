@@ -60,18 +60,3 @@
     stroke-dashoffset: -124px;
   }
 }
-
-@keyframes color {
-  100%,
-  0% {
-    stroke: var(--cobalt-blue);
-  }
-
-  33% {
-    stroke: var(--disco-green);
-  }
-
-  66% {
-    stroke: var(--coral-pink);
-  }
-}
