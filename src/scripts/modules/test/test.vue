@@ -1,5 +1,10 @@
 <template>
-  <div>Vue components {{ message }}</div>
+  <!-- Button -->
+  <p>
+    <sel-button>
+      Badge on icon
+    </sel-button>
+  </p>
 </template>
 
 <script>

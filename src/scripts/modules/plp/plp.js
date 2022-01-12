@@ -22,7 +22,7 @@ export default (el) => {
     }
   })
   app.use(selene, {
-    'sel-button': 'sel-button'
+    'sel-button': 'button'
   })
   app.use(store)
   app.mount(el)
