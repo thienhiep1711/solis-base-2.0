@@ -1,0 +1,65 @@
+/*
+** Section bottom line
+*/
+
+.grid {
+  @mixin flex-horizontal stretch, flex-start;
+  @mixin grid --xs;
+  @mixin grid --s, var(--gutter-s);
+  @mixin grid --sm, var(--gutter-sm);
+  @mixin grid --ml, var(--gutter-ml);
+}
+
+.grid__item {
+  @mixin cell-responsive;
+  @mixin cell-responsive --s, var(--gutter-s);
+  @mixin cell-responsive --sm, var(--gutter-sm);
+  @mixin cell-responsive --ml, var(--gutter-ml);
+  width: 100%;
+}
+
+.grid--no-gutter {
+  @mixin grid --xs, 0;
+
+  & > .grid__item {
+    @mixin cell-responsive --xs, 0;
+  }
+}
+
+/*
+** Two-up
+*/
+
+.grid--2 {
+  & > .grid__item {
+    @media (--ml) {
+      width: percentage(1/2);
+    }
+  }
+}
+
+/*
+** Three-up
+*/
+
+.grid--3 {
+  & > .grid__item {
+    @media (--ml) {
+      width: percentage(1/3);
+    }
+  }
+}
+
+/*
+** Four-up
+*/
+
+.grid--4 {
+  & > .grid__item {
+    width: percentage(1/2);
+
+    @media (--ml) {
+      width: percentage(1/4);
+    }
+  }
+}

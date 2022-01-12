@@ -9,7 +9,6 @@ body {
   flex-direction: column;
   max-width: 100vw;
   min-height: 100vh;
-  background-color: var(--c-background);
 }
 
 .header,

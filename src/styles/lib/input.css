@@ -1,0 +1,41 @@
+.input,
+.select,
+.textarea {
+  width: 100%;
+  appearance: none;
+  outline: none;
+}
+
+.input {
+  padding: 0 13px;
+  border-radius: 0;
+  border-color: var(--c-border);
+
+  &::-ms-clear,
+  &::-ms-reveal {
+    display: none;
+  }
+}
+
+.input:focus {
+  border-bottom: 1px solid var(--c-border);
+  box-shadow: none;
+  padding-top: 12px;
+}
+
+.input--error,
+.textarea--error {
+  color: var(--c-error);
+  border-color: var(--c-error);
+}
+
+/* Label  */
+.label {
+  @mixin transition all;
+  display: block;
+}
+
+/* Select */
+.select::-ms-expand {
+  display: none;
+}

@@ -1,4 +1,32 @@
+/* Global Styles */
 :root {
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", Times, serif;
+}
+
+/* Parameters */
+:root {
+  /* Transitions */
+  --transition-duration: 400ms;
+  --transition-timing: ease-in-out;
+  --transition-default: var(--transition-duration) var(--transition-timing);
+
+  /* Layout */
+  --container-edge: 16px;
+  --container-edge-tablet: 16px;
+  --container-edge-desktop: 24px;
+  --container-edge-compact: 8px;
+  --container-edge-page: 18px;
+  --container-max-width: 1272px;
+  --field-height: 48px;
+
+  /* Grid */
+  --grid-gutter-default: 16px;
+
+  --gutter-s: 16px;
+  --gutter-sm: 16px;
+  --gutter-ml: 32px;
+
   /* Breakpoints */
   --xxxs: 320px;
   --xxs: 445px;
@@ -10,52 +38,4 @@
   --l: 1280px;
   --xl: 1440px;
   --xxl: 1800px;
-
-  /* Colors */
-  --black: #000;
-  --white: #fff;
-  --gray: #e5e5e5;
-  --grey: #d0d0d0;
-  --grey-light: #f1f1f1;
-  --grey-dark: #838383;
-  --yellow: #fdd007;
-  --red: red;
-  --blue: #0069c3;
-  --green: #008623;
-  --border: 1px solid var(--c-borders);
-  --border-dim: rgba(var(--c-borders), 0.5);
-
-  /* Transitions */
-  --duration: 0.25s;
-  --speed: 0.2s;
-  --ease: ease-in-out;
-  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
-  --transition-default: var(--duration) var(--ease);
-  --header-height-lg: 134px;
-  --header-height-sm: 50px;
-
-  /* Gutters */
-  --gutter-xxs: 16px;
-  --gutter-ms: 24px;
-  --gutter: 16px;
-  --gutter-s: 16px;
-  --gutter-m: 24px;
-  --gutter-l: 24px;
 }
-
-/* Breakpoint Queries */
-@custom-media --xxxs (min-width: 320px);
-@custom-media --xxs (min-width: 445px);
-@custom-media --xs (min-width: 620px);
-@custom-media --s (min-width: 768px);
-@custom-media --ms (min-width: 840px);
-@custom-media --m (min-width: 1000px);
-@custom-media --ml (min-width: 1160px);
-@custom-media --l (min-width: 1200px);
-@custom-media --xl (min-width: 1440px);
-@custom-media --xxl (min-width: 1800px);
-@custom-media --xxs-max (max-width: 444px);
-@custom-media --xs-max (max-width: 619px);
-@custom-media --s-max (max-width: 767px);
-@custom-media --m-max (max-width: 999px);
-@custom-media --l-max (max-width: 1199px);

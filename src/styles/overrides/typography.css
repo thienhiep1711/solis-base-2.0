@@ -1,13 +1,4 @@
-%p3,
-.p3 {
-  line-height: 1.25;
-
-  @media (--ml) {
-    font-size: 24px;
-  }
-}
-
-.p4 {
+.p1 {
   font-family: var(--body-font-family);
   font-size: 13px;
   line-height: 1.46;
