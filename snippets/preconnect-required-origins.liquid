@@ -6,8 +6,7 @@
 <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 
-{%- unless settings.is_dev_mode -%}
-  <link rel="preload" href="{{- 'main.css' | asset_url -}}" as="style">
+<link rel="preload" href="{{- 'main.css' | asset_url -}}" as="style">
 
   {%- if template.name == 'index' -%}
     <link rel="preload" href="{{- 'index.js' | asset_url -}}" as="script">
@@ -27,4 +26,3 @@
       <link rel="preload" href="{{- 'product.js' | asset_url -}}" as="script">
     {%- endcomment -%}
   {%- endif -%}
-{%- endunless -%}

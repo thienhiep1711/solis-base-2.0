@@ -258,7 +258,7 @@
       "reset_password": "Reset password",
       "return_home": "Return home",
       "error": "This field is required",
-      "email_placeholder": "example@barrelny.com",
+      "email_placeholder": "example@gmail.com",
       "password_placeholder": "&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
     },
     "orders": {
@@ -302,7 +302,7 @@
       "success": "We've sent you an email with a link to update your password.",
       "reset_success": "Successfully Reset",
       "error": "This field is required",
-      "email_placeholder": "example@barrelny.com"
+      "email_placeholder": "example@gmail.com"
     },
     "reset_password": {
       "title": "Reset Password?",
@@ -321,7 +321,7 @@
       "last_name": "Last Name",
       "last_name_placeholder": "Smith",
       "email": "Email Address",
-      "email_placeholder": "Example@barrely.com",
+      "email_placeholder": "Example@gmail.com",
       "password": "Password",
       "password_placeholder": "&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;",
       "submit": "Create an Account",

@@ -15,7 +15,7 @@
     {%- if delay_load -%}
       function delayLoad() {
         setTimeout(function() {
-          var urls = {{- urls_split | json -}}{%- if load_apps -%}.concat(window.BARREL.shopifyAppUrls || []){%- endif -%};
+          var urls = {{- urls_split | json -}}{%- if load_apps -%}.concat(window.SLS_STATE.shopifyAppUrls || []){%- endif -%};
           for (var i = 0; i < urls.length; i++) {
             var s = document.createElement('script');
             s.type = 'text/javascript';
