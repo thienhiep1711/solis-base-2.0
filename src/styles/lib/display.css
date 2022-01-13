@@ -34,12 +34,6 @@
   display: block;
 }
 
-.block--xxs {
-  @media (--xxs) {
-    display: block;
-  }
-}
-
 .block--xs {
   @media (--xs) {
     display: block;
@@ -48,12 +42,6 @@
 
 .block--s {
   @media (--s) {
-    display: block;
-  }
-}
-
-.block--ms {
-  @media (--ms) {
     display: block;
   }
 }
@@ -82,24 +70,12 @@
   }
 }
 
-.block--xxl {
-  @media (--xxl) {
-    display: block;
-  }
-}
-
 /* critical:start */
 .hide {
   display: none;
 }
 
 /* critical:end */
-
-.hide--xxs {
-  @media (--xxs) {
-    display: none;
-  }
-}
 
 .hide--xs {
   @media (--xs) {
@@ -109,12 +85,6 @@
 
 .hide--s {
   @media (--s) {
-    display: none;
-  }
-}
-
-.hide--ms {
-  @media (--ms) {
     display: none;
   }
 }
@@ -139,12 +109,6 @@
 
 .hide--xl {
   @media (--xl) {
-    display: none;
-  }
-}
-
-.hide--xxl {
-  @media (--xxl) {
     display: none;
   }
 }

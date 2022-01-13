@@ -43,20 +43,12 @@
   @mixin container-compact;
 }
 
-.container--xxs {
-  max-width: var(--xxs);
-}
-
 .container--xs {
   max-width: var(--xs);
 }
 
 .container--s {
   max-width: var(--s);
-}
-
-.container--ms {
-  max-width: var(--ms);
 }
 
 .container--m {
@@ -73,10 +65,6 @@
 
 .container--xl {
   max-width: var(--xl);
-}
-
-.container--xxl {
-  max-width: var(--xxl);
 }
 
 .container--fluid {
