@@ -1,1 +1,15 @@
-<div class="styleguide" is="styleguide"></div>
+{%- assign sources = settings.feature_image | img_url: 'master' -%}
+
+<div class="styleguide__image">
+  {% render 'picture'
+  class: ''
+  sources: sources,
+  object_fit: 'cover',
+  loader: false
+%}
+
+</div>
+
+<div class="styleguide" is="styleguide">
+  
+</div>

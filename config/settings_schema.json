@@ -837,13 +837,6 @@
       },
       {
         "type": "text",
-        "id": "typekit_id",
-        "label": "Typekit ID",
-        "info": "Typekit ID to import webfonts. E.g. if your Typekit URL is https://use.typekit.net/xyr8tmm.css, then the Typekit ID is xyr8tmm.",
-        "placeholder": "xyr8tmm"
-      },
-      {
-        "type": "text",
         "id": "google_fonts_uri",
         "label": "Google Fonts Family",
         "default": "Montserrat:300,400,700|Muli|Poppins:400,600",

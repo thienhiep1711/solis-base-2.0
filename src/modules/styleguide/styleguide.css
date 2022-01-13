@@ -1,1 +1,8 @@
-.styleguide {}
+@import "../../styles/lib/variables.css";
+@import "../../styles/base/mixins.css";
+
+.styleguide__image {
+  @mixin aspect 1, 1;
+  width: 500px;
+  position: relative;
+}

@@ -35,4 +35,6 @@ Import all other libs using this markup
 @import "lib/inputs.css";
 @import "lib/button.css";
 
+@import "../modules/picture/picture.css";
+
 @import "overrides/typography.css";
