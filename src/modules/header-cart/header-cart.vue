@@ -1,6 +1,8 @@
 <template>
   <div class="header-cart">
     header-cart
+
+    <badge>Button</badge>
   </div>
 </template>
 
