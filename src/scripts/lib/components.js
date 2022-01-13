@@ -12,11 +12,8 @@ const initComponent = (Component, selector) => {
   })
 }
 
-const initVueComponent = (Component, componentName, selector) => {
-  const components = {}
-  components[componentName] = Component
-
-  const app = createApp(Component)
+const initVue = (options = {}) => {
+  const app = createApp(options)
 
   app.use(selene, {
     'sel-video': 'video',
@@ -31,11 +28,19 @@ const initVueComponent = (Component, componentName, selector) => {
     'sel-panel': 'panel',
   })
 
+  return app
+}
+
+const initVueComponent = (Component, componentName, selector) => {
+  const components = {}
+  components[componentName] = Component
+  const app = initVue(Component)
   app.use(store)
   app.mount(`[is="${selector}"]`)
 }
 
 export {
   initComponent,
+  initVue,
   initVueComponent
 }

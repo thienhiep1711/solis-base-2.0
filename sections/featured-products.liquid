@@ -1,0 +1,8 @@
+{{ 'section-featured-products.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'section-featured-products.js' | asset_url }}"></script>
+
+<section class="featured-products">
+  {%- for product in products -%}
+    {%- render 'product-card', product: product -%}
+  {%- endfor -%}
+</section>
