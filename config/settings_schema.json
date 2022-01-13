@@ -521,5 +521,335 @@
         "default": false
       }
     ]
+  },
+  {
+    "name": "404 Page",
+    "settings": [
+      {
+        "type": "text",
+        "id": "page_404_title",
+        "label": "404 Title",
+        "default": "Page not found"
+      },
+      {
+        "type": "richtext",
+        "id": "page_404_description",
+        "label": "Description"
+      },
+      {
+        "type": "text",
+        "id": "page_404_cta_text",
+        "label": "CTA Text",
+        "default": "Go To Homepage"
+      },
+      {
+        "type": "url",
+        "id": "page_404_cta_link",
+        "label": "CTA Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "page_404_image",
+        "label": "Image"
+      }
+    ]
+  },
+  {
+    "name": "Address page",
+    "settings": [
+      {
+        "type": "text",
+        "id": "google_api_key",
+        "label": "Your google API key",
+        "info": "Leave this field blank to disable Auto complete function on address page",
+        "default": "AIzaSyAyqPmssqVb9oXEuKNVO7xMsFNg1DhdWn8"
+      }
+    ]
+  },
+  {
+    "name": "App Integrations",
+    "settings": [
+      {
+        "type": "header",
+        "content": "App Integrations",
+        "info": "This theme contains some built-in support for several third-party apps. Please install the apps before enabling the integration here."
+      }
+    ]
+  },
+  {
+    "name": "Currency Code",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Currency Code Default",
+        "info": "This is Currency Code (from ISO 4217)"
+      },
+      {
+        "type": "text",
+        "id": "currency_code_iso_default",
+        "label": "Currency Code",
+        "default": "AUD"
+      }
+    ]
+  },
+  {
+    "name": "Default Featured Image",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "feature_image",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "feature_image_mobile",
+        "label": "Image Mobile"
+      }
+    ]
+  },
+  {
+    "name": "Logo",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo image"
+      }
+    ]
+  },
+  {
+    "name": "Newsletter popup",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "newsletter_popup_enable",
+        "label": "Enable",
+        "default": true
+      },
+      {
+        "type": "textarea",
+        "id": "newsletter_popup_title",
+        "label": "Title",
+        "default": "Sign up now & receive 15% off your next purchase"
+      },
+      {
+        "type": "textarea",
+        "id": "newsletter_popup_description",
+        "label": "Description",
+        "default": "Stay in the know with the latest styles, new releases and member exclusive offers."
+      },
+      {
+        "type": "image_picker",
+        "id": "newsletter_popup_image",
+        "label": "Image"
+      }
+    ]
+  },
+  {
+    "name": "Payment Methods",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "payment_image_1",
+        "label": "Payment Method 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "payment_image_2",
+        "label": "Payment Method 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "payment_image_3",
+        "label": "Payment Method 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "payment_image_4",
+        "label": "Payment Method 4"
+      }
+
+    ]
+  },
+  {
+    "name": "Products",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Product Labels"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_labels_enable",
+        "label": "Enable Product labels",
+        "default": true
+      },
+      {
+        "type": "textarea",
+        "id": "product_labels_sorted",
+        "label": "Product labels sorted"
+      },
+      {
+        "type": "header",
+        "content": "Product Images"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_disable_carousel_desktop",
+        "label": "Disable carousel on desktop",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "product_enable_image_zoom",
+        "label": "Enable Image zoom",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "product_use_carousel_image_thumbnail",
+        "label": "Use carousel image thumbnail",
+        "default": true
+      },
+      {
+        "type": "radio",
+        "id": "product_carousel_image_thumbnail_position",
+        "options": [
+          { "value": "left", "label": "Left"},
+          { "value": "bottom", "label": "Bottom"}
+        ],
+        "label": "Carousel image thumbnail postion",
+        "default": "bottom"
+      },
+      {
+        "type": "header",
+        "content": "Product Detail"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_enable_quantity",
+        "label": "Enable Quantity",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "product_enable_low_stock",
+        "label": "Enable Low Stock Notification",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "product_low_stock_threshold",
+        "min": 1,
+        "max": 15,
+        "label": "Low Stock Threshold",
+        "info": "Product will be marked as 'Low Stock' if quantity is below this amount",
+        "default": 10
+      },
+      {
+        "type": "radio",
+        "id": "product_position_title",
+        "label": "Position Product Title",
+        "options": [
+          { "value": "inside", "label": "Inside" },
+          { "value": "outside", "label": "Outside" },
+          { "value": "custom", "label": "Custom" }
+        ],
+        "default": "inside"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_detail_accordion_enable",
+        "label": "Display product description as accordion",
+        "default": true
+      },
+      {
+        "type": "radio",
+        "id": "product_show_variant_type",
+        "label": "Choose Variant form layout",
+        "options": [
+          { "value": "button", "label": "Button" },
+          { "value": "dropdown", "label": "Dropdown" }
+        ],
+        "default": "button"
+      }
+    ]
+  },
+  {
+    "name": "Report & Statistics",
+    "settings": [
+      {
+        "type": "text",
+        "id": "gtm_id",
+        "label": "Google Tags Manager ID",
+        "placeholder": "GTM-xxxxxxx"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Social sharing options"
+      },
+      {
+        "type": "checkbox",
+        "id": "social_sharing_blog",
+        "label": "Enable sharing for blog articles",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "share_facebook",
+        "label": "Share on Facebook",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "share_twitter",
+        "label": "Tweet on Twitter",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "share_pinterest",
+        "label": "Pin on Pinterest",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Social Media Linklist"
+      },
+      {
+        "type": "link_list",
+        "id": "social_media_linklist",
+        "label": "Social Media Linklist"
+      }
+    ]
+  },
+  {
+    "name": "Global Styles",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Web fonts"
+      },
+      {
+        "type": "text",
+        "id": "typekit_id",
+        "label": "Typekit ID",
+        "info": "Typekit ID to import webfonts. E.g. if your Typekit URL is https://use.typekit.net/xyr8tmm.css, then the Typekit ID is xyr8tmm.",
+        "placeholder": "xyr8tmm"
+      },
+      {
+        "type": "text",
+        "id": "google_fonts_uri",
+        "label": "Google Fonts Family",
+        "default": "Montserrat:300,400,700|Muli|Poppins:400,600",
+        "info": "Load fonts from Google Fonts. E.g. if your Google Fonts URL is https://fonts.google.com/selection?selection.family=Raleway:400,500,600,700, then the Google Fonts Family is Raleway:400,500,600,700.",
+        "placeholder": "Montserrat:300,400,700|Muli|Poppins:400,600"
+      }
+    ]
   }
 ]
