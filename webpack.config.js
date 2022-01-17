@@ -28,7 +28,7 @@ const getEntry = (dir = SCRIPT_ENTRIES_DIR) => {
         const fileName = file.name
         if (!isHiddenFile(fileName)) {
           const name = path.parse(fileName).name
-          entry['section' + `${isMainEntry ? '' : `${dir}-`}${name}`] = [path.join(scanDir, fileName)]
+          entry[`${isMainEntry ? '' : `${dir}-`}${name}`] = [path.join(scanDir, fileName)]
         }
       } else {
         getEntry(file.name)
