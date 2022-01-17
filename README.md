@@ -39,3 +39,8 @@ initVueComponent(HeaderCart, 'HeaderCart', 'header-cart')
    - Require CSS into the JS file with `import './module-name.css'`
 
 3. TODO: Create a bash script that can help to create module + section
+   - run script `npm run create_module.sh`
+   - Input the name of modules `module-name` => enter
+   - Confirm the `module-name` => enter
+   - Will create modules (js, css, vue) in the `./src/modules/`
+   - And snippet in `./snippets`
