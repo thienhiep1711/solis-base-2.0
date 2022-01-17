@@ -18,7 +18,8 @@
     "build": "webpack --env production --progress --color",
     "build:critical-split": "postcss src/styles/main.css -o snippets/main-critical-css.liquid --config postcss-tasks",
     "push": "shopify theme push --ignore \"config/*.json\"",
-    "deploy": "npm run build && npm run build:critical-split && npm run push"
+    "deploy": "npm run build && npm run build:critical-split && npm run push",
+    "create-module": "sh ./scripts/create_module.sh"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
