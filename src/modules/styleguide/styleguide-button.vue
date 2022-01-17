@@ -1,0 +1,51 @@
+<template>
+  <section class="style-guide__section">
+    <div class="container">
+      <h3 class="style-guide__section-header">Buttons</h3>
+      <div class="style-guide__section-content style-guide__section-content--responsive style-guide__section-table">
+        <table class="table style-guide__table">
+          <tr>
+            <td></td>
+            <td>PRIMARY</td>
+            <td>SECONDARY</td>
+            <td>HOLLOW</td>
+            <td></td>
+            <td>BUTTON HEIGHTS</td>
+          </tr>
+          <tr>
+            <td>STANDARD</td>
+            <td>
+              <sel-button class="button">Button</sel-button>
+            </td>
+            <td><sel-button class="button button--secondary">Button</sel-button></td>
+            <td><sel-button class="button button--hollow">Button</sel-button></td>
+            <td>40PX (SMALL)</td>
+            <td><sel-button class="button button--small">Button</sel-button></td>
+          </tr>
+          <tr>
+            <td>INACTIVE</td>
+            <td><sel-button class="button" disabled>Button</sel-button></td>
+            <td></td>
+            <td></td>
+            <td>48PX (STANDARD)</td>
+            <td><sel-button class="button">Button</sel-button></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>54PX (LARGE)</td>
+            <td><sel-button class="button button--large">Button</sel-button></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  name: "StyleguideButton"
+}
+</script>

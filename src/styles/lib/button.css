@@ -47,7 +47,6 @@ button {
 }
 
 .button--secondary {
-  padding: 12px 35px;
   background: var(--c-button-secondary-bg);
   color: var(--c-button-secondary-text);
   border: 2px solid var(--c-button-secondary-border);
@@ -65,8 +64,7 @@ button {
   }
 }
 
-.button--alternate {
-  padding: 12px 35px;
+.button--hollow {
   background: var(--c-button-alternate-bg);
   color: var(--c-button-alternate-text);
   border: 2px solid var(--c-button-alternate-border);
@@ -84,17 +82,12 @@ button {
   }
 }
 
-.button--block {
-  width: 100%;
+.button--small {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-.button--icon {
-  @mixin flex-horizontal;
-
-  & svg {
-    width: 14px;
-    height: 16px;
-    margin-left: 6px;
-    margin-bottom: 2px;
-  }
+.button--large {
+  padding-top: 17px;
+  padding-bottom: 17px;
 }
