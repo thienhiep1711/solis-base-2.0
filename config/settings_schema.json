@@ -133,26 +133,6 @@
         "content": "Headings"
       },
       {
-        "type": "select",
-        "id": "headings_size",
-        "label": "Size",
-        "default": "medium",
-        "options": [
-          {
-            "value": "small",
-            "label": "Small"
-          },
-          {
-            "value": "medium",
-            "label": "Medium"
-          },
-          {
-            "value": "large",
-            "label": "Large"
-          }
-        ]
-      },
-      {
         "type": "font_picker",
         "id": "headings_font",
         "label": "Font",
@@ -375,16 +355,6 @@
         "default": "normal"
       },
       {
-        "type": "range",
-        "id": "body_font_size",
-        "label": "Font Size",
-        "min": 13,
-        "max": 17,
-        "unit": "px",
-        "default": 14,
-        "info": "Mobile font size will be 2px smaller than this value."
-      },
-      {
         "type": "header",
         "content": "Buttons"
       },
@@ -493,16 +463,6 @@
           }
         ],
         "default": "normal"
-      },
-      {
-        "type": "range",
-        "id": "buttons_font_size",
-        "label": "Font Size",
-        "min": 11,
-        "max": 17,
-        "unit": "px",
-        "default": 14,
-        "info": "Mobile font size will be 2px smaller than this value."
       },
       {
         "type": "checkbox",
