@@ -9,6 +9,9 @@ Import all other libs using this markup
 
 @import "base/mixins.css";
 @import "base/reset.css";
+
+@import "lib/normalize.css";
+@import "lib/misc.css";
 @import "lib/media.css";
 @import "lib/typography.css";
 @import "lib/forms.css";

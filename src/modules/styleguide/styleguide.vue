@@ -1,12 +1,17 @@
 <template>
-  <div class="styleguide">
-    <sel-button class="button--primary">Button Primary</sel-button>
+  <div class="style-guide">
+    <styleguide-colors></styleguide-colors>
   </div>
 </template>
 
 <script>
-import './styleguide.css';
+import './styleguide.css'
+import StyleguideColors from './styleguide-colors.vue'
+
 export default {
-  name: "Styleguide"
+  name: "Styleguide",
+  components: {
+    StyleguideColors
+  }
 }
 </script>
