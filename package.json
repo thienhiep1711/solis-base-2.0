@@ -25,6 +25,7 @@
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.0",
+    "@solislab/postcss-type": "^1.2.0",
     "autoprefixer": "^9.6.5",
     "babel-loader": "^8.2.3",
     "concurrently": "^6.3.0",

@@ -8,6 +8,7 @@ const config = {
       'properties': { warnings: false }
     }),
     require('postcss-mixins'),
+    require('@solislab/postcss-type')({rootSize: '16px'}),
     require('postcss-inline-svg'),
     require('postcss-color-function'),
     require('autoprefixer'),
