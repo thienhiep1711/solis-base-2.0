@@ -17,3 +17,5 @@ node_modules
 /assets/section-*
 /assets/commons.js
 /assets/runtime.js
+/assets/main.js
+/assets/main.css

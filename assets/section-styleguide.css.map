@@ -1,0 +1,1 @@
+{"version":3,"file":"section-styleguide.css","mappings":"AAAA","sources":["webpack://shopify-base-2.0/./src/modules/styleguide/styleguide.css"],"sourcesContent":[".styleguide__image:before{content:\"\";display:block;padding-top:100%}.styleguide__image{width:500px;position:relative}"],"names":[],"sourceRoot":""}
