@@ -12,3 +12,8 @@ node_modules
 .vscode
 /assets/stats.json
 /assets/report.html
+
+# Disable these files for dev process. We will use "git add -f" on "npm run build" command
+/assets/section-*
+/assets/commons.js
+/assets/runtime.js

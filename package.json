@@ -15,8 +15,9 @@
     "start": "concurrently --raw npm:serve npm:watch",
     "serve": "shopify theme serve",
     "watch": "webpack watch --env development",
-    "build": "webpack --env production --progress --color",
+    "build": "webpack --env production --progress --color && npm run build:critical-split && npm run git:add-ignored-file",
     "build:critical-split": "postcss src/styles/main.css -o snippets/main-critical-css.liquid --config postcss-tasks",
+    "git:add-ignored-file": "git add -f assets/main.js && git add -f assets/main.css && git add -f assets/commons.js && git add -f assets/runtime.js && git add -f assets/section-*",
     "push": "shopify theme push --ignore \"config/*.json\"",
     "deploy": "npm run build && npm run build:critical-split && npm run push",
     "create-module": "sh ./scripts/create_module.sh"
