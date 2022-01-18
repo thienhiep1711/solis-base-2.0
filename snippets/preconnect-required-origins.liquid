@@ -7,11 +7,6 @@
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 
 <link rel="preload" href="{{- 'main.css' | asset_url -}}" as="style">
-
-  {%- if template.name == 'index' -%}
-    <link rel="preload" href="{{- 'index.js' | asset_url -}}" as="script">
-  {%- endif -%}
-
   {%- if template.name == 'collection' -%}
     {%- comment -%}
       <link rel="preload" href="{{- 'vendors@collection@index@main@product.js' | asset_url -}}" as="script">

@@ -1,0 +1,126 @@
+{% comment %}
+  Parameters:
+  - replace_block_image: replace default block image
+{% endcomment %}
+
+{% capture hero_content %}
+  {% unless before_content == blank %}
+    {{ before_content }}
+  {% endunless %}
+  {%- unless title == blank -%}
+    {% if title_tag == 'h1' %}
+      <h1 class="{{ title_class | prepend: 'hero__title ' | strip }}">
+        {% if cta_link != blank %}
+          <a href="{{ cta_link }}" class="text-inherit">{{ title }}</a>
+        {% else %}
+          {{ title }}
+        {% endif %}
+      </h1>
+    {% else %}
+      <h2 class="{{ title_class | prepend: 'hero__title ' | strip }}">
+        {% if cta_link != blank %}
+          <a href="{{ cta_link }}" class="text-inherit">{{ title }}</a>
+        {% else %}
+          {{ title }}
+        {% endif %}
+      </h2>
+    {% endif %}
+  {%- endunless -%}
+  {%- unless description == blank -%}
+    <div class="hero__description">
+      {% if description != blank %}
+        {{ description }}
+      {% endif %}
+    </div>
+  {%- endunless -%}
+  {% if cta_text != blank and cta_link != blank %}
+    <div class="hero__cta">
+      <a
+        href="{{ cta_link }}"
+        class="{{ cta_button_class | prepend: 'button hero__button ' | strip }}"
+      >
+        {{ cta_text }}
+      </a>
+    </div>
+  {% endif %}
+  {% unless after_content == blank %}
+    {{ after_content }}
+  {% endunless %}
+{% endcapture %}
+
+<div class="{{ class | prepend: 'hero ' | strip }}" {{ attrs }}>
+  <div class="hero__wrapper">
+    {% unless replace_block_image != blank %}
+      {%- if use_background_video -%}
+        <div class="hero__block-video-wrapper">
+          Video not complete
+        </div>
+      {% else %}
+        <div class="hero__block-image-wrapper">
+          {% unless before_image == blank %} {{ before_image }} {% endunless %}
+          <div class="hero__block-image-inner">
+            {%- unless image_mobile == blank -%}
+            {% assign _image_mobile = image_mobile | img_url: 'master' %}
+              <div class="hero__block-image hero__block-image--mobile">
+                {% if cta_link != blank %}
+                <a href="{{ cta_link }}" class="hero__block-image-link" title="{{ title | default: 'Title' }}">
+                  {% endif %}
+                  {%- assign sources = settings.feature_image | img_url: 'master' -%}
+                  {%- render 'picture',
+                    class: '',
+                    bind_dynamic_props: false,
+                    sources: _image_mobile,
+                    breakpoints: '(max-width: 444px)|(max-width: 767px)|(min-width: 768px)',
+                    width: 100,
+                    width_s: 100,
+                    width_m: 100,
+                    width_l: 100,
+                    alt: image_alt,
+                    object_fit: 'cover',
+                    loader: true
+                  -%}
+                  {% if cta_link != blank %}
+                </a>
+                {% endif %}
+              </div>
+            {%- endunless -%}
+            <div class="hero__block-image {% if image_mobile != blank %} hero__block-image--desktop {% endif %}">
+              {% assign _image = image | img_url: 'master' %}
+              {% if cta_link != blank %}
+              <a href="{{ cta_link }}" class="hero__block-image-link" title="{{ title | default: 'Title' }}">
+                {% endif %}
+                {%- assign sources = settings.feature_image | img_url: 'master' -%}
+                {%- render 'picture',
+                  class: '',
+                  bind_dynamic_props: false,
+                  sources: _image,
+                  breakpoints: '(max-width: 444px)|(max-width: 767px)|(min-width: 768px)',
+                  width: 100,
+                  width_s: 100,
+                  width_m: 100,
+                  width_l: 100,
+                  alt: image_alt,
+                  object_fit: 'cover',
+                  loader: true
+                -%}
+                {% if cta_link != blank %}
+              </a>
+              {% endif %}
+            </div>
+          </div>
+          {% unless after_image == blank %} {{ after_image }} {% endunless %}
+        </div>
+      {%- endif -%}
+    {% endunless %}
+    {% unless replace_block_image == blank %}
+      {{ replace_block_image }}
+    {% endunless %}
+    {% if hero_content != blank %}
+      <div class="hero__block-content" {%- if custom_style != blank -%}{{ custom_style }}{%- endif -%}>
+        <div class="hero__inner-content">
+          {{ hero_content }}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
