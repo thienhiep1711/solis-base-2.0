@@ -1,5 +1,3 @@
-@import "../../styles/main.css";
-
 .styleguide__image {
   @mixin aspect 1, 1;
   width: 500px;

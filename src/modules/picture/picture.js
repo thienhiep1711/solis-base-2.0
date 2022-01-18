@@ -1,3 +1,4 @@
+import './picture.css';
 import { select, selectAll, on } from 'lib/dom'
 import objectFitImages from 'object-fit-images'
 import { set } from 'lib/utils'
