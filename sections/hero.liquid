@@ -1,0 +1,99 @@
+{{ 'section-hero.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'section-hero.js' | asset_url }}" defer="defer"></script>
+
+{%- assign section_class = 'hero--base' -%}
+
+{%- if section.settings.content_align -%}
+  {%- assign section_class = section_class | append: ' ' | append: section.settings.content_align -%}
+{%- endif -%}
+
+{%- render 'hero',
+  use_background_video: section.settings.use_background_video,
+  class: section_class,
+  title_class: '',
+  title: section.settings.title,
+  title_tag: 'h1',
+  description: section.settings.description,
+  description_class: 'hero-description--home',
+  cta_text: section.settings.cta_text,
+  cta_link: section.settings.cta_link,
+  image_mobile: section.settings.image_mobile,
+  image: section.settings.image,
+  video_url: section.settings.video_url,
+  video_type: section.settings.video_type
+-%}
+
+{% schema %}
+  {
+    "name": "Hero",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "use_background_video",
+        "label": "Use background video",
+        "default": false
+      },
+      {
+        "type": "paragraph",
+        "content": "Choose product video source type (Vimeo/Youtube/Link mp4)"
+      },
+      {
+        "type": "select",
+        "id": "video_type",
+        "options": [
+          { "value": "Vimeo", "label": "Vimeo"},
+          { "value": "Youtube", "label": "Youtube"},
+          { "value": "mp4", "label": "Link mp4"}
+        ],
+        "label": "Video Type"
+      },
+      {
+        "type": "text",
+        "id": "video_url",
+        "label": "Video URL"
+      },
+      {
+        "type": "radio",
+        "id": "content_align",
+        "label": "Content Align",
+        "options": [
+          { "value": "center", "label": "Center" },
+          { "value": "hero--flex-left", "label": "Left" },
+          { "value": "hero--flex-right", "label": "Right" }
+        ],
+        "default": "center",
+        "info": "Text"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description"
+      },
+      {
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA Text"
+      },
+      {
+        "type": "url",
+        "id": "cta_link",
+        "label": "CTA Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Image Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }
+    ]
+  }
+{% endschema %}
