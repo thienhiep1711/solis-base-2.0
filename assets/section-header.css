@@ -1,4 +1,18 @@
-.top-bar{display:block;background:#daa520;text-align:center;padding:5px 0}
-.header-cart{display:block;background:#db7093}
+/*!**********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js?importLoaders=1!./node_modules/postcss-loader/lib/index.js!./src/modules/top-bar/top-bar.css ***!
+  \**********************************************************************************************************************************************/
+.top-bar {
+  display: block;
+  background: goldenrod;
+  text-align: center;
+  padding: 5px 0;
+}
 
-/*# sourceMappingURL=section-header.css.map*/
+/*!******************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js?importLoaders=1!./node_modules/postcss-loader/lib/index.js!./src/modules/header-cart/header-cart.css ***!
+  \******************************************************************************************************************************************************/
+.header-cart {
+  display: block;
+  background: palevioletred;
+}
+
