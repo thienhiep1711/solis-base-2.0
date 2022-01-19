@@ -31,13 +31,15 @@ const initVue = (options = {}) => {
   return app
 }
 
-const initVueComponent = (Component, componentName, selector, el) => {
-  const elements = selectAll(`[is="${selector}"]`, el)
+const initVueComponent = (Component, componentName, selector) => {
+  const components = {}
+  components[componentName] = Component
+  const elements = selectAll(`[is="${selector}"]`)
   if (elements && elements.length) {
     elements.forEach(element => {
-      const components = {}
-      components[componentName] = Component
-      const app = initVue(Component)
+      const app = initVue({
+        components
+      })
       app.use(store)
       app.mount(element)
     })

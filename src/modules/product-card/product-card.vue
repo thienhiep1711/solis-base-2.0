@@ -2,6 +2,7 @@
   <div>
     {{ title }}
   </div>
+  <slot></slot>
 </template>
 <script>
 
