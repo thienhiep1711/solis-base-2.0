@@ -1,4 +1,6 @@
 .top-bar {
   display: block;
-  background: wheat;
+  background: goldenrod;
+  text-align: center;
+  padding: 5px 0;
 }

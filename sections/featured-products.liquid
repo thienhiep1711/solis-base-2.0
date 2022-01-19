@@ -1,8 +1,41 @@
 {{ 'section-featured-products.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'section-featured-products.js' | asset_url }}"></script>
 
-<section class="featured-products">
-  {%- for product in products -%}
-    {%- render 'product-card', product: product -%}
+{% render 'page-title'
+  title: section.settings.title
+%}
+<section class="featured-products" data-module="product-list">
+  {%- for item in section.blocks -%}
+    {%- assign product_handle = item.settings.product -%}
+    {%- assign product_item = all_products[product_handle] -%}
+    {%- assign product_json = product_item -%}
+    {%- render 'product-card', product: product_json -%}
   {%- endfor -%}
 </section>
+
+{% schema %}
+  {
+    "name": "Featured Product",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Featured Product"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

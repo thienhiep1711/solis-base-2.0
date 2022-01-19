@@ -31,12 +31,17 @@ const initVue = (options = {}) => {
   return app
 }
 
-const initVueComponent = (Component, componentName, selector) => {
-  const components = {}
-  components[componentName] = Component
-  const app = initVue(Component)
-  app.use(store)
-  app.mount(`[is="${selector}"]`)
+const initVueComponent = (Component, componentName, selector, el) => {
+  const elements = selectAll(`[is="${selector}"]`, el)
+  if (elements && elements.length) {
+    elements.forEach(element => {
+      const components = {}
+      components[componentName] = Component
+      const app = initVue(Component)
+      app.use(store)
+      app.mount(element)
+    })
+  }
 }
 
 export {

@@ -4,6 +4,7 @@
   @mixin aspect 1, 1;
   width: 500px;
   position: relative;
+}
 
 .style-guide__section {
   padding: 57px 0;

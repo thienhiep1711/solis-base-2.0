@@ -1,14 +1,10 @@
 {
   "sections": {
-    "main": {
-      "type": "video"
-    },
-    "content": {
-      "type": "content"
+    "featured-products": {
+      "type": "featured-products"
     }
   },
   "order": [
-    "main",
-    "content"
+    "featured-products"
   ]
 }

@@ -1,8 +1,6 @@
 <template>
   <div class="header-cart">
-    header-cart
-
-    <badge>Button</badge>
+    header-cart {{ index }}
   </div>
 </template>
 
@@ -10,6 +8,17 @@
 import './header-cart.css';
 
 export default {
-  name: "HeaderCart"
+  name: "HeaderCart",
+  props: {
+    index: {
+      type: String,
+      default: ''
+    }
+  },
+  data () {
+    return {
+      isActive: false
+    }
+  }
 }
 </script>

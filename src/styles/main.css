@@ -36,6 +36,7 @@ Import all other libs using this markup
 @import "lib/table.css";
 @import "lib/inputs.css";
 @import "lib/button.css";
+@import "lib/carousel.css";
 
 @import "../modules/picture/picture.css";
 
