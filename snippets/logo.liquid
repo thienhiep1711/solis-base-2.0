@@ -1,0 +1,24 @@
+{%- if class == blank -%}
+  {%- assign class = 'logo' -%}
+{% else %}
+  {%- assign class = class | append: ' logo' %}
+{%- endif -%}
+<div class="{{ class }}" itemscope itemtype="http://schema.org/Organization">
+  {%- if logo != blank -%}
+    <a href="{{ routes.root_url }}" aria-label="Logo" itemprop="url" class="logo__link">
+      {%- render 'picture',
+        class: 'logo__img',
+        bind_dynamic_props: false,
+        sources: {{ logo | img_url: 'master' }},
+        alt: {{ logo.alt | default: shop.name }},
+        object_fit: 'cover',
+        loader: true
+      -%}
+    </a>
+  {%- else -%}
+    <a href="{{ routes.root_url }}" aria-label="Logo" itemprop="url" class="logo__link">
+      {% render 'icon' with 'logo', class: 'logo__img' %}
+    </a>
+  {%- endif -%}
+</div>
+ {%- assign class = '' -%}

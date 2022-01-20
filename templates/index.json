@@ -1,7 +1,42 @@
 {
   "sections": {
     "featured-products": {
-      "type": "featured-products"
+      "type": "featured-products",
+      "blocks": {
+        "42b63b0a-4b2c-4f9c-95d0-a48ccfe520e0": {
+          "type": "product",
+          "settings": {
+            "product": "adidas-classic-backpack"
+          }
+        },
+        "fc30ec87-8976-4012-9686-59806c529189": {
+          "type": "product",
+          "settings": {
+            "product": "adidas-classic-backpack-legend-ink-multicolour"
+          }
+        },
+        "3f9034ec-c10f-452e-9440-bc68d40fbb90": {
+          "type": "product",
+          "settings": {
+            "product": "adidas-superstar-80s"
+          }
+        },
+        "5ddfdd03-0493-4e9f-a121-adcef9c315f1": {
+          "type": "product",
+          "settings": {
+            "product": "converse-chuck-taylor-all-star-lo"
+          }
+        }
+      },
+      "block_order": [
+        "42b63b0a-4b2c-4f9c-95d0-a48ccfe520e0",
+        "fc30ec87-8976-4012-9686-59806c529189",
+        "3f9034ec-c10f-452e-9440-bc68d40fbb90",
+        "5ddfdd03-0493-4e9f-a121-adcef9c315f1"
+      ],
+      "settings": {
+        "title": "Featured Product"
+      }
     }
   },
   "order": [

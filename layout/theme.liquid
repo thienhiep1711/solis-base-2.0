@@ -9,13 +9,10 @@
   {%- render 'preconnect-required-origins' -%}
   {%- render 'favicon' -%}
   {%- render 'seo-title' -%}
-
   {%- render 'social-meta' -%}
   {%- render 'structured-data' -%}
   {%- render 'font-faces' -%}
-
   {%- render 'theme-styles' -%}
-
   {%- render 'sls-state' -%}
 
   {% assign exclude_pages = settings.exclude_pages | split: "|" %}
@@ -42,9 +39,7 @@
   <a class="skip_link" id="skip_to_content" href="#main">Skip to Main Content</a>
   {% section 'header' %}
   <main class="main js-mobile-content js-main" id="main" role="main">
-    <div class="content">
-      {{ content_for_layout }}
-    </div>
+    {{ content_for_layout }}
   </main>
   {% section 'footer' %}
   {%- if settings.enable_mini_cart -%}
