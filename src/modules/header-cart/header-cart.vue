@@ -1,6 +1,6 @@
 <template>
   <div class="header-cart">
-    header-cart {{ index }}
+    <sel-icon class-name="icon--header-cart" icon-name="icon-bag" />
   </div>
 </template>
 
