@@ -1,0 +1,7 @@
+{%- assign include_assets = true -%}
+{%- if include_assets -%}
+  {{ 'section-base-modules.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'section-base-modules.js' | asset_url }}"></script>
+{%- endif -%}
+
+{% render 'base-modules' %}

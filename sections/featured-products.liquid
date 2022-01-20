@@ -1,5 +1,8 @@
-{{ 'section-featured-products.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'section-featured-products.js' | asset_url }}"></script>
+{%- assign include_assets = true -%}
+{%- if include_assets -%}
+  {{ 'section-featured-products.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'section-featured-products.js' | asset_url }}"></script>
+{%- endif -%}
 
 {% render 'page-title'
   title: section.settings.title

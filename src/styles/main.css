@@ -4,6 +4,7 @@ Import all other libs using this markup
  */
 
 @import '@solislab/selene/dist/selene.css';
+@import "flickity";
 
 @import "lib/variables.css";
 

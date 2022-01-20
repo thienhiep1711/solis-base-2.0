@@ -9,7 +9,7 @@ import Carousel from 'modules/carousel/carousel.vue'
 
 initComponent(Hero, 'hero')
 initComponent(Picture, 'picture')
-initVueComponent(Carousel, 'carousel', 'carousel')
+initVueComponent(Carousel, 'Carousel', 'carousel')
 
 document.addEventListener('DOMContentLoaded', () => {
   if (isIEorEdge()) set(document.body, 'ie')
