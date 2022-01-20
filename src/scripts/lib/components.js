@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import store from 'scripts/store'
+import globalMixins from '../mixins/global';
 import { selectAll } from 'scripts/lib/dom'
 import selene from '@solislab/selene/dist/selene.umd'
 
@@ -14,6 +15,8 @@ const initComponent = (Component, selector) => {
 
 const initVue = (options = {}) => {
   const app = createApp(options)
+
+  app.mixin(globalMixins)
 
   app.use(selene, {
     'sel-video': 'video',
