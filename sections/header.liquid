@@ -1,5 +1,50 @@
 {{ 'section-header.css' | asset_url | stylesheet_tag }}
+{%- render 'topbar'
+  enable: section.settings.topbar_enable
+  left_message_text: section.settings.topbar_left_message_text,
+  message_text: section.settings.topbar_message_text,
+  topbar_menu: section.settings.topbar_right_menu,
+  show_login_register_link: section.settings.topbar_show_login_register_link,
+-%}
+{%- render 'header' -%}
 <script src="{{ 'section-header.js' | asset_url }}" defer="defer"></script>
 
-{%- render 'top-bar' -%}
-{%- render 'header' -%}
+{% schema %}
+  {
+    "name":"Header",
+    "class": "shopify-section--topbar js-sticky-topbar",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Topbar Config",
+        "info": "Config for topbar module"
+      },
+      {
+        "type": "checkbox",
+        "id": "topbar_enable",
+        "label": "Enable Topbar",
+        "default": true
+      },
+      {
+        "type": "textarea",
+        "label": "Left Message Text",
+        "id": "topbar_left_message_text"
+      },
+      {
+        "type": "textarea",
+        "label": "Message Text",
+        "id": "topbar_message_text"
+      },
+      {
+        "type": "link_list",
+        "label": "Right Menu",
+        "id": "topbar_right_menu"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Login & Register Link",
+        "id": "topbar_show_login_register_link"
+      }
+    ]
+  }
+{% endschema %}

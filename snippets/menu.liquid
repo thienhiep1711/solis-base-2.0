@@ -1,0 +1,14 @@
+<ul class="{{ class | prepend: 'menu ' | strip }}">
+  {%- for link in linklists[menu].links -%}
+    <li class="menu__item{% if link.active %} menu__item--active{% endif %}">
+      <a href="{{ link.url }}" class="menu__link" {%- if open_new_window -%}target="_blank" rel="noopener"{%- endif -%}>
+        {%- if have_menu_icon -%}
+          {%- assign icon = link.title | handleize -%}
+          {%- assign icon_class = 'menu__icon menu__icon-' | append: icon -%}
+          {% render 'icon' with icon, class: icon_class %}
+        {%- endif -%}
+        <span class="menu__link-text">{{ link.title }}</span>
+      </a>
+    </li>
+  {%- endfor -%}
+</ul>

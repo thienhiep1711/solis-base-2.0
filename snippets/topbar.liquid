@@ -1,0 +1,100 @@
+{%- comment -%}
+  1. Available variables after include:
+  {{- _parsed_content_with_icon -}}
+  {{- _icon_svg -}}
+  {{- _parsed_content_only -}}
+{%- endcomment -%}
+{%- if enable -%}
+  <div
+    class="topbar"
+    data-module="topbar"
+  >
+    <div class="container container--full topbar__container">
+      <div class="topbar__inner">
+        {%- unless left_message_text == blank -%}
+        {%- assign _parse_content = left_message_text -%}
+        {%- assign _parse_icon_start = '[icon-' -%}
+        {%- assign _parse_icon_end = ']' -%}
+
+          {%- if _parse_content contains _parse_icon_start -%}
+            {%- assign _icon_name = _parse_content | split: _parse_icon_start | last | split: _parse_icon_end | first -%}
+            {%- capture _icon_shortcode -%}{{- _parse_icon_start -}}{{- _icon_name -}}{{- _parse_icon_end -}}{%- endcapture -%}
+            {%- capture _icon_svg -%}{%- render 'icon' with _icon_name -%}{%- endcapture -%}
+
+            {% comment %}
+              Inline parsed icon needs to be wrapped and use aspect ratio for consistent height on IE11
+            {% endcomment %}
+            {% assign _icon_dimensions = _icon_svg | split: 'viewBox="' | last | split: '"' | first | split: ' ' %}
+            {% capture _icon_svg %}
+              <span class="icon-inline">
+                <canvas width="{{ _icon_dimensions[2] }}" height="{{ _icon_dimensions[3] }}"></canvas>
+                {{ _icon_svg }}
+              </span>
+            {% endcapture %}
+            {%- capture _parsed_content_with_icon -%}
+              {{- _parse_content | replace: _icon_shortcode, _icon_svg -}}
+            {%- endcapture -%}
+            {%- capture _parsed_content_only -%}{{- _parse_content | remove: _icon_shortcode -}}{%- endcapture -%}
+          {%- else -%}
+            {% assign _parsed_content_with_icon = _parse_content %}
+            {% assign _parsed_content_only = _parse_content %}
+          {%- endif -%}
+        <div class="topbar__block topbar__block--left">
+          <p class="topbar__text topbar__text--left">{{ _parsed_content_with_icon }}</p>
+        </div>
+        {%- endunless -%}
+
+        {%- unless message_text == blank -%}
+        {%- assign _parse_content = message_text -%}
+        {%- assign _parse_icon_start = '[icon-' -%}
+        {%- assign _parse_icon_end = ']' -%}
+
+          {%- if _parse_content contains _parse_icon_start -%}
+            {%- assign _icon_name = _parse_content | split: _parse_icon_start | last | split: _parse_icon_end | first -%}
+            {%- capture _icon_shortcode -%}{{- _parse_icon_start -}}{{- _icon_name -}}{{- _parse_icon_end -}}{%- endcapture -%}
+            {%- capture _icon_svg -%}{%- render 'icon' with _icon_name -%}{%- endcapture -%}
+
+            {% comment %}
+              Inline parsed icon needs to be wrapped and use aspect ratio for consistent height on IE11
+            {% endcomment %}
+            {% assign _icon_dimensions = _icon_svg | split: 'viewBox="' | last | split: '"' | first | split: ' ' %}
+            {% capture _icon_svg %}
+              <span class="icon-inline">
+                <canvas width="{{ _icon_dimensions[2] }}" height="{{ _icon_dimensions[3] }}"></canvas>
+                {{ _icon_svg }}
+              </span>
+            {% endcapture %}
+            {%- capture _parsed_content_with_icon -%}
+              {{- _parse_content | replace: _icon_shortcode, _icon_svg -}}
+            {%- endcapture -%}
+            {%- capture _parsed_content_only -%}{{- _parse_content | remove: _icon_shortcode -}}{%- endcapture -%}
+          {%- else -%}
+            {% assign _parsed_content_with_icon = _parse_content %}
+            {% assign _parsed_content_only = _parse_content %}
+          {%- endif -%}
+        <div class="topbar__block topbar__block--center">
+          <p class="topbar__text topbar__text--center">{{ _parsed_content_with_icon }}</p>
+        </div>
+        {%- endunless -%}
+        {% if topbar_menu != blank or show_login_register_link %}
+          <div class="topbar__block topbar__block--right">
+            {%- unless topbar_menu == blank -%}
+            {%- render 'menu' with topbar_menu, class: 'topbar__menu menu--topbar' , have_menu_icon: true-%}
+            {%- endunless -%}
+            {% if show_login_register_link %}
+              <div class="topbar__nav">
+                {%- render 'icon' with 'user', class:'topbar__icon' -%}
+                {%- if customer -%}
+                  <a href="{{ routes.account_url }}" class="topbar__nav-link">{{ 'layout.customer.account' | t }}</a>
+                {%- else -%}
+                  <a href="{{ routes.account_login_url }}" class="topbar__nav-link">{{ 'layout.customer.log_in' | t }}</a>
+                  or <a href="{{ routes.account_register_url }}" class="topbar__nav-link">{{ 'layout.customer.create_account' | t }}</a>
+                {%- endif -%}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{%- endif -%}

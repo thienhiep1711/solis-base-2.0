@@ -36,4 +36,5 @@ Import all other libs using this markup
 @import "lib/button.css";
 @import "lib/carousel.css";
 
+@import 'modules/menu.css';
 @import "overrides/typography.css";

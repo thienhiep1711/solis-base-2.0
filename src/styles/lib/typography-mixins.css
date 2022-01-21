@@ -48,6 +48,22 @@
   color: var(--c-link);
 }
 
+@define-mixin anchor-decoration {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@define-mixin anchor-decoration-none {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 @define-mixin badge {
   @type 11px 16px;
 }
