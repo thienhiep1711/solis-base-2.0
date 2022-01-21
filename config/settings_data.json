@@ -1,1 +1,26 @@
-[]
+{
+  "current": {
+    "feature_image": "shopify:\/\/shop_images\/silhouetted-couples-look-out-at-a-city-at-night.jpg",
+    "feature_image_mobile": "shopify:\/\/shop_images\/silhouetted-couples-look-out-at-a-city-at-night.jpg",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "topbar_enable": true,
+          "topbar_left_message_text": "Left text test",
+          "topbar_message_text": "message text",
+          "topbar_right_menu": "main-menu",
+          "topbar_show_login_register_link": false
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  }
+}
