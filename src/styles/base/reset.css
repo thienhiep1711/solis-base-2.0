@@ -1,5 +1,4 @@
 input {
-  @mixin transition;
   height: var(--field-height);
   padding: 0 13px;
   border: 1px solid var(--c-border);
@@ -27,7 +26,6 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 select {
-  @mixin transition;
   height: var(--field-height);
   padding: 0 13px;
   border: 1px solid var(--c-border);

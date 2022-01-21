@@ -1,14 +1,17 @@
 <template>
   <div class="header-cart">
-    <sel-icon class-name="icon--header-cart" icon-name="icon-bag" />
+    <sel-icon
+      class-name="icon--header-cart"
+      icon-name="icon-bag"
+    />
   </div>
 </template>
 
 <script>
-import './header-cart.css';
+import './header-cart.css'
 
 export default {
-  name: "HeaderCart",
+  name: 'HeaderCart',
   props: {
     index: {
       type: String,

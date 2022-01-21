@@ -17,9 +17,9 @@
   </slot>
 </template>
 <script>
-import './nav-trigger.css';
+import './nav-trigger.css'
 
 export default {
-  name: "NavTrigger"
+  name: 'NavTrigger'
 }
 </script>

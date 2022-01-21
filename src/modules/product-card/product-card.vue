@@ -1,16 +1,14 @@
 <template>
-  <div>
-    {{ title }}
-  </div>
+  <card></card>
   <slot></slot>
 </template>
 <script>
 
-import Card from '../card/card.vue';
-import './product-card.css';
+import Card from '../card/card.vue'
+import './product-card.css'
 
 export default {
-  name: "ProductCard",
+  name: 'ProductCard',
   components: {
     Card
   },
@@ -24,6 +22,6 @@ export default {
     return {
       isActive: false
     }
-  },
+  }
 }
 </script>

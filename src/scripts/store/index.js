@@ -7,7 +7,7 @@ const store = createStore({
   ...base,
   modules: {
     cart
-  },
+  }
 })
 
 export default store

@@ -1,4 +1,4 @@
-import {set, isIEorEdge, isTouch} from 'lib/utils'
+import { set, isIEorEdge, isTouch } from 'lib/utils'
 import { initComponent, initVueComponent } from 'lib/components'
 
 import 'styles/main.css'

@@ -1,4 +1,4 @@
-import { onPassive } from 'lib/dom'
+import { onPassive, off } from 'lib/dom'
 import debounce from 'lodash.debounce'
 const MOBILE_BREAKPOINT = 768
 const DESKTOP_BREAKPOINT = 1025

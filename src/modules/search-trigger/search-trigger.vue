@@ -1,12 +1,15 @@
 <template>
   <button>
-     <sel-icon class="icon--search-trigger" icon-name="icon-search"></sel-icon>
+     <sel-icon
+      class="icon--search-trigger"
+      icon-name="icon-search"
+    />
   </button>
 </template>
 <script>
-import './search-trigger.css';
+import './search-trigger.css'
 
 export default {
-  name: ""
+  name: 'SearchTrigger'
 }
 </script>

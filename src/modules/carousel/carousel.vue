@@ -50,6 +50,7 @@ import throttle from 'lodash.throttle'
 const BUTTONS_SELECTOR = '.flickity-prev-next-button'
 
 export default {
+  name: 'CarouselVue',
   inheritAttrs: false,
   props: {
     options: {
@@ -88,7 +89,7 @@ export default {
     },
     prevNextButtons () {
       return {
-        prevNextButtons: this.$slots.default.length > this.options.groupCellsNumber || false
+        prevNextButtons: this.options.groupCellsNumber || false
       }
     },
     handleNavNumber () {
@@ -111,7 +112,7 @@ export default {
       }
     }, 100), window)
   },
-  beforeDestroy () {
+  beforeUnmount () {
     this.destroy()
   },
   methods: {
@@ -168,7 +169,7 @@ export default {
         return
       }
 
-      for (let vnode of this.$slots.default) {
+      for (const vnode of this.$slots.default) {
         // Get reference to child Vue component
         const ref = (vnode.data && vnode.data.ref) || ''
         if (ref) {
@@ -231,7 +232,7 @@ export default {
           } else {
             const cellEls = this.instance.getCellElements()
             if (cellEls && cellEls.length) {
-              cellEls.map((cell) => {
+              cellEls.forEach((cell) => {
                 if (cell.classList.contains('is-clicked')) {
                   cell.classList.remove('is-clicked')
                 }

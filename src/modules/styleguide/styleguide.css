@@ -1,5 +1,4 @@
 .styleguide__image {
-  @mixin aspect 1, 1;
   width: 500px;
   position: relative;
 }

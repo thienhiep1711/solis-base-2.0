@@ -1,4 +1,4 @@
-import './picture.css';
+import './picture.css'
 import { select, selectAll, on } from 'lib/dom'
 import objectFitImages from 'object-fit-images'
 import { set } from 'lib/utils'
@@ -26,7 +26,7 @@ export const initImageObserver = () => {
       if (entry.isIntersecting) {
         if (entry.target.hasAttribute('data-src')) loadSrc(entry.target, true)
 
-        let sourceEls = selectAll('[data-srcset]', entry.target.parentNode)
+        const sourceEls = selectAll('[data-srcset]', entry.target.parentNode)
 
         if (sourceEls) loadSrcsets(sourceEls, true)
 
@@ -60,8 +60,8 @@ export const init = (el, imgEl, sourceEls, isVue = false) => {
 }
 
 export default (el) => {
-  let imgEl = select('[data-src]', el)
-  let sourceEls = selectAll('[data-srcset]', el)
+  const imgEl = select('[data-src]', el)
+  const sourceEls = selectAll('[data-srcset]', el)
 
   if (imgEl) init(el, imgEl, sourceEls, false)
 }

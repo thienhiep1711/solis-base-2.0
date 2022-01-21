@@ -6,6 +6,6 @@
 import './styleguide.css'
 
 export default {
-  name: "Styleguide"
+  name: 'StyleGuide'
 }
 </script>

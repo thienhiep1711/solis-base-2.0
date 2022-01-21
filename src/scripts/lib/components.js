@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import store from 'scripts/store'
-import globalMixins from '../mixins/global';
+import globalMixins from '../mixins/global'
 import { selectAll } from 'scripts/lib/dom'
 import selene from '@solislab/selene/dist/selene.umd'
 
@@ -28,7 +28,7 @@ const initVue = (options = {}) => {
     'sel-expansion': 'expansion',
     'sel-backdrop': 'backdrop',
     'sel-badge': 'badge',
-    'sel-panel': 'panel',
+    'sel-panel': 'panel'
   })
 
   return app

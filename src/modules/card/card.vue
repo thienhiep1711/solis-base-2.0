@@ -64,6 +64,7 @@
 <script>
 
 export default {
+  name: 'CardVue',
   props: {
     title: {
       type: String,
