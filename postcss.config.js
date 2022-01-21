@@ -7,8 +7,9 @@ const config = {
       // Disable warning "used without a fallback"
       'properties': { warnings: false }
     }),
-    require('postcss-mixins'),
+    require('postcss-easy-import'),
     require('@solislab/postcss-type')({rootSize: '16px'}),
+    require('postcss-mixins'),
     require('postcss-inline-svg'),
     require('postcss-color-function'),
     require('autoprefixer'),

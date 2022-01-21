@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const TerserPlugin = require("terser-webpack-plugin")
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const ROOT = path.resolve(__dirname)
 const ASSETS_DIR = path.join(ROOT, 'assets')
@@ -88,6 +89,9 @@ module.exports = env => {
     },
     plugins: [
       new VueLoaderPlugin(),
+      new ESLintPlugin({
+        extensions: ['js', 'vue']
+      }),
       new MiniCssExtractPlugin({
         filename: '[name].css'
       }),
