@@ -82,15 +82,7 @@ module.exports = env => {
           use: [
             MiniCssExtractPlugin.loader,
             'css-loader?importLoaders=1',
-            'postcss-loader',
-            {
-              loader: 'style-resources-loader',
-              options: {
-                patterns: [
-                  path.resolve(STYLES_DIR, '_global.css'),
-                ]
-              }
-            }
+            'postcss-loader'
           ]
         }
       ]
