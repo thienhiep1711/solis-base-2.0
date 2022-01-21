@@ -1,3 +1,5 @@
+@import "../../styles/global.css";
+
 .top-bar {
   display: block;
   background: blue;

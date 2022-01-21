@@ -120,7 +120,7 @@ elif [[ -e "$MODULE_FILE.css" ]]; then
     echo "${YELLOW}$MODULE_NAME.css already exists in the module directory, so we won't create a new one.${DEFAULT}"
 else
 cat <<EOF >$MODULE_FILE.css
-/* styles for $MODULE_NAME */
+@import "../../styles/global.css";
 .$MODULE_NAME {}
 EOF
 fi

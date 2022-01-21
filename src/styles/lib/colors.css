@@ -1,6 +1,4 @@
 :root {
-  /** Global Colors **/
-
   --c-red: #A20015;
   --c-green: #0B6514;
   --c-green-2: rgba(11, 101, 20, 0.50);
@@ -12,8 +10,6 @@
   --c-gray-2: #E2DFDF;
   --c-white: #FFFFFF;
   --c-white-1: #f8f8f8;
-
-  /** Text Color **/
 
   --c-text: var(--c-black);
   --c-text-dark-bg: var(--c-white);
@@ -31,12 +27,10 @@
   --c-border: var(--c-gray);
   --c-shadow: var(--c-border);
 
-  /** Notification **/
   --c-success: var(--c-green);
   --c-error: var(--c-red);
   --c-info: var(--c-gray);
 
-  /** Button **/
   --c-button-primary-bg: var(--c-blue);
   --c-button-primary-text: var(--c-white);
   --c-button-primary-border: var(--c-blue);

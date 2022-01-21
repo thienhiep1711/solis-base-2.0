@@ -1,6 +1,4 @@
-/*
-** General styles
- */
+@import "../../styles/global.css";
 
  .card {
   margin-bottom: 16px;

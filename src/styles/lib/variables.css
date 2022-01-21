@@ -1,11 +1,8 @@
-/* Parameters */
 :root {
-  /* Transitions */
   --transition-duration: 400ms;
   --transition-timing: ease-in-out;
   --transition-default: var(--transition-duration) var(--transition-timing);
 
-  /* Layout */
   --container-edge: 16px;
   --container-edge-tablet: 16px;
   --container-edge-desktop: 24px;
@@ -14,14 +11,12 @@
   --container-max-width: 1272px;
   --field-height: 48px;
 
-  /* Grid */
   --grid-gutter-default: 16px;
 
   --gutter-s: 16px;
   --gutter-sm: 16px;
   --gutter-ml: 32px;
 
-  /* Breakpoints */
   --xxxs: 320px;
   --xs: 620px;
   --s: 768px;
