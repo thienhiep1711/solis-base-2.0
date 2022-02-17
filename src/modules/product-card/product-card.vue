@@ -1,19 +1,19 @@
 <template>
   <card
     :title="product.title"
-    :featured-image="product.featured_image"
+    :featured-image="product.featuredImage"
     :class-name="'card--product ' + className"
     cta-primary-url="google.com"
   >
     <template v-slot:before-content>
       <span>
-        {{ product.vendor }}
+        {{ product.entity.vendor }}
       </span>
     </template>
     <template v-slot:description>
       <price
-        :price="product.price"
-        :original-price="product.compare_at_price"
+        :price="product.entity.price"
+        :original-price="product.entity.compareAtPriceMin"
       ></price>
     </template>
     <template v-slot:ctas>

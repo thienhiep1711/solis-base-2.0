@@ -14,8 +14,10 @@
   >
     {%- for item in section.blocks -%}
       {%- assign product_handle = item.settings.product -%}
-      {%- assign product_item = all_products[product_handle] -%}
-      {%- assign product_json = product_item -%}
+      {%- assign product_data = all_products[product_handle] -%}
+      {%- capture product_json -%}
+        {%- render 'product-json-meta' item: product_data -%}
+      {%- endcapture -%}
       {%- render 'product-card',
         product: product_json,
         class: 'grid__item'

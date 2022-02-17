@@ -1,0 +1,81 @@
+{%- assign _related_handles = product.metafields.you_may_also_like.products | split: '|' | uniq -%}
+{% if _related_handles.size > 0 %}
+  {%- capture _related_products -%}
+    {%- for handle in _related_handles -%}
+      {%- assign _related_product = all_products[handle] -%}
+      {%- if _related_product.published_at and _related_product.id != blank -%}
+      ,{% render 'product-json-meta', item: _related_product, include_linked_products: false, include_related_products: false, exclude_entity_item: false %}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+{% else %}
+  {% comment %}
+    Limit collection and product will display each collections
+  {% endcomment %}
+  {% assign collection_limit = 4 %}
+  {% assign collection_products_max = 4 %}
+  {% assign collection_products_min = 1 %}
+  {% assign collection_count = 0 %}
+
+  {% comment %}
+    Collections to ignore.
+    Never pick related items from those.
+  {% endcomment %}
+
+  {% assign exclusions = 'frontpage,all' | split: ',' %}
+
+  {% comment %}
+    Looking for a relevant collection.
+  {% endcomment %}
+
+  {% assign found_a_collection = false %}
+  {% for c in item.collections %}
+    {% unless exclusions contains c.handle
+      or c.all_products_count < collection_products_min
+      or collection_count > collection_limit
+      or collection_list contains c.handle
+    %}
+      {% assign found_a_collection = true %}
+      {% assign collection_list = collection_list | append: c.handle | append: ',' %}
+      {% assign collection_count = collection_count | plus: 1 %}
+    {% endunless %}
+  {% endfor %}
+
+  {% comment %}
+    If we have a relevant collection.
+  {% endcomment %}
+
+  {% if found_a_collection %}
+    {%- assign related_collections = collection_list | split: ',' | uniq -%}
+    {%- capture _related_products -%}
+      {% for collection_handle in related_collections %}
+        {% assign product_count = 0 %}
+        {% assign collection = collections[collection_handle] %}
+        {% if collection.all_products_count > 1 %}
+          {% assign collection_product_max_check = collection.all_products_count | divided_by: 2 %}
+        {% endif %}
+        {% comment %}Get random number for displaying different product on page reload{% endcomment %}
+        {% assign min = min | default: 0 %}
+        {% assign max = collection_product_max_check | default: 1 %}
+        {% assign diff = max | minus: min %}
+
+        {% assign random_number = "now" | date: "%N" | modulo: diff | plus: min %}
+
+        {% for product in collection.products offset: random_number %}
+            {% unless item.handle contains product.handle or product_count >= collection_products_max %}
+              {%- assign _related_product = product-%}
+              {%- if _related_product.published_at and _related_product.id != blank -%}
+                ,{% render 'product-json-meta', item: _related_product, include_linked_products: false, include_related_products: false, exclude_entity_item: false %}
+                {% assign product_count = product_count | plus: 1 %}
+              {%- endif -%}
+              {%- assign _related_product = nil -%}
+          {% endunless %}
+        {% endfor %}
+      {% endfor %}
+    {%- endcapture -%}
+  {% endif %}
+{% endif %}
+
+[
+  {{ _related_products | remove_first: ',' }}
+]

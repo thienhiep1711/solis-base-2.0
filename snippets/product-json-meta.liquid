@@ -1,0 +1,69 @@
+{
+  "id": {{- item.id -}},
+  "handle": {{- item.handle | json -}},
+  "url": "{{- item.url -}}",
+  "title": {{- item.title | json -}},
+  {%- unless exclude_entity_item == true -%}
+  "entity": {
+    "available": {{- item.available | json -}},
+    "id": {{- item.id | json -}},
+    "vendor": {{- item.vendor | json -}},
+    "handle": {{- item.handle | json -}},
+    "title": {{- item.title | json -}},
+    "price": {{- item.price | json -}},
+    "compareAtPriceMin": {{- item.compare_at_price_min | json -}},
+    "variants": {{- item.variants | json -}},
+    "options": {{- item.options | json -}},
+    "tags": {{- item.tags | json -}},
+    "type": {{- item.type | json -}}
+  },
+  "initialVariant": {{- item.selected_or_first_available_variant | json -}},
+
+  {%- capture product_images -%}
+    {%- for image in item.images -%}
+      ,{
+      "alt": {{- image.alt | json -}},
+      "src": "{{- image.src | img_url: 'master' -}}",
+      "id": {{- image.id -}}
+      }
+    {%- endfor -%}
+  {%- endcapture -%}
+  "images": [{{- product_images | remove_first: ',' -}}],
+
+  {%- capture variants_data -%}
+    {
+    {%- for variant in item.variants -%}
+      "{{- variant.id -}}": {
+      "inventoryQuantity": {{- variant.inventory_quantity -}}
+      }
+      {%- unless forloop.last -%},{% endunless %}
+    {%- endfor -%}
+    }
+  {%- endcapture -%}
+  "variantsData": {{- variants_data -}},
+  "media": {{- item.media | json -}},
+  {%- endunless -%}
+  {%- for product_option in item.options_with_values -%}
+    {%- if product_option.name == 'Color' or product_option.name == 'Colour' -%}
+      {%- assign color_name = product_option.values | first -%}
+      {%- assign color_handle = color_name | handle -%}
+    {%- endif -%}
+  {%- endfor -%}
+  "color": {"name": "{{- color_name -}}", "handle": "{{- color_handle -}}"},
+  "swatchColor": {{- item.metafields.accentuate.swatch_color | json -}},
+  {%- assign featured_image = item.featured_image | img_url: 'master' -%}
+  "featuredImage": "{{- featured_image -}}"
+  {%- if include_related_products -%}
+  ,
+  {%- capture related_products -%}
+    {%- render 'product-json-related', item: item -%}
+  {%- endcapture -%}
+  "relatedProducts": {{- related_products -}}
+  {%- endif -%}
+  {%- if include_linked_products -%}
+    ,
+    {%- capture linked_products -%}
+      {%- render 'product-json-linked', item: item -%}
+    {%- endcapture -%}
+  "linkedProducts": {{- linked_products -}}{% endif %}
+  }

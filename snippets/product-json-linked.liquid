@@ -1,0 +1,26 @@
+{%- capture _product_ajax_linked_tags -%}
+  {%- for tag in item.tags -%}
+    {%- if tag contains 'linked-' -%}
+      |{{- tag | remove: 'linked-' -}}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- assign _product_ajax_linked_tags = _product_ajax_linked_tags | remove_first: '|' -%}
+{%- assign _product_ajax_linked_value = item.metafields.accentuate.linked_products | default: _product_ajax_linked_tags -%}
+{%- if _product_ajax_linked_value == blank -%}
+  {%- assign _product_ajax_linked_value = item.handle -%}
+{%- else -%}
+  {%- assign _product_ajax_linked_value = _product_ajax_linked_value | append: '|' | append: item.handle -%}
+{%- endif -%}
+{%- assign _product_ajax_linked_handles = _product_ajax_linked_value | split: '|' | uniq | sort -%}
+{%- capture _product_ajax_linked_items -%}
+  {%- for _product_ajax_linked_handle in _product_ajax_linked_handles -%}
+    {%- assign _item = all_products[_product_ajax_linked_handle] -%}
+    {%- if _item.published_at and _item.id != blank -%}
+    ,{%- render 'product-json-meta', item: _item, include_linked_products: false, include_related_products: false, exclude_entity_item: true -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+[
+  {{ _product_ajax_linked_items | remove_first: ',' }}
+]
