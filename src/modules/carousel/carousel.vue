@@ -145,20 +145,6 @@ export default {
         this.instance.select(index, isWrap, isInstance)
       }
     },
-    observeMutations () {
-      // Observe DOM change to re-calculate slider
-      const callback = (mutations) => {
-        mutations.forEach((mutation) => {
-          if (mutation.type === 'childList') {
-            this.destroy()
-            this.init()
-            this.update()
-          }
-        })
-      }
-      const observer = new MutationObserver(callback)
-      observer.observe(this.$el, { childList: true, subtree: true, attributes: true })
-    },
     repositionButtons () {
       if (!this.finalOptions.buttonAlign) {
         return
