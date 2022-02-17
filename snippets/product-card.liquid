@@ -1,4 +1,5 @@
-<component is="product-card" title="{{ product.title }}">
-  This is a test slot content
-  <sel-button>Button</sel-button>
-</component>
+<component
+  is="product-card"
+  :product="{{ product | json | escape }}"
+  class-name="{{- class -}}"
+></component>

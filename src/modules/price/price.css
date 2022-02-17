@@ -1,0 +1,30 @@
+.price {
+  & s {
+    & + span {
+      color: var(--c-red);
+      margin-left: 5px;
+    }
+  }
+}
+
+.price__text--sold-out {
+  color: var(--c-red);
+}
+
+.price--large {
+  color: var(--c-text);
+}
+
+.price--vertical {
+  margin-left: 10px;
+
+  @media (--ml) {
+    margin-left: 30px;
+  }
+
+  & s {
+    & + span {
+      margin-left: 0;
+    }
+  }
+}

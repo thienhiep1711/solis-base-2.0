@@ -11,27 +11,20 @@
           :href="ctaPrimaryUrl"
           title="ctaPrimaryUrl"
         >
-          <image-lazy
-            v-if="!isMobile && secondImage"
-            :cover="true"
-            class="card__image card__image--second image-lazy--absolute"
-            :image-url="secondImage"
-            :is-src-set="isSrcSet"
-          />
-          <image-lazy
-            :cover="true"
-            class="card__image image-lazy--absolute"
-            :image-url="featuredImage"
-            :is-src-set="isSrcSet"
-          />
+          <figure class="card__image">
+            <sel-image
+              :sources="[
+                featuredImage
+              ]"
+              :breakpoints="[
+                '(min-width: 320px)'
+              ]"
+              class=""
+              data-x="0"
+              data-y="0"
+            ></sel-image>
+          </figure>
         </a>
-        <image-lazy
-          v-else
-          :cover="true"
-          class="card__image image-lazy--absolute"
-          :image-url="featuredImage"
-          :is-src-set="isSrcSet"
-        />
       </div>
       <slot name="before-content" />
       <div class="card__content">
@@ -60,8 +53,9 @@
     </div>
   </div>
 </template>
-
 <script>
+
+import './card.css'
 
 export default {
   name: 'CardVue',

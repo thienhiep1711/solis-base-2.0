@@ -4,17 +4,25 @@
   <script src="{{ 'section-featured-products.js' | asset_url }}"></script>
 {%- endif -%}
 
-{% render 'page-title'
-  title: section.settings.title
-%}
-<section class="featured-products" data-module="product-list">
-  {%- for item in section.blocks -%}
-    {%- assign product_handle = item.settings.product -%}
-    {%- assign product_item = all_products[product_handle] -%}
-    {%- assign product_json = product_item -%}
-    {%- render 'product-card', product: product_json -%}
-  {%- endfor -%}
-</section>
+<section class="container">
+  {% render 'page-title'
+    title: section.settings.title
+  %}
+  <div
+    data-module="product-list"
+    class="grid grid--4 featured-products"
+  >
+    {%- for item in section.blocks -%}
+      {%- assign product_handle = item.settings.product -%}
+      {%- assign product_item = all_products[product_handle] -%}
+      {%- assign product_json = product_item -%}
+      {%- render 'product-card',
+        product: product_json,
+        class: 'grid__item'
+      -%}
+    {%- endfor -%}
+  </div>
+  </section>
 
 {% schema %}
   {
