@@ -1,5 +1,5 @@
-import { initVueComponent } from 'lib/components'
+import { initComponent } from 'lib/components'
 
-import ProductCard from 'modules/product-card/product-card.vue'
+import ProductList from 'modules/product-list/product-list'
 
-initVueComponent(ProductCard, 'ProductCard', 'product-card')
+initComponent(ProductList, 'product-list')
