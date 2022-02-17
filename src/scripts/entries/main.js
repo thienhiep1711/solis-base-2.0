@@ -1,8 +1,6 @@
 import { set, isIEorEdge, isTouch } from 'lib/utils'
 import { initComponent, initVueComponent } from 'lib/components'
 
-import 'styles/main.css'
-
 import Hero from 'modules/hero/hero'
 import Picture from 'modules/picture/picture'
 import Carousel from 'modules/carousel/carousel.vue'

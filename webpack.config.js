@@ -36,6 +36,7 @@ const getEntry = (dir = SCRIPT_ENTRIES_DIR) => {
       }
     }
   )
+  entry.main.push(path.resolve(STYLES_DIR, 'main.css'))
   return entry
 }
 
@@ -82,8 +83,26 @@ module.exports = env => {
           use: [
             MiniCssExtractPlugin.loader,
             'css-loader?importLoaders=1',
+            'postcss-loader',
+            {
+              loader: 'style-resources-loader',
+              options: {
+                patterns: [
+                  path.resolve(STYLES_DIR, 'global.css'),
+                ]
+              }
+            }
+          ],
+          exclude: path.join(STYLES_DIR, 'main.css')
+        },
+        {
+          test: /\.css$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            'css-loader?importLoaders=1',
             'postcss-loader'
-          ]
+          ],
+          include: path.join(STYLES_DIR, 'main.css')
         }
       ]
     },
@@ -110,8 +129,8 @@ module.exports = env => {
     resolve: {
       alias: {
         '@': path.resolve(__dirname, 'src'),
-        scripts: SCRIPTS_DIR,
-        styles: STYLES_DIR,
+        'scripts': SCRIPTS_DIR,
+        'styles': STYLES_DIR,
         'lib': path.resolve(__dirname, 'src/scripts/lib'),
         'modules': path.resolve(__dirname, 'src/modules'),
         'mixins': path.resolve(__dirname, 'src/scripts/mixins'),
