@@ -93,8 +93,8 @@ p a {
   @mixin form-input;
 }
 
-.button {
-  @mixin button;
+.sel-button {
+  @mixin button-typo;
 }
 
 .headline {

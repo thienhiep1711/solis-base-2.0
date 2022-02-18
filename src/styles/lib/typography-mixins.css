@@ -80,7 +80,7 @@
   @type 13px 20px;
 }
 
-@define-mixin button {
+@define-mixin button-typo {
   @type 16px 16px;
   font-family: var(--buttons-font-family);
   font-weight: var(--buttons-font-weight);
