@@ -24,4 +24,9 @@
   --ml: 1160px;
   --l: 1280px;
   --xl: 1440px;
+
+  --carousel-arrow-size: 48px;
+  --carousel-arrow-icon-size: 24px;
+  --carousel-dots-size: 10px;
+  --carousel-dots-margin: 5px;
 }

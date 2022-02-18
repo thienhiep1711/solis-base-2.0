@@ -1,16 +1,15 @@
 {% assign carousel_options = carousel_options | default: '{"cellAlign": "left", "groupCells": true, "contain": true, "pageDots": true, "prevNextButtons": true, "autoPlay": true}' %}
 
-  <div>
+  <div class="container">
     <div data-module="base-modules">
       <component is="base-modules">
         <carousel
-          class="carousel-grid"
+          class="carousel-grid carousel-grid--2"
           options='{{ carousel_options }}'
         >
           <div class="carousel__item">1</div>
           <div class="carousel__item">2</div>
           <div class="carousel__item">3</div>
-          <div class="carousel__item">4</div>
           <div class="carousel__item">4</div>
       </carousel>
     </component>
