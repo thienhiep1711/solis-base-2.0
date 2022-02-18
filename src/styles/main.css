@@ -27,14 +27,12 @@ Import all other libs using this markup
 @import "lib/transitions.css";
 @import "lib/widths.css";
 @import "lib/z-index.css";
-@import "lib/shopify.css";
 @import "lib/icons.css";
 @import "lib/wysiwyg.css";
 @import 'lib/typography.css';
 @import "lib/table.css";
-@import "lib/inputs.css";
-@import "lib/button.css";
-@import "lib/carousel.css";
 
-@import 'modules/menu.css';
+@import 'components/**.css';
+@import 'modules/**.css';
+
 @import "overrides/typography.css";

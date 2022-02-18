@@ -19,16 +19,16 @@ const initVue = (options = {}) => {
   app.mixin(globalMixins)
 
   app.use(selene, {
-    'sel-video': 'video',
-    'sel-button': 'button',
-    'sel-select': 'select',
-    'sel-text-input': 'text-input',
-    'sel-dialog': 'dialog',
-    'sel-slideout': 'slideout',
-    'sel-expansion': 'expansion',
-    'sel-backdrop': 'backdrop',
-    'sel-badge': 'badge',
-    'sel-panel': 'panel'
+    'sel-video': 'sel-video',
+    'sel-button': 'sel-button',
+    'sel-select': 'sel-select',
+    'sel-text-input': 'sel-text-input',
+    'sel-dialog': 'sel-dialog',
+    'sel-slideout': 'sel-slideout',
+    'sel-expansion': 'sel-expansion',
+    'sel-backdrop': 'sel-backdrop',
+    'sel-badge': 'sel-badge',
+    'sel-panel': 'sel-panel'
   })
 
   return app
