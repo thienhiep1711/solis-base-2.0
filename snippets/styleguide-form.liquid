@@ -1,0 +1,80 @@
+<section class="style-guide__section">
+  <div class="container">
+    <div class="grid grid--2">
+      <div class="grid__item">
+        <h3 class="style-guide__section-header">Inputs</h3>
+        <div class="style-guide__section-content style-guide__section-content--responsive">
+          <sel-text-input
+            :attrs='{ placeholder: "This is input field" }'
+          >
+            Input title
+          </sel-text-input>
+          <sel-text-input
+            :attrs='{ placeholder: "This is input field" }'
+            :required="true"
+          >
+            Input title
+          </sel-text-input>
+          <sel-text-input
+            :lines="10"
+            :attrs='{ placeholder: "This is textarea field" }'
+          >
+            Textarea title
+          </sel-text-input>
+        </div>
+      </div>
+      <div class="grid__item">
+        <h3 class="style-guide__section-header">Selector</h3>
+        <div class="style-guide__section-content style-guide__section-content--responsive style-guide__section-table">
+          <h4>Checkbox</h4>
+          <sel-checkbox value="option-1">Option 1</sel-checkbox>
+          <sel-checkbox value="option-2">Option 2</sel-checkbox>
+          <sel-checkbox value="option-3">Option 3</sel-checkbox>
+          <h4>Radio Button</h4>
+          <sel-radio
+            name="test-radio"
+            v-for="n in 3"
+            :key="n"
+            :value="n"
+          >
+            Radio label
+          </sel-radio>
+          <h4>Select</h4>
+          <sel-select
+            :key="enableValidateSelect"
+            name="test-select"
+            :options="selectOptions"
+            :required="enableValidateSelect"
+            :options="[
+              {
+                label: 'Option 1',
+                value: 1
+              },
+              {
+                label: 'Option 2',
+                value: 2
+              },
+              {
+                label: 'Option 3',
+                value: 3
+              },
+              {
+                label: 'Option 4',
+                value: 4
+              },
+              {
+                label: 'Option 5',
+                value: 5
+              }
+            ]"
+          >
+            Select Options
+            <template v-if="enableValidateSelect" #empty-option>
+              <option value="">Select Option</option>
+            </template>
+          </sel-select>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

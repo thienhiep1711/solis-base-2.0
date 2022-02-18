@@ -1,7 +1,6 @@
 @define-mixin button {
   @mixin transition all;
   display: inline-block;
-  min-width: 200px;
   padding: 12px 35px;
   text-align: center;
   cursor: pointer;

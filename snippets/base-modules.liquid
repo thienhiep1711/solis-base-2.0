@@ -3,6 +3,7 @@
   <div class="container">
     <div data-module="base-modules">
       <component is="base-modules">
+        <h2 class="h2">Carousel</h2>
         <carousel
           class="carousel-grid carousel-grid--2"
           options='{{ carousel_options }}'
@@ -11,7 +12,16 @@
           <div class="carousel__item">2</div>
           <div class="carousel__item">3</div>
           <div class="carousel__item">4</div>
-      </carousel>
+        </carousel>
+        <h2 class="h2">Slideout</h2>
+        <sel-button class="js-test">Open slideout outside</sel-button>
+        <sel-slideout
+          :is-active="true"
+          activator-selector=".js-test"
+          class="slideout--minicart"
+        >
+          Test content slideout
+        </sel-slideout>
     </component>
   </div>
   </div>

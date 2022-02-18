@@ -6,7 +6,6 @@ Import all other libs using this markup
 @import '@solislab/selene/dist/selene.css';
 @import "flickity";
 
-@import "base/reset.css";
 @import "lib/normalize.css";
 
 @import "./global.css";

@@ -1,1 +1,34 @@
-.sel-text-input {}
+.sel-text-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.sel-text-input input,
+.sel-text-input textarea {
+  appearance: none;
+  min-height: 40px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 2px;
+  color: #000;
+  box-sizing: border-box;
+}
+
+.sel-text-input__label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.sel-text-input input:-webkit-autofill {
+  animation-name: onAutoFillStart;
+  transition: background-color 50000s ease-in-out 0s;
+}
+
+.sel-text-input input:not(:-webkit-autofill) {
+  animation-name: onAutoFillCancel;
+}
+
+.sel-text-input__error {
+  color: var(--c-red);
+}
