@@ -94,3 +94,29 @@
 .style-guide__colours-label {
   margin-top: 8px;
 }
+
+.style-guide__group {
+  margin-bottom: 15px;
+
+  & h4 {
+    text-transform: none;
+    margin-bottom: 10px;
+  }
+}
+
+.panel-wrapper {
+  position: relative;
+  border: 1px solid #CCCCCC;
+  width: 250px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.menu-item {
+  display: block;
+}
+
+.sample-image {
+  position: relative;
+  @mixin aspect 3, 2;
+}

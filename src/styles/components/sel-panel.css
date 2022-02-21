@@ -1,1 +1,3 @@
-.sel-panel {}
+.sel-panel {
+  background-color: var(--c-white);
+}

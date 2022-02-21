@@ -5,19 +5,23 @@
         <h3 class="style-guide__section-header">Inputs</h3>
         <div class="style-guide__section-content style-guide__section-content--responsive">
           <sel-text-input
-            :attrs='{ placeholder: "This is input field" }'
+            v-model="slotScope.textInput"
+            placeholder="This is input field"
+            class="input-custom"
           >
-            Input title
+            Input title 1
           </sel-text-input>
           <sel-text-input
-            :attrs='{ placeholder: "This is input field" }'
+            v-model="slotScope.textInput"
+            placeholder="This is input field"
             :required="true"
           >
-            Input title
+            Input title 2
           </sel-text-input>
           <sel-text-input
+            v-model="slotScope.textInput"
             :lines="10"
-            :attrs='{ placeholder: "This is textarea field" }'
+            placeholder="Form Textarea"
           >
             Textarea title
           </sel-text-input>
@@ -41,35 +45,13 @@
           </sel-radio>
           <h4>Select</h4>
           <sel-select
-            :key="enableValidateSelect"
+            :key="slotScope.enableValidateSelect"
             name="test-select"
-            :options="selectOptions"
-            :required="enableValidateSelect"
-            :options="[
-              {
-                label: 'Option 1',
-                value: 1
-              },
-              {
-                label: 'Option 2',
-                value: 2
-              },
-              {
-                label: 'Option 3',
-                value: 3
-              },
-              {
-                label: 'Option 4',
-                value: 4
-              },
-              {
-                label: 'Option 5',
-                value: 5
-              }
-            ]"
+            :options="slotScope.selectOptions"
+            :required="slotScope.enableValidateSelect"
           >
             Select Options
-            <template v-if="enableValidateSelect" #empty-option>
+            <template v-if="slotScope.enableValidateSelect" #empty-option>
               <option value="">Select Option</option>
             </template>
           </sel-select>
