@@ -19,7 +19,7 @@ class Cart {
       }, (code, responseText, request) => {
         const cart = JSON.parse(responseText)
         if (Number(code) !== 200) {
-          cart['errors'] = [cart.description]
+          cart.errors = [cart.description]
         }
         resolve(cart)
       })
@@ -39,7 +39,7 @@ class Cart {
       }, (code, responseText, request) => {
         const cart = JSON.parse(responseText)
         if (Number(code) !== 200) {
-          cart['errors'] = [cart.description]
+          cart.errors = [cart.description]
         }
         resolve(cart)
       })

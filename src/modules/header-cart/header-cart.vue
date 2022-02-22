@@ -1,5 +1,7 @@
 <template>
-  <div class="header-cart">
+  <div
+    class="header-cart js-cart-slideout"
+  >
     <sel-icon
       class-name="icon--header-cart"
       icon-name="icon-bag"

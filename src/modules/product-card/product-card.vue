@@ -17,7 +17,12 @@
       ></price>
     </template>
     <template v-slot:ctas>
-      <sel-button>Add to cart</sel-button>
+      <sel-button
+        :disabled="!product.entity.available"
+        @click="addToCart"
+      >
+        {{ addToCartText }}
+      </sel-button>
     </template>
     <template v-slot:after-content>
       Info
@@ -28,6 +33,8 @@
 
 import Card from '../card/card.vue'
 import Price from '../price/price.vue'
+import cart from 'lib/cart'
+import bus from 'lib/bus'
 import './product-card.css'
 
 export default {
@@ -48,11 +55,33 @@ export default {
     className: {
       type: String,
       default: ''
+    },
+    buttonText: {
+      type: String,
+      default: 'Add To Cart'
     }
   },
   data () {
     return {
-      isActive: false
+      isAdding: false
+    }
+  },
+  computed: {
+    addToCartText () {
+      return this.isAdding ? 'Adding' : this.buttonText
+    }
+  },
+  methods: {
+    addToCart () {
+      this.isAdding = true
+      const variables = {
+        id: this.product.initialVariant.id,
+        quantity: 1
+      }
+      cart.add(variables).then(() => {
+        this.isAdding = false
+        bus.$emit('add-to-cart')
+      })
     }
   }
 }

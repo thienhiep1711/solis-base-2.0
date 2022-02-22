@@ -84,7 +84,7 @@ export default {
   },
   methods: {
     formatMoney (price) {
-      return (Shopify.currency.active === this.defaultCurrency) ? `${formatMoney(price)}` : `${Shopify.currency.active} ${formatMoney(price)}`
+      return (Shopify.currency.active === window.SLS_STATE.defaultCurrency) ? `${formatMoney(price)}` : `${Shopify.currency.active} ${formatMoney(price)}`
     },
     formatMoneySale (price) {
       return formatMoney(price)

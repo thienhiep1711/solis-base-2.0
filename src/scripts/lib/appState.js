@@ -1,4 +1,4 @@
 export default {
-  miniCartOpened: false,
+  isMiniCartOpen: false,
   headerMenuOpened: false
 }

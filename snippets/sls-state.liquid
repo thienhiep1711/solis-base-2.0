@@ -11,6 +11,9 @@
     defaultImage: "{%- if settings.default_image != blank -%}{{ settings.default_image | img_url: 'master' }}{%- endif -%}",
     userLoggedIn: {%- if customer -%}true{%- else -%}false{%- endif -%},
     moneyFormat: {{ shop.money_format | json }},
+    {%- if settings.currency_code_iso_default -%}
+      defaultCurrency: {{ settings.currency_code_iso_default | json }},
+    {%- endif %}
     shop: {{ shop.permanent_domain | split: '.' | first | json }}
   };
 </script>
