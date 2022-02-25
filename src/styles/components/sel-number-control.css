@@ -1,0 +1,5 @@
+.sel-number-control {
+  & .sel-text-input__input {
+    width: 50px;
+  }
+}

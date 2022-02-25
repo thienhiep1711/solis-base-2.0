@@ -1,17 +1,14 @@
 import { initVue } from 'lib/components'
+import store from './@store'
 
-import store from 'modules/cart-grid/@store'
-import MiniCart from 'modules/mini-cart/mini-cart.vue'
-import CartGrid from 'modules/cart-grid/cart-grid.vue'
+import CartGrid from './cart-grid.vue'
 import CartItem from 'modules/cart-item/cart-item.vue'
-
-import './mini-cart.css'
+import './cart-grid.css'
 
 export default (el) => {
   const app = initVue({
-    name: 'MiniCartApp',
+    name: 'CartGridApp',
     components: {
-      MiniCart,
       CartGrid,
       CartItem
     }

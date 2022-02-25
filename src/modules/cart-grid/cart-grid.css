@@ -1,1 +1,16 @@
 .cart-grid {}
+
+.cart-grid__block-main {
+  width: 100%;
+}
+
+.cart-grid__block-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-grid--mini {
+  & .cart-grid__block-header {
+    display: none;
+  }
+}

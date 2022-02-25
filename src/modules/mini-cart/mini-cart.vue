@@ -1,13 +1,17 @@
 <template>
   <sel-slideout
-    v-model:is-active="isActive"
+    class="sel-slideout--minicart"
+    v-model:is-active="isOpened"
     activator-selector=".js-cart-slideout"
   >
     <div class="mini-cart">
       <div class="mini-cart__inner">
-        <div class="mini-cart__header">Mini cart</div>
-        <div class="mini-cart__main"></div>
-        <div class="mini-cart__footer"></div>
+        <div class="mini-cart__header">
+          <slot name="header"></slot>
+        </div>
+        <div class="mini-cart__main">
+          <slot name="main"></slot>
+        </div>
       </div>
     </div>
   </sel-slideout>
@@ -15,13 +19,14 @@
 
 <script>
 import { ref } from 'vue'
+
 export default {
   name: 'MiniCart',
   setup () {
-    const isActive = ref(false)
+    const isOpened = ref(false)
 
     return {
-      isActive
+      isOpened
     }
   }
 }

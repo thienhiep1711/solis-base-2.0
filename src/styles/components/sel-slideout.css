@@ -1,1 +1,7 @@
 .sel-slideout {}
+
+.sel-slideout--minicart {
+  & .sel-slideout__inner {
+    padding: 0;
+  }
+}

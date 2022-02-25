@@ -90,3 +90,7 @@ button {
   padding-top: 17px;
   padding-bottom: 17px;
 }
+
+.sel-button--number-control {
+  padding: 0;
+}

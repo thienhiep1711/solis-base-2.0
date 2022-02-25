@@ -1,1 +1,25 @@
-.mini-cart {}
+.mini-cart {
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-self: stretch;
+}
+
+.mini-cart__inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mini-cart__main {
+  flex: 1 1 0;
+}
+
+.mini-cart__header {
+  padding: 12px;
+}
+
+.mini-cart__buttons {
+  display: flex;
+}

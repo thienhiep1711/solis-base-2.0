@@ -32,6 +32,11 @@ hr {
   background-color: var(--c-border);
 }
 
+.image {
+  position: relative;
+  display: inline-block;
+}
+
 /* critical:start */
 .hide {
   display: none;

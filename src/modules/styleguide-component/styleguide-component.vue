@@ -17,13 +17,9 @@
               <sel-image
                 :sources="[
                   'https://via.placeholder.com/500x500',
-                  'https://via.placeholder.com/1000x1000',
-                  'https://via.placeholder.com/1500x1500'
                 ]"
                 :breakpoints="[
-                  '(max-width: 767px)',
-                  '(max-width: 999px)',
-                  '(min-width: 1000px)'
+                  '(min-width: 320px)'
                 ]"
                 class="image-custom"
               ></sel-image>

@@ -1,0 +1,60 @@
+{%- assign location = location | default: 'default' -%}
+{%- assign class = class | default: 'cart-grid--page' -%}
+{%- assign class_item = class_item | default: 'cart-item--default' -%}
+{%- assign class_container = class_container | default: '' -%}
+{%- assign is_mini_cart = false -%}
+
+{%- if location == 'mini-cart' -%}
+  {%- assign is_mini_cart = true -%}
+{%- endif -%}
+
+{%- unless is_mini_cart -%}
+<div data-module="cart-grid">
+{%- endunless -%}
+  <cart-grid
+    class="{{- class -}}"
+    class-item="{{- class_item -}}"
+    class-container="{{- class_container -}}"
+  >
+    <template #header>
+      <div>Shipping bar</div>
+    </template>
+    <template #main="scopeMain">
+      <div class="cart-grid__content">
+        <div class="{% if is_mini_cart %}cart-grid__wrap{% else %}grid grid--cart-grid{% endif %}">
+            <div class="cart-grid__block{% unless is_mini_cart %} grid__item{% endunless %}">
+              <div class="cart-grid__block-main">
+                {%- unless is_mini_cart -%}
+                  <div class="cart-grid__block-header">
+                    <div class="cart-grid__block-header-inner">
+                      <h4>Your Items</h4>
+                      <h4>Price</h4>
+                      <h4>Quantity</h4>
+                      <h4>Subtotal</h4>
+                    </div>
+                  </div>
+                {%- endunless -%}
+                <div class="cart-grid__block-items">
+                  <cart-item
+                    v-for="(item, index) in scopeMain.cartData.items"
+                    :key="item.id"
+                    class="{{- class_item -}}"
+                    :is-mini-cart="{{- is_mini_cart -}}"
+                    :line-index="index"
+                    :value="item"
+                  />
+                </div>
+              </div>
+            </div>
+            {%- unless is_mini_cart -%}
+              <div class="grid__item">
+              Sidebar
+              </div>
+            {%- endunless -%}
+        </div>
+      </div>
+    </template>
+  </cart-grid>
+{%- unless is_mini_cart -%}
+</div>
+{%- endunless -%}

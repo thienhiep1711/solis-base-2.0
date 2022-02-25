@@ -5,6 +5,7 @@ import Carousel from 'modules/carousel/carousel.vue'
 
 export default (el) => {
   initVue({
+    name: 'BaseModuleApp',
     components: {
       BaseModules,
       Carousel

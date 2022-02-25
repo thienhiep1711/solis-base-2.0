@@ -29,7 +29,8 @@ const initVue = (options = {}) => {
     'sel-backdrop': 'sel-backdrop',
     'sel-badge': 'sel-badge',
     'sel-panel': 'sel-panel',
-    'sel-checkbox': 'sel-checkbox'
+    'sel-checkbox': 'sel-checkbox',
+    'sel-number-control': 'sel-number-control'
   })
 
   return app

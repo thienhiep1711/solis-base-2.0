@@ -63,3 +63,18 @@
     }
   }
 }
+
+
+.grid--cart-grid {
+  @media (--ml) {
+    & .grid__item {
+      &:first-child {
+        width: calc(100% - 300px);
+      }
+
+      &:last-child {
+        width: 300px;
+      }
+    }
+  }
+}

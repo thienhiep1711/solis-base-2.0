@@ -7,6 +7,7 @@ import SearchTrigger from 'modules/search-trigger/search-trigger.vue'
 
 export default (el) => {
   initVue({
+    name: 'HeaderApp',
     components: {
       NavTrigger,
       HeaderCart,

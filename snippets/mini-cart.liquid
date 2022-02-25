@@ -1,7 +1,18 @@
 <div data-module="mini-cart">
   <mini-cart>
-    <div class="up-sell">
-      Upsell module
-    </div>
+    <template #header>
+      Mini cart
+    </template>
+    <template #main>
+      {% render 'cart-grid',
+        location: 'mini-cart',
+        class: 'cart-grid--mini',
+        class_container: '',
+        class_item: 'cart-item--mini'
+      %}
+    </template>
+    <template #sidebar>
+      Test sidebar
+    </template>
   </mini-cart>
 </div>
