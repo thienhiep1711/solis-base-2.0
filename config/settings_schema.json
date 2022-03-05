@@ -804,5 +804,16 @@
         "placeholder": "Montserrat:300,400,700|Muli|Poppins:400,600"
       }
     ]
+  },
+  {
+    "name": "GraphQL",
+    "settings": [
+      {
+        "type": "text",
+        "id": "storefront_access_token",
+        "label": "Storefront Access Token",
+        "default": "a321501d39a0b945769e3a1f5fd41de8"
+      }
+    ]
   }
 ]

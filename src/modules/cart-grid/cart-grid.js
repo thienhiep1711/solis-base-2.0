@@ -1,6 +1,5 @@
 import { initVue } from 'lib/components'
 import store from './@store'
-
 import CartGrid from './cart-grid.vue'
 import CartItem from 'modules/cart-item/cart-item.vue'
 import './cart-grid.css'

@@ -29,6 +29,7 @@
           <button
             class="link cart-item__close"
             type="button"
+            @click="handleRemove(value.id)"
           >
             {{ buttonRemoveText }}
           </button>
@@ -67,7 +68,7 @@
             v-if="!isMiniCart"
             class="link cart-item__close cart-item__close--desktop"
             type="button"
-            @click="remove"
+            @click="handleRemove(value.id)"
           >
             {{ buttonRemoveText }}
           </button>
@@ -81,6 +82,7 @@
 import './cart-item.css'
 
 import { computed, ref, watch } from 'vue'
+import useCart from 'uses/useCart'
 import Price from 'modules/price/price.vue'
 
 export default {
@@ -107,21 +109,32 @@ export default {
     }
   },
   setup (props) {
-    let quantity = ref(props.value.quantity)
+    const quantity = ref(props.value.quantity)
+
+    const { change, remove } = useCart()
 
     const max = computed(() => props.value.inventory_quantity ? props.value.inventory_quantity : Number.MAX_VALUE)
 
     const comparePrice = computed(() => props.value.compare_at_price ? props.value.compare_at_price : 0)
 
-    watch(quantity, (newValue) => {
-      quantity = newValue
-      console.log(newValue)
+    watch(quantity, async (newValue) => {
+      await change({
+        id: props.value.id,
+        quantity: newValue
+      })
     })
+
+    const handleRemove = (id) => {
+      remove({
+        id: id
+      })
+    }
 
     return {
       max,
       quantity,
-      comparePrice
+      comparePrice,
+      handleRemove
     }
   }
 }

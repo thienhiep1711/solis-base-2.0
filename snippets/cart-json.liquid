@@ -9,7 +9,7 @@
       {%- capture _product_data -%}
         "compare_at_price": {{ item.product.compare_at_price | json }},
         {%- for variant in item.product.variants -%}
-          {%- assign _variant_id = item.variant_id | json -%}
+          {%- assign _variant_id = item.variant_id -%}
           {%- if _variant_id == variant.id -%}
             "inventory_quantity": {{- variant.inventory_quantity | json -}},
           {%- endif -%}

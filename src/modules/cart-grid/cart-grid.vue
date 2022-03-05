@@ -28,7 +28,9 @@
 <script>
 
 import { useStore } from 'vuex'
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
+import useEmitter from 'uses/useEmitter'
+import useCart from 'uses/useCart'
 
 export default {
   name: 'CartGrid',
@@ -49,9 +51,19 @@ export default {
   setup () {
     const store = useStore()
 
+    const emitter = useEmitter()
+
+    const { toggleCart } = useCart()
+
     const totalItems = computed(() => store.getters.totalItems)
 
     const cartData = computed(() => store.getters.cartData)
+
+    onMounted(() => {
+      emitter.on('add-to-cart', () => {
+        toggleCart()
+      })
+    })
 
     return {
       totalItems,

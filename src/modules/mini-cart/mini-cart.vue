@@ -1,10 +1,12 @@
 <template>
   <sel-slideout
     class="sel-slideout--minicart"
-    v-model:is-active="isOpened"
+    v-model:is-active="isOpended"
     activator-selector=".js-cart-slideout"
   >
-    <div class="mini-cart">
+    <div
+      class="mini-cart"
+    >
       <div class="mini-cart__inner">
         <div class="mini-cart__header">
           <slot name="header"></slot>
@@ -18,15 +20,36 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { computed, reactive, toRefs, watch } from 'vue'
+import { useStore } from 'vuex'
+import useCart from 'uses/useCart'
 
 export default {
   name: 'MiniCart',
   setup () {
-    const isOpened = ref(false)
+    const store = useStore()
+    const { toggleCart } = useCart()
+    const state = reactive({
+      isOpended: false
+    })
+
+    const isOpended = computed(() => store.state.app.isMiniCartOpen)
+
+    watch(isOpended, newValue => {
+      if (newValue && !state.isOpended) {
+        state.isOpended = true
+      }
+    })
+
+    watch(state, newValue => {
+      if (!newValue.isOpended) {
+        toggleCart()
+        state.isOpended = false
+      }
+    })
 
     return {
-      isOpened
+      ...toRefs(state)
     }
   }
 }

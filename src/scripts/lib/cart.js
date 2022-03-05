@@ -1,9 +1,15 @@
 import nanoajax from 'nanoajax'
-import { fetchData } from 'lib/shopify'
-
 class Cart {
   get () {
-    return fetchData('/cart?view=ajax').then(cart => cart)
+    return new Promise(resolve => {
+      nanoajax.ajax({
+        url: '/cart.js',
+        method: 'get'
+      }, (code, responseText, request) => {
+        const cart = JSON.parse(responseText)
+        resolve(cart)
+      })
+    })
   }
 
   generateShopifyCartChangeBody ({ id, quantity }) {

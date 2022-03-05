@@ -133,6 +133,7 @@ module.exports = env => {
         'styles': STYLES_DIR,
         'lib': path.resolve(__dirname, 'src/scripts/lib'),
         'modules': path.resolve(__dirname, 'src/modules'),
+        'uses': path.resolve(__dirname, 'src/scripts/uses'),
         'mixins': path.resolve(__dirname, 'src/scripts/mixins'),
         'root': path.resolve(__dirname, 'src/scripts'),
         'vue': isProductionMode ? 'vue/dist/vue.cjs.prod.js' : 'vue/dist/vue.esm-bundler.js'

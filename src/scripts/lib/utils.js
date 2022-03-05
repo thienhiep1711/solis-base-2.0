@@ -412,6 +412,16 @@ const unset = (item, selector) => {
 
 const isTouch = () => 'ontouchstart' in document.documentElement
 
+/**
+ * Storefront API IDs Generator
+ * @param {string} type Object type
+ * @param {string} databaseKey Object ID
+ * @returns {string} GraphQL ID
+ */
+const normalizeId = (type, databaseKey) => {
+  return btoa(`gid://shopify/${type}/${databaseKey}`)
+}
+
 export {
   add,
   addQueryVar,
@@ -464,5 +474,6 @@ export {
   isIEorEdge,
   set,
   unset,
-  isTouch
+  isTouch,
+  normalizeId
 }

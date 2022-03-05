@@ -6,7 +6,6 @@ export default class StorefrontClient {
     this.method = 'POST'
     this.headers = {
       'Content-Type': 'application/json',
-      'Accept': 'application/json',
       'X-Shopify-Storefront-Access-Token': this.accessToken
     }
   }

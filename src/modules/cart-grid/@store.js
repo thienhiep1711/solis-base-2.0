@@ -5,7 +5,8 @@ import { getters } from './@getters'
 import appState from 'lib/appState'
 
 const defaults = {
-  app: appState
+  app: appState,
+  loading: false
 }
 
 export default createStore({

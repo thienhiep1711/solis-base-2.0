@@ -1,8 +1,11 @@
 import { createApp } from 'vue'
+import emit from 'mitt'
 import store from 'scripts/store'
 import globalMixins from '../mixins/global'
 import { selectAll } from 'scripts/lib/dom'
 import selene from '@solislab/selene/dist/selene.umd'
+
+const emitter = emit()
 
 const initComponent = (Component, selector) => {
   const elements = selectAll(`[data-module="${selector}"]`)
@@ -15,6 +18,8 @@ const initComponent = (Component, selector) => {
 
 const initVue = (options = {}) => {
   const app = createApp(options)
+
+  app.config.globalProperties.emitter = emitter
 
   app.mixin(globalMixins)
 

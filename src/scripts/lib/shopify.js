@@ -1,11 +1,11 @@
 /* global Promise */
 import { getModuleOptions, ready } from 'lib/dom'
 import nanoajax from 'nanoajax'
-import * as createHistory from 'history'
 import { formatMoney as shopifyFormatMoney } from '@shopify/theme-currency'
 
 const MODULE_NAME = 'shop'
 let settings = {}
+
 ready(() => {
   settings = getModuleOptions(MODULE_NAME, document.body, {})
 })
@@ -72,14 +72,11 @@ const formatMoney = function (cents, format = settings.moneyFormat) {
   return shopifyFormatMoney(cents, format)
 }
 
-const history = createHistory.createBrowserHistory()
-
 export {
   fetchData,
   getProduct,
   getShipping,
   formatMoney,
   nanoPromise,
-  postData,
-  history
+  postData
 }
