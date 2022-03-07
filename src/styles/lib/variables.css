@@ -3,19 +3,19 @@
   --transition-timing: ease-in-out;
   --transition-default: var(--transition-duration) var(--transition-timing);
 
-  --container-edge: 16px;
-  --container-edge-tablet: 16px;
+  --container-edge: 18px;
+  --container-edge-tablet: 18px;
   --container-edge-desktop: 24px;
-  --container-edge-compact: 8px;
+  --container-edge-compact: 12px;
   --container-edge-page: 18px;
-  --container-max-width: 1272px;
+  --container-max-width: 1288px;
   --field-height: 48px;
 
-  --grid-gutter-default: 16px;
+  --grid-gutter-default: 12px;
 
-  --gutter-s: 16px;
-  --gutter-sm: 16px;
-  --gutter-ml: 32px;
+  --gutter-s: 12px;
+  --gutter-sm: 12px;
+  --gutter-ml: 24px;
 
   --xxxs: 320px;
   --xs: 620px;
