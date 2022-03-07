@@ -136,7 +136,7 @@
         "type": "font_picker",
         "id": "headings_font",
         "label": "Font",
-        "default": "helvetica_n4"
+        "default": "titillium_web_n6"
       },
       {
         "type": "text",
@@ -220,7 +220,7 @@
             "label": "900"
           }
         ],
-        "default": "normal"
+        "default": "600"
       },
       {
         "type": "select",
@@ -242,7 +242,7 @@
         "type": "checkbox",
         "id": "headings_uppercase",
         "label": "Display headings in uppercase",
-        "default": true
+        "default": false
       },
       {
         "type": "header",
@@ -252,7 +252,7 @@
         "type": "font_picker",
         "id": "body_font",
         "label": "Font",
-        "default": "helvetica_n4"
+        "default": "titillium_web_n4"
       },
       {
         "type": "text",
@@ -362,7 +362,7 @@
         "type": "font_picker",
         "id": "buttons_font",
         "label": "Font",
-        "default": "helvetica_n4"
+        "default": "titillium_web_n7"
       },
       {
         "type": "text",
@@ -446,7 +446,7 @@
             "label": "900"
           }
         ],
-        "default": "normal"
+        "default": "bold"
       },
       {
         "type": "select",
@@ -467,7 +467,8 @@
       {
         "type": "checkbox",
         "id": "buttons_uppercase",
-        "label": "Display buttons in uppercase"
+        "label": "Display buttons in uppercase",
+        "default": true
       }
     ]
   },

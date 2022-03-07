@@ -1,25 +1,32 @@
 @define-mixin h1 {
-  @type 40px 52px;
+  @type 42px 48px;
 }
 
 @define-mixin h2 {
-  @type 32px 32px;
+  @type 30px 34px -0.2px;
 }
 
 @define-mixin h3 {
-  @type 24px 24px;
+  @type 24px 30px;
 }
 
 @define-mixin h4 {
-  @type 18px 20px;
+  @type 18px 24px;
 }
 
 @define-mixin h5 {
-  @type 13px 15px;
+  @type 18px 24px;
 }
 
 @define-mixin h6 {
-  @type 13px 15px;
+  @type 18px 24px;
+}
+
+@define-mixin heading {
+  font-family: var(--headings-font-family);
+  font-weight: var(--headings-font-weight);
+  font-style: var(--headings-font-style);
+  text-transform: var(--headings-text-transform);
 }
 
 @define-mixin text-inherit {
@@ -36,15 +43,21 @@
 }
 
 @define-mixin paragraph {
-  @type 13px 20px;
+  @type 14px 24px;
   font-family: var(--body-font-family);
   font-weight: var(--body-font-weight);
   font-style: var(--body-font-style);
+  text-transform: var(--body-text-transform);
   color: var(--c-text);
 }
 
+@define-mixin paragraph-large {
+  @type 16px 24px;
+}
+
 @define-mixin link {
-  @type 13px 20px;
+  @type 14px 22px;
+  text-decoration: underline;
   color: var(--c-link);
 }
 
@@ -69,19 +82,19 @@
 }
 
 @define-mixin label {
-  @type 13px 20px;
+  @type 14px 24px;
 }
 
 @define-mixin label-focus {
-  @type 10px 13px;
+  @type 11px 16px;
 }
 
 @define-mixin form-input {
-  @type 13px 20px;
+  @type 14px 24px;
 }
 
 @define-mixin button-typo {
-  @type 16px 16px;
+  @type 15px 18px 0.54px;
   font-family: var(--buttons-font-family);
   font-weight: var(--buttons-font-weight);
   font-style: var(--buttons-font-style);
@@ -107,4 +120,48 @@
 
 @define-mixin fw-bold {
   font-weight: 700;
+}
+
+@define-mixin typo-custom-1 {
+  @type 12px 12px 0.8px;
+}
+
+@define-mixin typo-custom-2 {
+  @type 12px 22px;
+}
+
+@define-mixin typo-custom-3 {
+  @type 13px 13px 0.87px;
+}
+
+@define-mixin typo-custom-4 {
+  @type 14px 18px 0.5px;
+}
+
+@define-mixin typo-custom-5 {
+  @type 16px 22px;
+}
+
+@define-mixin typo-custom-6 {
+  @type 16px 26px;
+}
+
+@define-mixin typo-custom-7 {
+  @type 18px 22px;
+}
+
+@define-mixin typo-custom-8 {
+  @type 20px 22px;
+}
+
+@define-mixin typo-custom-9 {
+  @type 20px 28px;
+}
+
+@define-mixin typo-custom-10 {
+  @type 22px 24px;
+}
+
+@define-mixin typo-custom-11 {
+  @type 24px 24px;
 }
