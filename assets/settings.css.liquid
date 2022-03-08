@@ -31,7 +31,10 @@
   {%- assign use_custom_font_body = true -%}
 {%- endif -%}
 
-{%- if (use_typekit and use_typekit_headings) or (use_custom_fonts and use_custom_font_headings) -%}
+{%- if use_typekit and use_typekit_headings -%}
+  {%- assign headings_font_weight = settings.headings_font_weight | default: 'normal' -%}
+  {%- assign headings_font_style = settings.headings_font_style | default: 'normal'-%}
+{%- elsif use_custom_fonts and use_custom_font_headings -%}
   {%- assign headings_font_weight = settings.headings_font_weight | default: 'normal' -%}
   {%- assign headings_font_style = settings.headings_font_style | default: 'normal'-%}
 {%- else -%}
@@ -57,7 +60,10 @@
   {%- endif -%}
 {%- endcapture -%}
 
-{%- if (use_typekit and use_typekit_body) or (use_custom_fonts and use_custom_font_body) -%}
+{%- if use_typekit and use_typekit_body -%}
+  {%- assign body_font_weight = settings.body_font_weight | default: 'normal' -%}
+  {%- assign body_font_style = settings.body_font_style | default: 'normal' -%}
+{%- elsif use_custom_fonts and use_custom_font_body -%}
   {%- assign body_font_weight = settings.body_font_weight | default: 'normal' -%}
   {%- assign body_font_style = settings.body_font_style | default: 'normal' -%}
 {%- else -%}
@@ -80,7 +86,10 @@
   {%- assign use_custom_font_buttons = true -%}
 {%- endif -%}
 
-{%- if (use_typekit and use_typekit_buttons) or (use_custom_fonts and use_custom_font_buttons) -%}
+{%- if use_typekit and use_typekit_buttons -%}
+  {%- assign buttons_font_weight = settings.buttons_font_weight | default: 'normal' -%}
+  {%- assign buttons_font_style = settings.buttons_font_style | default: 'normal'-%}
+{%- elsif use_custom_fonts and use_custom_font_buttons -%}
   {%- assign buttons_font_weight = settings.buttons_font_weight | default: 'normal' -%}
   {%- assign buttons_font_style = settings.buttons_font_style | default: 'normal'-%}
 {%- else -%}

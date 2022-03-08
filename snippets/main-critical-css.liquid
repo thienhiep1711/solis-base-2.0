@@ -31,7 +31,10 @@
   {%- assign use_custom_font_body = true -%}
 {%- endif -%}
 
-{%- if (use_typekit and use_typekit_headings) or (use_custom_fonts and use_custom_font_headings) -%}
+{%- if use_typekit and use_typekit_headings -%}
+  {%- assign headings_font_weight = settings.headings_font_weight | default: 'normal' -%}
+  {%- assign headings_font_style = settings.headings_font_style | default: 'normal'-%}
+{%- elsif use_custom_fonts and use_custom_font_headings -%}
   {%- assign headings_font_weight = settings.headings_font_weight | default: 'normal' -%}
   {%- assign headings_font_style = settings.headings_font_style | default: 'normal'-%}
 {%- else -%}
@@ -57,7 +60,10 @@
   {%- endif -%}
 {%- endcapture -%}
 
-{%- if (use_typekit and use_typekit_body) or (use_custom_fonts and use_custom_font_body) -%}
+{%- if use_typekit and use_typekit_body -%}
+  {%- assign body_font_weight = settings.body_font_weight | default: 'normal' -%}
+  {%- assign body_font_style = settings.body_font_style | default: 'normal' -%}
+{%- elsif use_custom_fonts and use_custom_font_body -%}
   {%- assign body_font_weight = settings.body_font_weight | default: 'normal' -%}
   {%- assign body_font_style = settings.body_font_style | default: 'normal' -%}
 {%- else -%}
@@ -80,7 +86,10 @@
   {%- assign use_custom_font_buttons = true -%}
 {%- endif -%}
 
-{%- if (use_typekit and use_typekit_buttons) or (use_custom_fonts and use_custom_font_buttons) -%}
+{%- if use_typekit and use_typekit_buttons -%}
+  {%- assign buttons_font_weight = settings.buttons_font_weight | default: 'normal' -%}
+  {%- assign buttons_font_style = settings.buttons_font_style | default: 'normal'-%}
+{%- elsif use_custom_fonts and use_custom_font_buttons -%}
   {%- assign buttons_font_weight = settings.buttons_font_weight | default: 'normal' -%}
   {%- assign buttons_font_style = settings.buttons_font_style | default: 'normal'-%}
 {%- else -%}
@@ -110,4 +119,4 @@
   All theme setting CSS vars are defined here
   After Postcss compiles the CssVarsToLiquid webpack plugin scans this file and updates the bundle
   replacing references to CSS vars listed here with their associated liquid
-{% endcomment -%}*/*{box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}figure{margin:0;padding:0}img{max-width:100%;height:auto}figure,h1,h2,h3,h4,h5,h6,ol,p,ul{margin:0;padding:0}ol,ul{list-style-type:none}a,input[type=submit]{cursor:pointer}[v-cloak]{display:none!important}.container{padding-left:16px;padding-right:16px;margin-left:auto;margin-right:auto;box-sizing:border-box;max-width:1272px}@media (min-width:768px){.container{padding-left:16px;padding-right:16px}}@media (min-width:1024px){.container{padding-left:24px;padding-right:24px}}@media (max-width:767px){.container--page{padding-left:18px;padding-right:18px}}@media (min-width:768px){.container--full{max-width:100%;padding-left:32px;padding-right:32px;margin:0 auto}}@media (max-width:767px){.container--compact{padding-left:8px;padding-right:8px}}.container--xs{max-width:620px}.container--s{max-width:768px}.container--m{max-width:1000px}.container--ml{max-width:1160px}.container--l{max-width:1280px}.container--xl{max-width:1440px}.container--fluid{margin:0 auto}[v-cloak]{display:none}.f{display:flex}.fw{flex-wrap:wrap}.ais{align-items:flex-start}.aie{align-items:flex-end}.aic{align-items:center}.aib{align-items:baseline}.jcs{justify-content:flex-start}.jce{justify-content:flex-end}.jcc{justify-content:center}.jcb{justify-content:space-between}.fa{flex:1 1 auto;min-width:0;min-height:0}.ff{flex-shrink:0}.fdc{flex-direction:column}.hide{display:none}
+{% endcomment -%}*/*{box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}figure{margin:0;padding:0}img{max-width:100%;height:auto}figure,h1,h2,h3,h4,h5,h6,ol,p,ul{margin:0;padding:0}ol,ul{list-style-type:none}a,input[type=submit]{cursor:pointer}[v-cloak]{display:none!important}.container{padding-left:18px;padding-right:18px;margin-left:auto;margin-right:auto;box-sizing:border-box;max-width:1288px}@media (min-width:768px){.container{padding-left:18px;padding-right:18px}}@media (min-width:1024px){.container{padding-left:24px;padding-right:24px}}@media (max-width:767px){.container--page{padding-left:18px;padding-right:18px}}@media (min-width:768px){.container--full{max-width:100%;padding-left:32px;padding-right:32px;margin:0 auto}}@media (max-width:767px){.container--compact{padding-left:12px;padding-right:12px}}.container--xs{max-width:620px}.container--s{max-width:768px}.container--m{max-width:1000px}.container--ml{max-width:1160px}.container--l{max-width:1280px}.container--xl{max-width:1440px}.container--fluid{margin:0 auto}[v-cloak]{display:none}.f{display:flex}.fw{flex-wrap:wrap}.ais{align-items:flex-start}.aie{align-items:flex-end}.aic{align-items:center}.aib{align-items:baseline}.jcs{justify-content:flex-start}.jce{justify-content:flex-end}.jcc{justify-content:center}.jcb{justify-content:space-between}.fa{flex:1 1 auto;min-width:0;min-height:0}.ff{flex-shrink:0}.fdc{flex-direction:column}.hide{display:none}

@@ -10,6 +10,7 @@ const config = {
     require('postcss-easy-import'),
     require('@solislab/postcss-type')({rootSize: '16px'}),
     require('postcss-mixins'),
+    require('postcss-percentage'),
     require('postcss-inline-svg'),
     require('postcss-color-function'),
     require('autoprefixer'),
