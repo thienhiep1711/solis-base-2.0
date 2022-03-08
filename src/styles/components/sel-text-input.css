@@ -1,17 +1,58 @@
 .sel-text-input {
-  display: flex;
-  flex-direction: column;
-}
+  @mixin flex-vertical flex-start, flex-start, wrap;
 
-.sel-text-input input,
-.sel-text-input textarea {
-  appearance: none;
-  min-height: 40px;
-  padding: 10px;
-  border: 1px solid #000;
-  border-radius: 2px;
-  color: #000;
-  box-sizing: border-box;
+  position: relative;
+
+  &.is-focused,
+  &.has-value {
+    & .sel-text-input__label {
+      @mixin label-focus;
+
+      top: -2px;
+      transform: translateY(-50%);
+      width: auto;
+      color: var(--c-dark-gray-5);
+    }
+  }
+
+  &.is-focused {
+    & .sel-text-input__label {
+      color: var(--c-text);
+    }
+
+    & .sel-text-input__textarea,
+    & .sel-text-input__input {
+      box-shadow: none;
+      border-color: var(--c-blue-1);
+    }
+  }
+
+  &.has-error {
+    & .sel-text-input__label {
+      color: var(--c-error);
+    }
+
+    & .sel-text-input__textarea,
+    & .sel-text-input__input {
+      border-color: var(--c-error);
+    }
+  }
+
+  & .sel-text-input__input,
+  & .sel-text-input__textarea {
+    @mixin transition border-color;
+    @mixin form-input;
+
+    border: 1px solid var(--c-border);
+    border-radius: 3px;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 48px;
+    padding: 11px 14px;
+    outline: none;
+    color: var(--c-text);
+    appearance: none;
+  }
 }
 
 .sel-text-input input:-webkit-autofill {
@@ -23,6 +64,24 @@
   animation-name: onAutoFillCancel;
 }
 
+.sel-text-input__label {
+  @mixin transition all;
+  @mixin label;
+
+  position: absolute;
+  top: 11px;
+  left: 12px;
+  padding: 0 7px 0 4px;
+  background: var(--c-white);
+}
+
+.sel-text-input__textarea {
+  resize: vertical;
+}
+
 .sel-text-input__error {
-  color: var(--c-red);
+  @mixin typo-custom-12;
+
+  margin-top: 2px;
+  color: var(--c-error);
 }

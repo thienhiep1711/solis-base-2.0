@@ -1,35 +1,52 @@
 <template>
   <section class="style-guide__section">
+    <div class="style-guide__section-header">
+      <div class="container">
+        <h3 class="style-guide__section-header-title">INPUTS AND SELECTORS</h3>
+      </div>
+    </div>
     <div class="container">
       <div class="grid grid--2">
         <div class="grid__item">
-          <h3 class="style-guide__section-header">Inputs</h3>
-          <div class="style-guide__section-content style-guide__section-content--responsive">
-            <sel-text-input
-              v-model="textInput"
-              placeholder="This is input field"
-              class="input-custom"
-            >
-              Input title 1
-            </sel-text-input>
-            <sel-text-input
-              v-model="textInput"
-              placeholder="This is input field"
-              :required="true"
-            >
-              Input title 2
-            </sel-text-input>
-            <sel-text-input
-              v-model="textInput"
-              :lines="10"
-              placeholder="Form Textarea"
-            >
-              Textarea title
-            </sel-text-input>
+          <div class="grid grid--2 style-guide__section-content">
+            <div class="grid__item">
+              <sel-text-input
+                v-model="textInput"
+                class="style-guide__section-input"
+              >
+                Label
+              </sel-text-input>
+              <sel-text-input
+                v-model="textInput"
+                class="style-guide__section-input"
+                :required="true"
+              >
+                Require Field
+              </sel-text-input>
+              <sel-text-input
+                v-model="textInput"
+                class="style-guide__section-input"
+                :lines="10"
+              >
+                Textarea Field
+              </sel-text-input>
+            </div>
+            <div class="grid__item">
+              <sel-select
+                v-model="selectValue"
+                :options="selectOptions"
+                :required="enableValidateSelect"
+                class="style-guide__section-input"
+              >
+                Select Options
+                <template v-if="enableValidateSelect" #empty-option>
+                  <option value="">Select Option</option>
+                </template>
+              </sel-select>
+            </div>
           </div>
         </div>
         <div class="grid__item">
-          <h3 class="style-guide__section-header">Selector</h3>
           <div class="style-guide__section-content style-guide__section-content--responsive style-guide__section-table">
             <div class="style-guide__group">
               <h4>Checkbox</h4>
@@ -63,29 +80,6 @@
               <p>parent value: {{ radioValue }}</p>
             </div>
             <div class="style-guide__group">
-              <h4>Select</h4>
-              <sel-checkbox
-                name="test-checkbox"
-                v-model:checked="enableValidateSelect"
-              >
-                Validate Select: {{ enableValidateSelect }}
-              </sel-checkbox>
-              <sel-select
-                :key="enableValidateSelect"
-                name="test-select"
-                v-model="selectValue"
-                :options="selectOptions"
-                :required="enableValidateSelect"
-                class="select-custom"
-              >
-                Select Options
-                <template v-if="enableValidateSelect" #empty-option>
-                  <option value="">Select Option</option>
-                </template>
-              </sel-select>
-              <p>parent value: {{ selectValue }}</p>
-            </div>
-            <div class="style-guide__group">
               <h4>Number Control</h4>
               <sel-number-control v-model="quantity" :max="5">
                 <template v-slot:exceeded="{ max }">
@@ -111,7 +105,7 @@ export default {
     const radioValue = ref(1)
     const quantity = ref(0)
     const textInput = ref('')
-    const selectValue = ref('')
+    const selectValue = ref(1)
     const enableValidateSelect = ref(false)
     const selectOptions = ref([
       {

@@ -5,10 +5,13 @@
 }
 
 .style-guide__section {
+  display: inline-block;
   margin: 33px 0;
+  width: 100%;
 }
 
 .style-guide__section-header {
+  margin-bottom: 42px;
   width: 100%;
   padding: 14px 0;
   background: var(--c-light-gray-1);
@@ -23,13 +26,17 @@
 .style-guide__section-title {
   @mixin label-focus;
 
-  margin: 30px 0 12px;
+  margin-bottom: 12px;
   text-transform: uppercase;
   color: var(--c-gray-1);
 }
 
 .style-guide__section-heading {
   margin-bottom: 24px;
+}
+
+.style-guide__paragraph {
+  margin-bottom: 18px;
 }
 
 .style-guide__colours-data {
@@ -129,4 +136,8 @@
 
   margin-top: 25px;
   gap: 18px;
+}
+
+.style-guide__section-input {
+  margin-bottom: 24px;
 }
