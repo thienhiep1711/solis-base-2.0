@@ -73,3 +73,97 @@
     @mixin fit;
   }
 }
+
+.icon-map {
+  width: 9px;
+  height: 11px;
+  color: var(--c-dark-gray-8);
+}
+
+.icon-phone,
+.icon-directions {
+  width: 11px;
+  height: 11px;
+  color: var(--c-dark-gray-3);
+}
+
+.icon-chevron-right,
+.icon-chevron-left {
+  width: 7px;
+  height: 13px;
+  color: var(--c-blue-1);
+}
+
+.icon-minus-svg,
+.icon-plus-svg {
+  color: var(--c-dark-gray-2);
+}
+
+.icon-minus-svg {
+  width: 12px;
+  height: 2px;
+}
+
+.icon-plus-svg {
+  width: 12px;
+  height: 12px;
+}
+
+.icon-location {
+  width: 13px;
+  height: 15px;
+  color: var(--c-blue-1);
+}
+
+.icon-cart {
+  width: 16px;
+  height: 15px;
+  color: var(--c-blue-1);
+}
+
+.icon-instagram,
+.icon-facebook {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-menu,
+.icon-close,
+.icon-tick,
+.icon-error,
+.icon-times {
+  color: var(--c-white);
+}
+
+.icon-menu {
+  width: 18px;
+  height: 15px;
+}
+
+.icon-close {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-arrow-left,
+.icon-arrow-right {
+  width: 30px;
+  height: 30px;
+}
+
+.icon-chevron-down {
+  width: 11px;
+  height: 13px;
+  color: var(--c-blue-1);
+}
+
+.icon-tick,
+.icon-error {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-times {
+  width: 12px;
+  height: 12px;
+}

@@ -11,7 +11,7 @@
 .style-guide__section-header {
   width: 100%;
   padding: 14px 0;
-  background: var(--c-white-1);
+  background: var(--c-light-gray-1);
 }
 
 .style-guide__section-header-title {
@@ -122,4 +122,11 @@
 .sample-image {
   position: relative;
   @mixin aspect 3, 2;
+}
+
+.style-guide__section-icons {
+  @mixin flex-horizontal center, flex-start, wrap;
+
+  margin-top: 25px;
+  gap: 18px;
 }
