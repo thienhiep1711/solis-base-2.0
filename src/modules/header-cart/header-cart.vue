@@ -3,8 +3,8 @@
     class="header-cart js-cart-slideout"
   >
     <sel-icon
-      class-name="icon--header-cart"
-      icon-name="icon-bag"
+      class="icon icon-cart icon-cart--header"
+      icon-name="icon-cart"
     />
   </div>
 </template>
