@@ -52,33 +52,24 @@
   --c-success: var(--c-blue-3);
   --c-error: var(--c-red);
 
-  --c-button-primary-bg: var(--c-blue);
+  --c-button-primary-bg: var(--c-blue-1);
   --c-button-primary-text: var(--c-white);
-  --c-button-primary-border: var(--c-blue);
-  --c-button-primary-disable-bg: var(--c-gray);
-  --c-button-primary-disable-text: var(--c-white);
-  --c-button-primary-disable-border: var(--c-gray);
-  --c-button-primary-hover-bg: var(--c-blue-2);
-  --c-button-primary-hover-text: var(--c-white);
-  --c-button-primary-hover-border: var(--c-blue-2);
+  --c-button-primary-border: transparent;
+  --c-button-primary-hover-bg: var(--c-blue-gradient-08);
 
-  --c-button-secondary-bg: var(--c-white);
-  --c-button-secondary-text: var(--c-black);
-  --c-button-secondary-border: var(--c-black);
-  --c-button-secondary-disable-bg: var(--c-white);
-  --c-button-secondary-disable-text: var(--c-black);
-  --c-button-secondary-disable-border: var(--c-blue);
-  --c-button-secondary-hover-bg: var(--c-white);
-  --c-button-secondary-hover-text: var(--c-black);
-  --c-button-secondary-hover-border: var(--c-blue);
+  --c-button-secondary-bg: var(--c-orange);
+  --c-button-secondary-text: var(--c-white);
+  --c-button-secondary-border: transparent;
+  --c-button-secondary-hover-bg: var(--c-orange-gradient-08);
 
-  --c-button-alternate-bg: var(--c-green);
-  --c-button-alternate-text: var(--c-white);
-  --c-button-alternate-border: var(--c-green);
-  --c-button-alternate-disable-bg: var(--c-gray);
-  --c-button-alternate-disable-text: var(--c-white);
-  --c-button-alternate-disable-border: var(--c-gray);
-  --c-button-alternate-hover-bg: var(--c-green-2);
+  --c-button-alternate-bg: transparent;
+  --c-button-alternate-text: var(--c-blue-1);
+  --c-button-alternate-border: var(--c-dark-gray-9);
+  --c-button-alternate-hover-bg: var(--c-blue-1);
   --c-button-alternate-hover-text: var(--c-white);
-  --c-button-alternate-hover-border: var(--c-green-2);
+  --c-button-alternate-hover-border: var(--c-blue-1);
+
+  --c-button-disable-bg: var(--c-light-gray-4);
+  --c-button-disable-text: var(--c-dark-gray-4);
+  --c-button-disable-border: var(--c-light-gray-4);
 }

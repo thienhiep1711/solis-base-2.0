@@ -95,11 +95,10 @@
 
 @define-mixin button-typo {
   @type 15px 18px 0.54px;
-  font-family: var(--buttons-font-family);
-  font-weight: var(--buttons-font-weight);
-  font-style: var(--buttons-font-style);
+  @mixin fw-bold;
+
   text-decoration: none;
-  text-transform: var(--buttons-text-transform);
+  text-transform: uppercase;
 }
 
 @define-mixin headline {
