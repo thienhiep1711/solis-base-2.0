@@ -19,4 +19,4 @@ node_modules
 /assets/runtime.js
 /assets/main.js
 /assets/main.css
-/assets/main.map.css
+/assets/main.css.map
