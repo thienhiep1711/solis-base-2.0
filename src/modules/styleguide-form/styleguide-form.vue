@@ -47,46 +47,94 @@
           </div>
         </div>
         <div class="grid__item">
-          <div class="style-guide__section-content style-guide__section-content--responsive style-guide__section-table">
-            <div class="style-guide__group">
-              <h4>Checkbox</h4>
-              <sel-checkbox class="checkbox-custom" data-x="11" name="test-checkbox" v-model:checked="checkboxValue">
-                Checkbox label
-              </sel-checkbox>
-              <p>parent value: {{ checkboxValue }}</p>
-            </div>
-            <div class="style-guide__group">
-              <h4>Checkbox groups</h4>
-              <sel-checkbox v-model:checked="checkboxGroup" value="option-1">Option 1</sel-checkbox>
-              <sel-checkbox v-model:checked="checkboxGroup" value="option-2">Option 2</sel-checkbox>
-              <sel-checkbox v-model:checked="checkboxGroup" value="option-3">Option 3</sel-checkbox>
-              <sel-checkbox v-model:checked="checkboxGroup" value="option-4">Option 4</sel-checkbox>
-              <sel-checkbox v-model:checked="checkboxGroup" value="option-5">Option 5</sel-checkbox>
-              <p>Selected Values: {{ checkboxGroup }}</p>
-            </div>
-            <div class="style-guide__group">
-              <h4>Radio Button</h4>
-              <sel-radio
-                name="test-radio"
-                v-model="radioValue"
-                v-for="n in 3"
-                :key="n"
-                :value="n"
-                class="radio-custom"
-                data-x="15"
+          <div class="style-guide__section-content style-guide__section-content--selector">
+            <div class="style-guide__section-group">
+              <sel-checkbox
+                v-model:checked="checkboxValue"
+                class="style-guide__section-selector"
               >
-                Radio label {{ n }}
-              </sel-radio>
-              <p>parent value: {{ radioValue }}</p>
+                Inactive
+              </sel-checkbox>
+              <sel-checkbox
+                v-model:checked="checkboxValueActive"
+                class="style-guide__section-selector"
+              >
+                Active
+              </sel-checkbox>
+              <sel-checkbox
+                v-model:checked="checkboxValue"
+                class="style-guide__section-selector"
+                :disabled="true"
+              >
+                Inactive disabled
+              </sel-checkbox>
+              <sel-checkbox
+                v-model:checked="checkboxValueActive"
+                class="style-guide__section-selector"
+                :disabled="true"
+              >
+                Active disabled
+              </sel-checkbox>
             </div>
-            <div class="style-guide__group">
-              <h4>Number Control</h4>
-              <sel-number-control v-model="quantity" :max="5">
-                <template v-slot:exceeded="{ max }">
-                  <p>Only allow {{max}}</p>
-                </template>
-              </sel-number-control>
-              <p>parent value: {{ quantity }}</p>
+            <div class="style-guide__section-group">
+              <sel-radio
+                v-model="radioValue"
+                class="style-guide__section-selector"
+                value="0"
+              >
+                Inactive
+              </sel-radio>
+              <sel-radio
+                v-model="radioValue"
+                class="style-guide__section-selector"
+                value="1"
+              >
+                Active
+              </sel-radio>
+              <sel-radio
+                v-model="radioValue"
+                class="style-guide__section-selector"
+                value="0"
+                :disabled="true"
+              >
+                Inactive disabled
+              </sel-radio>
+              <sel-radio
+                v-model="radioValue"
+                class="style-guide__section-selector"
+                value="1"
+                :disabled="true"
+              >
+                Active disabled
+              </sel-radio>
+            </div>
+            <div class="style-guide__section-group">
+              <sel-checkbox
+                v-model:checked="checkboxValue"
+                class="sel-checkbox--switch style-guide__section-selector"
+              >
+                Inactive
+              </sel-checkbox>
+              <sel-checkbox
+                v-model:checked="checkboxValueActive"
+                class="sel-checkbox--switch style-guide__section-selector"
+              >
+                Active
+              </sel-checkbox>
+              <sel-checkbox
+                v-model:checked="checkboxValue"
+                class="sel-checkbox--switch style-guide__section-selector"
+                :disabled="true"
+              >
+                Inactive disabled
+              </sel-checkbox>
+              <sel-checkbox
+                v-model:checked="checkboxValueActive"
+                class="sel-checkbox--switch style-guide__section-selector"
+                :disabled="true"
+              >
+                Active disabled
+              </sel-checkbox>
             </div>
           </div>
         </div>
@@ -101,7 +149,7 @@ import { ref } from 'vue'
 export default {
   setup () {
     const checkboxValue = ref(false)
-    const checkboxGroup = ref([])
+    const checkboxValueActive = ref(true)
     const radioValue = ref(1)
     const quantity = ref(0)
     const textInput = ref('')
@@ -132,7 +180,7 @@ export default {
 
     return {
       checkboxValue,
-      checkboxGroup,
+      checkboxValueActive,
       radioValue,
       quantity,
       textInput,

@@ -141,3 +141,20 @@
 .style-guide__section-input {
   margin-bottom: 24px;
 }
+
+.style-guide__section-content--selector {
+  margin-top: 24px;
+
+  @media (--ml) {
+    @mixin flex-horizontal flex-start, flex-start, wrap;
+    margin-top: 0;
+  }
+}
+
+.style-guide__section-group {
+  flex: 1 0 auto;
+
+  & > .style-guide__section-selector {
+    margin-bottom: 20px;
+  }
+}
